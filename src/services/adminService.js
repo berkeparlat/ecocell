@@ -8,7 +8,8 @@ import {
   orderBy,
   getDoc
 } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { updatePassword, updateEmail } from 'firebase/auth';
+import { db, auth } from '../config/firebase';
 
 // Admin email kontrolü
 const ADMIN_EMAIL = 'elektrik.bakim@karafiber.com';
@@ -37,7 +38,9 @@ export const getAllUsers = async () => {
 export const updateUser = async (userId, userData) => {
   try {
     const userRef = doc(db, 'users', userId);
-    await updateDoc(userRef, userData);
+    // Password alanını Firestore'a kaydetme
+    const { password, ...firestoreData } = userData;
+    await updateDoc(userRef, firestoreData);
     return { success: true };
   } catch (error) {
     console.error('Kullanıcı güncellenirken hata:', error);

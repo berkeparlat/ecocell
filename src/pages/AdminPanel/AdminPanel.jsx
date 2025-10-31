@@ -37,10 +37,15 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState(null);
   const [users, setUsers] = useState([]);
-  const [tasks, setTasks] = useState([]);
-  const [messages, setMessages] = useState([]);
+  const [tasks, setTasks] = useState([]);  const [messages, setMessages] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [editingUser, setEditingUser] = useState(null);
+  const [editForm, setEditForm] = useState({
+    fullName: '',
+    email: '',
+    department: '',
+    password: ''
+  });
   
   // Departments management state
   const [localDepartments, setLocalDepartments] = useState([...DEPARTMENTS]);
@@ -114,16 +119,54 @@ const AdminPanel = () => {
     } catch (error) {
       alert('Mesaj silinemedi!');
     }
-  };
-  const handleUpdateUser = async (userId, updates) => {
+  };  const handleUpdateUser = async (userId, updates) => {
     try {
       await updateUser(userId, updates);
       alert('Kullanıcı güncellendi!');
       setEditingUser(null);
+      setEditForm({ fullName: '', email: '', department: '', password: '' });
       loadData();
     } catch (error) {
+      console.error('Kullanıcı güncelleme hatası:', error);
       alert('Kullanıcı güncellenemedi!');
     }
+  };
+
+  const handleEditUser = (user) => {
+    setEditingUser(user);
+    setEditForm({
+      fullName: user.fullName || user.displayName || '',
+      email: user.email || '',
+      department: user.department || '',
+      password: ''
+    });
+  };
+
+  const handleCancelEdit = () => {
+    setEditingUser(null);
+    setEditForm({ fullName: '', email: '', department: '', password: '' });
+  };
+
+  const handleSaveEdit = () => {
+    if (!editForm.fullName.trim()) {
+      alert('Ad Soyad alanı boş olamaz!');
+      return;
+    }
+
+    const updates = {
+      fullName: editForm.fullName.trim(),
+      department: editForm.department,
+      updatedAt: new Date()
+    };
+
+    // Şifre değiştirme notunu ekle
+    if (editForm.password.trim()) {
+      // Not: Firebase Authentication şifrelerini admin olarak değiştiremeyiz
+      // Kullanıcı kendi şifresini değiştirmeli veya şifre sıfırlama kullanılmalı
+      alert('Not: Şifre değiştirmek için kullanıcıya şifre sıfırlama linki gönderilmesi önerilir. Sadece profil bilgileri güncellenecek.');
+    }
+
+    handleUpdateUser(editingUser.id, updates);
   };
 
   // Department management functions
@@ -376,8 +419,7 @@ const AdminPanel = () => {
                     <th>İşlemler</th>
                   </tr>
                 </thead>
-                <tbody>
-                  {filteredUsers.map(u => (
+                <tbody>                  {filteredUsers.map(u => (
                     <tr key={u.id}>
                       <td>{u.fullName || u.displayName || '-'}</td>
                       <td>{u.email}</td>
@@ -385,7 +427,10 @@ const AdminPanel = () => {
                       <td>{formatDate(u.createdAt)}</td>
                       <td>
                         <div className="action-buttons">
-                          <button className="btn-delete" onClick={() => handleDeleteUser(u.id)}>
+                          <button className="btn-edit" onClick={() => handleEditUser(u)} title="Düzenle">
+                            <Edit2 size={16} />
+                          </button>
+                          <button className="btn-delete" onClick={() => handleDeleteUser(u.id)} title="Sil">
                             <Trash2 size={16} />
                           </button>
                         </div>
@@ -494,9 +539,7 @@ const AdminPanel = () => {
               </table>
             </div>
           </div>
-        )}
-
-        {/* Departments Tab */}
+        )}        {/* Departments Tab */}
         {activeTab === 'departments' && (
           <div className="admin-content">
             <div className="departments-management">
@@ -579,6 +622,74 @@ const AdminPanel = () => {
           </div>
         )}
       </div>
+
+      {/* User Edit Modal */}
+      {editingUser && (
+        <div className="modal-overlay" onClick={handleCancelEdit}>
+          <div className="modal-content edit-user-modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>Kullanıcı Düzenle</h2>
+              <button className="modal-close" onClick={handleCancelEdit}>
+                <X size={24} />
+              </button>
+            </div>
+            <div className="modal-body">
+              <div className="form-group">
+                <label>Ad Soyad *</label>
+                <input
+                  type="text"
+                  value={editForm.fullName}
+                  onChange={(e) => setEditForm({ ...editForm, fullName: e.target.value })}
+                  placeholder="Ad Soyad"
+                />
+              </div>
+              
+              <div className="form-group">
+                <label>Email (Değiştirilemez)</label>
+                <input
+                  type="email"
+                  value={editForm.email}
+                  disabled
+                  className="disabled-input"
+                />
+                <small className="form-hint">Email adresi güvenlik nedeniyle değiştirilemez</small>
+              </div>
+              
+              <div className="form-group">
+                <label>Birim</label>
+                <select
+                  value={editForm.department}
+                  onChange={(e) => setEditForm({ ...editForm, department: e.target.value })}
+                >
+                  <option value="">Birim Seçin</option>
+                  {(departments || DEPARTMENTS).map(dept => (
+                    <option key={dept} value={dept}>{dept}</option>
+                  ))}
+                </select>
+              </div>
+              
+              <div className="form-group">
+                <label>Yeni Şifre (İsteğe bağlı)</label>
+                <input
+                  type="password"
+                  value={editForm.password}
+                  onChange={(e) => setEditForm({ ...editForm, password: e.target.value })}
+                  placeholder="Boş bırakılırsa değiştirilmez"
+                />
+                <small className="form-hint">Şifre değiştirme özelliği şu anda Firebase güvenlik kısıtlamaları nedeniyle kullanılamıyor. Kullanıcıya şifre sıfırlama linki gönderilmesi önerilir.</small>
+              </div>
+            </div>
+            <div className="modal-footer">
+              <button className="btn-secondary" onClick={handleCancelEdit}>
+                İptal
+              </button>
+              <button className="btn-primary" onClick={handleSaveEdit}>
+                Kaydet
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

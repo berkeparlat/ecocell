@@ -18,7 +18,7 @@ const ProtectedRoute = ({ children }) => {
 
 const PublicRoute = ({ children }) => {
   const { user } = useApp();
-  return !user ? children : <Navigate to="/main-menu" />;
+  return !user ? children : <Navigate to="/dashboard" />;
 };
 
 function AppContent() {
