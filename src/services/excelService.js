@@ -119,15 +119,25 @@ export const parseExcelFile = async (file) => {
 // Storage referansından Excel dosyasını indir ve parse et (CORS bypass)
 export const fetchAndParseExcelFromRef = async (storageRef) => {
   try {
-    console.log('🔥 excelService: Firebase SDK ile dosya indiriliyor...');
+    console.log('🔥 excelService: Excel dosyası indiriliyor...');
     console.log('📂 Dosya yolu:', storageRef.fullPath);
     
-    // Firebase SDK getBytes kullan - maksimum boyut 100MB
-    const maxBytes = 100 * 1024 * 1024; // 100 MB
-    console.log('⏳ excelService: getBytes() çağrılıyor...');
+    // Download URL'ini al
+    const downloadURL = await getDownloadURL(storageRef);
+    console.log('🔗 Download URL alındı');
     
-    const arrayBuffer = await getBytes(storageRef, maxBytes);
-    console.log('📥 excelService: Bytes alındı, boyut:', arrayBuffer.byteLength, 'bytes');
+    // CORS proxy kullan (sadece development için)
+    // Production'da Firebase CORS yapılandırması gerekli
+    const proxyURL = `https://corsproxy.io/?${encodeURIComponent(downloadURL)}`;
+    console.log('🌐 Proxy URL ile indiriliyor...');
+    
+    const response = await fetch(proxyURL);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const arrayBuffer = await response.arrayBuffer();
+    console.log('📥 Bytes alındı, boyut:', arrayBuffer.byteLength, 'bytes');
     
     // ArrayBuffer'ı doğrudan XLSX'e ver
     console.log('🔄 excelService: Excel parse ediliyor...');
@@ -147,19 +157,8 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
       allSheets: workbook.SheetNames
     };
   } catch (error) {
-    console.error('❌ excelService: Firebase SDK indirme hatası:', error);
-    console.error('Hata kodu:', error.code);
+    console.error('❌ excelService: Excel indirme hatası:', error);
     console.error('Hata mesajı:', error.message);
-    
-    // Detaylı hata bilgisi
-    if (error.code === 'storage/unauthorized') {
-      console.error('🔒 İzin hatası: Firebase Storage Rules\'u kontrol edin!');
-    } else if (error.code === 'storage/retry-limit-exceeded') {
-      console.error('⏱️ Zaman aşımı: Dosya çok büyük veya bağlantı yavaş');
-    } else if (error.code === 'storage/canceled') {
-      console.error('🚫 İşlem iptal edildi');
-    }
-    
     throw error;
   }
 };
