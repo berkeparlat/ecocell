@@ -12,7 +12,7 @@ const DailyStock = () => {
 
   useEffect(() => {
     loadLatestFile();
-  }, []);const loadLatestFile = async () => {
+  }, []);  const loadLatestFile = async () => {
     setLoading(true);
     try {
       console.log('🔍 DailyStock: Dosya yükleniyor...');
@@ -21,9 +21,8 @@ const DailyStock = () => {
       
       if (file) {
         console.log('📊 DailyStock: Excel dosyası hazırlanıyor...');
-        // Download URL'i direkt kullan - Google Viewer ile açacağız
         setExcelData({
-          url: file.url,
+          html: file.html,
           name: file.name
         });
         console.log('✅ DailyStock: Dosya hazır');
@@ -58,24 +57,13 @@ const DailyStock = () => {
             <RefreshCw className="spin" size={48} />
             <p>Yükleniyor...</p>
           </div>
-        ) : excelData ? (
-          <div className="excel-viewer">
+        ) : excelData ? (          <div className="excel-viewer">
             <div className="viewer-toolbar">
               <span className="file-name">📄 {excelData.name}</span>
-              <a 
-                href={excelData.url} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="open-external-btn"
-              >
-                <ExternalLink size={16} />
-                Tam Ekran Aç
-              </a>
-            </div>            <iframe
-              src={`https://docs.google.com/viewer?url=${encodeURIComponent(excelData.url)}&embedded=true`}
-              className="excel-iframe"
-              title="Excel Viewer"
-              frameBorder="0"
+            </div>
+            <div 
+              className="excel-content"
+              dangerouslySetInnerHTML={{ __html: excelData.html }}
             />
           </div>
         ) : (

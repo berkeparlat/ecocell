@@ -43,7 +43,7 @@ export const uploadExcelFile = async (file, type) => {
   }
 };
 
-// En son yüklenen Excel dosyasını getir
+// En son yüklenen Excel dosyasını getir ve HTML'e çevir
 export const getLatestExcelFile = async (type) => {
   try {
     console.log(`📂 excelService: ${type} klasörü kontrol ediliyor...`);
@@ -61,21 +61,50 @@ export const getLatestExcelFile = async (type) => {
     const filesWithMetadata = await Promise.all(
       fileList.items.map(async (item) => {
         const metadata = await getMetadata(item);
-        const url = await getDownloadURL(item);
         return {
           name: item.name,
-          url: url,
+          ref: item,
           uploadDate: metadata.timeCreated,
-          size: metadata.size,
-          ref: item
+          size: metadata.size
         };
       })
     );
 
     // Tarihe göre sırala ve en sonuncuyu al
     filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
-    console.log('✅ excelService: En son dosya:', filesWithMetadata[0]?.name);
-    return filesWithMetadata[0];
+    const latestFile = filesWithMetadata[0];
+    console.log('✅ excelService: En son dosya:', latestFile?.name);
+    
+    // Excel dosyasını indir ve HTML'e çevir
+    console.log('📥 excelService: Dosya indiriliyor...');
+    const bytes = await getBytes(latestFile.ref);
+    console.log('📊 excelService: Excel parse ediliyor...');
+    
+    const workbook = XLSX.read(bytes, { 
+      type: 'array',
+      cellStyles: true,
+      cellHTML: true
+    });
+    
+    // İlk sheet'i HTML'e çevir
+    const firstSheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[firstSheetName];
+    const html = XLSX.utils.sheet_to_html(worksheet, {
+      id: 'excel-table',
+      editable: false,
+      header: '',
+      footer: ''
+    });
+    
+    console.log('✅ excelService: HTML hazır');
+    
+    return {
+      name: latestFile.name,
+      html: html,
+      uploadDate: latestFile.uploadDate,
+      size: latestFile.size,
+      sheets: workbook.SheetNames
+    };
   } catch (error) {
     console.error('❌ excelService: Excel dosyası getirme hatası:', error);
     console.error('Hata kodu:', error.code);
