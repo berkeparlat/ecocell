@@ -50,13 +50,14 @@ function AppContent() {
           } 
         />
         <Route 
-          path="/dashboard" 
+          path="/job-tracking" 
           element={
             <ProtectedRoute>
               <Dashboard />
             </ProtectedRoute>
           } 
         />
+        <Route path="/dashboard" element={<Navigate to="/job-tracking" replace />} />
         <Route 
           path="/daily-stock" 
           element={
