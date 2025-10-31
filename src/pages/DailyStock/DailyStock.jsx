@@ -1,18 +1,41 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, FileSpreadsheet } from 'lucide-react';
 import { getLatestExcelFile, fetchAndParseExcelFromRef } from '../../services/excelService';
+import * as XLSX from 'xlsx';
 import './DailyStock.css';
 
 const DailyStock = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [excelData, setExcelData] = useState(null);
+  const containerRef = useRef(null);
 
   useEffect(() => {
     loadLatestFile();
-  }, []);  const loadLatestFile = async () => {
+  }, []);
+
+  useEffect(() => {
+    if (excelData && containerRef.current) {
+      renderExcelToCanvas();
+    }
+  }, [excelData]);
+
+  const renderExcelToCanvas = () => {
+    if (!excelData || !containerRef.current) return;
+
+    // Container'ı temizle
+    containerRef.current.innerHTML = '';
+
+    // XLSX workbook'u HTML table olarak render et (tam stiller ile)
+    const html = XLSX.utils.sheet_to_html(excelData.rawWorksheet, {
+      id: 'excel-table',
+      editable: false
+    });
+
+    containerRef.current.innerHTML = html;
+  };const loadLatestFile = async () => {
     setLoading(true);
     try {
       console.log('🔍 DailyStock: Dosya yükleniyor...');
@@ -58,33 +81,10 @@ const DailyStock = () => {
           </div>
         ) : excelData ? (
           <div className="excel-viewer">
-            {excelData.html ? (
-              <div 
-                className="excel-html-viewer"
-                dangerouslySetInnerHTML={{ __html: excelData.html }}
-              />
-            ) : (
-              <div className="table-wrapper">
-                <table className="excel-table">
-                  <thead>
-                    <tr>
-                      {excelData.data[0]?.map((header, index) => (
-                        <th key={index}>{header}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {excelData.data.slice(1).map((row, rowIndex) => (
-                      <tr key={rowIndex}>
-                        {row.map((cell, cellIndex) => (
-                          <td key={cellIndex}>{cell}</td>
-                        ))}
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
+            <div 
+              ref={containerRef}
+              className="excel-canvas-viewer"
+            />
           </div>
         ) : (
           <div className="empty-state">
