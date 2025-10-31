@@ -122,16 +122,19 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     console.log('🔥 excelService: Excel dosyası indiriliyor...');
     console.log('📂 Dosya yolu:', storageRef.fullPath);
     
-    // Download URL'ini al
-    const downloadURL = await getDownloadURL(storageRef);
-    console.log('🔗 Download URL alındı');
+    // Token'sız public download URL oluştur
+    const bucket = 'ecocell-5cf22.firebasestorage.app';
+    const encodedPath = encodeURIComponent(storageRef.fullPath);
+    const publicURL = `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodedPath}?alt=media`;
+    console.log('🔗 Public URL:', publicURL);
     
-    // CORS proxy kullan (sadece development için)
-    // Production'da Firebase CORS yapılandırması gerekli
-    const proxyURL = `https://corsproxy.io/?${encodeURIComponent(downloadURL)}`;
-    console.log('🌐 Proxy URL ile indiriliyor...');
+    console.log('🌐 Dosya indiriliyor...');
+    const response = await fetch(publicURL, {
+      method: 'GET',
+      mode: 'cors',
+      credentials: 'omit'
+    });
     
-    const response = await fetch(proxyURL);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -159,6 +162,7 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
   } catch (error) {
     console.error('❌ excelService: Excel indirme hatası:', error);
     console.error('Hata mesajı:', error.message);
+    console.error('Hata stack:', error.stack);
     throw error;
   }
 };
