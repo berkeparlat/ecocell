@@ -31,15 +31,13 @@ const sanitizeSheetHtml = (rawHtml) => {
       html, body {
         margin: 0;
         padding: 0;
-        width: 100%;
-        height: 100%;
+        min-height: 100%;
         background: #ffffff;
       }
       body {
-        padding: 32px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
+        padding: 24px;
+        width: max-content;
+        min-width: 100%;
         overflow: auto;
       }
       table {

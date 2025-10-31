@@ -10,7 +10,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 220px);
+  min-height: calc(100vh - 200px);
+  height: calc(100vh - 200px);
 }
 
 .excel-preview-toolbar {
@@ -88,7 +89,8 @@
   flex: 1;
   background: #d7deef;
   position: relative;
-  min-height: calc(100vh - 320px);
+  min-height: calc(100vh - 300px);
+  height: 100%;
 }
 
 .excel-iframe {
