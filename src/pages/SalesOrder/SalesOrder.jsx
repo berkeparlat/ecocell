@@ -9,7 +9,6 @@ const SalesOrder = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [excelData, setExcelData] = useState(null);
-  const [latestFile, setLatestFile] = useState(null);
 
   useEffect(() => {
     loadLatestFile();
@@ -20,7 +19,6 @@ const SalesOrder = () => {
     try {
       const file = await getLatestExcelFile('sales');
       if (file) {
-        setLatestFile(file);
         const parsedData = await fetchAndParseExcel(file.url);
         setExcelData(parsedData);
       }
@@ -29,11 +27,6 @@ const SalesOrder = () => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const formatDate = (dateString) => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString('tr-TR') + ' ' + date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
   };
 
   return (
@@ -52,21 +45,7 @@ const SalesOrder = () => {
           <button className="refresh-btn" onClick={loadLatestFile}>
             <RefreshCw size={18} />
             Yenile
-          </button>
-        </div>
-
-        {/* Dosya bilgisi */}
-        {latestFile && (
-          <div className="file-info-banner">
-            <div className="file-info-content">
-              <FileSpreadsheet size={20} />
-              <div className="file-details">
-                <p className="file-name">{latestFile.name}</p>
-                <p className="file-date">Son güncelleme: {formatDate(latestFile.uploadDate)}</p>
-              </div>
-            </div>
-          </div>
-        )}
+          </button>        </div>
 
         {loading ? (
           <div className="loading-state">
@@ -96,13 +75,7 @@ const SalesOrder = () => {
               </table>
             </div>
           </div>
-        ) : (
-          <div className="empty-state">
-            <FileSpreadsheet size={64} />
-            <h3>Henüz dosya yüklenmemiş</h3>
-            <p>Admin tarafından dosya yüklendiğinde burada görüntülenecektir</p>
-          </div>
-        )}
+        ) : null}
       </div>
     </div>
   );
