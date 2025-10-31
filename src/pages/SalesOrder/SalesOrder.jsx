@@ -64,6 +64,7 @@ const SalesOrder = () => {
             viewerUrl={excelData.viewerUrl}
             downloadUrl={excelData.downloadUrl}
             htmlContent={excelData.html}
+            htmlDocument={excelData.htmlDocument}
             accent="sales"
           />
         ) : null}

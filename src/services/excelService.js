@@ -1,21 +1,56 @@
 import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata, getBytes } from 'firebase/storage';
 import { storage } from '../config/firebase';
-import * as XLSX from 'xlsx';
+import * as XLSX from 'xlsx/xlsx.mjs';
 
 const sanitizeSheetHtml = (rawHtml) => {
   if (!rawHtml) {
-    return '';
+    return {
+      cleanedHtml: '',
+      htmlDocument: ''
+    };
   }
 
-  const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
-  const content = bodyMatch ? bodyMatch[1] : rawHtml;
+  const styleMatches = rawHtml.match(/<style[^>]*>[\s\S]*?<\/style>/gi) || [];
+  const combinedStyles = styleMatches.join('\n');
 
-  return content
+  const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const bodyContent = bodyMatch ? bodyMatch[1] : rawHtml;
+
+  const cleanedBody = bodyContent
     .replace(/<!DOCTYPE[^>]*>/gi, '')
     .replace(/<meta[^>]*>/gi, '')
     .replace(/<title[^>]*>[\s\S]*?<\/title>/gi, '')
     .replace(/<script[\s\S]*?<\/script>/gi, '')
     .trim();
+
+  const resetStyles = `
+    <style>
+      html, body {
+        margin: 0;
+        padding: 0;
+        background: #ffffff;
+      }
+    </style>
+  `;
+
+  const htmlDocument = [
+    '<!DOCTYPE html>',
+    '<html lang="tr">',
+    '<head>',
+    '<meta charset="utf-8" />',
+    resetStyles,
+    combinedStyles,
+    '</head>',
+    '<body>',
+    cleanedBody,
+    '</body>',
+    '</html>'
+  ].join('');
+
+  return {
+    cleanedHtml: cleanedBody,
+    htmlDocument
+  };
 };
 
 const buildOfficeViewerUrl = (directUrl) => {
@@ -136,7 +171,7 @@ export const getLatestExcelFile = async (type) => {
       header: '',
       footer: ''
     });
-    const cleanedHtml = sanitizeSheetHtml(rawHtml);
+    const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
     const viewerUrl = buildOfficeViewerUrl(latestFile.url);
     
     console.log('✅ excelService: HTML hazır');
@@ -144,6 +179,7 @@ export const getLatestExcelFile = async (type) => {
     return {
       name: latestFile.name,
       html: cleanedHtml,
+      htmlDocument,
       uploadDate: latestFile.uploadDate,
       size: latestFile.size,
       sheets: workbook.SheetNames,
@@ -234,7 +270,7 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
       header: '',
       footer: ''
     });
-    const htmlString = sanitizeSheetHtml(rawHtml);
+    const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
     
     // JSON data da al (yedek için)
     const jsonData = XLSX.utils.sheet_to_json(worksheet, { 
@@ -253,7 +289,8 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     return {
       sheetName: firstSheetName,
       data: jsonData,
-      html: htmlString,
+      html: cleanedHtml,
+      htmlDocument,
       colWidths: colWidths,
       rowHeights: rowHeights,
       allSheets: workbook.SheetNames,

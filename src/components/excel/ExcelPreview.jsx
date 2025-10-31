@@ -24,6 +24,7 @@ const ExcelPreview = ({
   viewerUrl,
   downloadUrl,
   htmlContent,
+  htmlDocument,
   accent = 'stock'
 }) => {
   const [showFallback, setShowFallback] = useState(false);
@@ -37,14 +38,15 @@ const ExcelPreview = ({
   };
 
   const hasViewer = Boolean(viewerUrl);
-  const shouldRenderFallback = !hasViewer || showFallback;
+  const hasFallbackContent = Boolean(htmlDocument || htmlContent);
+  const shouldRenderFallback = (!hasViewer && hasFallbackContent) || (showFallback && hasFallbackContent);
 
   return (
     <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>
       <div className="excel-preview-toolbar">
         <span className="excel-preview-file-name">📄 {fileName}</span>
         <div className="excel-preview-actions">
-          {hasViewer && (
+          {hasViewer && hasFallbackContent && (
             <button
               type="button"
               className="excel-preview-toggle"
@@ -70,11 +72,19 @@ const ExcelPreview = ({
 
       <div className="excel-render-area">
         {shouldRenderFallback ? (
-          <div
-            className="excel-preview-html"
-            dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
-          />
-        ) : (
+          htmlDocument ? (
+            <iframe
+              className="excel-iframe"
+              title={`Excel HTML önizleme - ${fileName}`}
+              srcDoc={htmlDocument}
+            />
+          ) : (
+            <div
+              className="excel-preview-html"
+              dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
+            />
+          )
+        ) : hasViewer ? (
           <iframe
             className="excel-iframe"
             title={`Excel önizleme - ${fileName}`}
@@ -82,6 +92,10 @@ const ExcelPreview = ({
             loading="lazy"
             allowFullScreen={false}
           />
+        ) : (
+          <div className="excel-preview-empty">
+            <p>Önizleme verisi bulunamadı.</p>
+          </div>
         )}
       </div>
     </div>

@@ -63,6 +63,7 @@ const DailyStock = () => {
             viewerUrl={excelData.viewerUrl}
             downloadUrl={excelData.downloadUrl}
             htmlContent={excelData.html}
+            htmlDocument={excelData.htmlDocument}
             accent="stock"
           />
         ) : (
