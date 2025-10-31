@@ -77,13 +77,26 @@ const buildOfficeViewerUrl = (directUrl) => {
     return null;
   }
 
+  const appOrigin =
+    typeof window !== 'undefined'
+      ? window.location.origin
+      : import.meta?.env?.VITE_APP_ORIGIN || '';
+
+  if (!appOrigin) {
+    return null;
+  }
+
+  const proxiedUrl = new URL('/api/excel-proxy', appOrigin);
+  proxiedUrl.searchParams.set('url', directUrl);
+
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   const params = new URLSearchParams({
-    src: directUrl,
+    src: proxiedUrl.toString(),
     wdAllowInteractivity: '1',
     wdHideHeaders: '1',
     wdHideSheetTabs: '0',
-    wdHideGridlines: '0'
+    wdHideGridlines: '0',
+    wdDownloadButton: '0'
   });
 
   return `${base}?${params.toString()}`;
