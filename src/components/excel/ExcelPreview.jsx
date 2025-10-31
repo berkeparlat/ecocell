@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { ExternalLink } from 'lucide-react';
 import './ExcelPreview.css';
 
 const ACCENT_PALETTES = {
@@ -22,14 +21,13 @@ const ACCENT_PALETTES = {
 const ExcelPreview = ({
   fileName,
   viewerUrl,
-  downloadUrl,
   htmlContent,
   htmlDocument,
   accent = 'stock'
 }) => {
   const hasViewer = Boolean(viewerUrl);
   const hasFallbackContent = Boolean(htmlDocument || htmlContent);
-  const initialFallback = hasFallbackContent || !hasViewer;
+  const initialFallback = !hasViewer;
   const [showFallback, setShowFallback] = useState(initialFallback);
   const palette = ACCENT_PALETTES[accent] || ACCENT_PALETTES.stock;
   const styleVars = {
@@ -41,56 +39,32 @@ const ExcelPreview = ({
   };
 
   useEffect(() => {
-    setShowFallback(initialFallback);
-  }, [initialFallback, fileName]);
-
-  const shouldRenderFallback = (!hasViewer && hasFallbackContent) || (showFallback && hasFallbackContent);
-  const toggleLabel = showFallback ? 'Office Görünümünü Aç' : 'HTML Yedek Görünüm';
+    setShowFallback(!hasViewer);
+  }, [hasViewer, fileName]);
 
   return (
     <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>
-      <div className="excel-preview-toolbar">
-        <span className="excel-preview-file-name">📄 {fileName}</span>
-        <div className="excel-preview-actions">
-          {hasViewer && hasFallbackContent && (
-            <button
-              type="button"
-              className="excel-preview-toggle"
-              onClick={() => setShowFallback((prev) => !prev)}
-            >
-              {toggleLabel}
-            </button>
-          )}
-
-          {downloadUrl && (
-            <a
-              className="excel-preview-open-btn"
-              href={downloadUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <ExternalLink size={16} />
-              Yeni Sekmede Aç
-            </a>
-          )}
-        </div>
-      </div>
-
       <div className="excel-render-area">
-        {shouldRenderFallback ? (
-          htmlDocument ? (
-            <iframe
-              className="excel-iframe"
-              title={`Excel HTML önizleme - ${fileName}`}
-              srcDoc={htmlDocument}
-            />
+        {showFallback || !hasViewer ? (
+          hasFallbackContent ? (
+            htmlDocument ? (
+              <iframe
+                className="excel-iframe"
+                title={`Excel HTML önizleme - ${fileName}`}
+                srcDoc={htmlDocument}
+              />
+            ) : (
+              <div
+                className="excel-preview-html"
+                dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
+              />
+            )
           ) : (
-            <div
-              className="excel-preview-html"
-              dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
-            />
+            <div className="excel-preview-empty">
+              <p>Önizleme verisi bulunamadı.</p>
+            </div>
           )
-        ) : hasViewer ? (
+        ) : (
           <iframe
             className="excel-iframe"
             title={`Excel önizleme - ${fileName}`}
@@ -99,10 +73,6 @@ const ExcelPreview = ({
             allowFullScreen={false}
             onError={() => setShowFallback(true)}
           />
-        ) : (
-          <div className="excel-preview-empty">
-            <p>Önizleme verisi bulunamadı.</p>
-          </div>
         )}
       </div>
     </div>

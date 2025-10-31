@@ -14,69 +14,6 @@
   height: calc(100vh - 200px);
 }
 
-.excel-preview-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  padding: 1rem 1.5rem;
-  background: linear-gradient(180deg, #f9fbfd 0%, #eef2f8 100%);
-  border-bottom: 1px solid rgba(148, 163, 184, 0.35);
-}
-
-.excel-preview-file-name {
-  font-weight: 600;
-  color: #1f2937;
-  font-size: 0.95rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.excel-preview-actions {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
-}
-
-.excel-preview-toggle {
-  padding: 0.55rem 1.2rem;
-  border-radius: 8px;
-  border: 1px solid var(--excel-accent-border);
-  background: white;
-  color: var(--excel-accent-text);
-  font-weight: 600;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, border 0.2s ease;
-}
-
-.excel-preview-toggle:hover {
-  background: var(--excel-accent-soft);
-}
-
-.excel-preview-open-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.35rem;
-  border-radius: 8px;
-  background: linear-gradient(135deg, var(--excel-accent-base) 0%, var(--excel-accent-dark) 100%);
-  color: white;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.22);
-}
-
-.excel-preview-open-btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 12px 24px rgba(46, 125, 50, 0.24);
-}
-
 .excel-preview-card--sales {
   --excel-accent-base: #ff6b35;
   --excel-accent-dark: #ff5722;
@@ -152,12 +89,12 @@
 }
 
 @media (max-width: 768px) {
-  .excel-preview-card {
-    border-radius: 10px;
-    min-height: 480px;
-  }
+.excel-preview-card {
+  border-radius: 10px;
+  min-height: 480px;
+}
 
-  .excel-render-area {
-    min-height: 360px;
-  }
+.excel-render-area {
+  min-height: 360px;
+}
 }
