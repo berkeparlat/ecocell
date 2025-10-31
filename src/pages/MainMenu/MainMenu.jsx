@@ -21,7 +21,7 @@ const MainMenu = () => {
     },
     {
       id: 'work-tracking',
-      title: 'İş Takibi',
+      title: 'Job Tracking',
       icon: '✓',
       path: '/dashboard',
       color: '#FF9800'

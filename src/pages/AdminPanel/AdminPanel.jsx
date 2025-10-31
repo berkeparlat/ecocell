@@ -63,7 +63,7 @@ const AdminPanel = () => {
 
   useEffect(() => {
     if (!user || !isAdmin(user)) {
-      navigate('/dashboard');
+      navigate('/main-menu');
       return;
     }
     loadData();

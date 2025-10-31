@@ -44,7 +44,7 @@ const Login = () => {
 
     if (result.success) {
       login(result.user);
-      navigate('/dashboard');
+      navigate('/main-menu');
     } else {
       setError(result.error);
     }
