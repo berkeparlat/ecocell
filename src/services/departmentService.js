@@ -52,12 +52,18 @@ export const listenToDepartments = (callback) => {
 };
 
 export const saveDepartments = async (departments) => {
-  await setDoc(
-    departmentsDocRef,
-    {
-      list: departments,
-      updatedAt: serverTimestamp(),
-    },
-    { merge: true }
-  );
+  try {
+    await setDoc(
+      departmentsDocRef,
+      {
+        list: departments,
+        updatedAt: serverTimestamp(),
+      },
+      { merge: true }
+    );
+    console.log('Birimler başarıyla kaydedildi:', departments);
+  } catch (error) {
+    console.error('Birimler kaydedilirken hata:', error);
+    throw error;
+  }
 };

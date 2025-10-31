@@ -127,6 +127,7 @@ service firebase.storage {
 ```powershell
 cd c:\Users\Otomasyon\Desktop\ecocell
 npm run dev
+
 ```
 
 #### Tarayıcıda Kayıt Olun:

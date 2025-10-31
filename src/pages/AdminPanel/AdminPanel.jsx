@@ -198,7 +198,6 @@ const AdminPanel = () => {
       setLocalDepartments((prev) => prev.filter((d) => d !== dept));
     }
   };
-
   const handleSaveDepartments = async () => {
     if (localDepartments.length === 0) {
       setDepartmentError('En az bir birim olmalıdır');
@@ -209,12 +208,15 @@ const AdminPanel = () => {
     setDepartmentError('');
 
     try {
+      console.log('Birimler kaydediliyor:', localDepartments);
       await updateDepartments(localDepartments);
       alert('Birimler başarıyla güncellendi!');
       loadData();
     } catch (err) {
       console.error('Birimler kaydedilirken hata oluştu:', err);
-      setDepartmentError('Birimler kaydedilirken bir hata oluştu. Lütfen tekrar deneyin.');
+      const errorMessage = err.message || 'Birimler kaydedilirken bir hata oluştu.';
+      setDepartmentError(`Hata: ${errorMessage}`);
+      alert(`Birimler kaydedilemedi: ${errorMessage}\n\nFirebase Console'dan "meta/departments" oluşturulması gerekebilir.`);
     } finally {
       setSavingDepartments(false);
     }
