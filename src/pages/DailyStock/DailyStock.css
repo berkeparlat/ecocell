@@ -316,6 +316,76 @@
   color: #424242;
 }
 
+/* Excel HTML Viewer - Excel'e benzer görünüm */
+.excel-html-viewer {
+  background: white;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: auto;
+  max-height: calc(100vh - 250px);
+}
+
+.excel-html-viewer table {
+  width: auto;
+  border-collapse: collapse;
+  font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+  font-size: 11pt;
+  table-layout: auto;
+}
+
+.excel-html-viewer table td,
+.excel-html-viewer table th {
+  border: 1px solid #d0d0d0;
+  padding: 4px 8px;
+  text-align: left;
+  vertical-align: middle;
+  min-width: 60px;
+  white-space: pre-wrap;
+  background: white;
+  height: 20px;
+}
+
+.excel-html-viewer table th {
+  background: #f2f2f2;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #a6a6a6;
+}
+
+/* Excel'deki gibi satır hover efekti */
+.excel-html-viewer table tbody tr:hover td {
+  background-color: #f5f9ff;
+}
+
+/* Bold text */
+.excel-html-viewer table td b,
+.excel-html-viewer table td strong,
+.excel-html-viewer table th b,
+.excel-html-viewer table th strong {
+  font-weight: 700;
+}
+
+/* Excel scroll bar */
+.excel-html-viewer::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+.excel-html-viewer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 6px;
+}
+
+.excel-html-viewer::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 6px;
+}
+
+.excel-html-viewer::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
 /* Loading State */
 .loading-state {
   display: flex;

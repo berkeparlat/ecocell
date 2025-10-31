@@ -139,22 +139,49 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     const arrayBuffer = await response.arrayBuffer();
     console.log('📥 Bytes alındı, boyut:', arrayBuffer.byteLength, 'bytes');
     
-    // ArrayBuffer'ı doğrudan XLSX'e ver
-    console.log('🔄 excelService: Excel parse ediliyor...');
-    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+    // ArrayBuffer'ı doğrudan XLSX'e ver - STILLER ile birlikte
+    console.log('🔄 excelService: Excel parse ediliyor (stiller dahil)...');
+    const workbook = XLSX.read(arrayBuffer, { 
+      type: 'array',
+      cellStyles: true,
+      cellHTML: true,
+      cellDates: true
+    });
     
     // İlk sheet'i al
     const firstSheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[firstSheetName];
     
-    // JSON'a çevir
-    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    // HTML olarak render et (stiller dahil)
+    const htmlString = XLSX.utils.sheet_to_html(worksheet, {
+      id: 'excel-table',
+      editable: false,
+      header: '',
+      footer: ''
+    });
+    
+    // JSON data da al (yedek için)
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, { 
+      header: 1,
+      raw: false,
+      dateNF: 'dd/mm/yyyy'
+    });
+    
+    // Kolon genişlikleri
+    const colWidths = worksheet['!cols'] || [];
+    
+    // Satır yükseklikleri
+    const rowHeights = worksheet['!rows'] || [];
     
     console.log('✅ excelService: Parse tamamlandı!');
     return {
       sheetName: firstSheetName,
       data: jsonData,
-      allSheets: workbook.SheetNames
+      html: htmlString,
+      colWidths: colWidths,
+      rowHeights: rowHeights,
+      allSheets: workbook.SheetNames,
+      rawWorksheet: worksheet
     };
   } catch (error) {
     console.error('❌ excelService: Excel indirme hatası:', error);

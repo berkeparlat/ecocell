@@ -52,35 +52,40 @@ const SalesOrder = () => {
           <button className="refresh-btn" onClick={loadLatestFile}>
             <RefreshCw size={18} />
             Yenile
-          </button>        </div>
-
-        {loading ? (
+          </button>        </div>        {loading ? (
           <div className="loading-state">
             <RefreshCw className="spin" size={48} />
             <p>Yükleniyor...</p>
           </div>
         ) : excelData ? (
           <div className="excel-viewer">
-            <div className="table-wrapper">
-              <table className="excel-table">
-                <thead>
-                  <tr>
-                    {excelData.data[0]?.map((header, index) => (
-                      <th key={index}>{header}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {excelData.data.slice(1).map((row, rowIndex) => (
-                    <tr key={rowIndex}>
-                      {row.map((cell, cellIndex) => (
-                        <td key={cellIndex}>{cell}</td>
+            {excelData.html ? (
+              <div 
+                className="excel-html-viewer"
+                dangerouslySetInnerHTML={{ __html: excelData.html }}
+              />
+            ) : (
+              <div className="table-wrapper">
+                <table className="excel-table">
+                  <thead>
+                    <tr>
+                      {excelData.data[0]?.map((header, index) => (
+                        <th key={index}>{header}</th>
                       ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
+                  </thead>
+                  <tbody>
+                    {excelData.data.slice(1).map((row, rowIndex) => (
+                      <tr key={rowIndex}>
+                        {row.map((cell, cellIndex) => (
+                          <td key={cellIndex}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            )}
           </div>
         ) : null}
       </div>
