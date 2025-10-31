@@ -10,7 +10,7 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  min-height: 620px;
+  min-height: calc(100vh - 220px);
 }
 
 .excel-preview-toolbar {
@@ -88,6 +88,7 @@
   flex: 1;
   background: #d7deef;
   position: relative;
+  min-height: calc(100vh - 320px);
 }
 
 .excel-iframe {
@@ -102,8 +103,15 @@
   height: 100%;
   overflow: auto;
   background: white;
-  padding: 1rem;
+  padding: 1.5rem;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.excel-preview-html > * {
+  max-width: 100%;
 }
 
 .excel-preview-empty {
@@ -123,7 +131,7 @@
   font-size: 11pt;
   background: white;
   table-layout: auto;
-  margin: 0;
+  margin: 0 auto;
 }
 
 .excel-preview-html th,
@@ -144,9 +152,10 @@
 @media (max-width: 768px) {
   .excel-preview-card {
     border-radius: 10px;
+    min-height: 480px;
   }
 
   .excel-render-area {
-    min-height: 420px;
+    min-height: 360px;
   }
 }

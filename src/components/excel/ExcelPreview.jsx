@@ -27,7 +27,10 @@ const ExcelPreview = ({
   htmlDocument,
   accent = 'stock'
 }) => {
-  const [showFallback, setShowFallback] = useState(true);
+  const hasViewer = Boolean(viewerUrl);
+  const hasFallbackContent = Boolean(htmlDocument || htmlContent);
+  const initialFallback = hasFallbackContent || !hasViewer;
+  const [showFallback, setShowFallback] = useState(initialFallback);
   const palette = ACCENT_PALETTES[accent] || ACCENT_PALETTES.stock;
   const styleVars = {
     '--excel-accent-base': palette.base,
@@ -37,14 +40,12 @@ const ExcelPreview = ({
     '--excel-accent-border': palette.border
   };
 
-  const hasViewer = Boolean(viewerUrl);
-  const hasFallbackContent = Boolean(htmlDocument || htmlContent);
+  useEffect(() => {
+    setShowFallback(initialFallback);
+  }, [initialFallback, fileName]);
+
   const shouldRenderFallback = (!hasViewer && hasFallbackContent) || (showFallback && hasFallbackContent);
   const toggleLabel = showFallback ? 'Office Görünümünü Aç' : 'HTML Yedek Görünüm';
-
-  useEffect(() => {
-    setShowFallback(true);
-  }, [fileName, viewerUrl, htmlDocument]);
 
   return (
     <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>

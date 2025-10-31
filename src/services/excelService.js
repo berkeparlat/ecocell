@@ -25,10 +25,30 @@ const sanitizeSheetHtml = (rawHtml) => {
 
   const resetStyles = `
     <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
       html, body {
         margin: 0;
         padding: 0;
+        width: 100%;
+        height: 100%;
         background: #ffffff;
+      }
+      body {
+        padding: 32px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        overflow: auto;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
       }
     </style>
   `;
@@ -38,6 +58,7 @@ const sanitizeSheetHtml = (rawHtml) => {
     '<html lang="tr">',
     '<head>',
     '<meta charset="utf-8" />',
+    '<meta name="viewport" content="width=device-width, initial-scale=1" />',
     resetStyles,
     combinedStyles,
     '</head>',
