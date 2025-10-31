@@ -1,5 +1,19 @@
 # Firebase Storage Kurulum Rehberi
 
+## 🆓 ÖNEMLİ: Firebase Storage TAMAMEN ÜCRETSİZ!
+
+Firebase'in **Spark Plan** (ücretsiz) ile Storage kullanabilirsiniz:
+
+### Ücretsiz Limitler:
+- 📦 **5 GB** depolama
+- 📥 **1 GB/gün** indirme
+- ⬆️ **20,000** yükleme/gün
+- ⬇️ **50,000** indirme/gün
+
+**Excel dosyalarınız için bu limitler fazlasıyla yeterli!**
+
+---
+
 ## Önemli: Firebase Storage'ı Etkinleştirme
 
 Excel dosyalarının yüklenebilmesi için Firebase Storage'ın aktif edilmesi gerekiyor.
@@ -13,10 +27,16 @@ Excel dosyalarının yüklenebilmesi için Firebase Storage'ın aktif edilmesi g
 
 1. Sol menüden **Build** > **Storage** sekmesine tıklayın
 2. **Get Started** butonuna tıklayın
-3. Güvenlik kuralları için **Start in production mode** seçin
-4. **Next** butonuna tıklayın
-5. Lokasyon seçin (Varsayılan: europe-west)
-6. **Done** butonuna tıklayın
+3. ⚠️ **"Upgrade Plan" mesajı çıkarsa:** **TIKLAMAYIN!** Aşağı kaydırın
+4. **"Start in test mode"** veya **"Start in production mode"** seçin (ikisi de ücretsiz)
+5. **Next** butonuna tıklayın
+6. Lokasyon seçin (Varsayılan: europe-west)
+7. **Done** butonuna tıklayın
+
+### ⚠️ ÖNEMLI NOT:
+- **"Upgrade to Blaze Plan"** mesajı çıkabilir - **BUNU ATLAYINIZ**
+- **"Get Started"** butonuna tıklayın, ücretsiz plan ile devam edin
+- Kredi kartı bilgisi **GEREKMEZ**
 
 ### 3. Güvenlik Kurallarını Güncelleme
 
