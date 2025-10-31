@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, FileSpreadsheet } from 'lucide-react';
-import { getLatestExcelFile, fetchAndParseExcel } from '../../services/excelService';
+import { getLatestExcelFile, fetchAndParseExcelFromRef } from '../../services/excelService';
 import './DailyStock.css';
 
 const DailyStock = () => {
@@ -12,8 +12,7 @@ const DailyStock = () => {
 
   useEffect(() => {
     loadLatestFile();
-  }, []);
-  const loadLatestFile = async () => {
+  }, []);  const loadLatestFile = async () => {
     setLoading(true);
     try {
       console.log('🔍 DailyStock: Dosya yükleniyor...');
@@ -22,7 +21,8 @@ const DailyStock = () => {
       
       if (file) {
         console.log('📊 DailyStock: Excel parse ediliyor...');
-        const parsedData = await fetchAndParseExcel(file.url);
+        // Firebase SDK kullanarak CORS bypass
+        const parsedData = await fetchAndParseExcelFromRef(file.ref);
         console.log('✅ DailyStock: Excel parse edildi, satır sayısı:', parsedData?.data?.length);
         setExcelData(parsedData);
       } else {

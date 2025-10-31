@@ -1,4 +1,4 @@
-import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata } from 'firebase/storage';
+import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata, getBytes } from 'firebase/storage';
 import { storage } from '../config/firebase';
 import * as XLSX from 'xlsx';
 
@@ -116,7 +116,35 @@ export const parseExcelFile = async (file) => {
   });
 };
 
-// URL'den Excel dosyasını indir ve parse et
+// Storage referansından Excel dosyasını indir ve parse et (CORS bypass)
+export const fetchAndParseExcelFromRef = async (storageRef) => {
+  try {
+    console.log('🔥 excelService: Firebase SDK ile dosya indiriliyor...');
+    console.log('📂 Dosya yolu:', storageRef.fullPath);
+    
+    // Firebase SDK getBytes kullan (CORS bypass)
+    const bytes = await getBytes(storageRef);
+    console.log('📥 excelService: Bytes alındı, boyut:', bytes.byteLength, 'bytes');
+    
+    // Bytes'ı Blob'a çevir
+    const blob = new Blob([bytes], { 
+      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' 
+    });
+    console.log('📄 excelService: Blob oluşturuldu');
+    
+    console.log('🔄 excelService: Excel parse ediliyor...');
+    const result = await parseExcelFile(blob);
+    console.log('✅ excelService: Parse tamamlandı!');
+    return result;
+  } catch (error) {
+    console.error('❌ excelService: Firebase SDK indirme hatası:', error);
+    console.error('Hata kodu:', error.code);
+    console.error('Hata mesajı:', error.message);
+    throw error;
+  }
+};
+
+// URL'den Excel dosyasını indir ve parse et (DEPRECATED - CORS sorunu var)
 export const fetchAndParseExcel = async (url) => {
   try {
     console.log('🌐 excelService: Excel dosyası indiriliyor:', url);

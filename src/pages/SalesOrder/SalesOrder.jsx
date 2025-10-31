@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, FileSpreadsheet, ShoppingCart } from 'lucide-react';
-import { getLatestExcelFile, fetchAndParseExcel } from '../../services/excelService';
+import { getLatestExcelFile, fetchAndParseExcelFromRef } from '../../services/excelService';
 import './SalesOrder.css';
 
 const SalesOrder = () => {
@@ -12,8 +12,7 @@ const SalesOrder = () => {
 
   useEffect(() => {
     loadLatestFile();
-  }, []);
-  const loadLatestFile = async () => {
+  }, []);  const loadLatestFile = async () => {
     setLoading(true);
     try {
       console.log('🔍 SalesOrder: Dosya yükleniyor...');
@@ -22,7 +21,8 @@ const SalesOrder = () => {
       
       if (file) {
         console.log('📊 SalesOrder: Excel parse ediliyor...');
-        const parsedData = await fetchAndParseExcel(file.url);
+        // Firebase SDK kullanarak CORS bypass
+        const parsedData = await fetchAndParseExcelFromRef(file.ref);
         console.log('✅ SalesOrder: Excel parse edildi, satır sayısı:', parsedData?.data?.length);
         setExcelData(parsedData);
       } else {
