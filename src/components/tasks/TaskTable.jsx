@@ -122,7 +122,7 @@ const TaskTable = () => {
     <div className="task-table-container">
       <div className="table-header">
         <div className="table-title">
-          <h2>Job Tracking</h2>
+          <h2>İş Takibi</h2>
           <span className="task-count">{sortedTasks.length} iş</span>
         </div>
         
