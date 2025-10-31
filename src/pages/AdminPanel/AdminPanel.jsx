@@ -26,8 +26,11 @@ import {
   Building2,
   Calendar,
   Plus,
-  X
+  X,
+  Upload,
+  FileSpreadsheet
 } from 'lucide-react';
+import { uploadExcelFile } from '../../services/excelService';
 import './AdminPanel.css';
 
 const AdminPanel = () => {
@@ -46,12 +49,18 @@ const AdminPanel = () => {
     department: '',
     password: ''
   });
-  
-  // Departments management state
+    // Departments management state
   const [localDepartments, setLocalDepartments] = useState([...DEPARTMENTS]);
   const [newDepartment, setNewDepartment] = useState('');
   const [departmentError, setDepartmentError] = useState('');
   const [savingDepartments, setSavingDepartments] = useState(false);
+
+  // Excel upload state
+  const [selectedStockFile, setSelectedStockFile] = useState(null);
+  const [selectedSalesFile, setSelectedSalesFile] = useState(null);
+  const [uploadingStock, setUploadingStock] = useState(false);
+  const [uploadingSales, setUploadingSales] = useState(false);
+
   useEffect(() => {
     if (!user || !isAdmin(user)) {
       navigate('/dashboard');
@@ -229,6 +238,59 @@ const AdminPanel = () => {
     }
   };
 
+  // Excel upload handlers
+  const handleStockFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedStockFile(file);
+    }
+  };
+
+  const handleSalesFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedSalesFile(file);
+    }
+  };
+
+  const handleUploadStock = async () => {
+    if (!selectedStockFile) {
+      alert('Lütfen bir dosya seçin!');
+      return;
+    }
+
+    setUploadingStock(true);
+    try {
+      await uploadExcelFile(selectedStockFile, 'stock');
+      alert('Günlük Stok dosyası başarıyla yüklendi!');
+      setSelectedStockFile(null);
+      document.getElementById('stockFileInput').value = '';
+    } catch (error) {
+      alert('Dosya yüklenirken hata oluştu: ' + error.message);
+    } finally {
+      setUploadingStock(false);
+    }
+  };
+
+  const handleUploadSales = async () => {
+    if (!selectedSalesFile) {
+      alert('Lütfen bir dosya seçin!');
+      return;
+    }
+
+    setUploadingSales(true);
+    try {
+      await uploadExcelFile(selectedSalesFile, 'sales');
+      alert('Satış Sipariş dosyası başarıyla yüklendi!');
+      setSelectedSalesFile(null);
+      document.getElementById('salesFileInput').value = '';
+    } catch (error) {
+      alert('Dosya yüklenirken hata oluştu: ' + error.message);
+    } finally {
+      setUploadingSales(false);
+    }
+  };
+
   const formatDate = (timestamp) => {
     if (!timestamp) return '-';
     const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
@@ -308,13 +370,19 @@ const AdminPanel = () => {
           >
             <MessageSquare size={18} />
             Mesajlar ({messages.length})
-          </button>
-          <button 
+          </button>          <button 
             className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
             onClick={() => setActiveTab('departments')}
           >
             <Building2 size={18} />
             Birimleri Yönet
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'excel' ? 'active' : ''}`}
+            onClick={() => setActiveTab('excel')}
+          >
+            <FileSpreadsheet size={18} />
+            Excel Yönetimi
           </button>
         </div>
 
@@ -541,7 +609,104 @@ const AdminPanel = () => {
               </table>
             </div>
           </div>
-        )}        {/* Departments Tab */}
+        )}        {/* Excel Management Tab */}
+        {activeTab === 'excel' && (
+          <div className="tab-content">
+            <div className="excel-management-section">
+              <div className="section-header">
+                <FileSpreadsheet size={24} />
+                <div>
+                  <h2>Excel Dosya Yönetimi</h2>
+                  <p>Günlük Stok ve Satış Sipariş dosyalarını buradan yükleyin</p>
+                </div>
+              </div>
+
+              {/* Günlük Stok Upload */}
+              <div className="excel-upload-card">
+                <div className="upload-card-header">
+                  <FileSpreadsheet size={20} />
+                  <h3>Günlük Stok</h3>
+                </div>
+                <div className="upload-card-body">
+                  <p className="upload-description">
+                    Günlük stok Excel dosyasını yükleyin. Kullanıcılar "Günlük Stok" sayfasında bu dosyayı görüntüleyebilecek.
+                  </p>
+                  <div className="file-input-wrapper">
+                    <input
+                      id="stockFileInput"
+                      type="file"
+                      accept=".xlsx,.xls"
+                      onChange={handleStockFileSelect}
+                      className="file-input"
+                    />
+                    <label htmlFor="stockFileInput" className="file-input-label">
+                      <Upload size={18} />
+                      {selectedStockFile ? selectedStockFile.name : 'Dosya Seç'}
+                    </label>
+                  </div>
+                  {selectedStockFile && (
+                    <button 
+                      className="upload-btn" 
+                      onClick={handleUploadStock}
+                      disabled={uploadingStock}
+                    >
+                      <Upload size={18} />
+                      {uploadingStock ? 'Yükleniyor...' : 'Yükle'}
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              {/* Satış Sipariş Upload */}
+              <div className="excel-upload-card">
+                <div className="upload-card-header">
+                  <FileSpreadsheet size={20} />
+                  <h3>Satış Sipariş</h3>
+                </div>
+                <div className="upload-card-body">
+                  <p className="upload-description">
+                    Satış sipariş Excel dosyasını yükleyin. Kullanıcılar "Satış Sipariş" sayfasında bu dosyayı görüntüleyebilecek.
+                  </p>
+                  <div className="file-input-wrapper">
+                    <input
+                      id="salesFileInput"
+                      type="file"
+                      accept=".xlsx,.xls"
+                      onChange={handleSalesFileSelect}
+                      className="file-input"
+                    />
+                    <label htmlFor="salesFileInput" className="file-input-label">
+                      <Upload size={18} />
+                      {selectedSalesFile ? selectedSalesFile.name : 'Dosya Seç'}
+                    </label>
+                  </div>
+                  {selectedSalesFile && (
+                    <button 
+                      className="upload-btn" 
+                      onClick={handleUploadSales}
+                      disabled={uploadingSales}
+                    >
+                      <Upload size={18} />
+                      {uploadingSales ? 'Yükleniyor...' : 'Yükle'}
+                    </button>
+                  )}
+                </div>
+              </div>
+
+              <div className="excel-info-box">
+                <h4>📌 Bilgi</h4>
+                <ul>
+                  <li>Dosya formatı: .xlsx veya .xls</li>
+                  <li>Maksimum dosya boyutu: 10 MB</li>
+                  <li>Yüklenen dosyalar otomatik olarak ilgili sayfalarda görüntülenir</li>
+                  <li>Kullanıcılar sadece görüntüleme yapabilir, yükleme yapamaz</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Departments Management Tab */}
         {activeTab === 'departments' && (
           <div className="admin-content">
             <div className="departments-management">

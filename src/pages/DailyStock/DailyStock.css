@@ -62,7 +62,39 @@
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
 }
 
-/* Upload Section */
+/* Dosya bilgisi banner */
+.file-info-banner {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 24px;
+  color: white;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.file-info-banner .file-info-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.file-info-banner .file-details {
+  flex: 1;
+}
+
+.file-info-banner .file-name {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+}
+
+.file-info-banner .file-date {
+  font-size: 14px;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* Excel önizleme */
 .upload-section {
   margin-bottom: 2rem;
 }
