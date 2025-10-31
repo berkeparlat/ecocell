@@ -120,14 +120,25 @@ export const parseExcelFile = async (file) => {
 export const fetchAndParseExcel = async (url) => {
   try {
     console.log('🌐 excelService: Excel dosyası indiriliyor:', url);
-    const response = await fetch(url);
     
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
+    // CORS bypass için XMLHttpRequest kullan
+    const xhr = new XMLHttpRequest();
+    xhr.responseType = 'blob';
+    
+    const blob = await new Promise((resolve, reject) => {
+      xhr.onload = () => {
+        if (xhr.status === 200) {
+          resolve(xhr.response);
+        } else {
+          reject(new Error(`HTTP error! status: ${xhr.status}`));
+        }
+      };
+      xhr.onerror = () => reject(new Error('Network error'));
+      xhr.open('GET', url);
+      xhr.send();
+    });
     
     console.log('📥 excelService: Response alındı, blob oluşturuluyor...');
-    const blob = await response.blob();
     console.log('📄 excelService: Blob boyutu:', blob.size, 'bytes');
     
     console.log('🔄 excelService: Excel parse ediliyor...');
