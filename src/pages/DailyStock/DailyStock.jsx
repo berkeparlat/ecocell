@@ -1,41 +1,18 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { RefreshCw, FileSpreadsheet } from 'lucide-react';
-import { getLatestExcelFile, fetchAndParseExcelFromRef } from '../../services/excelService';
-import * as XLSX from 'xlsx';
+import { RefreshCw, FileSpreadsheet, ExternalLink } from 'lucide-react';
+import { getLatestExcelFile } from '../../services/excelService';
 import './DailyStock.css';
 
 const DailyStock = () => {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
   const [excelData, setExcelData] = useState(null);
-  const containerRef = useRef(null);
 
   useEffect(() => {
     loadLatestFile();
-  }, []);
-
-  useEffect(() => {
-    if (excelData && containerRef.current) {
-      renderExcelToCanvas();
-    }
-  }, [excelData]);
-
-  const renderExcelToCanvas = () => {
-    if (!excelData || !containerRef.current) return;
-
-    // Container'ı temizle
-    containerRef.current.innerHTML = '';
-
-    // XLSX workbook'u HTML table olarak render et (tam stiller ile)
-    const html = XLSX.utils.sheet_to_html(excelData.rawWorksheet, {
-      id: 'excel-table',
-      editable: false
-    });
-
-    containerRef.current.innerHTML = html;
-  };const loadLatestFile = async () => {
+  }, []);const loadLatestFile = async () => {
     setLoading(true);
     try {
       console.log('🔍 DailyStock: Dosya yükleniyor...');
@@ -43,11 +20,13 @@ const DailyStock = () => {
       console.log('📁 DailyStock: Bulunan dosya:', file);
       
       if (file) {
-        console.log('📊 DailyStock: Excel parse ediliyor...');
-        // Firebase SDK kullanarak CORS bypass
-        const parsedData = await fetchAndParseExcelFromRef(file.ref);
-        console.log('✅ DailyStock: Excel parse edildi, satır sayısı:', parsedData?.data?.length);
-        setExcelData(parsedData);
+        console.log('📊 DailyStock: Excel dosyası hazırlanıyor...');
+        // Download URL'i direkt kullan - Google Viewer ile açacağız
+        setExcelData({
+          url: file.url,
+          name: file.name
+        });
+        console.log('✅ DailyStock: Dosya hazır');
       } else {
         console.warn('⚠️ DailyStock: Dosya bulunamadı!');
       }
@@ -81,9 +60,22 @@ const DailyStock = () => {
           </div>
         ) : excelData ? (
           <div className="excel-viewer">
-            <div 
-              ref={containerRef}
-              className="excel-canvas-viewer"
+            <div className="viewer-toolbar">
+              <span className="file-name">📄 {excelData.name}</span>
+              <a 
+                href={excelData.url} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="open-external-btn"
+              >
+                <ExternalLink size={16} />
+                Tam Ekran Aç
+              </a>
+            </div>            <iframe
+              src={`https://docs.google.com/viewer?url=${encodeURIComponent(excelData.url)}&embedded=true`}
+              className="excel-iframe"
+              title="Excel Viewer"
+              frameBorder="0"
             />
           </div>
         ) : (
