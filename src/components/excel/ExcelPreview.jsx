@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ExternalLink } from 'lucide-react';
 import './ExcelPreview.css';
 
@@ -27,7 +27,7 @@ const ExcelPreview = ({
   htmlDocument,
   accent = 'stock'
 }) => {
-  const [showFallback, setShowFallback] = useState(false);
+  const [showFallback, setShowFallback] = useState(true);
   const palette = ACCENT_PALETTES[accent] || ACCENT_PALETTES.stock;
   const styleVars = {
     '--excel-accent-base': palette.base,
@@ -40,6 +40,11 @@ const ExcelPreview = ({
   const hasViewer = Boolean(viewerUrl);
   const hasFallbackContent = Boolean(htmlDocument || htmlContent);
   const shouldRenderFallback = (!hasViewer && hasFallbackContent) || (showFallback && hasFallbackContent);
+  const toggleLabel = showFallback ? 'Office Görünümünü Aç' : 'HTML Yedek Görünüm';
+
+  useEffect(() => {
+    setShowFallback(true);
+  }, [fileName, viewerUrl, htmlDocument]);
 
   return (
     <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>
@@ -52,7 +57,7 @@ const ExcelPreview = ({
               className="excel-preview-toggle"
               onClick={() => setShowFallback((prev) => !prev)}
             >
-              {showFallback ? 'Çevrimiçi Önizlemeyi Göster' : 'HTML Yedek Görünüm'}
+              {toggleLabel}
             </button>
           )}
 
@@ -91,6 +96,7 @@ const ExcelPreview = ({
             src={viewerUrl}
             loading="lazy"
             allowFullScreen={false}
+            onError={() => setShowFallback(true)}
           />
         ) : (
           <div className="excel-preview-empty">
