@@ -46,10 +46,14 @@ export const uploadExcelFile = async (file, type) => {
 // En son yüklenen Excel dosyasını getir
 export const getLatestExcelFile = async (type) => {
   try {
+    console.log(`📂 excelService: ${type} klasörü kontrol ediliyor...`);
     const listRef = ref(storage, `excel/${type}`);
     const fileList = await listAll(listRef);
 
+    console.log(`📋 excelService: Bulunan dosya sayısı: ${fileList.items.length}`);
+
     if (fileList.items.length === 0) {
+      console.warn(`⚠️ excelService: ${type} klasöründe dosya yok!`);
       return null;
     }
 
@@ -70,9 +74,12 @@ export const getLatestExcelFile = async (type) => {
 
     // Tarihe göre sırala ve en sonuncuyu al
     filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
+    console.log('✅ excelService: En son dosya:', filesWithMetadata[0]?.name);
     return filesWithMetadata[0];
   } catch (error) {
-    console.error('Excel dosyası getirme hatası:', error);
+    console.error('❌ excelService: Excel dosyası getirme hatası:', error);
+    console.error('Hata kodu:', error.code);
+    console.error('Hata mesajı:', error.message);
     throw error;
   }
 };
@@ -112,11 +119,23 @@ export const parseExcelFile = async (file) => {
 // URL'den Excel dosyasını indir ve parse et
 export const fetchAndParseExcel = async (url) => {
   try {
+    console.log('🌐 excelService: Excel dosyası indiriliyor:', url);
     const response = await fetch(url);
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    console.log('📥 excelService: Response alındı, blob oluşturuluyor...');
     const blob = await response.blob();
-    return await parseExcelFile(blob);
+    console.log('📄 excelService: Blob boyutu:', blob.size, 'bytes');
+    
+    console.log('🔄 excelService: Excel parse ediliyor...');
+    const result = await parseExcelFile(blob);
+    console.log('✅ excelService: Parse tamamlandı!');
+    return result;
   } catch (error) {
-    console.error('Excel parse hatası:', error);
+    console.error('❌ excelService: Excel parse hatası:', error);
     throw error;
   }
 };

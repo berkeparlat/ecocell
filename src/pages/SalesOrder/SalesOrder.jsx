@@ -13,17 +13,24 @@ const SalesOrder = () => {
   useEffect(() => {
     loadLatestFile();
   }, []);
-
   const loadLatestFile = async () => {
     setLoading(true);
     try {
+      console.log('🔍 SalesOrder: Dosya yükleniyor...');
       const file = await getLatestExcelFile('sales');
+      console.log('📁 SalesOrder: Bulunan dosya:', file);
+      
       if (file) {
+        console.log('📊 SalesOrder: Excel parse ediliyor...');
         const parsedData = await fetchAndParseExcel(file.url);
+        console.log('✅ SalesOrder: Excel parse edildi, satır sayısı:', parsedData?.data?.length);
         setExcelData(parsedData);
+      } else {
+        console.warn('⚠️ SalesOrder: Dosya bulunamadı!');
       }
     } catch (error) {
-      console.error('Dosya yükleme hatası:', error);
+      console.error('❌ SalesOrder: Dosya yükleme hatası:', error);
+      console.error('Hata detayı:', error.message);
     } finally {
       setLoading(false);
     }

@@ -13,17 +13,24 @@ const DailyStock = () => {
   useEffect(() => {
     loadLatestFile();
   }, []);
-
   const loadLatestFile = async () => {
     setLoading(true);
     try {
+      console.log('🔍 DailyStock: Dosya yükleniyor...');
       const file = await getLatestExcelFile('stock');
+      console.log('📁 DailyStock: Bulunan dosya:', file);
+      
       if (file) {
+        console.log('📊 DailyStock: Excel parse ediliyor...');
         const parsedData = await fetchAndParseExcel(file.url);
+        console.log('✅ DailyStock: Excel parse edildi, satır sayısı:', parsedData?.data?.length);
         setExcelData(parsedData);
+      } else {
+        console.warn('⚠️ DailyStock: Dosya bulunamadı!');
       }
     } catch (error) {
-      console.error('Dosya yükleme hatası:', error);
+      console.error('❌ DailyStock: Dosya yükleme hatası:', error);
+      console.error('Hata detayı:', error.message);
     } finally {
       setLoading(false);
     }
