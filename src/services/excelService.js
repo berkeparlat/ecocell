@@ -122,21 +122,18 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     console.log('🔥 excelService: Excel dosyası indiriliyor...');
     console.log('📂 Dosya yolu:', storageRef.fullPath);
     
-    // Token'sız public download URL oluştur
-    const bucket = 'ecocell-5cf22.firebasestorage.app';
-    const encodedPath = encodeURIComponent(storageRef.fullPath);
-    const publicURL = `https://firebasestorage.googleapis.com/v0/b/${bucket}/o/${encodedPath}?alt=media`;
-    console.log('🔗 Public URL:', publicURL);
+    // Download URL al
+    const downloadURL = await getDownloadURL(storageRef);
+    console.log('🔗 Firebase URL alındı');
     
-    console.log('🌐 Dosya indiriliyor...');
-    const response = await fetch(publicURL, {
-      method: 'GET',
-      mode: 'cors',
-      credentials: 'omit'
-    });
+    // Vercel serverless function proxy kullan
+    const proxyURL = `/api/excel-proxy?url=${encodeURIComponent(downloadURL)}`;
+    console.log('🌐 Vercel proxy ile indiriliyor...');
+    
+    const response = await fetch(proxyURL);
     
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`Proxy error! status: ${response.status}`);
     }
     
     const arrayBuffer = await response.arrayBuffer();
@@ -162,7 +159,6 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
   } catch (error) {
     console.error('❌ excelService: Excel indirme hatası:', error);
     console.error('Hata mesajı:', error.message);
-    console.error('Hata stack:', error.stack);
     throw error;
   }
 };
