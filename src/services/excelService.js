@@ -122,24 +122,44 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     console.log('🔥 excelService: Firebase SDK ile dosya indiriliyor...');
     console.log('📂 Dosya yolu:', storageRef.fullPath);
     
-    // Firebase SDK getBytes kullan (CORS bypass)
-    const bytes = await getBytes(storageRef);
-    console.log('📥 excelService: Bytes alındı, boyut:', bytes.byteLength, 'bytes');
+    // Firebase SDK getBytes kullan - maksimum boyut 100MB
+    const maxBytes = 100 * 1024 * 1024; // 100 MB
+    console.log('⏳ excelService: getBytes() çağrılıyor...');
     
-    // Bytes'ı Blob'a çevir
-    const blob = new Blob([bytes], { 
-      type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' 
-    });
-    console.log('📄 excelService: Blob oluşturuldu');
+    const arrayBuffer = await getBytes(storageRef, maxBytes);
+    console.log('📥 excelService: Bytes alındı, boyut:', arrayBuffer.byteLength, 'bytes');
     
+    // ArrayBuffer'ı doğrudan XLSX'e ver
     console.log('🔄 excelService: Excel parse ediliyor...');
-    const result = await parseExcelFile(blob);
+    const workbook = XLSX.read(arrayBuffer, { type: 'array' });
+    
+    // İlk sheet'i al
+    const firstSheetName = workbook.SheetNames[0];
+    const worksheet = workbook.Sheets[firstSheetName];
+    
+    // JSON'a çevir
+    const jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+    
     console.log('✅ excelService: Parse tamamlandı!');
-    return result;
+    return {
+      sheetName: firstSheetName,
+      data: jsonData,
+      allSheets: workbook.SheetNames
+    };
   } catch (error) {
     console.error('❌ excelService: Firebase SDK indirme hatası:', error);
     console.error('Hata kodu:', error.code);
     console.error('Hata mesajı:', error.message);
+    
+    // Detaylı hata bilgisi
+    if (error.code === 'storage/unauthorized') {
+      console.error('🔒 İzin hatası: Firebase Storage Rules\'u kontrol edin!');
+    } else if (error.code === 'storage/retry-limit-exceeded') {
+      console.error('⏱️ Zaman aşımı: Dosya çok büyük veya bağlantı yavaş');
+    } else if (error.code === 'storage/canceled') {
+      console.error('🚫 İşlem iptal edildi');
+    }
+    
     throw error;
   }
 };
