@@ -5,14 +5,14 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 // Your web app's Firebase configuration
+// Project: ecocell-5cf22 (Blaze Plan - Ücretli)
 const firebaseConfig = {
-  apiKey: "AIzaSyAqiILWy-U28vAXDf8i80IhenzxUT62FGw",
-  authDomain: "ecocell-8d794.firebaseapp.com",
-  projectId: "ecocell-8d794",
-  storageBucket: "ecocell-8d794.firebasestorage.app",
-  messagingSenderId: "170224826883",
-  appId: "1:170224826883:web:36cea22ecdcec0b332ec36",
-  measurementId: "G-X08L87ZDG2"
+  apiKey: "AIzaSyAhMj0ljztXyusfVKLu8R8I7Kp_u8mMdlM",
+  authDomain: "ecocell-5cf22.firebaseapp.com",
+  projectId: "ecocell-5cf22",
+  storageBucket: "ecocell-5cf22.firebasestorage.app",
+  messagingSenderId: "357513489226",
+  appId: "1:357513489226:web:d915b52699b588b4436fb3"
 };
 
 // Initialize Firebase

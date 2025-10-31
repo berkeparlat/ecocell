@@ -1,0 +1,10 @@
+# File Watcher dependencies
+node_modules/
+serviceAccountKey.json
+.env
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
