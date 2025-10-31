@@ -1,130 +1,3 @@
-/* Excel HTML Content */
-.excel-content {
-  width: 100%;
-  height: calc(100vh - 280px);
-  min-height: 600px;
-  overflow: auto;
-  background: white;
-  border-radius: 0 0 8px 8px;
-  padding: 1rem;
-}
-
-/* Excel tablo stilleri */
-.excel-content table {
-  border-collapse: collapse;
-  width: auto;
-  font-family: Arial, sans-serif;
-  font-size: 12px;
-}
-
-.excel-content td,
-.excel-content th {
-  border: 1px solid #d0d0d0;
-  padding: 4px 8px;
-  white-space: nowrap;
-  min-width: 60px;
-}
-
-.excel-content th {
-  background: #f0f0f0;
-  font-weight: 600;
-  text-align: center;
-}
-
-.viewer-toolbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem;
-  background: #f8f9fa;
-  border-radius: 8px 8px 0 0;
-  border-bottom: 2px solid #e0e0e0;
-}
-
-.file-name {
-  font-weight: 600;
-  color: #333;
-  font-size: 14px;
-}
-
-.open-external-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: #4caf50;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  font-size: 13px;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.open-external-btn:hover {
-  background: #43a047;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
-}
-
-/* Excel Canvas Viewer - Excel'in TAM kopyası */
-.excel-canvas-viewer {
-  background: white;
-  border-radius: 0;
-  padding: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: auto;
-  max-height: calc(100vh - 200px);
-  border: 1px solid #c7c7c7;
-}
-
-.excel-canvas-viewer table {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: 'Calibri', 'Arial', sans-serif;
-  font-size: 11pt;
-  background: white;
-}
-
-.excel-canvas-viewer td,
-.excel-canvas-viewer th {
-  border: 1px solid #d4d4d4;
-  padding: 2px 4px;
-  min-height: 20px;
-  height: 20px;
-  line-height: 18px;
-  vertical-align: middle;
-  white-space: nowrap;
-  overflow: visible;
-  background: white;
-}
-
-.excel-canvas-viewer th {
-  background: #f2f2f2;
-  font-weight: 600;
-  text-align: left;
-  color: #000;
-  border-right: 1px solid #d4d4d4;
-}
-
-.excel-canvas-viewer::-webkit-scrollbar {
-  width: 17px;
-  height: 17px;
-}
-
-.excel-canvas-viewer::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
-
-.excel-canvas-viewer::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border: 3px solid #f1f1f1;
-}
-
-.excel-canvas-viewer::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
-}
-
 .daily-stock-page {
   min-height: 100vh;
   background: #f5f7fa;
@@ -145,6 +18,10 @@
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.stock-container .excel-preview-card {
+  margin-top: 2rem;
 }
 
 .header-title {
@@ -187,13 +64,6 @@
   background: #43a047;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
-}
-
-.excel-viewer {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .loading-state {

@@ -2,6 +2,39 @@ import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata, g
 import { storage } from '../config/firebase';
 import * as XLSX from 'xlsx';
 
+const sanitizeSheetHtml = (rawHtml) => {
+  if (!rawHtml) {
+    return '';
+  }
+
+  const bodyMatch = rawHtml.match(/<body[^>]*>([\s\S]*?)<\/body>/i);
+  const content = bodyMatch ? bodyMatch[1] : rawHtml;
+
+  return content
+    .replace(/<!DOCTYPE[^>]*>/gi, '')
+    .replace(/<meta[^>]*>/gi, '')
+    .replace(/<title[^>]*>[\s\S]*?<\/title>/gi, '')
+    .replace(/<script[\s\S]*?<\/script>/gi, '')
+    .trim();
+};
+
+const buildOfficeViewerUrl = (directUrl) => {
+  if (!directUrl) {
+    return null;
+  }
+
+  const base = 'https://view.officeapps.live.com/op/embed.aspx';
+  const params = new URLSearchParams({
+    src: directUrl,
+    wdAllowInteractivity: '1',
+    wdHideHeaders: '1',
+    wdHideSheetTabs: '0',
+    wdHideGridlines: '0'
+  });
+
+  return `${base}?${params.toString()}`;
+};
+
 // Excel dosyası yükle
 export const uploadExcelFile = async (file, type) => {
   try {
@@ -97,21 +130,26 @@ export const getLatestExcelFile = async (type) => {
     // İlk sheet'i HTML'e çevir
     const firstSheetName = workbook.SheetNames[0];
     const worksheet = workbook.Sheets[firstSheetName];
-    const html = XLSX.utils.sheet_to_html(worksheet, {
+    const rawHtml = XLSX.utils.sheet_to_html(worksheet, {
       id: 'excel-table',
       editable: false,
       header: '',
       footer: ''
     });
+    const cleanedHtml = sanitizeSheetHtml(rawHtml);
+    const viewerUrl = buildOfficeViewerUrl(latestFile.url);
     
     console.log('✅ excelService: HTML hazır');
     
     return {
       name: latestFile.name,
-      html: html,
+      html: cleanedHtml,
       uploadDate: latestFile.uploadDate,
       size: latestFile.size,
-      sheets: workbook.SheetNames
+      sheets: workbook.SheetNames,
+      downloadUrl: latestFile.url,
+      viewerUrl,
+      sheetName: firstSheetName
     };
   } catch (error) {
     console.error('❌ excelService: Excel dosyası getirme hatası:', error);
@@ -190,12 +228,13 @@ export const fetchAndParseExcelFromRef = async (storageRef) => {
     const worksheet = workbook.Sheets[firstSheetName];
     
     // HTML olarak render et (stiller dahil)
-    const htmlString = XLSX.utils.sheet_to_html(worksheet, {
+    const rawHtml = XLSX.utils.sheet_to_html(worksheet, {
       id: 'excel-table',
       editable: false,
       header: '',
       footer: ''
     });
+    const htmlString = sanitizeSheetHtml(rawHtml);
     
     // JSON data da al (yedek için)
     const jsonData = XLSX.utils.sheet_to_json(worksheet, { 

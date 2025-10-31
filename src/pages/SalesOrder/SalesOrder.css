@@ -20,6 +20,10 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
+.sales-container .excel-preview-card {
+  margin-top: 2rem;
+}
+
 .header-title {
   display: flex;
   align-items: center;
@@ -253,137 +257,6 @@
   background: #ff5722;
   transform: translateY(-1px);
   box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
-}
-
-/* Excel Viewer */
-.excel-viewer {
-  background: white;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-}
-
-.excel-header {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 2px solid #f0f0f0;
-}
-
-.excel-header h3 {
-  margin: 0;
-  color: #212121;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-.excel-table {
-  width: 100%;
-  border-collapse: collapse;
-  min-width: 600px;
-}
-
-.excel-table thead {
-  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
-  color: white;
-}
-
-.excel-table th {
-  padding: 1rem;
-  text-align: left;
-  font-weight: 600;
-  white-space: nowrap;
-}
-
-.excel-table tbody tr {
-  border-bottom: 1px solid #f0f0f0;
-  transition: background 0.2s;
-}
-
-.excel-table tbody tr:hover {
-  background: #fff3e0;
-}
-
-.excel-table td {
-  padding: 0.875rem 1rem;
-  color: #424242;
-}
-
-/* Excel HTML Viewer - Excel'e benzer görünüm */
-.excel-html-viewer {
-  background: white;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  overflow: auto;
-  max-height: calc(100vh - 250px);
-}
-
-.excel-html-viewer table {
-  width: auto;
-  border-collapse: collapse;
-  font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
-  font-size: 11pt;
-  table-layout: auto;
-}
-
-.excel-html-viewer table td,
-.excel-html-viewer table th {
-  border: 1px solid #d0d0d0;
-  padding: 4px 8px;
-  text-align: left;
-  vertical-align: middle;
-  min-width: 60px;
-  white-space: pre-wrap;
-  background: white;
-  height: 20px;
-}
-
-.excel-html-viewer table th {
-  background: #f2f2f2;
-  font-weight: 600;
-  color: #333;
-  border-bottom: 2px solid #a6a6a6;
-}
-
-/* Excel'deki gibi satır hover efekti */
-.excel-html-viewer table tbody tr:hover td {
-  background-color: #f5f9ff;
-}
-
-/* Bold text */
-.excel-html-viewer table td b,
-.excel-html-viewer table td strong,
-.excel-html-viewer table th b,
-.excel-html-viewer table th strong {
-  font-weight: 700;
-}
-
-/* Excel scroll bar */
-.excel-html-viewer::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
-}
-
-.excel-html-viewer::-webkit-scrollbar-track {
-  background: #f1f1f1;
-  border-radius: 6px;
-}
-
-.excel-html-viewer::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
-  border-radius: 6px;
-}
-
-.excel-html-viewer::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
 }
 
 /* Loading State */
