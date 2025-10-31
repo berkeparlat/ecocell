@@ -43,7 +43,7 @@ export const uploadExcelFile = async (file, type) => {
   }
 };
 
-// En son yüklenen Excel dosyasını getir ve HTML'e çevir
+// En son yüklenen Excel dosyasını getir ve HTML'e çevir (CORS bypass ile)
 export const getLatestExcelFile = async (type) => {
   try {
     console.log(`📂 excelService: ${type} klasörü kontrol ediliyor...`);
@@ -61,9 +61,10 @@ export const getLatestExcelFile = async (type) => {
     const filesWithMetadata = await Promise.all(
       fileList.items.map(async (item) => {
         const metadata = await getMetadata(item);
+        const url = await getDownloadURL(item);
         return {
           name: item.name,
-          ref: item,
+          url: url,
           uploadDate: metadata.timeCreated,
           size: metadata.size
         };
@@ -75,12 +76,19 @@ export const getLatestExcelFile = async (type) => {
     const latestFile = filesWithMetadata[0];
     console.log('✅ excelService: En son dosya:', latestFile?.name);
     
-    // Excel dosyasını indir ve HTML'e çevir
-    console.log('📥 excelService: Dosya indiriliyor...');
-    const bytes = await getBytes(latestFile.ref);
+    // Vercel proxy kullanarak Excel'i indir ve HTML'e çevir
+    console.log('📥 excelService: Vercel proxy ile indiriliyor...');
+    const proxyURL = `/api/excel-proxy?url=${encodeURIComponent(latestFile.url)}`;
+    const response = await fetch(proxyURL);
+    
+    if (!response.ok) {
+      throw new Error(`Proxy error! status: ${response.status}`);
+    }
+    
+    const arrayBuffer = await response.arrayBuffer();
     console.log('📊 excelService: Excel parse ediliyor...');
     
-    const workbook = XLSX.read(bytes, { 
+    const workbook = XLSX.read(arrayBuffer, { 
       type: 'array',
       cellStyles: true,
       cellHTML: true
