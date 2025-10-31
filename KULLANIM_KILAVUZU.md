@@ -2,7 +2,7 @@
 
 ## ⚠️ ÖNEMLİ: Sadece Admin Yükleme Yapabilir
 
-**Dosya Yükleme Yetkisi:** Sadece admin kullanıcısı (`elektrik.bakim@karafiber.com`) Excel dosyalarını yükleyebilir.
+**Dosya Yükleme Yetkisi:** Sadece admin kullanıcısı (`berke.parlat27@gmail.com`) Excel dosyalarını yükleyebilir.
 
 **Diğer Kullanıcılar:** Güncel Excel verilerini görüntüleyebilir ve indirebilir.
 

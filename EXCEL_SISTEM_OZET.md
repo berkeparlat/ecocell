@@ -24,7 +24,7 @@
 ## 🔐 Yetkilendirme Sistemi
 
 ### Admin Kullanıcı
-**Email:** `elektrik.bakim@karafiber.com`
+**Email:** `berke.parlat27@gmail.com`
 
 **Yetkiler:**
 - ✅ Kullanıcı düzenleme
@@ -202,7 +202,7 @@ npm run dev
 
 ### "Yetki hatası" mesajı
 - ✓ Admin email ile giriş yaptınız mı?
-- ✓ `elektrik.bakim@karafiber.com` doğru mu?
+- ✓ `berke.parlat27@gmail.com` doğru mu?
 
 ### Dosya görünmüyor
 - ✓ Sayfayı yenileyin (F5)

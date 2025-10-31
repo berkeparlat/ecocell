@@ -12,7 +12,7 @@ import { updatePassword, updateEmail } from 'firebase/auth';
 import { db, auth } from '../config/firebase';
 
 // Admin email kontrolü
-const ADMIN_EMAIL = 'elektrik.bakim@karafiber.com';
+const ADMIN_EMAIL = 'berke.parlat27@gmail.com';
 
 export const isAdmin = (user) => {
   return user?.email === ADMIN_EMAIL;

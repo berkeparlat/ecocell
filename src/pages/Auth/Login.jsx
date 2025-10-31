@@ -141,7 +141,7 @@ const Login = () => {
                 </div>
                 <div className="contact-item">
                   <Mail size={18} />
-                  <a href="mailto:elektrik.bakim@karafiber.com">elektrik.bakim@karafiber.com</a>
+                  <a href="mailto:berke.parlat27@gmail.com">berke.parlat27@gmail.com</a>
                 </div>
               </div>
               <div className="help-footer">
