@@ -112,21 +112,27 @@
   min-height: 100%;
   overflow: auto;
   background: white;
-  padding: 1.5rem;
+  padding: 1rem;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  display: block;
   transition: transform 0.2s ease-out;
 }
 
 .excel-preview-html.fit-width {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .excel-preview-html.fit-width table {
   width: 100% !important;
   max-width: 100% !important;
+  table-layout: fixed !important;
+}
+
+.excel-preview-html.fit-width td,
+.excel-preview-html.fit-width th {
+  word-wrap: break-word !important;
+  overflow-wrap: break-word !important;
+  white-space: normal !important;
 }
 
 .excel-preview-html > * {

@@ -33,20 +33,51 @@ const sanitizeSheetHtml = (rawHtml) => {
         padding: 0;
         min-height: 100%;
         background: #ffffff;
+        overflow: auto;
       }
       body {
-        padding: 24px;
-        width: max-content;
-        min-width: 100%;
-        overflow: auto;
+        padding: 16px;
+        width: 100%;
+        max-width: 100%;
       }
       table {
         border-collapse: collapse;
+        width: 100% !important;
+        max-width: 100% !important;
+        table-layout: fixed;
+        font-size: 12px;
+      }
+      table td, table th {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal;
+        padding: 6px 8px;
+        border: 1px solid #d0d0d0;
+      }
+      table th {
+        background: #f1f5f9;
+        font-weight: 600;
       }
       img {
         max-width: 100%;
         height: auto;
         display: block;
+      }
+      @media (max-width: 1200px) {
+        table {
+          font-size: 11px;
+        }
+        table td, table th {
+          padding: 4px 6px;
+        }
+      }
+      @media (max-width: 768px) {
+        table {
+          font-size: 10px;
+        }
+        table td, table th {
+          padding: 3px 4px;
+        }
       }
     </style>
   `;
@@ -96,7 +127,10 @@ const buildOfficeViewerUrl = (directUrl) => {
     wdHideHeaders: '1',
     wdHideSheetTabs: '0',
     wdHideGridlines: '0',
-    wdDownloadButton: '0'
+    wdDownloadButton: '0',
+    wdDefaultZoom: '100',
+    wdFitToPage: '1',
+    wdPageView: '1'
   });
 
   return `${base}?${params.toString()}`;
