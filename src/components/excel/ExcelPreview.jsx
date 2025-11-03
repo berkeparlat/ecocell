@@ -21,8 +21,8 @@ const ACCENT_PALETTES = {
 
 // Varsayılan zoom değerleri
 const DEFAULT_ZOOM = {
-  stock: 67,  // %67 (2 parça daha küçük)
-  sales: 50   // %50 (1 parça daha küçük)
+  stock: 50,  // %50
+  sales: 80   // %80
 };
 
 const ExcelPreview = ({
@@ -49,6 +49,15 @@ const ExcelPreview = ({
 
   useEffect(() => {
     setShowFallback(!hasViewer);
+    
+    // Her dosya değiştiğinde A1 hücresine scroll et
+    setTimeout(() => {
+      const renderArea = document.querySelector('.excel-render-area');
+      if (renderArea) {
+        renderArea.scrollTop = 0;
+        renderArea.scrollLeft = 0;
+      }
+    }, 100);
   }, [hasViewer, fileName]);
 
   useEffect(() => {
