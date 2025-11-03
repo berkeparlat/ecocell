@@ -45,3 +45,24 @@
 [2025-11-03T09:30:53.501Z]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
 [2025-11-03T09:30:53.502Z] ============================================================
 [2025-11-03T09:30:53.558Z] ✓ Dosya izleyici hazır ve çalışıyor...
+[2025-11-03T10:06:38.900Z] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[2025-11-03T10:06:39.376Z] ============================================================
+[2025-11-03T10:06:39.377Z] Excel Dosya İzleyici Başlatıldı
+[2025-11-03T10:06:39.377Z] ============================================================
+[2025-11-03T10:06:39.378Z] İzlenen dosyalar:
+[2025-11-03T10:06:39.379Z]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-03T10:06:39.379Z]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-03T10:06:39.380Z] ============================================================
+[2025-11-03T10:06:39.480Z] ✓ Dosya izleyici hazır ve çalışıyor...
+[2025-11-03T10:08:04.095Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-03T10:08:06.109Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-03T10:08:08.017Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-03T10:08:55.106Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-03T10:08:57.122Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-03T10:08:58.578Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-03T10:09:32.490Z] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-03T10:09:34.502Z] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[2025-11-03T10:09:35.796Z] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-03T10:10:12.184Z] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-03T10:10:14.187Z] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[2025-11-03T10:10:15.477Z] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
