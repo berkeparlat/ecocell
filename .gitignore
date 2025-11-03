@@ -1,0 +1,8 @@
+# Sadece çok büyük dosyalar hariç
+node_modules/
+**/node_modules/
+dist/
+dist-ssr/
+
+# OS dosyaları
+.DS_Store

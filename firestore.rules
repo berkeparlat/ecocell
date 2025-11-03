@@ -1,0 +1,50 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Tasks koleksiyonu
+    match /tasks/{taskId} {
+      // Kullanıcı giriş yapmış olmalı
+      allow read: if request.auth != null;
+      
+      // Yeni görev oluşturma
+      allow create: if request.auth != null 
+                    && request.resource.data.userId == request.auth.uid;
+      
+      // Görev güncelleme ve silme
+      allow update, delete: if request.auth != null 
+                            && resource.data.userId == request.auth.uid;
+    }
+    
+    // Users koleksiyonu (gelecekte kullanılabilir)
+    match /users/{userId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Messages koleksiyonu
+    match /messages/{messageId} {
+      // Giriş yapmış kullanıcılar mesaj gönderebilir
+      allow create: if request.auth != null 
+                    && request.resource.data.senderId == request.auth.uid;
+      
+      // Kullanıcı sadece kendisine gelen mesajları okuyabilir
+      allow read: if request.auth != null 
+                  && (resource.data.recipientId == request.auth.uid 
+                      || resource.data.senderId == request.auth.uid);
+      
+      // Kullanıcı sadece kendisine gelen mesajları güncelleyebilir (okundu işareti için)
+      allow update: if request.auth != null 
+                    && resource.data.recipientId == request.auth.uid;
+      
+      // Mesaj silme yalnızca alıcı tarafından yapılabilir
+      allow delete: if request.auth != null 
+                    && resource.data.recipientId == request.auth.uid;
+    }
+    
+    // Diğer tüm koleksiyonları engelle
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

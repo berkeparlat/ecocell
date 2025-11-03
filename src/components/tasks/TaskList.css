@@ -1,0 +1,56 @@
+.task-list {
+  padding: 1.5rem;
+}
+
+.task-list-empty {
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #9ca3af;
+}
+
+.task-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.task-list-section {
+  background: white;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.task-list-section-title {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.task-list-count {
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.task-list-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .task-list {
+    padding: 1rem;
+  }
+
+  .task-list-items {
+    grid-template-columns: 1fr;
+  }
+}

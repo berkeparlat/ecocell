@@ -1,0 +1,259 @@
+.simple-header {
+  background: white;
+  border-bottom: 1px solid #e0e0e0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.header-brand:hover {
+  opacity: 0.85;
+}
+
+.header-logo {
+  height: 45px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.header-brand-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-brand-text h1 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #1b5e20;
+  margin: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.header-brand-text span {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #757575;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.header-user {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-left: 1.5rem;
+  border-left: 1px solid #e0e0e0;
+}
+
+.user-menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+}
+
+.user-menu-trigger:hover {
+  background: #f5f5f5;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.125rem;
+}
+
+.user-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #212121;
+}
+
+.user-department {
+  font-size: 0.75rem;
+  color: #757575;
+  font-weight: 500;
+}
+
+.chevron {
+  color: #757575;
+  transition: transform 0.2s;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.user-dropdown {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  padding: 0.5rem;
+  z-index: 1000;
+  animation: slideDown 0.2s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #424242;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background: #f5f5f5;
+  color: #212121;
+}
+
+.dropdown-item svg {
+  color: #757575;
+}
+
+.dropdown-item:hover svg {
+  color: #4caf50;
+}
+
+.dropdown-item.logout {
+  color: #d32f2f;
+}
+
+.dropdown-item.logout:hover {
+  background: #ffebee;
+}
+
+.dropdown-item.logout svg {
+  color: #d32f2f;
+}
+
+.dropdown-item.admin {
+  color: #ff6b35;
+  font-weight: 600;
+}
+
+.dropdown-item.admin:hover {
+  background: #fff3e0;
+}
+
+.dropdown-item.admin svg {
+  color: #ff6b35;
+}
+
+.dropdown-divider {
+  height: 1px;
+  background: #e0e0e0;
+  margin: 0.5rem 0;
+}
+
+.logout-btn {
+  background: #fafafa;
+  border: 1px solid #e0e0e0;
+  color: #616161;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.logout-btn:hover {
+  background: #ffebee;
+  color: #d32f2f;
+  border-color: #ffcdd2;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .header-brand-text h1 {
+    font-size: 1rem;
+  }
+
+  .header-brand-text span {
+    font-size: 0.75rem;
+  }
+
+  .header-logo {
+    height: 40px;
+  }
+
+  .view-toggle-btn span {
+    display: none;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 1rem;
+  }
+}

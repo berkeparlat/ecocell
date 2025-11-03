@@ -1,0 +1,6 @@
+# Sadece node_modules hariç (çok büyük)
+node_modules/
+
+# OS dosyaları
+.DS_Store
+Thumbs.db

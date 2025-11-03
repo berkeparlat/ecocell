@@ -1,0 +1,14 @@
+{
+  "functions": {
+    "api/excel-proxy.js": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
