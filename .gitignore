@@ -4,5 +4,10 @@ node_modules/
 dist/
 dist-ssr/
 
+# Hassas bilgiler
+serviceAccountKey.json
+**/serviceAccountKey.json
+.env.local
+
 # OS dosyaları
 .DS_Store
