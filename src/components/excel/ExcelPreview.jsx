@@ -131,7 +131,7 @@ const ExcelPreview = ({
           </div>
         </div>
 
-        <div className="excel-render-area" style={{ transform: `scale(${zoom / 100})`, transformOrigin: 'top center' }}>
+        <div className="excel-render-area">
           {showFallback || !hasViewer ? (
             hasFallbackContent ? (
               htmlDocument ? (
@@ -139,10 +139,22 @@ const ExcelPreview = ({
                   className="excel-iframe"
                   title={`Excel HTML önizleme - ${fileName}`}
                   srcDoc={htmlDocument}
+                  style={{ 
+                    transform: `scale(${zoom / 100})`, 
+                    transformOrigin: 'top left',
+                    width: `${(100 / zoom) * 100}%`,
+                    height: `${(100 / zoom) * 100}%`
+                  }}
                 />
               ) : (
                 <div
                   className="excel-preview-html"
+                  style={{ 
+                    transform: `scale(${zoom / 100})`, 
+                    transformOrigin: 'top left',
+                    width: `${(100 / zoom) * 100}%`,
+                    height: `${(100 / zoom) * 100}%`
+                  }}
                   dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
                 />
               )
@@ -159,6 +171,12 @@ const ExcelPreview = ({
               loading="lazy"
               allowFullScreen={false}
               onError={() => setShowFallback(true)}
+              style={{ 
+                transform: `scale(${zoom / 100})`, 
+                transformOrigin: 'top left',
+                width: `${(100 / zoom) * 100}%`,
+                height: `${(100 / zoom) * 100}%`
+              }}
             />
           )}
         </div>
