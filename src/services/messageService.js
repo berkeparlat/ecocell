@@ -9,7 +9,8 @@ import {
   updateDoc,
   doc,
   getDocs,
-  or
+  or,
+  deleteDoc
 } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { db, storage } from '../config/firebase';
@@ -178,6 +179,48 @@ export const markConversationAsRead = async (userId, otherUserId) => {
     await Promise.all(updatePromises);
   } catch (error) {
     console.error('Mesajlar okundu işaretleme hatası:', error);
+    throw error;
+  }
+};
+
+// Tek bir mesajı sil
+export const deleteMessage = async (messageId) => {
+  try {
+    await deleteDoc(doc(db, MESSAGES_COLLECTION, messageId));
+  } catch (error) {
+    console.error('Mesaj silme hatası:', error);
+    throw error;
+  }
+};
+
+// İki kullanıcı arasındaki tüm konuşmayı sil
+export const deleteConversation = async (userId1, userId2) => {
+  try {
+    const q = query(
+      collection(db, MESSAGES_COLLECTION),
+      or(
+        where('senderId', '==', userId1),
+        where('recipientId', '==', userId1)
+      )
+    );
+
+    const snapshot = await getDocs(q);
+    const deletePromises = [];
+
+    snapshot.forEach((document) => {
+      const data = document.data();
+      // İki kullanıcı arasındaki mesajları bul
+      if (
+        (data.senderId === userId1 && data.recipientId === userId2) ||
+        (data.senderId === userId2 && data.recipientId === userId1)
+      ) {
+        deletePromises.push(deleteDoc(doc(db, MESSAGES_COLLECTION, document.id)));
+      }
+    });
+
+    await Promise.all(deletePromises);
+  } catch (error) {
+    console.error('Konuşma silme hatası:', error);
     throw error;
   }
 };

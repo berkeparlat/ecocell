@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, uploadMessageFile } from '../../services/messageService';
-import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download, ChevronDown } from 'lucide-react';
+import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, uploadMessageFile, deleteMessage, deleteConversation } from '../../services/messageService';
+import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download, ChevronDown, Trash2, MoreVertical } from 'lucide-react';
 import './Messages.css';
 
 const Messages = () => {
@@ -20,6 +20,7 @@ const Messages = () => {
   const [isGroupChat, setIsGroupChat] = useState(false);
   const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
   const [isUsersExpanded, setIsUsersExpanded] = useState(true);
+  const [showDeleteMenu, setShowDeleteMenu] = useState(null);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -121,6 +122,37 @@ const Messages = () => {
     setSelectedFile(null);
     if (fileInputRef.current) {
       fileInputRef.current.value = '';
+    }
+  };
+
+  const handleDeleteMessage = async (messageId) => {
+    if (!window.confirm('Bu mesajı silmek istediğinize emin misiniz?')) {
+      return;
+    }
+
+    try {
+      await deleteMessage(messageId);
+      setShowDeleteMenu(null);
+    } catch (error) {
+      console.error('Mesaj silme hatası:', error);
+      alert('Mesaj silinirken bir hata oluştu.');
+    }
+  };
+
+  const handleDeleteConversation = async () => {
+    if (!selectedChat || isGroupChat) return;
+    
+    if (!window.confirm('Bu konuşmadaki tüm mesajları silmek istediğinize emin misiniz?')) {
+      return;
+    }
+
+    try {
+      await deleteConversation(user.uid, selectedChat.userId);
+      setSelectedChat(null);
+      setChatMessages([]);
+    } catch (error) {
+      console.error('Konuşma silme hatası:', error);
+      alert('Konuşma silinirken bir hata oluştu.');
     }
   };
 
@@ -452,6 +484,15 @@ const Messages = () => {
                     )}
                   </div>
                 </div>
+                {!isGroupChat && (
+                  <button 
+                    className="delete-conversation-btn" 
+                    onClick={handleDeleteConversation}
+                    title="Konuşmayı Sil"
+                  >
+                    <Trash2 size={18} />
+                  </button>
+                )}
               </div>
 
               <div className="chat-messages">
@@ -459,6 +500,8 @@ const Messages = () => {
                   <div
                     key={msg.id}
                     className={`message-bubble ${msg.senderId === user.uid ? 'sent' : 'received'}`}
+                    onMouseEnter={() => setShowDeleteMenu(msg.id)}
+                    onMouseLeave={() => setShowDeleteMenu(null)}
                   >
                     {msg.fileUrl && (
                       <div className="message-file">
@@ -484,6 +527,15 @@ const Messages = () => {
                         </span>
                       )}
                     </div>
+                    {showDeleteMenu === msg.id && msg.senderId === user.uid && (
+                      <button
+                        className="delete-message-btn"
+                        onClick={() => handleDeleteMessage(msg.id)}
+                        title="Mesajı Sil"
+                      >
+                        <Trash2 size={14} />
+                      </button>
+                    )}
                   </div>
                 ))}
                 <div ref={chatEndRef} />
