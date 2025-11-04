@@ -139,6 +139,24 @@ const Messages = () => {
     setShowNewChat(false);
   };
 
+  const handleStartDepartmentChat = (department) => {
+    const targetUsers = department === 'all' 
+      ? users 
+      : users.filter(u => u.department === department);
+
+    setSelectedChat({
+      userId: 'group_' + department,
+      userName: department === 'all' ? 'Tüm Karafiber Elyaf' : department,
+      userDepartment: `${targetUsers.length} kişi`,
+      isGroup: true,
+      groupType: department,
+      members: targetUsers
+    });
+    setIsGroupChat(true);
+    setChatMessages([]);
+    setShowNewChat(false);
+  };
+
   const formatTime = (timestamp) => {
     if (!timestamp) return '';
     const date = timestamp.toDate();
@@ -271,59 +289,56 @@ const Messages = () => {
                 <h3>Yeni Sohbet</h3>
               </div>
               
-              <div className="department-group-section">
-                <div className="section-title">Birime veya Tüm Kullanıcılara Mesaj Gönder</div>
-                <select 
-                  className="department-select"
-                  value={selectedDepartment}
-                  onChange={(e) => setSelectedDepartment(e.target.value)}
-                >
-                  <option value="">Birim seçin...</option>
-                  <option value="all">🏢 Tüm Karafiber Elyaf ({users.length} kişi)</option>
-                  {departments && departments.map(dept => (
-                    <option key={dept} value={dept}>{dept}</option>
-                  ))}
-                </select>
-                
-                {selectedDepartment && (
-                  <div className="group-message-box">
-                    <textarea
-                      placeholder={
-                        selectedDepartment === 'all' 
-                          ? `Tüm kullanıcılara mesaj yazın (${users.length} kişi)...` 
-                          : `${selectedDepartment} birimine mesaj yazın...`
-                      }
-                      value={messageInput}
-                      onChange={(e) => setMessageInput(e.target.value)}
-                      rows="3"
-                      disabled={loading}
-                    />
-                    <button 
-                      className={selectedDepartment === 'all' ? 'send-all-btn' : 'send-group-btn'}
-                      onClick={handleSendToDepartment}
-                      disabled={loading || !messageInput.trim()}
-                    >
-                      {loading ? 'Gönderiliyor...' : 
-                        selectedDepartment === 'all' 
-                          ? `Tüm Kullanıcılara Gönder (${users.length})`
-                          : `${selectedDepartment} Birimine Gönder`
-                      }
-                    </button>
-                  </div>
-                )}
-              </div>
-              
-              <div className="section-title">veya Kişi Seçin</div>
-              
               <div className="search-box">
                 <Search size={18} />
                 <input
                   type="text"
-                  placeholder="Kullanıcı ara..."
+                  placeholder="Kullanıcı veya birim ara..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                 />
-              </div><div className="users-list">
+              </div>
+
+              <div className="users-list">
+                {/* Birimler */}
+                {!searchQuery && departments && (
+                  <>
+                    <div className="list-section-title">Birimler</div>
+                    <div
+                      className="user-item department-item"
+                      onClick={() => handleStartDepartmentChat('all')}
+                    >
+                      <div className="user-avatar department-avatar">
+                        🏢
+                      </div>
+                      <div className="user-info-chat">
+                        <div className="user-name-chat">Tüm Karafiber Elyaf</div>
+                        <div className="user-dept">{users.length} kişi</div>
+                      </div>
+                    </div>
+                    {departments.map(dept => {
+                      const deptUsers = users.filter(u => u.department === dept);
+                      return (
+                        <div
+                          key={dept}
+                          className="user-item department-item"
+                          onClick={() => handleStartDepartmentChat(dept)}
+                        >
+                          <div className="user-avatar department-avatar">
+                            👥
+                          </div>
+                          <div className="user-info-chat">
+                            <div className="user-name-chat">{dept}</div>
+                            <div className="user-dept">{deptUsers.length} kişi</div>
+                          </div>
+                        </div>
+                      );
+                    })}
+                    <div className="list-section-title">Kişiler</div>
+                  </>
+                )}
+                
+                {/* Kullanıcılar */}
                 {filteredUsers.map(u => (
                   <div
                     key={u.id}
