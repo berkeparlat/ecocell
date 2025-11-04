@@ -22,19 +22,6 @@ export const useApp = () => {
   return context;
 };
 
-export const DEPARTMENTS = [
-  'Uretim',
-  'Kalite Kontrol',
-  'Ar-Ge',
-  'Satis',
-  'Pazarlama',
-  'Lojistik',
-  'Insan Kaynaklari',
-  'Finans',
-  'Bilgi Islem',
-  'Bakim-Onarim',
-];
-
 const readDepartmentsFromStorage = () => {
   if (typeof window === 'undefined') {
     return null;
@@ -58,7 +45,7 @@ export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [viewMode, setViewMode] = useState('board');
-  const [departments, setDepartments] = useState(() => readDepartmentsFromStorage() || DEPARTMENTS);
+  const [departments, setDepartments] = useState(() => readDepartmentsFromStorage() || []);
   const tasksListenerRef = useRef(null);
   const departmentsListenerRef = useRef(null);
   const userProfileListenerRef = useRef(null);
@@ -97,7 +84,7 @@ export const AppProvider = ({ children }) => {
           email: firebaseUser.email,
           username: profile?.fullName || fallbackName,
           fullName: profile?.fullName || fallbackName,
-          department: profile?.department || 'Genel',
+          department: profile?.department || '',
           createdAt: profile?.createdAt || null,
         };
 
@@ -164,8 +151,6 @@ export const AppProvider = ({ children }) => {
 
         if (Array.isArray(remoteList) && remoteList.length > 0) {
           setDepartments(remoteList);
-        } else {
-          setDepartments(DEPARTMENTS);
         }
       });
 
