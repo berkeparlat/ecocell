@@ -21,8 +21,8 @@ const ACCENT_PALETTES = {
 
 // Varsayılan zoom değerleri
 const DEFAULT_ZOOM = {
-  stock: 50,  // %50
-  sales: 80   // %80
+  stock: 60,
+  sales: 60
 };
 
 const ExcelPreview = ({

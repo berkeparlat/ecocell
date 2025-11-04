@@ -172,6 +172,43 @@ const Messages = () => {
     }
   };
 
+  const handleSendToAll = async () => {
+    if (!messageInput.trim()) {
+      alert('Lütfen mesaj yazın.');
+      return;
+    }
+
+    if (!confirm(`Mesaj tüm kullanıcılara (${users.length} kişi) gönderilecek. Onaylıyor musunuz?`)) {
+      return;
+    }
+
+    setLoading(true);
+    try {
+      const sendPromises = users.map(recipient => {
+        return sendMessage({
+          senderId: user.uid,
+          senderName: user.fullName || user.displayName || user.email,
+          senderDepartment: user.department || '',
+          recipientId: recipient.id,
+          recipientName: recipient.fullName || recipient.displayName || recipient.email,
+          recipientDepartment: recipient.department || '',
+          subject: 'Karafiber Elyaf Duyurusu',
+          content: messageInput.trim()
+        });
+      });
+
+      await Promise.all(sendPromises);
+      alert(`Mesaj ${users.length} kişiye başarıyla gönderildi!`);
+      setMessageInput('');
+      setShowNewChat(false);
+    } catch (error) {
+      console.error('Toplu mesaj gönderme hatası:', error);
+      alert('Mesajlar gönderilemedi!');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <div className="messages-page">
       <SimpleHeader />
@@ -191,6 +228,26 @@ const Messages = () => {
                 <h3>Yeni Sohbet</h3>
               </div>
               
+              <div className="department-group-section">
+                <div className="section-title">Tüm Karafiber Elyaf'a Gönder</div>
+                <div className="group-message-box">
+                  <textarea
+                    placeholder={`Tüm kullanıcılara mesaj yazın (${users.length} kişi)...`}
+                    value={messageInput}
+                    onChange={(e) => setMessageInput(e.target.value)}
+                    rows="3"
+                    disabled={loading}
+                  />
+                  <button 
+                    className="send-all-btn"
+                    onClick={handleSendToAll}
+                    disabled={loading || !messageInput.trim()}
+                  >
+                    {loading ? 'Gönderiliyor...' : `Tüm Kullanıcılara Gönder (${users.length})`}
+                  </button>
+                </div>
+              </div>
+
               <div className="department-group-section">
                 <div className="section-title">Birime Mesaj Gönder</div>
                 <select 

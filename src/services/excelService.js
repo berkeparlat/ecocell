@@ -104,7 +104,7 @@ const sanitizeSheetHtml = (rawHtml) => {
   };
 };
 
-const buildOfficeViewerUrl = (directUrl) => {
+const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
   if (!directUrl) {
     return null;
   }
@@ -122,6 +122,10 @@ const buildOfficeViewerUrl = (directUrl) => {
   proxiedUrl.searchParams.set('url', directUrl);
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
+  
+  // Yüklemeler dosyası için son satıra git (A1957)
+  const activeCell = fileType === 'shipping' ? 'A1957' : 'A1';
+  
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),
     wdAllowInteractivity: '1',
@@ -132,10 +136,10 @@ const buildOfficeViewerUrl = (directUrl) => {
     wdDefaultZoom: '100',
     wdFitToPage: '1',
     wdPageView: '1',
-    ActiveCell: 'A1'
+    ActiveCell: activeCell
   });
 
-  return `${base}?${params.toString()}#A1`;
+  return `${base}?${params.toString()}#${activeCell}`;
 };
 
 // Excel dosyası yükle
@@ -240,7 +244,7 @@ export const getLatestExcelFile = async (type) => {
       footer: ''
     });
     const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
-    const viewerUrl = buildOfficeViewerUrl(latestFile.url);
+    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type);
     
     console.log('✅ excelService: HTML hazır');
     
