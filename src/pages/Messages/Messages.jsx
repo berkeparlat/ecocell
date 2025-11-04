@@ -82,7 +82,7 @@ const Messages = () => {
       // Grup chat ise tüm üyelere gönder
       if (isGroupChat && selectedChat.members) {
         const sendPromises = selectedChat.members.map(recipient => {
-          return sendMessage({
+          const messageData = {
             senderId: user.uid,
             senderName: user.fullName || user.displayName || user.email,
             senderDepartment: user.department || '',
@@ -90,18 +90,24 @@ const Messages = () => {
             recipientName: recipient.fullName || recipient.displayName || recipient.email,
             recipientDepartment: recipient.department || '',
             subject: `${selectedChat.userName} Mesajı`,
-            content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
-            fileUrl: fileData?.url,
-            fileName: fileData?.name,
-            fileSize: fileData?.size,
-            fileType: fileData?.type
-          });
+            content: messageInput.trim() || (fileData ? '📎 Dosya' : '')
+          };
+
+          // Sadece dosya varsa dosya alanlarını ekle
+          if (fileData) {
+            messageData.fileUrl = fileData.url;
+            messageData.fileName = fileData.name;
+            messageData.fileSize = fileData.size;
+            messageData.fileType = fileData.type;
+          }
+
+          return sendMessage(messageData);
         });
 
         await Promise.all(sendPromises);
       } else {
         // Normal chat
-        await sendMessage({
+        const messageData = {
           senderId: user.uid,
           senderName: user.fullName || user.displayName || user.email,
           senderDepartment: user.department || '',
@@ -109,12 +115,18 @@ const Messages = () => {
           recipientName: selectedChat.userName,
           recipientDepartment: selectedChat.userDepartment || '',
           subject: 'Sohbet',
-          content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
-          fileUrl: fileData?.url,
-          fileName: fileData?.name,
-          fileSize: fileData?.size,
-          fileType: fileData?.type
-        });
+          content: messageInput.trim() || (fileData ? '📎 Dosya' : '')
+        };
+
+        // Sadece dosya varsa dosya alanlarını ekle
+        if (fileData) {
+          messageData.fileUrl = fileData.url;
+          messageData.fileName = fileData.name;
+          messageData.fileSize = fileData.size;
+          messageData.fileType = fileData.type;
+        }
+
+        await sendMessage(messageData);
       }
 
       setMessageInput('');
@@ -285,7 +297,7 @@ const Messages = () => {
       }
 
       const sendPromises = targetUsers.map(recipient => {
-        return sendMessage({
+        const messageData = {
           senderId: user.uid,
           senderName: user.fullName || user.displayName || user.email,
           senderDepartment: user.department || '',
@@ -293,27 +305,39 @@ const Messages = () => {
           recipientName: recipient.fullName || recipient.displayName || recipient.email,
           recipientDepartment: recipient.department || '',
           subject: messageSubject,
-          content: messageInput.trim(),
-          fileUrl: fileData?.url,
-          fileName: fileData?.name,
-          fileSize: fileData?.size,
-          fileType: fileData?.type
-        });
+          content: messageInput.trim()
+        };
+
+        // Sadece dosya varsa dosya alanlarını ekle
+        if (fileData) {
+          messageData.fileUrl = fileData.url;
+          messageData.fileName = fileData.name;
+          messageData.fileSize = fileData.size;
+          messageData.fileType = fileData.type;
+        }
+
+        return sendMessage(messageData);
       });
 
       await Promise.all(sendPromises);
       
       // Chat'e mesajı ekle (görünüm için)
-      setChatMessages(prev => [...prev, {
+      const chatMessage = {
         id: Date.now(),
         senderId: user.uid,
         senderName: user.fullName || user.displayName || user.email,
         content: messageInput.trim(),
         createdAt: { toDate: () => new Date() },
-        status: 'sent',
-        fileUrl: fileData?.url,
-        fileName: fileData?.name
-      }]);
+        status: 'sent'
+      };
+
+      // Sadece dosya varsa dosya alanlarını ekle
+      if (fileData) {
+        chatMessage.fileUrl = fileData.url;
+        chatMessage.fileName = fileData.name;
+      }
+
+      setChatMessages(prev => [...prev, chatMessage]);
       
       setMessageInput('');
       setSelectedFile(null);
