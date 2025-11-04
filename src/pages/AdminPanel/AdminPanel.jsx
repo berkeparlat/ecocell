@@ -128,7 +128,9 @@ const AdminPanel = () => {
     } catch (error) {
       alert('Mesaj silinemedi!');
     }
-  };  const handleUpdateUser = async (userId, updates) => {
+  };
+
+  const handleUpdateUser = async (userId, updates) => {
     try {
       await updateUser(userId, updates);
       alert('Kullanıcı güncellendi!');

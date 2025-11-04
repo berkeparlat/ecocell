@@ -71,7 +71,6 @@ const Messages = () => {
   const handleSendMessage = async (e) => {
     e.preventDefault();
     if ((!messageInput.trim() && !selectedFile) || !selectedChat || loading) return;
-    if (isGroupChat) return; // Grup chat için ayrı fonksiyon kullanılıyor
 
     setLoading(true);
     try {
@@ -80,20 +79,43 @@ const Messages = () => {
         fileData = await uploadMessageFile(selectedFile, user.uid);
       }
 
-      await sendMessage({
-        senderId: user.uid,
-        senderName: user.fullName || user.displayName || user.email,
-        senderDepartment: user.department || '',
-        recipientId: selectedChat.userId,
-        recipientName: selectedChat.userName,
-        recipientDepartment: selectedChat.userDepartment || '',
-        subject: 'Sohbet',
-        content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
-        fileUrl: fileData?.url,
-        fileName: fileData?.name,
-        fileSize: fileData?.size,
-        fileType: fileData?.type
-      });
+      // Grup chat ise tüm üyelere gönder
+      if (isGroupChat && selectedChat.members) {
+        const sendPromises = selectedChat.members.map(recipient => {
+          return sendMessage({
+            senderId: user.uid,
+            senderName: user.fullName || user.displayName || user.email,
+            senderDepartment: user.department || '',
+            recipientId: recipient.id,
+            recipientName: recipient.fullName || recipient.displayName || recipient.email,
+            recipientDepartment: recipient.department || '',
+            subject: `${selectedChat.userName} Mesajı`,
+            content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
+            fileUrl: fileData?.url,
+            fileName: fileData?.name,
+            fileSize: fileData?.size,
+            fileType: fileData?.type
+          });
+        });
+
+        await Promise.all(sendPromises);
+      } else {
+        // Normal chat
+        await sendMessage({
+          senderId: user.uid,
+          senderName: user.fullName || user.displayName || user.email,
+          senderDepartment: user.department || '',
+          recipientId: selectedChat.userId,
+          recipientName: selectedChat.userName,
+          recipientDepartment: selectedChat.userDepartment || '',
+          subject: 'Sohbet',
+          content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
+          fileUrl: fileData?.url,
+          fileName: fileData?.name,
+          fileSize: fileData?.size,
+          fileType: fileData?.type
+        });
+      }
 
       setMessageInput('');
       setSelectedFile(null);
