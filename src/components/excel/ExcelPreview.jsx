@@ -49,15 +49,6 @@ const ExcelPreview = ({
 
   useEffect(() => {
     setShowFallback(!hasViewer);
-    
-    // Her dosya değiştiğinde A1 hücresine scroll et
-    setTimeout(() => {
-      const renderArea = document.querySelector('.excel-render-area');
-      if (renderArea) {
-        renderArea.scrollTop = 0;
-        renderArea.scrollLeft = 0;
-      }
-    }, 100);
   }, [hasViewer, fileName]);
 
   useEffect(() => {
@@ -174,6 +165,7 @@ const ExcelPreview = ({
             )
           ) : (
             <iframe
+              key={viewerUrl}
               className="excel-iframe"
               title={`Excel önizleme - ${fileName}`}
               src={viewerUrl}
@@ -223,6 +215,7 @@ const ExcelPreview = ({
                 )
               ) : (
                 <iframe
+                  key={`fullscreen-${viewerUrl}`}
                   className="excel-iframe"
                   title={`Excel Tam Ekran - ${fileName}`}
                   src={viewerUrl}

@@ -93,6 +93,7 @@ const sanitizeSheetHtml = (rawHtml) => {
     '</head>',
     '<body>',
     cleanedBody,
+    '<script>window.onload = function() { window.scrollTo(0, 0); };</script>',
     '</body>',
     '</html>'
   ].join('');
@@ -130,10 +131,11 @@ const buildOfficeViewerUrl = (directUrl) => {
     wdDownloadButton: '0',
     wdDefaultZoom: '100',
     wdFitToPage: '1',
-    wdPageView: '1'
+    wdPageView: '1',
+    ActiveCell: 'A1'
   });
 
-  return `${base}?${params.toString()}`;
+  return `${base}?${params.toString()}#A1`;
 };
 
 // Excel dosyası yükle
