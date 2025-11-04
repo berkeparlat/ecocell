@@ -66,6 +66,82 @@
   box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
 }
 
+/* Dual View Layout */
+.sales-dual-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: calc(100vh - 180px);
+}
+
+.sales-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.panel-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff5722 100%);
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.panel-header svg {
+  flex-shrink: 0;
+}
+
+.panel-header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.sales-panel .excel-preview-card {
+  flex: 1;
+  margin: 0;
+  border-radius: 0;
+  box-shadow: none;
+  height: 100%;
+}
+
+.empty-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: #9e9e9e;
+}
+
+.empty-panel svg {
+  opacity: 0.5;
+}
+
+.empty-panel p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .sales-dual-view {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+  
+  .sales-panel {
+    min-height: 600px;
+  }
+}
+
 /* Dosya bilgisi banner */
 .file-info-banner {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);

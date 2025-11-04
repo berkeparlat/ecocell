@@ -85,6 +85,7 @@ async function handleFileChange(filePath) {
   // Dosya tipini belirle
   const stockPath = process.env.STOCK_FILE_PATH;
   const salesPath = process.env.SALES_FILE_PATH;
+  const shippingPath = process.env.SHIPPING_FILE_PATH;
   
   let fileType = 'unknown';
   
@@ -92,6 +93,8 @@ async function handleFileChange(filePath) {
     fileType = 'stock';
   } else if (filePath === salesPath) {
     fileType = 'sales';
+  } else if (filePath === shippingPath) {
+    fileType = 'shipping';
   }
   
   if (fileType === 'unknown') {
@@ -109,7 +112,8 @@ async function handleFileChange(filePath) {
 // İzlenecek dosyaları al
 const watchFiles = [
   process.env.STOCK_FILE_PATH,
-  process.env.SALES_FILE_PATH
+  process.env.SALES_FILE_PATH,
+  process.env.SHIPPING_FILE_PATH
 ].filter(Boolean);
 
 if (watchFiles.length === 0) {
