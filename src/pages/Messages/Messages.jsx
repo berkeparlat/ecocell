@@ -20,7 +20,6 @@ const Messages = () => {
   const [isGroupChat, setIsGroupChat] = useState(false);
   const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
   const [isUsersExpanded, setIsUsersExpanded] = useState(true);
-  const [showDeleteMenu, setShowDeleteMenu] = useState(null);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -166,7 +165,6 @@ const Messages = () => {
 
     try {
       await deleteMessage(messageId);
-      setShowDeleteMenu(null);
     } catch (error) {
       console.error('Mesaj silme hatası:', error);
       alert('Mesaj silinirken bir hata oluştu.');
@@ -546,8 +544,6 @@ const Messages = () => {
                   <div
                     key={msg.id}
                     className={`message-bubble ${msg.senderId === user.uid ? 'sent' : 'received'}`}
-                    onMouseEnter={() => setShowDeleteMenu(msg.id)}
-                    onMouseLeave={() => setShowDeleteMenu(null)}
                   >
                     {msg.fileUrl && (
                       <div className="message-file">
@@ -573,7 +569,7 @@ const Messages = () => {
                         </span>
                       )}
                     </div>
-                    {showDeleteMenu === msg.id && msg.senderId === user.uid && (
+                    {msg.senderId === user.uid && (
                       <button
                         className="delete-message-btn"
                         onClick={() => handleDeleteMessage(msg.id)}
