@@ -138,15 +138,27 @@ const Messages = () => {
       return;
     }
 
-    const departmentUsers = users.filter(u => u.department === selectedDepartment);
-    if (departmentUsers.length === 0) {
+    // Tüm kullanıcılara mı yoksa belirli birime mi gönderilecek?
+    const targetUsers = selectedDepartment === 'all' 
+      ? users 
+      : users.filter(u => u.department === selectedDepartment);
+
+    if (targetUsers.length === 0) {
       alert('Bu birimde kullanıcı bulunamadı.');
+      return;
+    }
+
+    const messageSubject = selectedDepartment === 'all' 
+      ? 'Karafiber Elyaf Duyurusu' 
+      : `${selectedDepartment} Birimi Mesajı`;
+
+    if (selectedDepartment === 'all' && !confirm(`Mesaj tüm kullanıcılara (${targetUsers.length} kişi) gönderilecek. Onaylıyor musunuz?`)) {
       return;
     }
 
     setLoading(true);
     try {
-      const sendPromises = departmentUsers.map(recipient => {
+      const sendPromises = targetUsers.map(recipient => {
         return sendMessage({
           senderId: user.uid,
           senderName: user.fullName || user.displayName || user.email,
@@ -154,55 +166,18 @@ const Messages = () => {
           recipientId: recipient.id,
           recipientName: recipient.fullName || recipient.displayName || recipient.email,
           recipientDepartment: recipient.department || '',
-          subject: `${selectedDepartment} Birimi Mesajı`,
+          subject: messageSubject,
           content: messageInput.trim()
         });
       });
 
       await Promise.all(sendPromises);
-      alert(`Mesaj ${departmentUsers.length} kişiye başarıyla gönderildi!`);
+      alert(`Mesaj ${targetUsers.length} kişiye başarıyla gönderildi!`);
       setMessageInput('');
       setSelectedDepartment('');
       setShowNewChat(false);
     } catch (error) {
       console.error('Grup mesajı gönderme hatası:', error);
-      alert('Mesajlar gönderilemedi!');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleSendToAll = async () => {
-    if (!messageInput.trim()) {
-      alert('Lütfen mesaj yazın.');
-      return;
-    }
-
-    if (!confirm(`Mesaj tüm kullanıcılara (${users.length} kişi) gönderilecek. Onaylıyor musunuz?`)) {
-      return;
-    }
-
-    setLoading(true);
-    try {
-      const sendPromises = users.map(recipient => {
-        return sendMessage({
-          senderId: user.uid,
-          senderName: user.fullName || user.displayName || user.email,
-          senderDepartment: user.department || '',
-          recipientId: recipient.id,
-          recipientName: recipient.fullName || recipient.displayName || recipient.email,
-          recipientDepartment: recipient.department || '',
-          subject: 'Karafiber Elyaf Duyurusu',
-          content: messageInput.trim()
-        });
-      });
-
-      await Promise.all(sendPromises);
-      alert(`Mesaj ${users.length} kişiye başarıyla gönderildi!`);
-      setMessageInput('');
-      setShowNewChat(false);
-    } catch (error) {
-      console.error('Toplu mesaj gönderme hatası:', error);
       alert('Mesajlar gönderilemedi!');
     } finally {
       setLoading(false);
@@ -229,33 +204,14 @@ const Messages = () => {
               </div>
               
               <div className="department-group-section">
-                <div className="section-title">Tüm Karafiber Elyaf'a Gönder</div>
-                <div className="group-message-box">
-                  <textarea
-                    placeholder={`Tüm kullanıcılara mesaj yazın (${users.length} kişi)...`}
-                    value={messageInput}
-                    onChange={(e) => setMessageInput(e.target.value)}
-                    rows="3"
-                    disabled={loading}
-                  />
-                  <button 
-                    className="send-all-btn"
-                    onClick={handleSendToAll}
-                    disabled={loading || !messageInput.trim()}
-                  >
-                    {loading ? 'Gönderiliyor...' : `Tüm Kullanıcılara Gönder (${users.length})`}
-                  </button>
-                </div>
-              </div>
-
-              <div className="department-group-section">
-                <div className="section-title">Birime Mesaj Gönder</div>
+                <div className="section-title">Birime veya Tüm Kullanıcılara Mesaj Gönder</div>
                 <select 
                   className="department-select"
                   value={selectedDepartment}
                   onChange={(e) => setSelectedDepartment(e.target.value)}
                 >
                   <option value="">Birim seçin...</option>
+                  <option value="all">🏢 Tüm Karafiber Elyaf ({users.length} kişi)</option>
                   {departments && departments.map(dept => (
                     <option key={dept} value={dept}>{dept}</option>
                   ))}
@@ -264,18 +220,26 @@ const Messages = () => {
                 {selectedDepartment && (
                   <div className="group-message-box">
                     <textarea
-                      placeholder={`${selectedDepartment} birimine mesaj yazın...`}
+                      placeholder={
+                        selectedDepartment === 'all' 
+                          ? `Tüm kullanıcılara mesaj yazın (${users.length} kişi)...` 
+                          : `${selectedDepartment} birimine mesaj yazın...`
+                      }
                       value={messageInput}
                       onChange={(e) => setMessageInput(e.target.value)}
                       rows="3"
                       disabled={loading}
                     />
                     <button 
-                      className="send-group-btn"
+                      className={selectedDepartment === 'all' ? 'send-all-btn' : 'send-group-btn'}
                       onClick={handleSendToDepartment}
                       disabled={loading || !messageInput.trim()}
                     >
-                      {loading ? 'Gönderiliyor...' : `${selectedDepartment} Birimine Gönder`}
+                      {loading ? 'Gönderiliyor...' : 
+                        selectedDepartment === 'all' 
+                          ? `Tüm Kullanıcılara Gönder (${users.length})`
+                          : `${selectedDepartment} Birimine Gönder`
+                      }
                     </button>
                   </div>
                 )}
