@@ -144,3 +144,86 @@
 [2025-11-03T15:30:18.829Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
 [2025-11-04T04:56:25.903Z] İzleyici hatası: ECONNRESET: connection reset by peer, watch
 [2025-11-04T04:56:25.908Z] İzleyici hatası: ECONNRESET: connection reset by peer, watch
+[2025-11-04T05:21:52.520Z] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[2025-11-04T05:21:52.997Z] ============================================================
+[2025-11-04T05:21:52.997Z] Excel Dosya İzleyici Başlatıldı
+[2025-11-04T05:21:52.998Z] ============================================================
+[2025-11-04T05:21:52.999Z] İzlenen dosyalar:
+[2025-11-04T05:21:53.000Z]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:21:53.000Z]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-04T05:21:53.001Z]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T05:21:53.002Z] ============================================================
+[2025-11-04T05:21:53.081Z] ✓ Dosya izleyici hazır ve çalışıyor...
+[2025-11-04T05:31:21.207Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:31:23.212Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:31:25.145Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:38:04.298Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:38:06.308Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:38:08.242Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:38:10.084Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:38:12.085Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:38:13.258Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:39:22.898Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:39:24.903Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:39:27.171Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:47:19.455Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:47:21.455Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:47:23.012Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:50:06.714Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:50:08.729Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:50:10.056Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:50:29.069Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:50:31.076Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:50:32.354Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:52:59.153Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:53:01.160Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:53:02.732Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T05:59:32.346Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T05:59:34.355Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T05:59:35.820Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:00:39.845Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[2025-11-04T06:00:41.856Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[2025-11-04T06:00:43.213Z] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:00:43.841Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:00:45.856Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:00:47.804Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:02:22.152Z] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-04T06:02:24.161Z] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[2025-11-04T06:02:25.521Z] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:20:26.994Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:20:28.996Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:20:31.365Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:24:56.310Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:24:58.315Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:25:00.411Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:25:01.759Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:25:03.762Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:25:05.712Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:30:56.191Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:30:58.204Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:31:00.910Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:31:21.756Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:31:23.770Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:31:26.131Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:40:32.335Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:40:34.342Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:40:36.641Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:57:43.881Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T06:57:45.882Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T06:57:49.098Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T06:58:08.852Z] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[2025-11-04T06:58:10.858Z] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[2025-11-04T06:58:12.561Z] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T07:03:11.260Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T07:03:13.275Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T07:03:15.644Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T07:05:34.124Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T07:05:36.136Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T07:05:38.321Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T07:05:50.576Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T07:05:52.581Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T07:05:54.696Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T07:07:11.950Z] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[2025-11-04T07:07:13.966Z] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[2025-11-04T07:07:16.074Z] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[2025-11-04T07:32:19.490Z] İzleyici durduruluyor...
