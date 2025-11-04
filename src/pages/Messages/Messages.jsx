@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, uploadMessageFile } from '../../services/messageService';
-import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download } from 'lucide-react';
+import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download, ChevronDown } from 'lucide-react';
 import './Messages.css';
 
 const Messages = () => {
@@ -18,6 +18,8 @@ const Messages = () => {
   const [loading, setLoading] = useState(false);
   const [selectedFile, setSelectedFile] = useState(null);
   const [isGroupChat, setIsGroupChat] = useState(false);
+  const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
+  const [isUsersExpanded, setIsUsersExpanded] = useState(true);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -300,46 +302,77 @@ const Messages = () => {
               </div>
 
               <div className="users-list">
-                {/* Birimler */}
+                {/* Birimler Accordion */}
                 {!searchQuery && departments && (
                   <>
-                    <div className="list-section-title">Birimler</div>
-                    <div
-                      className="user-item department-item"
-                      onClick={() => handleStartDepartmentChat('all')}
+                    <div 
+                      className="list-section-header"
+                      onClick={() => setIsDepartmentsExpanded(!isDepartmentsExpanded)}
                     >
-                      <div className="user-avatar department-avatar">
-                        🏢
+                      <div className="section-header-content">
+                        <span className="section-title">Birimler</span>
+                        <span className="section-count">({departments.length + 1})</span>
                       </div>
-                      <div className="user-info-chat">
-                        <div className="user-name-chat">Tüm Karafiber Elyaf</div>
-                        <div className="user-dept">{users.length} kişi</div>
-                      </div>
+                      <ChevronDown 
+                        size={18} 
+                        className={`section-chevron ${isDepartmentsExpanded ? 'expanded' : ''}`}
+                      />
                     </div>
-                    {departments.map(dept => {
-                      const deptUsers = users.filter(u => u.department === dept);
-                      return (
+                    
+                    {isDepartmentsExpanded && (
+                      <>
                         <div
-                          key={dept}
                           className="user-item department-item"
-                          onClick={() => handleStartDepartmentChat(dept)}
+                          onClick={() => handleStartDepartmentChat('all')}
                         >
                           <div className="user-avatar department-avatar">
-                            👥
+                            🏢
                           </div>
                           <div className="user-info-chat">
-                            <div className="user-name-chat">{dept}</div>
-                            <div className="user-dept">{deptUsers.length} kişi</div>
+                            <div className="user-name-chat">Tüm Karafiber Elyaf</div>
+                            <div className="user-dept">{users.length} kişi</div>
                           </div>
                         </div>
-                      );
-                    })}
-                    <div className="list-section-title">Kişiler</div>
+                        {departments.map(dept => {
+                          const deptUsers = users.filter(u => u.department === dept);
+                          return (
+                            <div
+                              key={dept}
+                              className="user-item department-item"
+                              onClick={() => handleStartDepartmentChat(dept)}
+                            >
+                              <div className="user-avatar department-avatar">
+                                👥
+                              </div>
+                              <div className="user-info-chat">
+                                <div className="user-name-chat">{dept}</div>
+                                <div className="user-dept">{deptUsers.length} kişi</div>
+                              </div>
+                            </div>
+                          );
+                        })}
+                      </>
+                    )}
                   </>
                 )}
                 
+                {/* Kişiler Accordion */}
+                <div 
+                  className="list-section-header"
+                  onClick={() => setIsUsersExpanded(!isUsersExpanded)}
+                >
+                  <div className="section-header-content">
+                    <span className="section-title">Kişiler</span>
+                    <span className="section-count">({filteredUsers.length})</span>
+                  </div>
+                  <ChevronDown 
+                    size={18} 
+                    className={`section-chevron ${isUsersExpanded ? 'expanded' : ''}`}
+                  />
+                </div>
+                
                 {/* Kullanıcılar */}
-                {filteredUsers.map(u => (
+                {isUsersExpanded && filteredUsers.map(u => (
                   <div
                     key={u.id}
                     className="user-item"

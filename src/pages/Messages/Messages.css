@@ -255,6 +255,52 @@
   letter-spacing: 0.5px;
 }
 
+/* Accordion Section Header */
+.list-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  background: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background 0.2s;
+}
+
+.list-section-header:hover {
+  background: #f0f2f5;
+}
+
+.section-header-content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.section-title {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #00a884;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-count {
+  font-size: 0.8125rem;
+  color: #757575;
+  font-weight: 500;
+}
+
+.section-chevron {
+  color: #00a884;
+  transition: transform 0.3s ease;
+}
+
+.section-chevron.expanded {
+  transform: rotate(180deg);
+}
+
+
 /* Department Items */
 .department-item {
   background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
