@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead } from '../../services/messageService';
-import { Send, Inbox, ArrowLeft, User, Search } from 'lucide-react';
+import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, uploadMessageFile } from '../../services/messageService';
+import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download } from 'lucide-react';
 import './Messages.css';
 
 const Messages = () => {
@@ -16,8 +16,11 @@ const Messages = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('');
   const [loading, setLoading] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+  const [isGroupChat, setIsGroupChat] = useState(false);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
+  const fileInputRef = useRef(null);
 
   useEffect(() => {
     if (!user) return;
@@ -64,10 +67,16 @@ const Messages = () => {
   };
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if (!messageInput.trim() || !selectedChat || loading) return;
+    if ((!messageInput.trim() && !selectedFile) || !selectedChat || loading) return;
+    if (isGroupChat) return; // Grup chat için ayrı fonksiyon kullanılıyor
 
     setLoading(true);
     try {
+      let fileData = null;
+      if (selectedFile) {
+        fileData = await uploadMessageFile(selectedFile, user.uid);
+      }
+
       await sendMessage({
         senderId: user.uid,
         senderName: user.fullName || user.displayName || user.email,
@@ -76,10 +85,15 @@ const Messages = () => {
         recipientName: selectedChat.userName,
         recipientDepartment: selectedChat.userDepartment || '',
         subject: 'Sohbet',
-        content: messageInput.trim()
+        content: messageInput.trim() || (fileData ? '📎 Dosya' : ''),
+        fileUrl: fileData?.url,
+        fileName: fileData?.name,
+        fileSize: fileData?.size,
+        fileType: fileData?.type
       });
 
       setMessageInput('');
+      setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
       console.error('Mesaj gönderme hatası:', error);
@@ -89,8 +103,28 @@ const Messages = () => {
     }
   };
 
+  const handleFileSelect = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // 10MB limit
+      if (file.size > 10 * 1024 * 1024) {
+        alert('Dosya boyutu 10MB\'dan küçük olmalıdır.');
+        return;
+      }
+      setSelectedFile(file);
+    }
+  };
+
+  const removeFile = () => {
+    setSelectedFile(null);
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
   const handleSelectConversation = (conversation) => {
     setSelectedChat(conversation);
+    setIsGroupChat(false);
     setShowNewChat(false);
   };
   const handleStartNewChat = (selectedUser) => {
@@ -101,6 +135,7 @@ const Messages = () => {
       lastMessage: null,
       unreadCount: 0
     });
+    setIsGroupChat(false);
     setShowNewChat(false);
   };
 
@@ -156,8 +191,25 @@ const Messages = () => {
       return;
     }
 
+    // Grup chat moduna geç
+    setIsGroupChat(true);
+    setSelectedChat({
+      userId: 'group_' + selectedDepartment,
+      userName: selectedDepartment === 'all' ? 'Tüm Karafiber Elyaf' : selectedDepartment,
+      userDepartment: selectedDepartment === 'all' ? `${targetUsers.length} kişi` : `${targetUsers.length} kişi`,
+      isGroup: true,
+      members: targetUsers
+    });
+    setShowNewChat(false);
+    
+    // Mesajı grup üyelerine gönder
     setLoading(true);
     try {
+      let fileData = null;
+      if (selectedFile) {
+        fileData = await uploadMessageFile(selectedFile, user.uid);
+      }
+
       const sendPromises = targetUsers.map(recipient => {
         return sendMessage({
           senderId: user.uid,
@@ -167,15 +219,31 @@ const Messages = () => {
           recipientName: recipient.fullName || recipient.displayName || recipient.email,
           recipientDepartment: recipient.department || '',
           subject: messageSubject,
-          content: messageInput.trim()
+          content: messageInput.trim(),
+          fileUrl: fileData?.url,
+          fileName: fileData?.name,
+          fileSize: fileData?.size,
+          fileType: fileData?.type
         });
       });
 
       await Promise.all(sendPromises);
-      alert(`Mesaj ${targetUsers.length} kişiye başarıyla gönderildi!`);
+      
+      // Chat'e mesajı ekle (görünüm için)
+      setChatMessages(prev => [...prev, {
+        id: Date.now(),
+        senderId: user.uid,
+        senderName: user.fullName || user.displayName || user.email,
+        content: messageInput.trim(),
+        createdAt: { toDate: () => new Date() },
+        status: 'sent',
+        fileUrl: fileData?.url,
+        fileName: fileData?.name
+      }]);
+      
       setMessageInput('');
-      setSelectedDepartment('');
-      setShowNewChat(false);
+      setSelectedFile(null);
+      scrollToBottom();
     } catch (error) {
       console.error('Grup mesajı gönderme hatası:', error);
       alert('Mesajlar gönderilemedi!');
@@ -344,8 +412,30 @@ const Messages = () => {
                     key={msg.id}
                     className={`message-bubble ${msg.senderId === user.uid ? 'sent' : 'received'}`}
                   >
-                    <div className="message-content-bubble">{msg.content}</div>
-                    <div className="message-time">{formatTime(msg.createdAt)}</div>
+                    {msg.fileUrl && (
+                      <div className="message-file">
+                        <a href={msg.fileUrl} target="_blank" rel="noopener noreferrer" className="file-link">
+                          <Paperclip size={16} />
+                          <span>{msg.fileName}</span>
+                          <Download size={14} />
+                        </a>
+                      </div>
+                    )}
+                    {msg.content && <div className="message-content-bubble">{msg.content}</div>}
+                    <div className="message-footer">
+                      <span className="message-time">{formatTime(msg.createdAt)}</span>
+                      {msg.senderId === user.uid && (
+                        <span className="message-status">
+                          {msg.status === 'read' ? (
+                            <CheckCheck size={16} className="status-read" />
+                          ) : msg.status === 'delivered' ? (
+                            <CheckCheck size={16} className="status-delivered" />
+                          ) : (
+                            <Check size={16} className="status-sent" />
+                          )}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 ))}
                 <div ref={chatEndRef} />
@@ -353,13 +443,34 @@ const Messages = () => {
 
               <form className="chat-input" onSubmit={handleSendMessage}>
                 <input
+                  ref={fileInputRef}
+                  type="file"
+                  style={{ display: 'none' }}
+                  onChange={handleFileSelect}
+                  accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt"
+                />
+                <button 
+                  type="button" 
+                  className="attach-btn"
+                  onClick={() => fileInputRef.current?.click()}
+                  disabled={loading || isGroupChat}
+                >
+                  <Paperclip size={20} />
+                </button>
+                {selectedFile && (
+                  <div className="selected-file">
+                    <span>{selectedFile.name}</span>
+                    <button type="button" onClick={removeFile}>×</button>
+                  </div>
+                )}
+                <input
                   type="text"
-                  placeholder="Mesaj yazın..."
+                  placeholder={isGroupChat ? "Mesaj gönderildi..." : "Mesaj yazın..."}
                   value={messageInput}
                   onChange={(e) => setMessageInput(e.target.value)}
-                  disabled={loading}
+                  disabled={loading || isGroupChat}
                 />
-                <button type="submit" disabled={loading || !messageInput.trim()}>
+                <button type="submit" disabled={loading || (!messageInput.trim() && !selectedFile) || isGroupChat}>
                   <Send size={20} />
                 </button>
               </form>

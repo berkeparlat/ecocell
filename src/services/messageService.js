@@ -11,7 +11,8 @@ import {
   getDocs,
   or
 } from 'firebase/firestore';
-import { db } from '../config/firebase';
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { db, storage } from '../config/firebase';
 
 const MESSAGES_COLLECTION = 'messages';
 
@@ -117,6 +118,40 @@ export const getUsers = async () => {
   }
 };
 
+// Dosya yükle (mesaj için)
+export const uploadMessageFile = async (file, senderId) => {
+  try {
+    const timestamp = Date.now();
+    const fileName = `${timestamp}_${file.name}`;
+    const storageRef = ref(storage, `messages/${senderId}/${fileName}`);
+    
+    await uploadBytes(storageRef, file);
+    const downloadURL = await getDownloadURL(storageRef);
+    
+    return {
+      url: downloadURL,
+      name: file.name,
+      size: file.size,
+      type: file.type
+    };
+  } catch (error) {
+    console.error('Dosya yükleme hatası:', error);
+    throw error;
+  }
+};
+
+// Mesajı görüldü olarak işaretle
+export const markMessageAsDelivered = async (messageId) => {
+  try {
+    await updateDoc(doc(db, MESSAGES_COLLECTION, messageId), {
+      status: 'delivered',
+      deliveredAt: Timestamp.now()
+    });
+  } catch (error) {
+    console.error('Mesaj iletildi güncelleme hatası:', error);
+  }
+};
+
 // Konuşmadaki tüm mesajları okundu olarak işaretle
 export const markConversationAsRead = async (userId, otherUserId) => {
   try {
@@ -134,7 +169,8 @@ export const markConversationAsRead = async (userId, otherUserId) => {
       updatePromises.push(
         updateDoc(doc(db, MESSAGES_COLLECTION, document.id), {
           read: true,
-          readAt: Timestamp.now()
+          readAt: Timestamp.now(),
+          status: 'read'
         })
       );
     });
