@@ -20,6 +20,7 @@ const Messages = () => {
   const [isGroupChat, setIsGroupChat] = useState(false);
   const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
   const [isUsersExpanded, setIsUsersExpanded] = useState(true);
+  const [contextMenu, setContextMenu] = useState(null);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
   const fileInputRef = useRef(null);
@@ -33,7 +34,14 @@ const Messages = () => {
       setConversations(conversations);
     });
 
-    return () => unsubscribe();
+    // Context menu kapatma
+    const handleClick = () => setContextMenu(null);
+    document.addEventListener('click', handleClick);
+
+    return () => {
+      unsubscribe();
+      document.removeEventListener('click', handleClick);
+    };
   }, [user]);
 
   useEffect(() => {
@@ -165,10 +173,22 @@ const Messages = () => {
 
     try {
       await deleteMessage(messageId);
+      setContextMenu(null);
     } catch (error) {
       console.error('Mesaj silme hatası:', error);
       alert('Mesaj silinirken bir hata oluştu.');
     }
+  };
+
+  const handleContextMenu = (e, msg) => {
+    if (msg.senderId !== user.uid) return; // Sadece kendi mesajlarında
+    
+    e.preventDefault();
+    setContextMenu({
+      x: e.clientX,
+      y: e.clientY,
+      messageId: msg.id
+    });
   };
 
   const handleDeleteConversation = async () => {
@@ -544,6 +564,7 @@ const Messages = () => {
                   <div
                     key={msg.id}
                     className={`message-bubble ${msg.senderId === user.uid ? 'sent' : 'received'}`}
+                    onContextMenu={(e) => handleContextMenu(e, msg)}
                   >
                     {msg.fileUrl && (
                       <div className="message-file">
@@ -569,19 +590,30 @@ const Messages = () => {
                         </span>
                       )}
                     </div>
-                    {msg.senderId === user.uid && (
-                      <button
-                        className="delete-message-btn"
-                        onClick={() => handleDeleteMessage(msg.id)}
-                        title="Mesajı Sil"
-                      >
-                        <Trash2 size={14} />
-                      </button>
-                    )}
                   </div>
                 ))}
                 <div ref={chatEndRef} />
               </div>
+
+              {/* Context Menu */}
+              {contextMenu && (
+                <div 
+                  className="context-menu"
+                  style={{ 
+                    top: contextMenu.y, 
+                    left: contextMenu.x 
+                  }}
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <button
+                    className="context-menu-item delete"
+                    onClick={() => handleDeleteMessage(contextMenu.messageId)}
+                  >
+                    <Trash2 size={16} />
+                    <span>Mesajı Sil</span>
+                  </button>
+                </div>
+              )}
 
               <form className="chat-input" onSubmit={handleSendMessage}>
                 <input
