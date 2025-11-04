@@ -4,24 +4,24 @@
 }
 
 .sales-container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem;
 }
 
 .sales-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 1rem 1.5rem;
   background: white;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .sales-container .excel-preview-card {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 .header-title {
