@@ -50,7 +50,7 @@ const AdminPanel = () => {
     password: ''
   });
     // Departments management state
-  const [localDepartments, setLocalDepartments] = useState([...DEPARTMENTS]);
+  const [localDepartments, setLocalDepartments] = useState([]);
   const [newDepartment, setNewDepartment] = useState('');
   const [departmentError, setDepartmentError] = useState('');
   const [savingDepartments, setSavingDepartments] = useState(false);
