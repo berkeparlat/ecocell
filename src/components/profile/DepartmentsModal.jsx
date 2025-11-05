@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { useApp, DEPARTMENTS } from '../../context/AppContext';
+import { useApp } from '../../context/AppContext';
 import { Plus, Trash2, Building2, Users, X } from 'lucide-react';
 import Input from '../ui/Input';
 import Button from '../ui/Button';
 import './DepartmentsModal.css';
 
 const DepartmentsModal = ({ onClose }) => {
-  const { updateDepartments, departments = DEPARTMENTS } = useApp();
+  const { updateDepartments, departments = [] } = useApp();
   const [localDepartments, setLocalDepartments] = useState([...departments]);
   const [newDepartment, setNewDepartment] = useState('');
   const [error, setError] = useState('');

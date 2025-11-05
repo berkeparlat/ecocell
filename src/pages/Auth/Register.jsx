@@ -21,6 +21,11 @@ const Register = () => {
     department: '',
   });
 
+  // Debug: departments değişimini izle
+  useEffect(() => {
+    console.log('Register - Departments güncellendi:', departments);
+  }, [departments]);
+
   useEffect(() => {
     if (!Array.isArray(departments) || departments.length === 0) {
       return;
@@ -132,8 +137,13 @@ const Register = () => {
             name="department"
             value={formData.department}
             onChange={handleChange}
-            options={(departments || []).map(dept => ({ value: dept, label: dept }))}
+            options={
+              !departments || departments.length === 0
+                ? [{ value: '', label: 'Birimler yükleniyor...' }]
+                : departments.map(dept => ({ value: dept, label: dept }))
+            }
             placeholder="Biriminizi seçin"
+            disabled={!departments || departments.length === 0}
           />
 
           <Input
