@@ -322,3 +322,14 @@
 [05.11.2025 15:05:45] ✓ Firebase trigger listener başlatıldı
 [05.11.2025 15:05:45] ✓ Dosya izleyici hazır ve çalışıyor...
 [05.11.2025 15:06:03] İzleyici durduruluyor...
+[05.11.2025 15:07:24] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[05.11.2025 15:07:24] ============================================================
+[05.11.2025 15:07:24] Excel Dosya İzleyici Başlatıldı
+[05.11.2025 15:07:24] ============================================================
+[05.11.2025 15:07:24] İzlenen dosyalar:
+[05.11.2025 15:07:24]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[05.11.2025 15:07:24]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[05.11.2025 15:07:24]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[05.11.2025 15:07:24] ============================================================
+[05.11.2025 15:07:24] ✓ Firebase trigger listener başlatıldı
+[05.11.2025 15:07:24] ✓ Dosya izleyici hazır ve çalışıyor...

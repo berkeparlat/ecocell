@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Edit2, Trash2, Calendar, User, Building2, FileText, ArrowUpDown, MessageSquare } from 'lucide-react';
+import { Plus, Edit2, Trash2, Calendar, User, Building2, FileText, ArrowUpDown, MessageSquare, RefreshCw } from 'lucide-react';
 import TaskForm from './TaskForm';
 import TaskEditForm from './TaskEditForm';
 import QuickMessageModal from './QuickMessageModal';
 import Modal from '../ui/Modal';
 import Button from '../ui/Button';
+import { triggerFileWatcher } from '../../services/fileWatcherService';
 import './TaskTable.css';
 
 const TaskTable = () => {
@@ -15,6 +16,7 @@ const TaskTable = () => {
   const [messageTask, setMessageTask] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState('all');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
+  const [isRefreshing, setIsRefreshing] = useState(false);
 
   const statusOptions = [
     { id: 'all', label: 'Tümü', color: '#757575' },
@@ -118,6 +120,26 @@ const TaskTable = () => {
     return date.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
   };
 
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    try {
+      const result = await triggerFileWatcher();
+      if (result.success) {
+        // Başarılı bildirim göster (isteğe bağlı)
+        console.log('Dosya izleyici tetiklendi');
+      } else {
+        console.error('Dosya izleyici tetiklenemedi:', result.error);
+        alert('Excel dosyaları yenilenemedi. Lütfen tekrar deneyin.');
+      }
+    } catch (error) {
+      console.error('Yenileme hatası:', error);
+      alert('Excel dosyaları yenilenemedi. Lütfen tekrar deneyin.');
+    } finally {
+      // 2 saniye sonra animasyonu durdur
+      setTimeout(() => setIsRefreshing(false), 2000);
+    }
+  };
+
   return (
     <div className="task-table-container">
       <div className="table-header">
@@ -141,6 +163,17 @@ const TaskTable = () => {
               </button>
             ))}
           </div>
+
+          <Button 
+            variant="secondary" 
+            onClick={handleRefresh}
+            disabled={isRefreshing}
+            className="refresh-btn"
+            title="Excel dosyalarını şimdi yenile"
+          >
+            <RefreshCw size={18} className={isRefreshing ? 'spinning' : ''} />
+            Excel Yenile
+          </Button>
           
           <Button 
             variant="primary" 

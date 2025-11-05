@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useApp, DEPARTMENTS } from '../../context/AppContext';
+import { useApp } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { 
@@ -34,7 +34,7 @@ import { uploadExcelFile } from '../../services/excelService';
 import './AdminPanel.css';
 
 const AdminPanel = () => {
-  const { user, updateDepartments, departments = DEPARTMENTS } = useApp();
+  const { user, updateDepartments, departments = [] } = useApp();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('dashboard');
   const [loading, setLoading] = useState(true);

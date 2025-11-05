@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, ShoppingCart, Truck } from 'lucide-react';
 import { getLatestExcelFile } from '../../services/excelService';
+import { triggerFileWatcher } from '../../services/fileWatcherService';
 import ExcelPreview from '../../components/excel/ExcelPreview';
 import './SalesOrder.css';
 
@@ -17,6 +18,13 @@ const SalesOrder = () => {
   const loadLatestFiles = async () => {
     setLoading(true);
     try {
+      // Önce file-watcher'ı tetikle
+      console.log('🔄 File-watcher tetikleniyor...');
+      await triggerFileWatcher();
+      
+      // 2 saniye bekle (file-watcher dosyaları yüklesin)
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      
       console.log('🔍 SalesOrder: Dosyalar yükleniyor...');
       
       // Sipariş dosyası
