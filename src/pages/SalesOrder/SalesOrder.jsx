@@ -100,7 +100,7 @@ const SalesOrder = () => {
                   downloadUrl={shippingData.downloadUrl}
                   htmlContent={shippingData.html}
                   htmlDocument={shippingData.htmlDocument}
-                  accent="sales"
+                  accent="shipping"
                 />
               ) : (
                 <div className="empty-panel">
