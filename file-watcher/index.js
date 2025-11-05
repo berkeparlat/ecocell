@@ -155,6 +155,37 @@ watcher
   .on('error', error => log(`İzleyici hatası: ${error.message}`))
   .on('ready', () => log('✓ Dosya izleyici hazır ve çalışıyor...'));
 
+// Manuel tetikleme için Firebase listener
+const db = admin.firestore();
+const triggerRef = db.collection('meta').doc('fileWatcherTrigger');
+
+// Manuel tarama fonksiyonu
+async function manualScan() {
+  log('🔄 Manuel tarama başlatıldı...');
+  
+  for (const filePath of watchFiles) {
+    await handleFileChange(filePath);
+  }
+  
+  log('✓ Manuel tarama tamamlandı');
+}
+
+// Firebase trigger'ı dinle
+triggerRef.onSnapshot(async (snapshot) => {
+  if (!snapshot.exists) return;
+  
+  const data = snapshot.data();
+  if (data.trigger === true) {
+    log('🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...');
+    await manualScan();
+    
+    // Trigger'ı sıfırla
+    await triggerRef.update({ trigger: false, lastTriggered: admin.firestore.FieldValue.serverTimestamp() });
+  }
+});
+
+log('✓ Firebase trigger listener başlatıldı');
+
 // Graceful shutdown
 process.on('SIGINT', () => {
   log('İzleyici durduruluyor...');
