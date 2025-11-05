@@ -34,7 +34,18 @@ if (!fs.existsSync(logDir)) {
 
 // Log fonksiyonu
 function log(message) {
-  const timestamp = new Date().toISOString();
+  const now = new Date();
+  // Türkiye saatine çevir (UTC+3)
+  const turkeyTime = new Date(now.getTime() + (3 * 60 * 60 * 1000));
+  const timestamp = turkeyTime.toLocaleString('tr-TR', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  });
   const logMessage = `[${timestamp}] ${message}\n`;
   console.log(logMessage.trim());
   

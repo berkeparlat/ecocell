@@ -2,6 +2,11 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
     
+    // Admin kontrolü
+    function isAdmin() {
+      return request.auth != null && request.auth.token.email == 'berke.parlat27@gmail.com';
+    }
+    
     // Tasks koleksiyonu
     match /tasks/{taskId} {
       // Kullanıcı giriş yapmış olmalı
@@ -11,15 +16,18 @@ service cloud.firestore {
       allow create: if request.auth != null 
                     && request.resource.data.userId == request.auth.uid;
       
-      // Görev güncelleme ve silme
+      // Görev güncelleme ve silme (kendi görevi veya admin)
       allow update, delete: if request.auth != null 
-                            && resource.data.userId == request.auth.uid;
+                            && (resource.data.userId == request.auth.uid || isAdmin());
     }
     
-    // Users koleksiyonu (gelecekte kullanılabilir)
+    // Users koleksiyonu
     match /users/{userId} {
       allow read: if request.auth != null;
-      allow write: if request.auth != null && request.auth.uid == userId;
+      // Kullanıcı kendi bilgilerini güncelleyebilir VEYA admin tüm kullanıcıları güncelleyebilir
+      allow create: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow update: if request.auth != null && (request.auth.uid == userId || isAdmin());
+      allow delete: if isAdmin();
     }
     
     // Messages koleksiyonu
@@ -28,18 +36,27 @@ service cloud.firestore {
       allow create: if request.auth != null 
                     && request.resource.data.senderId == request.auth.uid;
       
-      // Kullanıcı sadece kendisine gelen mesajları okuyabilir
+      // Kullanıcı sadece kendisine gelen mesajları okuyabilir (veya admin)
       allow read: if request.auth != null 
                   && (resource.data.recipientId == request.auth.uid 
-                      || resource.data.senderId == request.auth.uid);
+                      || resource.data.senderId == request.auth.uid
+                      || isAdmin());
       
       // Kullanıcı sadece kendisine gelen mesajları güncelleyebilir (okundu işareti için)
       allow update: if request.auth != null 
-                    && resource.data.recipientId == request.auth.uid;
+                    && (resource.data.recipientId == request.auth.uid || isAdmin());
       
-      // Mesaj silme yalnızca alıcı tarafından yapılabilir
+      // Mesaj silme - gönderen veya alan silebilir veya admin
       allow delete: if request.auth != null 
-                    && resource.data.recipientId == request.auth.uid;
+                    && (resource.data.recipientId == request.auth.uid 
+                        || resource.data.senderId == request.auth.uid
+                        || isAdmin());
+    }
+    
+    // Departments koleksiyonu (admin paneli için)
+    match /departments/{docId} {
+      allow read: if request.auth != null;
+      allow write: if isAdmin();
     }
     
     // Diğer tüm koleksiyonları engelle
