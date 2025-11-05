@@ -136,7 +136,7 @@ export const AppProvider = ({ children }) => {
 
     const initialiseDepartments = async () => {
       try {
-        const ensured = await ensureDepartmentsDocument(DEPARTMENTS);
+        const ensured = await ensureDepartmentsDocument([]);
         if (isMounted && Array.isArray(ensured) && ensured.length > 0) {
           setDepartments(ensured);
         }
