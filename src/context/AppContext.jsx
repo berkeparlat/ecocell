@@ -22,30 +22,11 @@ export const useApp = () => {
   return context;
 };
 
-const readDepartmentsFromStorage = () => {
-  if (typeof window === 'undefined') {
-    return null;
-  }
-
-  try {
-    const stored = localStorage.getItem('karafiber_departments');
-    if (!stored) {
-      return null;
-    }
-
-    const parsed = JSON.parse(stored);
-    return Array.isArray(parsed) ? parsed : null;
-  } catch (error) {
-    console.error('Stored departments verisi okunamadi:', error);
-    return null;
-  }
-};
-
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
   const [viewMode, setViewMode] = useState('board');
-  const [departments, setDepartments] = useState(() => readDepartmentsFromStorage() || []);
+  const [departments, setDepartments] = useState([]);
   const tasksListenerRef = useRef(null);
   const departmentsListenerRef = useRef(null);
   const userProfileListenerRef = useRef(null);
@@ -168,18 +149,6 @@ export const AppProvider = ({ children }) => {
     };
   }, []);
 
-  useEffect(() => {
-    if (typeof window === 'undefined') {
-      return;
-    }
-
-    try {
-      localStorage.setItem('karafiber_departments', JSON.stringify(departments));
-    } catch (error) {
-      console.error('Birimler kaydedilirken hata:', error);
-    }
-  }, [departments]);
-
   const login = (userData) => {
     setUser(userData);
     localStorage.setItem('karafiber_user', JSON.stringify(userData));
@@ -192,8 +161,10 @@ export const AppProvider = ({ children }) => {
     }
     setUser(null);
     setTasks([]);
+    setDepartments([]);
     localStorage.removeItem('karafiber_user');
     localStorage.removeItem('karafiber_tasks');
+    localStorage.removeItem('karafiber_departments');
   };
 
   const normaliseDepartments = (list) => {
