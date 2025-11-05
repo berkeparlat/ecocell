@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, FileSpreadsheet } from 'lucide-react';
 import { getLatestExcelFile } from '../../services/excelService';
-import { triggerFileWatcher } from '../../services/fileWatcherService';
 import ExcelPreview from '../../components/excel/ExcelPreview';
 import './DailyStock.css';
 
@@ -17,13 +16,6 @@ const DailyStock = () => {
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-      // Önce file-watcher'ı tetikle
-      console.log('🔄 File-watcher tetikleniyor...');
-      await triggerFileWatcher();
-      
-      // 2 saniye bekle (file-watcher dosyaları yüklesin)
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
       console.log('🔍 DailyStock: Dosya yükleniyor...');
       const file = await getLatestExcelFile('stock');
       console.log('📁 DailyStock: Bulunan dosya:', file);
@@ -55,10 +47,6 @@ const DailyStock = () => {
               <p>Güncel stok bilgilerini görüntüleyin</p>
             </div>
           </div>
-          <button className="refresh-btn" onClick={loadLatestFile}>
-            <RefreshCw size={18} />
-            Yenile
-          </button>
         </div>
         {loading ? (
           <div className="loading-state">
