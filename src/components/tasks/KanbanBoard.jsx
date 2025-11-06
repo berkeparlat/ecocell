@@ -8,7 +8,7 @@ import { Plus } from 'lucide-react';
 import './KanbanBoard.css';
 
 const KanbanBoard = () => {
-  const { tasks, currentProject, moveTask } = useApp();
+  const { tasks, currentProject, moveTask, user } = useApp();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState('todo');
 
@@ -19,7 +19,10 @@ const KanbanBoard = () => {
     { id: 'done', title: 'Tamamlandı', color: '#4caf50' },
   ];
 
-  const projectTasks = tasks; // Artık tüm tasklar gösteriliyor
+  // Kullanıcı kendi birimindeki işleri görsün (admin hariç)
+  const projectTasks = user?.email === 'berke.parlat27@gmail.com'
+    ? tasks
+    : tasks.filter(t => t.department === user?.department);
 
   const handleDragStart = (e, taskId) => {
     e.dataTransfer.setData('taskId', taskId);

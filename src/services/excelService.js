@@ -123,8 +123,8 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  // Hepsi A1'den başlasın
-  const activeCell = 'A1';
+  // Elyaf Yüklemeleri A1985'ten, diğerleri A1'den başlasın
+  const activeCell = fileType === 'shipping' ? 'A1985' : 'A1';
   
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),

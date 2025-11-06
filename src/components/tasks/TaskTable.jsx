@@ -9,7 +9,7 @@ import Button from '../ui/Button';
 import './TaskTable.css';
 
 const TaskTable = () => {
-  const { tasks, deleteTask } = useApp();
+  const { tasks, deleteTask, user } = useApp();
   const [showTaskForm, setShowTaskForm] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [messageTask, setMessageTask] = useState(null);
@@ -23,9 +23,14 @@ const TaskTable = () => {
     { id: 'done', label: 'Tamamlandı', color: '#4caf50' },
   ];
 
-  const filteredTasks = selectedStatus === 'all' 
+  // Kullanıcı kendi birimindeki işleri görsün (admin hariç - admin hepsini görür)
+  const userDepartmentTasks = user?.email === 'berke.parlat27@gmail.com' 
     ? tasks 
-    : tasks.filter(t => t.status === selectedStatus);
+    : tasks.filter(t => t.department === user?.department);
+
+  const filteredTasks = selectedStatus === 'all' 
+    ? userDepartmentTasks 
+    : userDepartmentTasks.filter(t => t.status === selectedStatus);
 
   const handleSort = (key) => {
     let direction = 'asc';

@@ -617,3 +617,7 @@
 [06.11.2025 17:24:16] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
 [06.11.2025 17:24:18] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
 [06.11.2025 17:24:21] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 17:30:39] İzleyici hatası: ECONNRESET: connection reset by peer, watch
+[06.11.2025 17:30:54] İzleyici hatası: ECONNRESET: connection reset by peer, watch
+[06.11.2025 17:30:54] İzleyici hatası: UNKNOWN: unknown error, watch
+[06.11.2025 17:30:54] İzleyici hatası: ECONNRESET: connection reset by peer, stat '\\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx'
