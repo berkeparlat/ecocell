@@ -123,8 +123,15 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  // Elyaf Yüklemeleri A1985'ten, diğerleri A1'den başlasın
-  const activeCell = fileType === 'shipping' ? 'A1985' : 'A1';
+  // Dosya tipine göre başlangıç hücresi
+  let activeCell = 'A1';
+  if (fileType === 'shipping') {
+    activeCell = 'A1985';
+  } else if (fileType === 'electrical-maintenance' || fileType === 'mechanical-maintenance') {
+    activeCell = 'A1';
+  } else if (fileType === 'electrical-downtime' || fileType === 'mechanical-downtime') {
+    activeCell = 'A1';
+  }
   
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),

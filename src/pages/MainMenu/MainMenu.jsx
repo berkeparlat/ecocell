@@ -20,6 +20,20 @@ const MainMenu = () => {
       color: '#2196F3'
     },
     {
+      id: 'maintenance-plan',
+      title: 'Bakım Günlük İş Planı',
+      icon: '🔧',
+      path: '/maintenance-plan',
+      color: '#9C27B0'
+    },
+    {
+      id: 'maintenance-downtime',
+      title: 'Bakım Duruş Listesi',
+      icon: '⚠️',
+      path: '/maintenance-downtime',
+      color: '#FF5722'
+    },
+    {
       id: 'work-tracking',
       title: 'İş Takibi',
       icon: '✓',

@@ -6,6 +6,8 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MainMenu from './pages/MainMenu/MainMenu';
 import DailyStock from './pages/DailyStock/DailyStock';
 import SalesOrder from './pages/SalesOrder/SalesOrder';
+import MaintenancePlan from './pages/MaintenancePlan/MaintenancePlan';
+import MaintenanceDowntime from './pages/MaintenanceDowntime/MaintenanceDowntime';
 import MonthlyCalendar from './pages/MonthlyCalendar/MonthlyCalendar';
 import Messages from './pages/Messages/Messages';
 import AdminPanel from './pages/AdminPanel/AdminPanel';
@@ -71,6 +73,22 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <SalesOrder />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/maintenance-plan" 
+          element={
+            <ProtectedRoute>
+              <MaintenancePlan />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/maintenance-downtime" 
+          element={
+            <ProtectedRoute>
+              <MaintenanceDowntime />
             </ProtectedRoute>
           } 
         />
