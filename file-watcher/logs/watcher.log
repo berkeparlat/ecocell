@@ -621,3 +621,15 @@
 [06.11.2025 17:30:54] İzleyici hatası: ECONNRESET: connection reset by peer, watch
 [06.11.2025 17:30:54] İzleyici hatası: UNKNOWN: unknown error, watch
 [06.11.2025 17:30:54] İzleyici hatası: ECONNRESET: connection reset by peer, stat '\\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx'
+[06.11.2025 20:10:21] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[06.11.2025 20:10:21] ============================================================
+[06.11.2025 20:10:21] Excel Dosya İzleyici Başlatıldı
+[06.11.2025 20:10:21] ============================================================
+[06.11.2025 20:10:21] İzlenen dosyalar:
+[06.11.2025 20:10:21]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 20:10:21]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 20:10:21]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 20:10:21] ============================================================
+[06.11.2025 20:10:22] ✓ Firebase trigger listener başlatıldı
+[06.11.2025 20:10:22] ✓ Dosya izleyici hazır ve çalışıyor...
+[06.11.2025 20:10:54] İzleyici durduruluyor...

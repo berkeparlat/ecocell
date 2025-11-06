@@ -97,6 +97,10 @@ async function handleFileChange(filePath) {
   const stockPath = process.env.STOCK_FILE_PATH;
   const salesPath = process.env.SALES_FILE_PATH;
   const shippingPath = process.env.SHIPPING_FILE_PATH;
+  const electricalMaintenancePath = process.env.ELECTRICAL_MAINTENANCE_FILE_PATH;
+  const mechanicalMaintenancePath = process.env.MECHANICAL_MAINTENANCE_FILE_PATH;
+  const electricalDowntimePath = process.env.ELECTRICAL_DOWNTIME_FILE_PATH;
+  const mechanicalDowntimePath = process.env.MECHANICAL_DOWNTIME_FILE_PATH;
   
   let fileType = 'unknown';
   
@@ -106,6 +110,14 @@ async function handleFileChange(filePath) {
     fileType = 'sales';
   } else if (filePath === shippingPath) {
     fileType = 'shipping';
+  } else if (filePath === electricalMaintenancePath) {
+    fileType = 'electrical-maintenance';
+  } else if (filePath === mechanicalMaintenancePath) {
+    fileType = 'mechanical-maintenance';
+  } else if (filePath === electricalDowntimePath) {
+    fileType = 'electrical-downtime';
+  } else if (filePath === mechanicalDowntimePath) {
+    fileType = 'mechanical-downtime';
   }
   
   if (fileType === 'unknown') {
@@ -124,8 +136,12 @@ async function handleFileChange(filePath) {
 const watchFiles = [
   process.env.STOCK_FILE_PATH,
   process.env.SALES_FILE_PATH,
-  process.env.SHIPPING_FILE_PATH
-].filter(Boolean);
+  process.env.SHIPPING_FILE_PATH,
+  process.env.ELECTRICAL_MAINTENANCE_FILE_PATH,
+  process.env.MECHANICAL_MAINTENANCE_FILE_PATH,
+  process.env.ELECTRICAL_DOWNTIME_FILE_PATH,
+  process.env.MECHANICAL_DOWNTIME_FILE_PATH
+].filter(Boolean); // Boş olanları filtrele
 
 if (watchFiles.length === 0) {
   log('HATA: İzlenecek dosya bulunamadı! .env dosyasını kontrol edin.');
