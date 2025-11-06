@@ -245,28 +245,15 @@ export const getLatestExcelFile = async (type) => {
     });
     const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
     
-    // Shipping için son veri satırını bul
+    // Shipping için son veri satırını bul (Excel worksheet'inden)
     let lastRowNumber = 1;
-    if (type === 'shipping' && htmlDocument) {
-      const tempDiv = document.createElement('div');
-      tempDiv.innerHTML = htmlDocument;
-      const table = tempDiv.querySelector('table');
-      if (table) {
-        const rows = Array.from(table.querySelectorAll('tr'));
-        // Sondan başa doğru tara, boş olmayan ilk satırı bul
-        for (let i = rows.length - 1; i >= 1; i--) {
-          const row = rows[i];
-          const cells = Array.from(row.querySelectorAll('td'));
-          const hasData = cells.some(cell => {
-            const text = cell.textContent?.trim();
-            return text && text !== '' && text !== '-' && text !== '—';
-          });
-          if (hasData) {
-            lastRowNumber = i + 1; // +1 çünkü index 0'dan başlıyor
-            break;
-          }
-        }
-      }
+    if (type === 'shipping' && worksheet) {
+      // Excel'de kullanılan aralığı al (örn: A1:Z1982)
+      const range = XLSX.utils.decode_range(worksheet['!ref'] || 'A1');
+      // Son satır numarası (0-based, +1 ile 1-based'e çevir)
+      lastRowNumber = range.e.r + 1;
+      
+      console.log(`📍 Shipping son satır: ${lastRowNumber}`);
     }
     
     const viewerUrl = buildOfficeViewerUrl(latestFile.url, type, lastRowNumber);
