@@ -104,7 +104,7 @@ const sanitizeSheetHtml = (rawHtml) => {
   };
 };
 
-const buildOfficeViewerUrl = (directUrl, fileType = 'default', lastRow = 1) => {
+const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
   if (!directUrl) {
     return null;
   }
@@ -123,8 +123,8 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default', lastRow = 1) => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  // Yüklemeler dosyası için dinamik son satır, diğerleri A1
-  const activeCell = fileType === 'shipping' ? `A${lastRow}` : 'A1';
+  // Hepsi A1'den başlasın
+  const activeCell = 'A1';
   
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),
@@ -244,40 +244,7 @@ export const getLatestExcelFile = async (type) => {
       footer: ''
     });
     const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
-    
-    // Shipping için son veri satırını bul (worksheet'den geriye doğru tara)
-    let lastRowNumber = 1;
-    if (type === 'shipping' && worksheet) {
-      // Excel range'inden maksimum satır ve sütun sayısını al
-      const range = XLSX.utils.decode_range(worksheet['!ref'] || 'A1');
-      const maxRow = range.e.r + 1; // 1-based index
-      const maxCol = range.e.c; // 0-based index
-      
-      // Son satırdan başlayarak geriye doğru tara, herhangi bir sütunda veri olan ilk satırı bul
-      for (let row = maxRow; row >= 1; row--) {
-        let hasData = false;
-        
-        // Tüm sütunları kontrol et
-        for (let col = 0; col <= maxCol; col++) {
-          const cellAddress = XLSX.utils.encode_cell({ r: row - 1, c: col });
-          const cell = worksheet[cellAddress];
-          
-          // Hücrede herhangi bir değer varsa (boş string bile olsa format olabilir)
-          if (cell && cell.v !== undefined && cell.v !== null && String(cell.v).trim() !== '') {
-            hasData = true;
-            break;
-          }
-        }
-        
-        if (hasData) {
-          lastRowNumber = row;
-          console.log(`📍 Shipping son veri satırı: ${lastRowNumber} (max row: ${maxRow})`);
-          break;
-        }
-      }
-    }
-    
-    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type, lastRowNumber);
+    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type);
     
     console.log('✅ excelService: HTML hazır');
     
