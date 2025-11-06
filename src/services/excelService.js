@@ -123,14 +123,25 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  // Dosya tipine göre başlangıç hücresi
+  // Dosya tipine göre başlangıç hücresi ve zoom
   let activeCell = 'A1';
+  let defaultZoom = '100';
+  
+  console.log(`🔍 buildOfficeViewerUrl: fileType="${fileType}"`);
+  
   if (fileType === 'shipping') {
     activeCell = 'A1985';
-  } else if (fileType === 'electrical-maintenance' || fileType === 'mechanical-maintenance') {
+    defaultZoom = '100';
+  } else if (fileType === 'electrical-maintenance') {
+    activeCell = 'A1130';
+    defaultZoom = '80';
+    console.log(`⚡ Elektrik Bakım: activeCell=${activeCell}, zoom=${defaultZoom}`);
+  } else if (fileType === 'mechanical-maintenance') {
     activeCell = 'A1';
+    defaultZoom = '100';
   } else if (fileType === 'electrical-downtime' || fileType === 'mechanical-downtime') {
     activeCell = 'A1';
+    defaultZoom = '100';
   }
   
   const params = new URLSearchParams({
@@ -140,7 +151,7 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
     wdHideSheetTabs: '0',
     wdHideGridlines: '0',
     wdDownloadButton: '0',
-    wdDefaultZoom: '100',
+    wdDefaultZoom: defaultZoom,
     wdFitToPage: '1',
     wdPageView: '1',
     ActiveCell: activeCell

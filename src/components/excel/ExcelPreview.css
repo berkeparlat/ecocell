@@ -95,7 +95,7 @@
   background: white;
   position: relative;
   min-height: calc(100vh - 360px);
-  height: 100%;
+  height: calc(100vh - 200px);
   overflow: hidden;
 }
 
