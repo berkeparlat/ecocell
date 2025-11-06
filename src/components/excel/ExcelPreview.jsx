@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import './ExcelPreview.css';
 import { Maximize2 } from 'lucide-react';
 
@@ -46,8 +46,6 @@ const ExcelPreview = ({
   const [showFallback, setShowFallback] = useState(initialFallback);
   const [zoom, setZoom] = useState(DEFAULT_ZOOM[accent] || 100);
   const [isFullscreen, setIsFullscreen] = useState(false);
-  const [iframeLoaded, setIframeLoaded] = useState(false);
-  const contentRef = useRef(null);
   const palette = ACCENT_PALETTES[accent] || ACCENT_PALETTES.stock;
   const styleVars = {
     '--excel-accent-base': palette.base,
@@ -59,7 +57,6 @@ const ExcelPreview = ({
 
   useEffect(() => {
     setShowFallback(!hasViewer);
-    setIframeLoaded(false);
   }, [hasViewer, fileName]);
 
   useEffect(() => {
@@ -71,71 +68,6 @@ const ExcelPreview = ({
     window.addEventListener('keydown', handleEsc);
     return () => window.removeEventListener('keydown', handleEsc);
   }, [isFullscreen]);
-
-  // Shipping için son veri satırını bul ve scroll et
-  useEffect(() => {
-    if (accent !== 'shipping' || !contentRef.current) return;
-    if (!htmlContent && !htmlDocument) return;
-    if (htmlDocument && !iframeLoaded) return; // Iframe yüklenene kadar bekle
-
-    const timer = setTimeout(() => {
-      const container = contentRef.current;
-      if (!container) return;
-
-      let targetDocument = null;
-
-      // Eğer iframe ise contentDocument'i al
-      if (container.tagName === 'IFRAME') {
-        try {
-          targetDocument = container.contentDocument || container.contentWindow?.document;
-        } catch (e) {
-          console.warn('Iframe content erişilemedi:', e);
-          return;
-        }
-      } else {
-        // Normal div ise direkt container'ı kullan
-        targetDocument = container;
-      }
-
-      if (!targetDocument) return;
-
-      // Table'ı bul
-      const table = targetDocument.querySelector('table');
-      if (!table) return;
-
-      const rows = Array.from(table.querySelectorAll('tr'));
-      if (rows.length <= 1) return; // Sadece header varsa
-
-      // Son veri satırını bul (boş olmayan son satır)
-      let lastDataRow = null;
-      for (let i = rows.length - 1; i >= 1; i--) {
-        const row = rows[i];
-        const cells = Array.from(row.querySelectorAll('td'));
-        
-        const hasData = cells.some(cell => {
-          const text = cell.textContent?.trim();
-          return text && text !== '' && text !== '-' && text !== '—';
-        });
-
-        if (hasData) {
-          lastDataRow = row;
-          break;
-        }
-      }
-
-      if (lastDataRow) {
-        // Highlight ekle
-        lastDataRow.style.backgroundColor = '#fff3e0';
-        lastDataRow.style.border = '2px solid #ff9800';
-        lastDataRow.style.boxShadow = '0 0 10px rgba(255, 152, 0, 0.3)';
-
-        // Scroll et
-        lastDataRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }, 300);
-
-    return () => clearTimeout(timer);
-  }, [accent, htmlContent, htmlDocument, iframeLoaded]);
 
   const handleZoomIn = () => {
     setZoom(prev => Math.min(prev + 10, 200));
@@ -212,11 +144,9 @@ const ExcelPreview = ({
             hasFallbackContent ? (
               htmlDocument ? (
                 <iframe
-                  ref={contentRef}
                   className="excel-iframe"
                   title={`Excel HTML önizleme - ${fileName}`}
                   srcDoc={htmlDocument}
-                  onLoad={() => setIframeLoaded(true)}
                   style={{ 
                     transform: `scale(${zoom / 100})`, 
                     transformOrigin: 'top left',
@@ -226,7 +156,6 @@ const ExcelPreview = ({
                 />
               ) : (
                 <div
-                  ref={contentRef}
                   className="excel-preview-html"
                   style={{ 
                     transform: `scale(${zoom / 100})`, 

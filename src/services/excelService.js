@@ -104,7 +104,7 @@ const sanitizeSheetHtml = (rawHtml) => {
   };
 };
 
-const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
+const buildOfficeViewerUrl = (directUrl, fileType = 'default', lastRow = 1) => {
   if (!directUrl) {
     return null;
   }
@@ -123,8 +123,8 @@ const buildOfficeViewerUrl = (directUrl, fileType = 'default') => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  // Yüklemeler dosyası için son satıra git (A1957)
-  const activeCell = fileType === 'shipping' ? 'A1957' : 'A1';
+  // Yüklemeler dosyası için dinamik son satır, diğerleri A1
+  const activeCell = fileType === 'shipping' ? `A${lastRow}` : 'A1';
   
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),
@@ -244,7 +244,32 @@ export const getLatestExcelFile = async (type) => {
       footer: ''
     });
     const { cleanedHtml, htmlDocument } = sanitizeSheetHtml(rawHtml);
-    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type);
+    
+    // Shipping için son veri satırını bul
+    let lastRowNumber = 1;
+    if (type === 'shipping' && htmlDocument) {
+      const tempDiv = document.createElement('div');
+      tempDiv.innerHTML = htmlDocument;
+      const table = tempDiv.querySelector('table');
+      if (table) {
+        const rows = Array.from(table.querySelectorAll('tr'));
+        // Sondan başa doğru tara, boş olmayan ilk satırı bul
+        for (let i = rows.length - 1; i >= 1; i--) {
+          const row = rows[i];
+          const cells = Array.from(row.querySelectorAll('td'));
+          const hasData = cells.some(cell => {
+            const text = cell.textContent?.trim();
+            return text && text !== '' && text !== '-' && text !== '—';
+          });
+          if (hasData) {
+            lastRowNumber = i + 1; // +1 çünkü index 0'dan başlıyor
+            break;
+          }
+        }
+      }
+    }
+    
+    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type, lastRowNumber);
     
     console.log('✅ excelService: HTML hazır');
     
