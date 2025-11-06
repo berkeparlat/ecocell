@@ -564,3 +564,27 @@
 [06.11.2025 02:09:38] İzleyici hatası: ECONNRESET: connection reset by peer, watch
 [06.11.2025 02:09:38] İzleyici hatası: ECONNRESET: connection reset by peer, watch
 [06.11.2025 02:09:38] İzleyici hatası: ECONNRESET: connection reset by peer, watch
+[06.11.2025 17:07:54] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[06.11.2025 17:07:55] ============================================================
+[06.11.2025 17:07:55] Excel Dosya İzleyici Başlatıldı
+[06.11.2025 17:07:55] ============================================================
+[06.11.2025 17:07:55] İzlenen dosyalar:
+[06.11.2025 17:07:55]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 17:07:55]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 17:07:55]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 17:07:55] ============================================================
+[06.11.2025 17:07:55] ✓ Firebase trigger listener başlatıldı
+[06.11.2025 17:07:55] ✓ Dosya izleyici hazır ve çalışıyor...
+[06.11.2025 17:07:56] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[06.11.2025 17:07:56] 🔄 Manuel tarama başlatıldı...
+[06.11.2025 17:07:56] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 17:07:58] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[06.11.2025 17:08:00] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 17:08:00] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 17:08:02] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[06.11.2025 17:08:03] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 17:08:03] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 17:08:05] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[06.11.2025 17:08:07] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 17:08:07] ✓ Manuel tarama tamamlandı
+[06.11.2025 17:14:11] İzleyici durduruluyor...
