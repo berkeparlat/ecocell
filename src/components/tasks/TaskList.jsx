@@ -3,12 +3,9 @@ import TaskCard from './TaskCard';
 import './TaskList.css';
 
 const TaskList = () => {
-  const { tasks, user } = useApp();
+  const { tasks } = useApp();
 
-  // Kullanıcı kendi birimindeki işleri görsün (admin hariç)
-  const projectTasks = user?.email === 'berke.parlat27@gmail.com'
-    ? tasks
-    : tasks.filter(t => t.department === user?.department);
+  const projectTasks = tasks;
 
   const groupedTasks = {
     todo: projectTasks.filter(t => t.status === 'todo'),
