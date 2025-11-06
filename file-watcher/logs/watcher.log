@@ -633,3 +633,46 @@
 [06.11.2025 20:10:22] ✓ Firebase trigger listener başlatıldı
 [06.11.2025 20:10:22] ✓ Dosya izleyici hazır ve çalışıyor...
 [06.11.2025 20:10:54] İzleyici durduruluyor...
+[06.11.2025 20:19:56] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[06.11.2025 20:19:57] ============================================================
+[06.11.2025 20:19:57] Excel Dosya İzleyici Başlatıldı
+[06.11.2025 20:19:57] ============================================================
+[06.11.2025 20:19:57] İzlenen dosyalar:
+[06.11.2025 20:19:57]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 20:19:57]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 20:19:57]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 20:19:57]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Bakım Günlük İş Listesi.xlsx
+[06.11.2025 20:19:57]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Duruş Listesi.xlsx
+[06.11.2025 20:19:57] ============================================================
+[06.11.2025 20:19:57] ✓ Firebase trigger listener başlatıldı
+[06.11.2025 20:19:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[06.11.2025 20:22:20] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[06.11.2025 20:22:20] 🔄 Manuel tarama başlatıldı...
+[06.11.2025 20:22:20] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 20:22:20] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[06.11.2025 20:22:20] 🔄 Manuel tarama başlatıldı...
+[06.11.2025 20:22:20] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[06.11.2025 20:22:22] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[06.11.2025 20:22:22] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[06.11.2025 20:22:24] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:24] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 20:22:24] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:24] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[06.11.2025 20:22:26] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[06.11.2025 20:22:26] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[06.11.2025 20:22:27] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 20:22:28] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:28] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[06.11.2025 20:22:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[06.11.2025 20:22:30] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[06.11.2025 20:22:31] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:31] ✓ Manuel tarama tamamlandı
+[06.11.2025 20:22:31] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:31] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Bakım Günlük İş Listesi.xlsx
+[06.11.2025 20:22:33] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[06.11.2025 20:22:35] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:35] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Duruş Listesi.xlsx
+[06.11.2025 20:22:37] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\\Elektrik Duruş Listesi.xlsx (Tip: electrical-downtime)
+[06.11.2025 20:22:38] ✓ Başarılı: electrical-downtime.xlsx Firebase'e yüklendi (güncellendi)
+[06.11.2025 20:22:38] ✓ Manuel tarama tamamlandı
