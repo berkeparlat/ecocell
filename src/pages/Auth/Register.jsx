@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useApp } from '../../context/AppContext';
 import { registerUser } from '../../services/authService';
+import { doc, getDoc } from 'firebase/firestore';
+import { db } from '../../config/firebase';
 import Input from '../../components/ui/Input';
 import Select from '../../components/ui/Select';
 import Button from '../../components/ui/Button';
@@ -10,7 +11,7 @@ import './Auth.css';
 
 const Register = () => {
   const navigate = useNavigate();
-  const { departments } = useApp();
+  const [departments, setDepartments] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
   const [formData, setFormData] = useState({
@@ -21,26 +22,26 @@ const Register = () => {
     department: '',
   });
 
-  // Debug: departments değişimini izle
+  // Departments'ı doğrudan Firebase'den yükle (authentication olmadan)
   useEffect(() => {
-    console.log('Register - Departments güncellendi:', departments);
-  }, [departments]);
-
-  useEffect(() => {
-    if (!Array.isArray(departments) || departments.length === 0) {
-      return;
-    }
-
-    setFormData((prev) => {
-      if (prev.department && departments.includes(prev.department)) {
-        return prev;
+    const loadDepartments = async () => {
+      try {
+        const departmentsDoc = await getDoc(doc(db, 'meta', 'departments'));
+        if (departmentsDoc.exists()) {
+          const data = departmentsDoc.data();
+          const list = Array.isArray(data?.list) ? data.list : [];
+          console.log('Register - Departments yüklendi:', list);
+          setDepartments(list);
+        } else {
+          console.error('Departments dokümanı bulunamadı');
+        }
+      } catch (error) {
+        console.error('Departments yüklenirken hata:', error);
       }
-      return {
-        ...prev,
-        department: '',
-      };
-    });
-  }, [departments]);
+    };
+
+    loadDepartments();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
