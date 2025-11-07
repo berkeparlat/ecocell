@@ -89,65 +89,67 @@ const WorkPermitForm = ({ permit = null, onClose }) => {
         </button>
       </div>
       
-      {/* 1. İş Adı */}
-      <Input
-        label="1. İş Adı"
-        name="title"
-        value={formData.title}
-        onChange={handleChange}
-        placeholder="İşin adını girin"
-        required
-      />
+      <div className="work-permit-form-body">
+        {/* 1. İş Adı */}
+        <Input
+          label="1. İş Adı"
+          name="title"
+          value={formData.title}
+          onChange={handleChange}
+          placeholder="İşin adını girin"
+          required
+        />
 
-      {/* 2. Ekleyen Kişi (Otomatik) */}
-      <div className="work-permit-form-group">
-        <label className="work-permit-form-label">2. İşi Ekleyen Kişi</label>
-        <div className="work-permit-form-readonly">
-          <strong>{user?.fullName || user?.username}</strong> - {user?.department}
+        {/* 2. Ekleyen Kişi (Otomatik) */}
+        <div className="work-permit-form-group">
+          <label className="work-permit-form-label">2. İşi Ekleyen Kişi</label>
+          <div className="work-permit-form-readonly">
+            <strong>{user?.fullName || user?.username}</strong> - {user?.department}
+          </div>
         </div>
-      </div>
 
-      {/* 3. İlgili Birim */}
-      <div className="work-permit-form-group">
-        <label className="work-permit-form-label">3. İlgili Birim</label>
-        <Select
-          name="relatedDepartment"
-          value={formData.relatedDepartment}
-          onChange={handleChange}
-          placeholder="Ana sorumlu birimi seçin"
-          options={departmentOptions.map(dept => ({ value: dept, label: dept }))}
-          required
-        />
-      </div>
+        {/* 3. İlgili Birim */}
+        <div className="work-permit-form-group">
+          <label className="work-permit-form-label">3. İlgili Birim</label>
+          <Select
+            name="relatedDepartment"
+            value={formData.relatedDepartment}
+            onChange={handleChange}
+            placeholder="Ana sorumlu birimi seçin"
+            options={departmentOptions.map(dept => ({ value: dept, label: dept }))}
+            required
+          />
+        </div>
 
-      {/* 4. İş Tanımı */}
-      <div className="work-permit-form-group">
-        <label className="work-permit-form-label">4. İş Tanımı</label>
-        <textarea
-          name="description"
-          value={formData.description}
-          onChange={handleChange}
-          placeholder="İşin detaylı açıklamasını girin"
-          className="work-permit-form-textarea"
-          rows="4"
-          required
-        />
-      </div>
+        {/* 4. İş Tanımı */}
+        <div className="work-permit-form-group">
+          <label className="work-permit-form-label">4. İş Tanımı</label>
+          <textarea
+            name="description"
+            value={formData.description}
+            onChange={handleChange}
+            placeholder="İşin detaylı açıklamasını girin"
+            className="work-permit-form-textarea"
+            rows="4"
+            required
+          />
+        </div>
 
-      {/* 5. Bakım Türü */}
-      <div className="work-permit-form-group">
-        <label className="work-permit-form-label">5. Bakım Türü</label>
-        <Select
-          name="maintenanceType"
-          value={formData.maintenanceType}
-          onChange={handleChange}
-          options={[
-            { value: 'planned', label: 'Planlı' },
-            { value: 'breakdown', label: 'Arızi' },
-            { value: 'predictive', label: 'Kestirimci' },
-          ]}
-          required
-        />
+        {/* 5. Bakım Türü */}
+        <div className="work-permit-form-group">
+          <label className="work-permit-form-label">5. Bakım Türü</label>
+          <Select
+            name="maintenanceType"
+            value={formData.maintenanceType}
+            onChange={handleChange}
+            options={[
+              { value: 'planned', label: 'Planlı' },
+              { value: 'breakdown', label: 'Arızi' },
+              { value: 'predictive', label: 'Kestirimci' },
+            ]}
+            required
+          />
+        </div>
       </div>
 
       <div className="work-permit-form-actions">

@@ -7,7 +7,7 @@ import WorkPermitForm from './WorkPermitForm';
 import './WorkPermitTable.css';
 
 const WorkPermitTable = () => {
-  const { user, workPermits, deleteWorkPermit } = useApp();
+  const { user, workPermits = [], deleteWorkPermit } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingPermit, setEditingPermit] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');

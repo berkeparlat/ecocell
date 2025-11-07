@@ -7,7 +7,7 @@ import AnnouncementForm from './AnnouncementForm';
 import './AnnouncementList.css';
 
 const AnnouncementList = () => {
-  const { user, announcements, deleteAnnouncement } = useApp();
+  const { user, announcements = [], deleteAnnouncement } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingAnnouncement, setEditingAnnouncement] = useState(null);
   const [activeMenu, setActiveMenu] = useState(null);
