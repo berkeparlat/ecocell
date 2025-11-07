@@ -73,11 +73,14 @@ const WorkPermitForm = ({ permit = null, onClose }) => {
       if (permit) {
         await updateWorkPermit(permit.id, permitData);
       } else {
+        console.log('WorkPermitForm: Submitting permit data', permitData);
         await addWorkPermit(permitData);
+        console.log('WorkPermitForm: Permit added successfully');
       }
       onClose?.();
     } catch (error) {
-      alert('İş izni kaydedilirken bir hata oluştu. Lütfen tekrar deneyin.');
+      console.error('WorkPermitForm: Error saving permit', error);
+      alert('İş izni kaydedilirken bir hata oluştu: ' + (error.message || 'Bilinmeyen hata'));
     }
   };
 

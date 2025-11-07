@@ -316,6 +316,7 @@ export const AppProvider = ({ children }) => {
 
   const addWorkPermit = async (permit) => {
     if (!user?.uid) {
+      console.error('User not authenticated');
       throw new Error('Oturum acilmamis');
     }
 
@@ -326,12 +327,15 @@ export const AppProvider = ({ children }) => {
     };
 
     try {
+      console.log('AppContext: Adding work permit', payload);
       const result = await addWorkPermitToStore(payload, user.uid);
+      console.log('AppContext: Result', result);
       if (!result.success) {
         throw new Error(result.error || 'Is izni eklenemedi');
       }
       return result.permit;
     } catch (error) {
+      console.error('AppContext: Error adding work permit', error);
       throw error;
     }
   };
