@@ -231,7 +231,7 @@
 
 .task-table th {
   padding: 1rem 1.25rem;
-  text-align: left;
+  text-align: center;
   font-weight: 600;
   color: #424242;
   text-transform: uppercase;
@@ -293,6 +293,7 @@
   padding: 1rem 1.25rem;
   color: #616161;
   vertical-align: middle;
+  text-align: center;
 }
 
 .task-number {
@@ -362,6 +363,7 @@
 .date-info {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
   color: #616161;
   font-size: 0.8125rem;
