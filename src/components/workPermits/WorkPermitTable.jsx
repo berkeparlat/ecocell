@@ -7,7 +7,7 @@ import WorkPermitForm from './WorkPermitForm';
 import './WorkPermitTable.css';
 
 const WorkPermitTable = () => {
-  const { user, workPermits = [], deleteWorkPermit, departments } = useApp();
+  const { user, workPermits = [], deleteWorkPermit, updateWorkPermit, departments } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingPermit, setEditingPermit] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
@@ -39,6 +39,17 @@ const WorkPermitTable = () => {
     if (window.confirm('Bu iş iznini silmek istediğinizden emin misiniz?')) {
       await deleteWorkPermit(permitId);
       setActiveMenu(null);
+    }
+  };
+
+  const handleApprove = async (permit) => {
+    try {
+      await updateWorkPermit(permit.id, {
+        status: 'approved'
+      });
+    } catch (error) {
+      console.error('Error approving permit:', error);
+      alert('İş izni onaylanırken bir hata oluştu.');
     }
   };
 
@@ -139,12 +150,12 @@ const WorkPermitTable = () => {
         <table className="work-permit-table">
           <thead>
             <tr>
-              <th>İş Adı</th>
-              <th>Durum</th>
-              <th>İşi Ekleyen</th>
-              <th>İlgili Birim</th>
-              <th>Bakım Türü</th>
-              <th>İşlemler</th>
+              <th style={{ width: '25%' }}>İş Adı</th>
+              <th style={{ width: '12%' }}>Durum</th>
+              <th style={{ width: '15%' }}>İşi Ekleyen</th>
+              <th style={{ width: '15%' }}>İlgili Birim</th>
+              <th style={{ width: '13%' }}>Bakım Türü</th>
+              <th style={{ width: '20%' }}>İşlemler</th>
             </tr>
           </thead>
           <tbody>
@@ -208,12 +219,15 @@ const WorkPermitTable = () => {
                         >
                           <MessageSquare size={16} />
                         </button>
-                        <button
-                          className="action-btn approve-btn"
-                          title="Onayla"
-                        >
-                          <CheckCircle size={16} />
-                        </button>
+                        {permit.status !== 'approved' && (
+                          <button
+                            className="action-btn approve-btn"
+                            onClick={() => handleApprove(permit)}
+                            title="Onayla"
+                          >
+                            <CheckCircle size={16} />
+                          </button>
+                        )}
                         <button
                           className="action-btn edit-btn"
                           onClick={() => handleEdit(permit)}
