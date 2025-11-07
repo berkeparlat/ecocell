@@ -250,6 +250,7 @@
 .work-permit-table td {
   padding: 1rem 1.25rem;
   color: #424242;
+  vertical-align: middle;
 }
 
 .permit-title {
