@@ -1,0 +1,11 @@
+.announcements-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  padding-bottom: 2rem;
+}
+
+.announcements-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}

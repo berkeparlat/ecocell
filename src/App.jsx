@@ -10,6 +10,8 @@ import MaintenancePlan from './pages/MaintenancePlan/MaintenancePlan';
 import MaintenanceDowntime from './pages/MaintenanceDowntime/MaintenanceDowntime';
 import MonthlyCalendar from './pages/MonthlyCalendar/MonthlyCalendar';
 import Messages from './pages/Messages/Messages';
+import WorkPermits from './pages/WorkPermits/WorkPermits';
+import Announcements from './pages/Announcements/Announcements';
 import AdminPanel from './pages/AdminPanel/AdminPanel';
 import './App.css';
 
@@ -105,6 +107,22 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <Messages />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/work-permits" 
+          element={
+            <ProtectedRoute>
+              <WorkPermits />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/announcements" 
+          element={
+            <ProtectedRoute>
+              <Announcements />
             </ProtectedRoute>
           } 
         />

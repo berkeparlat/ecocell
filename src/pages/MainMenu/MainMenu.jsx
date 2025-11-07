@@ -41,6 +41,20 @@ const MainMenu = () => {
       color: '#FF9800'
     },
     {
+      id: 'work-permits',
+      title: 'İş İzinleri',
+      icon: '📋',
+      path: '/work-permits',
+      color: '#673AB7'
+    },
+    {
+      id: 'announcements',
+      title: 'Duyurular',
+      icon: '📢',
+      path: '/announcements',
+      color: '#E91E63'
+    },
+    {
       id: 'messages',
       title: 'Mesajlar',
       icon: '💬',

@@ -11,6 +11,18 @@ import {
   listenToDepartments as listenToDepartmentsFromStore,
   saveDepartments,
 } from '../services/departmentService';
+import {
+  listenToWorkPermits,
+  addWorkPermit as addWorkPermitToStore,
+  updateWorkPermit as updateWorkPermitInStore,
+  deleteWorkPermit as deleteWorkPermitFromStore,
+} from '../services/workPermitService';
+import {
+  listenToAnnouncements,
+  addAnnouncement as addAnnouncementToStore,
+  updateAnnouncement as updateAnnouncementInStore,
+  deleteAnnouncement as deleteAnnouncementFromStore,
+} from '../services/announcementService';
 
 const AppContext = createContext();
 
@@ -25,9 +37,13 @@ export const useApp = () => {
 export const AppProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [tasks, setTasks] = useState([]);
+  const [workPermits, setWorkPermits] = useState([]);
+  const [announcements, setAnnouncements] = useState([]);
   const [viewMode, setViewMode] = useState('board');
   const [departments, setDepartments] = useState([]);
   const tasksListenerRef = useRef(null);
+  const workPermitsListenerRef = useRef(null);
+  const announcementsListenerRef = useRef(null);
   const departmentsListenerRef = useRef(null);
   const userProfileListenerRef = useRef(null);
 
@@ -37,7 +53,7 @@ export const AppProvider = ({ children }) => {
       try {
         setUser(JSON.parse(savedUser));
       } catch (error) {
-        // Geçersiz veri varsa temizle
+        // Geï¿½ersiz veri varsa temizle
         localStorage.removeItem('karafiber_user');
       }
     }
@@ -67,6 +83,7 @@ export const AppProvider = ({ children }) => {
           username: profile?.fullName || fallbackName,
           fullName: profile?.fullName || fallbackName,
           department: profile?.department || '',
+          role: profile?.role || 'user',
           createdAt: profile?.createdAt || null,
         };
 
@@ -113,6 +130,54 @@ export const AppProvider = ({ children }) => {
   }, [user?.uid]);
 
   useEffect(() => {
+    if (!user?.uid) {
+      if (workPermitsListenerRef.current) {
+        workPermitsListenerRef.current();
+        workPermitsListenerRef.current = null;
+      }
+      setWorkPermits([]);
+      return;
+    }
+
+    const unsubscribe = listenToWorkPermits((fetchedPermits) => {
+      setWorkPermits(fetchedPermits);
+    });
+
+    workPermitsListenerRef.current = unsubscribe;
+
+    return () => {
+      if (workPermitsListenerRef.current) {
+        workPermitsListenerRef.current();
+        workPermitsListenerRef.current = null;
+      }
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
+    if (!user?.uid) {
+      if (announcementsListenerRef.current) {
+        announcementsListenerRef.current();
+        announcementsListenerRef.current = null;
+      }
+      setAnnouncements([]);
+      return;
+    }
+
+    const unsubscribe = listenToAnnouncements((fetchedAnnouncements) => {
+      setAnnouncements(fetchedAnnouncements);
+    });
+
+    announcementsListenerRef.current = unsubscribe;
+
+    return () => {
+      if (announcementsListenerRef.current) {
+        announcementsListenerRef.current();
+        announcementsListenerRef.current = null;
+      }
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
     let isMounted = true;
     let unsubscribe;
 
@@ -123,7 +188,7 @@ export const AppProvider = ({ children }) => {
           setDepartments(ensured);
         }
       } catch (error) {
-        // Hata durumunda boþ liste kullan
+        // Hata durumunda boï¿½ liste kullan
       }
 
       unsubscribe = listenToDepartmentsFromStore((remoteList) => {
@@ -249,6 +314,98 @@ export const AppProvider = ({ children }) => {
     await updateTask(taskId, { status: newStatus });
   };
 
+  const addWorkPermit = async (permit) => {
+    if (!user?.uid) {
+      throw new Error('Oturum acilmamis');
+    }
+
+    const payload = {
+      ...permit,
+      createdBy: permit.createdBy || user.fullName || user.username || user.email || 'Bilinmeyen',
+      createdByDepartment: permit.createdByDepartment || user.department || permit.relatedDepartment || '',
+    };
+
+    try {
+      const result = await addWorkPermitToStore(payload, user.uid);
+      if (!result.success) {
+        throw new Error(result.error || 'Is izni eklenemedi');
+      }
+      return result.permit;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const updateWorkPermit = async (permitId, updates) => {
+    try {
+      const result = await updateWorkPermitInStore(permitId, updates);
+      if (!result.success) {
+        throw new Error(result.error || 'Is izni guncellenemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteWorkPermit = async (permitId) => {
+    try {
+      const result = await deleteWorkPermitFromStore(permitId);
+      if (!result.success) {
+        throw new Error(result.error || 'Is izni silinemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const addAnnouncement = async (announcement) => {
+    if (!user?.uid) {
+      throw new Error('Oturum acilmamis');
+    }
+
+    const payload = {
+      ...announcement,
+      createdBy: announcement.createdBy || user.fullName || user.username || user.email || 'Bilinmeyen',
+      department: announcement.department || user.department || '',
+    };
+
+    try {
+      const result = await addAnnouncementToStore(payload, user.uid);
+      if (!result.success) {
+        throw new Error(result.error || 'Duyuru eklenemedi');
+      }
+      return result.announcement;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const updateAnnouncement = async (announcementId, updates) => {
+    try {
+      const result = await updateAnnouncementInStore(announcementId, updates);
+      if (!result.success) {
+        throw new Error(result.error || 'Duyuru guncellenemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteAnnouncement = async (announcementId) => {
+    try {
+      const result = await deleteAnnouncementFromStore(announcementId);
+      if (!result.success) {
+        throw new Error(result.error || 'Duyuru silinemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
   const value = {
     user,
     login,
@@ -258,6 +415,14 @@ export const AppProvider = ({ children }) => {
     updateTask,
     deleteTask,
     moveTask,
+    workPermits,
+    addWorkPermit,
+    updateWorkPermit,
+    deleteWorkPermit,
+    announcements,
+    addAnnouncement,
+    updateAnnouncement,
+    deleteAnnouncement,
     viewMode,
     setViewMode,
     departments,
