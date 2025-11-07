@@ -176,7 +176,7 @@ const WorkPermitTable = () => {
                     <td>
                       <div className="permit-title">{permit.title}</div>
                       {permit.description && (
-                        <div className="permit-description">{permit.description.substring(0, 60)}...</div>
+                        <div className="permit-description">{permit.description}</div>
                       )}
                     </td>
                     <td>
