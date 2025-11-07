@@ -36,7 +36,10 @@ const DEFAULT_ZOOM = {
 const ExcelPreview = ({
   fileName,
   viewerUrl,
-  accent = 'stock'
+  accent = 'stock',
+  hideToolbar = false,
+  onZoomChange,
+  onFullscreen
 }) => {
   const hasViewer = Boolean(viewerUrl);
   const [zoom, setZoom] = useState(DEFAULT_ZOOM[accent] || 100);
@@ -61,74 +64,84 @@ const ExcelPreview = ({
   }, [isFullscreen]);
 
   const handleZoomIn = () => {
-    setZoom(prev => Math.min(prev + 10, 200));
+    const newZoom = Math.min(zoom + 10, 200);
+    setZoom(newZoom);
+    if (onZoomChange) onZoomChange(newZoom);
   };
 
   const handleZoomOut = () => {
-    setZoom(prev => Math.max(prev - 10, 50));
+    const newZoom = Math.max(zoom - 10, 50);
+    setZoom(newZoom);
+    if (onZoomChange) onZoomChange(newZoom);
   };
 
   const handleResetZoom = () => {
-    setZoom(DEFAULT_ZOOM[accent] || 100);
+    const newZoom = DEFAULT_ZOOM[accent] || 100;
+    setZoom(newZoom);
+    if (onZoomChange) onZoomChange(newZoom);
   };
 
   const handleFullscreen = () => {
     setIsFullscreen(true);
+    if (onFullscreen) onFullscreen(true);
   };
 
   const handleCloseFullscreen = () => {
     setIsFullscreen(false);
+    if (onFullscreen) onFullscreen(false);
   };
 
   return (
     <>
       <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>
-        {/* Zoom Kontrolleri */}
-        <div className="excel-toolbar">
-          <div className="excel-toolbar-left">
-            <button 
-              className="excel-btn excel-btn-icon"
-              onClick={handleZoomOut}
-              disabled={zoom <= 50}
-              title="Küçült"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-                <line x1="8" y1="11" x2="14" y2="11"/>
-              </svg>
-            </button>
-            <button 
-              className="excel-btn excel-btn-icon"
-              onClick={handleZoomIn}
-              disabled={zoom >= 200}
-              title="Büyüt"
-            >
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                <circle cx="11" cy="11" r="8"/>
-                <path d="M21 21l-4.35-4.35"/>
-                <line x1="11" y1="8" x2="11" y2="14"/>
-                <line x1="8" y1="11" x2="14" y2="11"/>
-              </svg>
-            </button>
-            <span className="excel-zoom-label">{zoom}%</span>
-            <button 
-              className="excel-btn"
-              onClick={handleResetZoom}
-              title="Varsayılan Zoom"
-            >
-              Sıfırla
-            </button>
-            <button 
-              className="excel-btn excel-btn-fullscreen"
-              onClick={handleFullscreen}
-              title="Tam Ekran"
-            >
-              <Maximize2 size={16} />
-              Tam Ekran
-            </button>
+        {/* Zoom Kontrolleri - Sadece hideToolbar false ise göster */}
+        {!hideToolbar && (
+          <div className="excel-toolbar">
+            <div className="excel-toolbar-left">
+              <button 
+                className="excel-btn excel-btn-icon"
+                onClick={handleZoomOut}
+                disabled={zoom <= 50}
+                title="Küçült"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="M21 21l-4.35-4.35"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </button>
+              <button 
+                className="excel-btn excel-btn-icon"
+                onClick={handleZoomIn}
+                disabled={zoom >= 200}
+                title="Büyüt"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="M21 21l-4.35-4.35"/>
+                  <line x1="11" y1="8" x2="11" y2="14"/>
+                  <line x1="8" y1="11" x2="14" y2="11"/>
+                </svg>
+              </button>
+              <span className="excel-zoom-label">{zoom}%</span>
+              <button 
+                className="excel-btn"
+                onClick={handleResetZoom}
+                title="Varsayılan Zoom"
+              >
+                Sıfırla
+              </button>
+              <button 
+                className="excel-btn excel-btn-fullscreen"
+                onClick={handleFullscreen}
+                title="Tam Ekran"
+              >
+                <Maximize2 size={16} />
+                Tam Ekran
+              </button>
+            </div>
           </div>
-        </div>
+        )}
 
         <div className="excel-render-area">
           {hasViewer ? (
@@ -165,26 +178,7 @@ const ExcelPreview = ({
               </svg>
             </button>
             <div className="excel-fullscreen-viewer">
-              {showFallback || !hasViewer ? (
-                hasFallbackContent ? (
-                  htmlDocument ? (
-                    <iframe
-                      className="excel-iframe"
-                      title={`Excel Tam Ekran - ${fileName}`}
-                      srcDoc={htmlDocument}
-                    />
-                  ) : (
-                    <div
-                      className="excel-preview-html"
-                      dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
-                    />
-                  )
-                ) : (
-                  <div className="excel-preview-empty">
-                    <p>Önizleme verisi bulunamadı.</p>
-                  </div>
-                )
-              ) : (
+              {hasViewer ? (
                 <iframe
                   key={`fullscreen-${viewerUrl}`}
                   className="excel-iframe"
@@ -193,6 +187,10 @@ const ExcelPreview = ({
                   loading="lazy"
                   allowFullScreen={false}
                 />
+              ) : (
+                <div className="excel-preview-empty">
+                  <p>Önizleme verisi bulunamadı.</p>
+                </div>
               )}
             </div>
           </div>

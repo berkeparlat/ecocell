@@ -34,7 +34,7 @@ const DailyStock = () => {
       <div className="stock-container">
         <div className="stock-header">
           <div className="header-title">
-            <FileSpreadsheet size={32} />
+            <FileSpreadsheet size={22} />
             <div>
               <h1>Günlük Stok Takibi</h1>
               <p>Güncel stok bilgilerini görüntüleyin</p>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { RefreshCw, ShoppingCart, Truck } from 'lucide-react';
+import { RefreshCw, ShoppingCart, Truck, ZoomIn, ZoomOut, RotateCcw, Maximize2 } from 'lucide-react';
 import { getLatestExcelFile } from '../../services/excelService';
 import ExcelPreview from '../../components/excel/ExcelPreview';
 import './SalesOrder.css';
@@ -9,6 +9,10 @@ const SalesOrder = () => {
   const [loading, setLoading] = useState(false);
   const [excelData, setExcelData] = useState(null);
   const [shippingData, setShippingData] = useState(null);
+  
+  // Zoom states
+  const [salesZoom, setSalesZoom] = useState(100);
+  const [shippingZoom, setShippingZoom] = useState(100);
 
   useEffect(() => {
     loadLatestFiles();
@@ -43,7 +47,7 @@ const SalesOrder = () => {
       <div className="sales-container">
         <div className="sales-header">
           <div className="header-title">
-            <ShoppingCart size={32} />
+            <ShoppingCart size={22} />
             <div>
               <h1>Satış Sipariş ve Yükleme Takibi</h1>
               <p>Güncel satış sipariş ve yükleme bilgilerini görüntüleyin</p>
@@ -60,15 +64,58 @@ const SalesOrder = () => {
           <div className="sales-dual-view">
             {/* Sol Panel - Satış Siparişleri */}
             <div className="sales-panel">
-              <div className="panel-header">
-                <ShoppingCart size={20} />
-                <h2>Satış Siparişleri</h2>
+              <div className="panel-header sales">
+                <div className="panel-header-left">
+                  <ShoppingCart size={18} />
+                  <h2>Satış Siparişleri</h2>
+                </div>
+                {excelData && (
+                  <div className="panel-header-controls">
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setSalesZoom(Math.max(50, salesZoom - 10))}
+                      disabled={salesZoom <= 50}
+                      title="Küçült"
+                    >
+                      <ZoomOut size={14} />
+                    </button>
+                    <span className="panel-zoom-display">{salesZoom}%</span>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setSalesZoom(Math.min(200, salesZoom + 10))}
+                      disabled={salesZoom >= 200}
+                      title="Büyüt"
+                    >
+                      <ZoomIn size={14} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setSalesZoom(100)}
+                      title="Varsayılan (100%)"
+                    >
+                      <RotateCcw size={14} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => {
+                        const iframe = document.querySelector('.sales-panel:first-child iframe');
+                        if (iframe) {
+                          iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
+                        }
+                      }}
+                      title="Tam Ekran"
+                    >
+                      <Maximize2 size={14} />
+                    </button>
+                  </div>
+                )}
               </div>
               {excelData ? (
                 <ExcelPreview
                   fileName={excelData.name}
                   viewerUrl={excelData.viewerUrl}
                   accent="sales"
+                  hideToolbar={true}
                 />
               ) : (
                 <div className="empty-panel">
@@ -80,15 +127,58 @@ const SalesOrder = () => {
 
             {/* Sağ Panel - Yüklemeler */}
             <div className="sales-panel">
-              <div className="panel-header">
-                <Truck size={20} />
-                <h2>Elyaf Yüklemeleri</h2>
+              <div className="panel-header shipping">
+                <div className="panel-header-left">
+                  <Truck size={18} />
+                  <h2>Elyaf Yüklemeleri</h2>
+                </div>
+                {shippingData && (
+                  <div className="panel-header-controls">
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setShippingZoom(Math.max(50, shippingZoom - 10))}
+                      disabled={shippingZoom <= 50}
+                      title="Küçült"
+                    >
+                      <ZoomOut size={14} />
+                    </button>
+                    <span className="panel-zoom-display">{shippingZoom}%</span>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setShippingZoom(Math.min(200, shippingZoom + 10))}
+                      disabled={shippingZoom >= 200}
+                      title="Büyüt"
+                    >
+                      <ZoomIn size={14} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setShippingZoom(100)}
+                      title="Varsayılan (100%)"
+                    >
+                      <RotateCcw size={14} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => {
+                        const iframe = document.querySelector('.sales-panel:last-child iframe');
+                        if (iframe) {
+                          iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
+                        }
+                      }}
+                      title="Tam Ekran"
+                    >
+                      <Maximize2 size={14} />
+                    </button>
+                  </div>
+                )}
               </div>
               {shippingData ? (
                 <ExcelPreview
                   fileName={shippingData.name}
                   viewerUrl={shippingData.viewerUrl}
                   accent="shipping"
+                  hideToolbar={true}
                 />
               ) : (
                 <div className="empty-panel">
