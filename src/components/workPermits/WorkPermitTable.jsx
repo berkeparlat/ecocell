@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, CheckCircle, Building2, User } from 'lucide-react';
+import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, Building2, User } from 'lucide-react';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import WorkPermitForm from './WorkPermitForm';
@@ -39,17 +39,6 @@ const WorkPermitTable = () => {
     if (window.confirm('Bu iş iznini silmek istediğinizden emin misiniz?')) {
       await deleteWorkPermit(permitId);
       setActiveMenu(null);
-    }
-  };
-
-  const handleApprove = async (permit) => {
-    try {
-      await updateWorkPermit(permit.id, {
-        status: 'approved'
-      });
-    } catch (error) {
-      console.error('Error approving permit:', error);
-      alert('İş izni onaylanırken bir hata oluştu.');
     }
   };
 
@@ -217,15 +206,6 @@ const WorkPermitTable = () => {
                         >
                           <MessageSquare size={16} />
                         </button>
-                        {permit.status !== 'approved' && (
-                          <button
-                            className="action-btn approve-btn"
-                            onClick={() => handleApprove(permit)}
-                            title="Onayla"
-                          >
-                            <CheckCircle size={16} />
-                          </button>
-                        )}
                         <button
                           className="action-btn edit-btn"
                           onClick={() => handleEdit(permit)}

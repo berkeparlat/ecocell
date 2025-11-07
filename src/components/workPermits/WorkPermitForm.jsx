@@ -154,6 +154,21 @@ const WorkPermitForm = ({ permit = null, onClose }) => {
             required
           />
         </div>
+
+        {/* 6. Durum */}
+        <div className="work-permit-form-group">
+          <label className="work-permit-form-label">6. Durum</label>
+          <Select
+            name="status"
+            value={formData.status}
+            onChange={handleChange}
+            options={[
+              { value: 'pending', label: 'Onay Bekliyor' },
+              { value: 'approved', label: 'Onaylandı' },
+            ]}
+            required
+          />
+        </div>
       </div>
 
       <div className="work-permit-form-actions">
