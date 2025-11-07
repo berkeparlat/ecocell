@@ -250,11 +250,13 @@ const AdminPanel = () => {
     return date.toLocaleDateString('tr-TR') + ' ' + date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
   };
 
-  const filteredUsers = users.filter(u => 
-    (u.fullName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (u.email || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
-    (u.department || '').toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const filteredUsers = users
+    .filter(u => !u.deleted) // Silinen kullanıcıları gösterme
+    .filter(u => 
+      (u.fullName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (u.email || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
+      (u.department || '').toLowerCase().includes(searchQuery.toLowerCase())
+    );
 
   const filteredTasks = tasks.filter(t =>
     (t.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||

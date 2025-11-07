@@ -54,7 +54,16 @@ export const loginUser = async (email, password) => {
     try {
       profileData = await getUserProfile(userCredential.user.uid);
     } catch (profileError) {
-      // Profile y�klenemezse varsay�lan de�erler kullan�lacak
+      // Profile y�klenemezse varsay�lan de�erler kullan�lacak
+    }
+
+    // Kullanıcı silinmişse giriş yapmasına izin verme
+    if (profileData?.deleted) {
+      await signOut(auth);
+      return {
+        success: false,
+        error: 'Bu hesap silinmiştir. Lütfen yönetici ile iletişime geçin.',
+      };
     }
 
     const userData = {

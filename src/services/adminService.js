@@ -48,17 +48,32 @@ export const updateUser = async (userId, userData) => {
   }
 };
 
-// Kullanıcı sil
+// Kullanıcı sil (soft delete - Firestore'da deleted flag'i ekler)
+// Not: Firebase Authentication'dan silmek için Cloud Function gerekir
 export const deleteUser = async (userId) => {
+  try {
+    const userRef = doc(db, 'users', userId);
+    // Kullanıcıyı tamamen silmek yerine "deleted" flag'i ekle
+    await updateDoc(userRef, {
+      deleted: true,
+      deletedAt: new Date().toISOString()
+    });
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Kullanıcıyı tamamen sil (sadece Firestore'dan)
+export const permanentlyDeleteUser = async (userId) => {
   try {
     const userRef = doc(db, 'users', userId);
     await deleteDoc(userRef);
     return { success: true };
   } catch (error) {
-    
     throw error;
   }
-};
+};;
 
 // Tüm görevleri getir
 export const getAllTasks = async () => {

@@ -2,8 +2,10 @@ import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import './Modal.css';
 
-const Modal = ({ onClose, title, children, size = 'medium' }) => {
+const Modal = ({ isOpen, onClose, title, children, size = 'medium' }) => {
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleKeyDown = (event) => {
       if (event.key === 'Escape') {
         onClose?.();
@@ -18,7 +20,9 @@ const Modal = ({ onClose, title, children, size = 'medium' }) => {
       document.body.style.overflow = previousOverflow;
       document.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onClose]);
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
 
   const contentProps = title ? { 'aria-label': title } : {};
 
