@@ -1,11 +1,15 @@
 .work-permits-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding-bottom: 2rem;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
 }
 
 .work-permits-content {
+  flex: 1;
+  overflow: auto;
   max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem;
 }

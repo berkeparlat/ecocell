@@ -1,11 +1,15 @@
 .announcements-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  padding-bottom: 2rem;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
 }
 
 .announcements-content {
-  max-width: 1200px;
+  flex: 1;
+  overflow: auto;
+  max-width: 1400px;
+  width: 100%;
   margin: 0 auto;
-  padding: 0 1rem;
+  padding: 2rem;
 }

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Bell, MoreVertical, Edit2, Trash2, AlertCircle } from 'lucide-react';
+import { Plus, Bell, MoreVertical, Edit2, Trash2, AlertCircle, Search } from 'lucide-react';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import AnnouncementForm from './AnnouncementForm';
@@ -12,6 +12,23 @@ const AnnouncementList = () => {
   const [editingAnnouncement, setEditingAnnouncement] = useState(null);
   const [activeMenu, setActiveMenu] = useState(null);
   const [selectedAnnouncement, setSelectedAnnouncement] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [priorityFilter, setPriorityFilter] = useState('all');
+
+  const priorityOptions = [
+    { id: 'all', label: 'Tümü', color: '#757575' },
+    { id: 'low', label: 'Bilgilendirme', color: '#616161' },
+    { id: 'medium', label: 'Normal', color: '#1565c0' },
+    { id: 'high', label: 'Önemli', color: '#e65100' },
+    { id: 'urgent', label: 'Acil', color: '#c62828' },
+  ];
+
+  const filteredAnnouncements = announcements.filter(announcement => {
+    const matchesSearch = announcement.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         announcement.content.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchesPriority = priorityFilter === 'all' || announcement.priority === priorityFilter;
+    return matchesSearch && matchesPriority;
+  });
 
   const handleEdit = (announcement) => {
     setEditingAnnouncement(announcement);
@@ -81,25 +98,53 @@ const AnnouncementList = () => {
             <p>Genel duyuruları görüntüleyin ve yönetin</p>
           </div>
         </div>
-        {user?.role === 'admin' && (
+        
+        <div className="table-actions">
+          <div className="priority-filter">
+            {priorityOptions.map(priority => (
+              <button
+                key={priority.id}
+                className={`filter-btn ${priorityFilter === priority.id ? 'active' : ''}`}
+                onClick={() => setPriorityFilter(priority.id)}
+                style={{
+                  '--priority-color': priority.color,
+                }}
+              >
+                {priority.label}
+              </button>
+            ))}
+          </div>
+          
           <Button onClick={handleAddNew} className="add-announcement-btn">
-            <Plus size={20} />
-            Yeni Duyuru Ekle
+            <Plus size={18} />
+            Yeni Duyuru
           </Button>
-        )}
+        </div>
+      </div>
+
+      <div className="announcement-filters">
+        <div className="search-box">
+          <Search size={18} />
+          <input
+            type="text"
+            placeholder="Duyurularda ara..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       <div className="announcements-grid">
-        {announcements.length === 0 ? (
+        {filteredAnnouncements.length === 0 ? (
           <div className="no-announcements">
             <AlertCircle size={48} />
-            <p>Henüz duyuru bulunmamaktadır.</p>
-            {user?.role === 'admin' && (
-              <Button onClick={handleAddNew}>Yeni Duyuru Ekle</Button>
-            )}
+            <p>{searchTerm || priorityFilter !== 'all' 
+              ? 'Arama kriterlerine uygun duyuru bulunamadı.'
+              : 'Henüz duyuru bulunmamaktadır.'
+            }</p>
           </div>
         ) : (
-          announcements.map((announcement) => (
+          filteredAnnouncements.map((announcement) => (
             <div
               key={announcement.id}
               className={`announcement-card ${getPriorityClass(announcement.priority)}`}
@@ -108,28 +153,26 @@ const AnnouncementList = () => {
                 <div className="announcement-priority-badge">
                   {getPriorityLabel(announcement.priority)}
                 </div>
-                {user?.role === 'admin' && (
-                  <div className="announcement-actions">
-                    <button
-                      className="action-btn"
-                      onClick={() => setActiveMenu(activeMenu === announcement.id ? null : announcement.id)}
-                    >
-                      <MoreVertical size={18} />
-                    </button>
-                    {activeMenu === announcement.id && (
-                      <div className="action-dropdown">
-                        <button onClick={() => handleEdit(announcement)}>
-                          <Edit2 size={16} />
-                          Düzenle
-                        </button>
-                        <button onClick={() => handleDelete(announcement.id)} className="delete-action">
-                          <Trash2 size={16} />
-                          Sil
-                        </button>
-                      </div>
-                    )}
-                  </div>
-                )}
+                <div className="announcement-actions">
+                  <button
+                    className="action-btn"
+                    onClick={() => setActiveMenu(activeMenu === announcement.id ? null : announcement.id)}
+                  >
+                    <MoreVertical size={18} />
+                  </button>
+                  {activeMenu === announcement.id && (
+                    <div className="action-dropdown">
+                      <button onClick={() => handleEdit(announcement)}>
+                        <Edit2 size={16} />
+                        Düzenle
+                      </button>
+                      <button onClick={() => handleDelete(announcement.id)} className="delete-action">
+                        <Trash2 size={16} />
+                        Sil
+                      </button>
+                    </div>
+                  )}
+                </div>
               </div>
 
               <h3 className="announcement-title">{announcement.title}</h3>

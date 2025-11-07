@@ -21,6 +21,7 @@ const WorkPermitForm = ({ permit = null, onClose }) => {
     relatedDepartment: initialRelatedDepartment, // 3. İlgili Birim
     description: permit?.description || '', // 4. İş Tanımı
     maintenanceType: permit?.maintenanceType || 'planned', // 5. Bakım Türü
+    status: permit?.status || 'pending', // Durum (Onay Bekliyor / Onaylandı)
   });
 
   useEffect(() => {

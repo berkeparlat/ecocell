@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Edit2, Trash2, Calendar, User, Building2, FileText, ArrowUpDown, MessageSquare } from 'lucide-react';
+import { Plus, Edit2, Trash2, Calendar, User, Building2, ArrowUpDown, MessageSquare, Search } from 'lucide-react';
 import TaskForm from './TaskForm';
 import TaskEditForm from './TaskEditForm';
 import QuickMessageModal from './QuickMessageModal';
@@ -9,11 +9,13 @@ import Button from '../ui/Button';
 import './TaskTable.css';
 
 const TaskTable = () => {
-  const { tasks, deleteTask } = useApp();
+  const { tasks, deleteTask, departments } = useApp();
   const [showTaskForm, setShowTaskForm] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [messageTask, setMessageTask] = useState(null);
   const [selectedStatus, setSelectedStatus] = useState('all');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'asc' });
 
   const statusOptions = [
@@ -23,9 +25,14 @@ const TaskTable = () => {
     { id: 'done', label: 'Tamamlandı', color: '#4caf50' },
   ];
 
-  const filteredTasks = selectedStatus === 'all' 
-    ? tasks 
-    : tasks.filter(t => t.status === selectedStatus);
+  // Filtreleme: durum, arama ve birim
+  const filteredTasks = tasks.filter(task => {
+    const matchesStatus = selectedStatus === 'all' || task.status === selectedStatus;
+    const matchesSearch = task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                         (task.description && task.description.toLowerCase().includes(searchTerm.toLowerCase()));
+    const matchesDepartment = selectedDepartment === 'all' || task.relatedDepartment === selectedDepartment;
+    return matchesStatus && matchesSearch && matchesDepartment;
+  });
 
   const handleSort = (key) => {
     let direction = 'asc';
@@ -153,31 +160,79 @@ const TaskTable = () => {
         </div>
       </div>
 
+      <div className="task-filters">
+        <div className="search-box">
+          <Search size={18} />
+          <input
+            type="text"
+            placeholder="İş ara (başlık veya açıklama)..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+        <div className="department-filter">
+          <Building2 size={18} />
+          <select 
+            value={selectedDepartment} 
+            onChange={(e) => setSelectedDepartment(e.target.value)}
+          >
+            <option value="all">Tüm Birimler</option>
+            {departments && departments.map(dept => (
+              <option key={dept} value={dept}>{dept}</option>
+            ))}
+          </select>
+        </div>
+      </div>
+
       <div className="table-wrapper">
         <table className="task-table">
           <thead>
             <tr>
-              <th style={{ width: '5%' }} onClick={() => handleSort('index')} className="sortable-header">
-                <span>No</span>
+              <th 
+                style={{ width: '10%' }} 
+                onClick={() => handleSort('createdAt')} 
+                className={`sortable-header ${sortConfig.key === 'createdAt' ? 'active' : ''}`}
+              >
+                <span>Eklenme Tarihi</span>
                 <ArrowUpDown size={14} />
               </th>
-              <th style={{ width: '20%' }} onClick={() => handleSort('title')} className="sortable-header">
+              <th 
+                style={{ width: '20%' }} 
+                onClick={() => handleSort('title')} 
+                className={`sortable-header ${sortConfig.key === 'title' ? 'active' : ''}`}
+              >
                 <span>İş Adı</span>
                 <ArrowUpDown size={14} />
               </th>
-              <th style={{ width: '12%' }} onClick={() => handleSort('status')} className="sortable-header">
+              <th 
+                style={{ width: '12%' }} 
+                onClick={() => handleSort('status')} 
+                className={`sortable-header ${sortConfig.key === 'status' ? 'active' : ''}`}
+              >
                 <span>Durum</span>
                 <ArrowUpDown size={14} />
               </th>
-              <th style={{ width: '12%' }} onClick={() => handleSort('relatedDepartment')} className="sortable-header">
+              <th 
+                style={{ width: '12%' }} 
+                onClick={() => handleSort('relatedDepartment')} 
+                className={`sortable-header ${sortConfig.key === 'relatedDepartment' ? 'active' : ''}`}
+              >
                 <span>İlgili Birim</span>
                 <ArrowUpDown size={14} />
               </th>
-              <th style={{ width: '12%' }} onClick={() => handleSort('createdBy')} className="sortable-header">
+              <th 
+                style={{ width: '12%' }} 
+                onClick={() => handleSort('createdBy')} 
+                className={`sortable-header ${sortConfig.key === 'createdBy' ? 'active' : ''}`}
+              >
                 <span>Ekleyen</span>
                 <ArrowUpDown size={14} />
               </th>
-              <th style={{ width: '10%' }} onClick={() => handleSort('dueDate')} className="sortable-header">
+              <th 
+                style={{ width: '10%' }} 
+                onClick={() => handleSort('dueDate')} 
+                className={`sortable-header ${sortConfig.key === 'dueDate' ? 'active' : ''}`}
+              >
                 <span>Teslim Tarihi</span>
                 <ArrowUpDown size={14} />
               </th>
@@ -187,21 +242,21 @@ const TaskTable = () => {
           <tbody>
             {sortedTasks.length === 0 ? (
               <tr>
-                <td colSpan="8" className="empty-state">
-                  <FileText size={48} />
-                  <p>Henüz iş eklenmemiş</p>
-                  <button 
-                    className="empty-add-btn"
-                    onClick={() => setShowTaskForm(true)}
-                  >
-                    İlk işi ekle
-                  </button>
+                <td colSpan="7" className="no-data">
+                  {searchTerm || departmentFilter || statusFilter !== 'all'
+                    ? 'Arama kriterlerine uygun iş bulunamadı.'
+                    : 'Henüz iş eklenmemiş. Yeni bir iş eklemek için yukarıdaki butona tıklayın.'}
                 </td>
               </tr>
             ) : (
               sortedTasks.map((task, index) => (
                 <tr key={task.id} className="task-row">
-                  <td className="task-number">{index + 1}</td>
+                  <td className="task-date">
+                    <div className="date-info">
+                      <Calendar size={14} />
+                      {task.createdAt ? formatDate(task.createdAt) : '-'}
+                    </div>
+                  </td>
                   <td className="task-name">
                     <div className="task-name-content">
                       <span className="name-text">{task.title}</span>

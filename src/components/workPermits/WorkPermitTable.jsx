@@ -1,24 +1,32 @@
 import { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText } from 'lucide-react';
+import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, CheckCircle, Building2 } from 'lucide-react';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import WorkPermitForm from './WorkPermitForm';
 import './WorkPermitTable.css';
 
 const WorkPermitTable = () => {
-  const { user, workPermits = [], deleteWorkPermit } = useApp();
+  const { user, workPermits = [], deleteWorkPermit, departments } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingPermit, setEditingPermit] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
-  const [maintenanceTypeFilter, setMaintenanceTypeFilter] = useState('all');
+  const [statusFilter, setStatusFilter] = useState('all');
+  const [departmentFilter, setDepartmentFilter] = useState('all');
   const [activeMenu, setActiveMenu] = useState(null);
+
+  const statusOptions = [
+    { id: 'all', label: 'Tümü', color: '#757575' },
+    { id: 'pending', label: 'Onay Bekliyor', color: '#FF6B35' },
+    { id: 'approved', label: 'Onaylandı', color: '#4caf50' },
+  ];
 
   const filteredPermits = workPermits.filter(permit => {
     const matchesSearch = permit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          permit.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesMaintenanceType = maintenanceTypeFilter === 'all' || permit.maintenanceType === maintenanceTypeFilter;
-    return matchesSearch && matchesMaintenanceType;
+    const matchesStatus = statusFilter === 'all' || permit.status === statusFilter;
+    const matchesDepartment = departmentFilter === 'all' || permit.relatedDepartment === departmentFilter;
+    return matchesSearch && matchesStatus && matchesDepartment;
   });
 
   const handleEdit = (permit) => {
@@ -53,6 +61,22 @@ const WorkPermitTable = () => {
     return typeMap[type] || typeMap['planned'];
   };
 
+  const getStatusLabel = (status) => {
+    const statusMap = {
+      'pending': 'Onay Bekliyor',
+      'approved': 'Onaylandı'
+    };
+    return statusMap[status] || 'Onay Bekliyor';
+  };
+
+  const getStatusColor = (status) => {
+    const colorMap = {
+      'pending': '#FF6B35',
+      'approved': '#4caf50'
+    };
+    return colorMap[status] || '#FF6B35';
+  };
+
   return (
     <div className="work-permit-table-container">
       <div className="work-permit-header">
@@ -63,10 +87,28 @@ const WorkPermitTable = () => {
             <p>İş izinlerini yönetin ve takip edin</p>
           </div>
         </div>
-        <Button onClick={handleAddNew} className="add-permit-btn">
-          <Plus size={20} />
-          Yeni İş İzni Ekle
-        </Button>
+        
+        <div className="table-actions">
+          <div className="status-filter">
+            {statusOptions.map(status => (
+              <button
+                key={status.id}
+                className={`filter-btn ${statusFilter === status.id ? 'active' : ''}`}
+                onClick={() => setStatusFilter(status.id)}
+                style={{
+                  '--status-color': status.color,
+                }}
+              >
+                {status.label}
+              </button>
+            ))}
+          </div>
+          
+          <Button onClick={handleAddNew} className="add-permit-btn">
+            <Plus size={18} />
+            Yeni İş İzni
+          </Button>
+        </div>
       </div>
 
       <div className="work-permit-filters">
@@ -79,13 +121,16 @@ const WorkPermitTable = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="filter-group">
-          <Filter size={18} />
-          <select value={maintenanceTypeFilter} onChange={(e) => setMaintenanceTypeFilter(e.target.value)}>
-            <option value="all">Tüm Bakım Türleri</option>
-            <option value="planned">Planlı</option>
-            <option value="breakdown">Arızi</option>
-            <option value="predictive">Kestirimci</option>
+        <div className="department-filter">
+          <Building2 size={18} />
+          <select 
+            value={departmentFilter} 
+            onChange={(e) => setDepartmentFilter(e.target.value)}
+          >
+            <option value="all">Tüm Birimler</option>
+            {departments && departments.map(dept => (
+              <option key={dept} value={dept}>{dept}</option>
+            ))}
           </select>
         </div>
       </div>
@@ -95,6 +140,7 @@ const WorkPermitTable = () => {
           <thead>
             <tr>
               <th>İş Adı</th>
+              <th>Durum</th>
               <th>İşi Ekleyen</th>
               <th>İlgili Birim</th>
               <th>Bakım Türü</th>
@@ -104,8 +150,8 @@ const WorkPermitTable = () => {
           <tbody>
             {filteredPermits.length === 0 ? (
               <tr>
-                <td colSpan="5" className="no-data">
-                  {searchTerm || maintenanceTypeFilter !== 'all'
+                <td colSpan="6" className="no-data">
+                  {searchTerm || statusFilter !== 'all'
                     ? 'Arama kriterlerine uygun iş izni bulunamadı.'
                     : 'Henüz iş izni eklenmemiş. Yeni bir iş izni eklemek için yukarıdaki butona tıklayın.'}
                 </td>
@@ -121,6 +167,22 @@ const WorkPermitTable = () => {
                       {permit.description && (
                         <div className="permit-description">{permit.description.substring(0, 60)}...</div>
                       )}
+                    </td>
+                    <td>
+                      <span 
+                        className="status-badge"
+                        style={{
+                          backgroundColor: getStatusColor(permit.status || 'pending'),
+                          color: 'white',
+                          padding: '4px 12px',
+                          borderRadius: '12px',
+                          fontSize: '0.85rem',
+                          fontWeight: '500',
+                          display: 'inline-block'
+                        }}
+                      >
+                        {getStatusLabel(permit.status || 'pending')}
+                      </span>
                     </td>
                     <td>
                       <div className="creator-info">
@@ -141,23 +203,31 @@ const WorkPermitTable = () => {
                     <td>
                       <div className="actions-menu">
                         <button
-                          className="action-btn"
-                          onClick={() => setActiveMenu(activeMenu === permit.id ? null : permit.id)}
+                          className="action-btn message-btn"
+                          title="Mesaj Gönder"
                         >
-                          <MoreVertical size={18} />
+                          <MessageSquare size={16} />
                         </button>
-                        {activeMenu === permit.id && (
-                          <div className="action-dropdown">
-                            <button onClick={() => handleEdit(permit)}>
-                              <Edit2 size={16} />
-                              Düzenle
-                            </button>
-                            <button onClick={() => handleDelete(permit.id)} className="delete-action">
-                              <Trash2 size={16} />
-                              Sil
-                            </button>
-                          </div>
-                        )}
+                        <button
+                          className="action-btn approve-btn"
+                          title="Onayla"
+                        >
+                          <CheckCircle size={16} />
+                        </button>
+                        <button
+                          className="action-btn edit-btn"
+                          onClick={() => handleEdit(permit)}
+                          title="Düzenle"
+                        >
+                          <Edit2 size={16} />
+                        </button>
+                        <button
+                          className="action-btn delete-btn"
+                          onClick={() => handleDelete(permit.id)}
+                          title="Sil"
+                        >
+                          <Trash2 size={16} />
+                        </button>
                       </div>
                     </td>
                   </tr>

@@ -94,10 +94,13 @@ const ExcelPreview = ({
   return (
     <>
       <div className={`excel-preview-card excel-preview-card--${accent}`} style={styleVars}>
-        {/* Zoom Kontrolleri - Sadece hideToolbar false ise göster */}
+        {/* Zoom Kontrolleri - Sağ üstte */}
         {!hideToolbar && (
           <div className="excel-toolbar">
             <div className="excel-toolbar-left">
+              {/* Boş - gelecekte başlık veya info eklenebilir */}
+            </div>
+            <div className="excel-toolbar-right">
               <button 
                 className="excel-btn excel-btn-icon"
                 onClick={handleZoomOut}
@@ -110,6 +113,7 @@ const ExcelPreview = ({
                   <line x1="8" y1="11" x2="14" y2="11"/>
                 </svg>
               </button>
+              <span className="excel-zoom-label">{zoom}%</span>
               <button 
                 className="excel-btn excel-btn-icon"
                 onClick={handleZoomIn}
@@ -123,7 +127,6 @@ const ExcelPreview = ({
                   <line x1="8" y1="11" x2="14" y2="11"/>
                 </svg>
               </button>
-              <span className="excel-zoom-label">{zoom}%</span>
               <button 
                 className="excel-btn"
                 onClick={handleResetZoom}
