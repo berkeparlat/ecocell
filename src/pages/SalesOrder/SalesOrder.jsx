@@ -17,27 +17,21 @@ const SalesOrder = () => {
   const loadLatestFiles = async () => {
     setLoading(true);
     try {
-      console.log('🔍 SalesOrder: Dosyalar yükleniyor...');
-      
+            
       // Sipariş dosyası
       const salesFile = await getLatestExcelFile('sales');
-      console.log('📁 SalesOrder: Sipariş dosyası:', salesFile);
-      if (salesFile) {
+            if (salesFile) {
         setExcelData(salesFile);
       }
       
       // Yükleme dosyası
       const shippingFile = await getLatestExcelFile('shipping');
-      console.log('📦 SalesOrder: Yükleme dosyası:', shippingFile);
-      if (shippingFile) {
+            if (shippingFile) {
         setShippingData(shippingFile);
       }
       
-      console.log('✅ SalesOrder: Dosyalar hazır');
-    } catch (error) {
-      console.error('❌ SalesOrder: Dosya yükleme hatası:', error);
-      console.error('Hata detayı:', error.message);
-    } finally {
+          } catch (error) {
+                } finally {
       setLoading(false);
     }
   };
@@ -74,9 +68,6 @@ const SalesOrder = () => {
                 <ExcelPreview
                   fileName={excelData.name}
                   viewerUrl={excelData.viewerUrl}
-                  downloadUrl={excelData.downloadUrl}
-                  htmlContent={excelData.html}
-                  htmlDocument={excelData.htmlDocument}
                   accent="sales"
                 />
               ) : (
@@ -97,9 +88,6 @@ const SalesOrder = () => {
                 <ExcelPreview
                   fileName={shippingData.name}
                   viewerUrl={shippingData.viewerUrl}
-                  downloadUrl={shippingData.downloadUrl}
-                  htmlContent={shippingData.html}
-                  htmlDocument={shippingData.htmlDocument}
                   accent="shipping"
                 />
               ) : (

@@ -15,7 +15,7 @@ export const triggerFileWatcher = async () => {
     });
     return { success: true };
   } catch (error) {
-    console.error('File-watcher tetikleme hatası:', error);
+    
     return { success: false, error: error.message };
   }
 };

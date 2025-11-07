@@ -30,7 +30,7 @@ export const sendMessage = async (messageData) => {
     const docRef = await addDoc(collection(db, MESSAGES_COLLECTION), message);
     return docRef.id;
   } catch (error) {
-    console.error('Mesaj gönderme hatası:', error);
+    
     throw error;
   }
 };
@@ -114,7 +114,7 @@ export const getUsers = async () => {
     });
     return users;
   } catch (error) {
-    console.error('Kullanıcılar alınırken hata:', error);
+    
     return [];
   }
 };
@@ -136,7 +136,7 @@ export const uploadMessageFile = async (file, senderId) => {
       type: file.type
     };
   } catch (error) {
-    console.error('Dosya yükleme hatası:', error);
+    
     throw error;
   }
 };
@@ -149,7 +149,7 @@ export const markMessageAsDelivered = async (messageId) => {
       deliveredAt: Timestamp.now()
     });
   } catch (error) {
-    console.error('Mesaj iletildi güncelleme hatası:', error);
+    
   }
 };
 
@@ -178,7 +178,7 @@ export const markConversationAsRead = async (userId, otherUserId) => {
     
     await Promise.all(updatePromises);
   } catch (error) {
-    console.error('Mesajlar okundu işaretleme hatası:', error);
+    
     throw error;
   }
 };
@@ -188,7 +188,7 @@ export const deleteMessage = async (messageId) => {
   try {
     await deleteDoc(doc(db, MESSAGES_COLLECTION, messageId));
   } catch (error) {
-    console.error('Mesaj silme hatası:', error);
+    
     throw error;
   }
 };
@@ -220,7 +220,7 @@ export const deleteConversation = async (userId1, userId2) => {
 
     await Promise.all(deletePromises);
   } catch (error) {
-    console.error('Konuşma silme hatası:', error);
+    
     throw error;
   }
 };

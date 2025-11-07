@@ -16,21 +16,14 @@ const DailyStock = () => {
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-      console.log('🔍 DailyStock: Dosya yükleniyor...');
-      const file = await getLatestExcelFile('stock');
-      console.log('📁 DailyStock: Bulunan dosya:', file);
-      
+            const file = await getLatestExcelFile('stock');
+            
       if (file) {
-        console.log('📊 DailyStock: Excel dosyası hazırlanıyor...');
-        setExcelData(file);
-        console.log('✅ DailyStock: Dosya hazır');
-      } else {
-        console.warn('⚠️ DailyStock: Dosya bulunamadı!');
-      }
+                setExcelData(file);
+              } else {
+              }
     } catch (error) {
-      console.error('❌ DailyStock: Dosya yükleme hatası:', error);
-      console.error('Hata detayı:', error.message);
-    } finally {
+                } finally {
       setLoading(false);
     }
   };
@@ -57,9 +50,6 @@ const DailyStock = () => {
           <ExcelPreview
             fileName={excelData.name}
             viewerUrl={excelData.viewerUrl}
-            downloadUrl={excelData.downloadUrl}
-            htmlContent={excelData.html}
-            htmlDocument={excelData.htmlDocument}
             accent="stock"
           />
         ) : (

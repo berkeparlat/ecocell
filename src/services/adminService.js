@@ -29,7 +29,7 @@ export const getAllUsers = async () => {
     });
     return users;
   } catch (error) {
-    console.error('Kullanıcılar alınırken hata:', error);
+    
     throw error;
   }
 };
@@ -43,7 +43,7 @@ export const updateUser = async (userId, userData) => {
     await updateDoc(userRef, firestoreData);
     return { success: true };
   } catch (error) {
-    console.error('Kullanıcı güncellenirken hata:', error);
+    
     throw error;
   }
 };
@@ -55,7 +55,7 @@ export const deleteUser = async (userId) => {
     await deleteDoc(userRef);
     return { success: true };
   } catch (error) {
-    console.error('Kullanıcı silinirken hata:', error);
+    
     throw error;
   }
 };
@@ -72,7 +72,7 @@ export const getAllTasks = async () => {
     });
     return tasks;
   } catch (error) {
-    console.error('Görevler alınırken hata:', error);
+    
     throw error;
   }
 };
@@ -84,7 +84,7 @@ export const deleteTask = async (taskId) => {
     await deleteDoc(taskRef);
     return { success: true };
   } catch (error) {
-    console.error('Görev silinirken hata:', error);
+    
     throw error;
   }
 };
@@ -101,7 +101,7 @@ export const getAllMessages = async () => {
     });
     return messages;
   } catch (error) {
-    console.error('Mesajlar alınırken hata:', error);
+    
     throw error;
   }
 };
@@ -113,7 +113,7 @@ export const deleteMessage = async (messageId) => {
     await deleteDoc(messageRef);
     return { success: true };
   } catch (error) {
-    console.error('Mesaj silinirken hata:', error);
+    
     throw error;
   }
 };
@@ -148,7 +148,7 @@ export const getStatistics = async () => {
 
     return stats;
   } catch (error) {
-    console.error('İstatistikler alınırken hata:', error);
+    
     throw error;
   }
 };

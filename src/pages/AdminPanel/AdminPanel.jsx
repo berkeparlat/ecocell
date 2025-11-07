@@ -83,8 +83,7 @@ const AdminPanel = () => {
       setTasks(tasksData);
       setMessages(messagesData);
     } catch (error) {
-      console.error('Veri yüklenirken hata:', error);
-      alert('Veriler yüklenemedi!');
+            alert('Veriler yüklenemedi!');
     } finally {
       setLoading(false);
     }
@@ -134,8 +133,7 @@ const AdminPanel = () => {
       setEditForm({ fullName: '', email: '', department: '', password: '' });
       loadData();
     } catch (error) {
-      console.error('Kullanıcı güncelleme hatası:', error);
-      alert('Kullanıcı güncellenemedi!');
+            alert('Kullanıcı güncellenemedi!');
     }
   };
 
@@ -215,13 +213,11 @@ const AdminPanel = () => {
     setDepartmentError('');
 
     try {
-      console.log('Birimler kaydediliyor:', localDepartments);
-      await updateDepartments(localDepartments);
+            await updateDepartments(localDepartments);
       alert('Birimler başarıyla güncellendi!');
       loadData();
     } catch (err) {
-      console.error('Birimler kaydedilirken hata oluştu:', err);
-      const errorMessage = err.message || 'Birimler kaydedilirken bir hata oluştu.';
+            const errorMessage = err.message || 'Birimler kaydedilirken bir hata oluştu.';
       setDepartmentError(`Hata: ${errorMessage}`);
       alert(`Birimler kaydedilemedi: ${errorMessage}\n\nFirebase Console'dan "meta/departments" oluşturulması gerekebilir.`);
     } finally {
@@ -239,12 +235,10 @@ const AdminPanel = () => {
   const handleRefreshExcel = async () => {
     setRefreshingExcel(true);
     try {
-      console.log('🔄 Excel dosyaları yenileniyor...');
-      await triggerFileWatcher();
+            await triggerFileWatcher();
       alert('Excel dosyaları yenileme işlemi başlatıldı! Dosyalar birkaç saniye içinde güncellenecek.');
     } catch (error) {
-      console.error('Excel yenileme hatası:', error);
-      alert('Excel dosyaları yenilenemedi. Lütfen tekrar deneyin.');
+            alert('Excel dosyaları yenilenemedi. Lütfen tekrar deneyin.');
     } finally {
       setTimeout(() => setRefreshingExcel(false), 3000);
     }

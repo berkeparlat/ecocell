@@ -30,14 +30,11 @@ const Register = () => {
         if (departmentsDoc.exists()) {
           const data = departmentsDoc.data();
           const list = Array.isArray(data?.list) ? data.list : [];
-          console.log('Register - Departments yüklendi:', list);
-          setDepartments(list);
+                    setDepartments(list);
         } else {
-          console.error('Departments dokümanı bulunamadı');
-        }
+                  }
       } catch (error) {
-        console.error('Departments yüklenirken hata:', error);
-      }
+              }
     };
 
     loadDepartments();

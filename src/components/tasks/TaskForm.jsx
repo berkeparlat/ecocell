@@ -80,7 +80,6 @@ const TaskForm = ({ task = null, initialStatus = 'new', onClose }) => {
       }
       onClose?.();
     } catch (error) {
-      console.error('İş kaydedilirken hata oluştu:', error);
       alert('İş kaydedilirken bir hata oluştu. Lütfen tekrar deneyin.');
     }
   };

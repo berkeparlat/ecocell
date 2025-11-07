@@ -28,7 +28,6 @@ const TaskEditForm = ({ task, onClose }) => {
       await updateTask(task.id, formData);
       onClose?.();
     } catch (error) {
-      console.error('İş güncellenirken hata oluştu:', error);
       alert('İş güncellenirken bir hata oluştu. Lütfen tekrar deneyin.');
     }
   };

@@ -1,4 +1,4 @@
-ï»¿import {
+import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
@@ -37,7 +37,6 @@ export const registerUser = async (email, password, displayName, department) => 
       },
     };
   } catch (error) {
-    console.error('Kayit hatasi:', error);
     return {
       success: false,
       error: getErrorMessage(error.code),
@@ -55,7 +54,7 @@ export const loginUser = async (email, password) => {
     try {
       profileData = await getUserProfile(userCredential.user.uid);
     } catch (profileError) {
-      console.error('Kullanici profili yuklenemedi:', profileError);
+      // Profile yüklenemezse varsayýlan deðerler kullanýlacak
     }
 
     const userData = {
@@ -73,7 +72,6 @@ export const loginUser = async (email, password) => {
       user: userData,
     };
   } catch (error) {
-    console.error('Giris hatasi:', error);
     return {
       success: false,
       error: getErrorMessage(error.code),
@@ -86,7 +84,6 @@ export const logoutUser = async () => {
     await signOut(auth);
     return { success: true };
   } catch (error) {
-    console.error('Cikis hatasi:', error);
     return {
       success: false,
       error: 'Cikis yapilirken bir hata olustu',
@@ -111,7 +108,6 @@ export const getUserProfile = async (uid) => {
       createdAt: data.createdAt?.toDate ? data.createdAt.toDate().toISOString() : data.createdAt || null,
     };
   } catch (error) {
-    console.error('Kullanici profili getirilirken hata:', error);
     throw error;
   }
 };
@@ -132,8 +128,7 @@ export const listenToUserProfile = (uid, callback) => {
         createdAt: data.createdAt?.toDate ? data.createdAt.toDate().toISOString() : data.createdAt || null,
       });
     },
-    (error) => {
-      console.error('Kullanici profili dinlenirken hata:', error);
+    () => {
       callback(null);
     }
   );

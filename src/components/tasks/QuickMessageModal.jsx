@@ -38,7 +38,7 @@ const QuickMessageModal = ({ task, onClose }) => {
         setSelectedRecipient(filteredUsers[0].id);
       }
     } catch (error) {
-      console.error('Kullanıcılar yüklenirken hata:', error);
+      // Kullanıcılar yüklenemezse boş liste kullan
     } finally {
       setLoadingUsers(false);
     }
@@ -97,7 +97,6 @@ const QuickMessageModal = ({ task, onClose }) => {
       
       onClose();
     } catch (error) {
-      console.error('Mesaj gönderme hatası:', error);
       alert('Mesaj gönderilemedi. Lütfen tekrar deneyin.');
     } finally {
       setLoading(false);

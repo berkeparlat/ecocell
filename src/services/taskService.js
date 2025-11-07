@@ -35,7 +35,6 @@ export const getTasks = async (userId) => {
     
     return { success: true, tasks };
   } catch (error) {
-    console.error('Görevler getirilirken hata:', error);
     return { success: false, error: error.message };
   }
 };
@@ -56,8 +55,8 @@ export const listenToTasks = (callback) => {
       });
     });
     callback(tasks);
-  }, (error) => {
-    console.error('Görevler dinlenirken hata:', error);
+  }, () => {
+    callback([]);
   });
 };
 
@@ -81,7 +80,6 @@ export const addTask = async (taskData, userId) => {
       }
     };
   } catch (error) {
-    console.error('Görev eklenirken hata:', error);
     return { success: false, error: error.message };
   }
 };
@@ -97,7 +95,6 @@ export const updateTask = async (taskId, updates) => {
     
     return { success: true };
   } catch (error) {
-    console.error('Görev güncellenirken hata:', error);
     return { success: false, error: error.message };
   }
 };
@@ -110,7 +107,6 @@ export const deleteTask = async (taskId) => {
     
     return { success: true };
   } catch (error) {
-    console.error('Görev silinirken hata:', error);
     return { success: false, error: error.message };
   }
 };
@@ -137,7 +133,6 @@ export const getTasksByDepartment = async (department) => {
     
     return { success: true, tasks };
   } catch (error) {
-    console.error('Departman görevleri getirilirken hata:', error);
     return { success: false, error: error.message };
   }
 };

@@ -60,7 +60,6 @@ const DepartmentsModal = ({ onClose }) => {
       alert('Birimler başarıyla güncellendi!');
       onClose();
     } catch (err) {
-      console.error('Birimler kaydedilirken hata oluştu:', err);
       setError('Birimler kaydedilirken bir hata oluştu. Lütfen tekrar deneyin.');
     } finally {
       setSaving(false);

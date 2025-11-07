@@ -1,4 +1,4 @@
-ï»¿import { createContext, useContext, useEffect, useRef, useState } from 'react';
+import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import { logoutUser, onAuthChange, listenToUserProfile } from '../services/authService';
 import {
   listenToTasks,
@@ -37,7 +37,8 @@ export const AppProvider = ({ children }) => {
       try {
         setUser(JSON.parse(savedUser));
       } catch (error) {
-        console.error('Stored user verisi okunamadi:', error);
+        // Geçersiz veri varsa temizle
+        localStorage.removeItem('karafiber_user');
       }
     }
   }, []);
@@ -122,7 +123,7 @@ export const AppProvider = ({ children }) => {
           setDepartments(ensured);
         }
       } catch (error) {
-        console.error('Birimler yuklenirken hata:', error);
+        // Hata durumunda boþ liste kullan
       }
 
       unsubscribe = listenToDepartmentsFromStore((remoteList) => {
@@ -156,9 +157,6 @@ export const AppProvider = ({ children }) => {
 
   const logout = async () => {
     const result = await logoutUser();
-    if (result?.success === false) {
-      console.error('Cikis yapilirken hata:', result.error);
-    }
     setUser(null);
     setTasks([]);
     setDepartments([]);
@@ -194,7 +192,6 @@ export const AppProvider = ({ children }) => {
     try {
       await saveDepartments(cleaned);
     } catch (error) {
-      console.error('Birimler guncellenirken hata:', error);
       setDepartments(previous);
       throw error;
     }
@@ -220,7 +217,6 @@ export const AppProvider = ({ children }) => {
       }
       return result.task;
     } catch (error) {
-      console.error('Is eklenirken hata:', error);
       throw error;
     }
   };
@@ -233,7 +229,6 @@ export const AppProvider = ({ children }) => {
       }
       return result;
     } catch (error) {
-      console.error('Is guncellenirken hata:', error);
       throw error;
     }
   };
@@ -246,7 +241,6 @@ export const AppProvider = ({ children }) => {
       }
       return result;
     } catch (error) {
-      console.error('Is silinirken hata:', error);
       throw error;
     }
   };

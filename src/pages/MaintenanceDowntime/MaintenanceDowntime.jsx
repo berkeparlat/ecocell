@@ -17,27 +17,21 @@ const MaintenanceDowntime = () => {
   const loadLatestFiles = async () => {
     setLoading(true);
     try {
-      console.log('🔍 MaintenanceDowntime: Dosyalar yükleniyor...');
-      
+            
       // Elektrik Bakım Duruş dosyası
       const electricalFile = await getLatestExcelFile('electrical-downtime');
-      console.log('⚡ MaintenanceDowntime: Elektrik dosyası:', electricalFile);
-      if (electricalFile) {
+            if (electricalFile) {
         setElectricalData(electricalFile);
       }
       
       // Mekanik Bakım Duruş dosyası
       const mechanicalFile = await getLatestExcelFile('mechanical-downtime');
-      console.log('🔧 MaintenanceDowntime: Mekanik dosyası:', mechanicalFile);
-      if (mechanicalFile) {
+            if (mechanicalFile) {
         setMechanicalData(mechanicalFile);
       }
       
-      console.log('✅ MaintenanceDowntime: Dosyalar hazır');
-    } catch (error) {
-      console.error('❌ MaintenanceDowntime: Dosya yükleme hatası:', error);
-      console.error('Hata detayı:', error.message);
-    } finally {
+          } catch (error) {
+                } finally {
       setLoading(false);
     }
   };
@@ -74,9 +68,6 @@ const MaintenanceDowntime = () => {
                 <ExcelPreview
                   fileName={electricalData.name}
                   viewerUrl={electricalData.viewerUrl}
-                  downloadUrl={electricalData.downloadUrl}
-                  htmlContent={electricalData.html}
-                  htmlDocument={electricalData.htmlDocument}
                   accent="electrical"
                 />
               ) : (
@@ -97,9 +88,6 @@ const MaintenanceDowntime = () => {
                 <ExcelPreview
                   fileName={mechanicalData.name}
                   viewerUrl={mechanicalData.viewerUrl}
-                  downloadUrl={mechanicalData.downloadUrl}
-                  htmlContent={mechanicalData.html}
-                  htmlDocument={mechanicalData.htmlDocument}
                   accent="mechanical"
                 />
               ) : (

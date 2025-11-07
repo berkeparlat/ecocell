@@ -1,4 +1,4 @@
-﻿import { doc, setDoc, getDoc, onSnapshot, serverTimestamp } from 'firebase/firestore';
+import { doc, setDoc, getDoc, onSnapshot, serverTimestamp } from 'firebase/firestore';
 import { db } from '../config/firebase';
 
 const departmentsDocRef = doc(db, 'meta', 'departments');
@@ -45,8 +45,8 @@ export const listenToDepartments = (callback) => {
       const list = Array.isArray(data?.list) ? data.list : [];
       callback(list);
     },
-    (error) => {
-      console.error('Birimler dinlenirken hata:', error);
+    () => {
+      callback([]);
     }
   );
 };
@@ -61,9 +61,7 @@ export const saveDepartments = async (departments) => {
       },
       { merge: true }
     );
-    console.log('Birimler başarıyla kaydedildi:', departments);
   } catch (error) {
-    console.error('Birimler kaydedilirken hata:', error);
     throw error;
   }
 };

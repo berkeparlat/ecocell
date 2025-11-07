@@ -36,14 +36,9 @@ const DEFAULT_ZOOM = {
 const ExcelPreview = ({
   fileName,
   viewerUrl,
-  htmlContent,
-  htmlDocument,
   accent = 'stock'
 }) => {
   const hasViewer = Boolean(viewerUrl);
-  const hasFallbackContent = Boolean(htmlDocument || htmlContent);
-  const initialFallback = !hasViewer;
-  const [showFallback, setShowFallback] = useState(initialFallback);
   const [zoom, setZoom] = useState(DEFAULT_ZOOM[accent] || 100);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const palette = ACCENT_PALETTES[accent] || ACCENT_PALETTES.stock;
@@ -54,10 +49,6 @@ const ExcelPreview = ({
     '--excel-accent-soft': palette.soft,
     '--excel-accent-border': palette.border
   };
-
-  useEffect(() => {
-    setShowFallback(!hasViewer);
-  }, [hasViewer, fileName]);
 
   useEffect(() => {
     const handleEsc = (e) => {
@@ -140,38 +131,7 @@ const ExcelPreview = ({
         </div>
 
         <div className="excel-render-area">
-          {showFallback || !hasViewer ? (
-            hasFallbackContent ? (
-              htmlDocument ? (
-                <iframe
-                  className="excel-iframe"
-                  title={`Excel HTML önizleme - ${fileName}`}
-                  srcDoc={htmlDocument}
-                  style={{ 
-                    transform: `scale(${zoom / 100})`, 
-                    transformOrigin: 'top left',
-                    width: `${(100 / zoom) * 100}%`,
-                    height: `${(100 / zoom) * 100}%`
-                  }}
-                />
-              ) : (
-                <div
-                  className="excel-preview-html"
-                  style={{ 
-                    transform: `scale(${zoom / 100})`, 
-                    transformOrigin: 'top left',
-                    width: `${(100 / zoom) * 100}%`,
-                    height: `${(100 / zoom) * 100}%`
-                  }}
-                  dangerouslySetInnerHTML={{ __html: htmlContent || '<p>Önizleme bulunamadı.</p>' }}
-                />
-              )
-            ) : (
-              <div className="excel-preview-empty">
-                <p>Önizleme verisi bulunamadı.</p>
-              </div>
-            )
-          ) : (
+          {hasViewer ? (
             <iframe
               key={viewerUrl}
               className="excel-iframe"
@@ -179,7 +139,6 @@ const ExcelPreview = ({
               src={viewerUrl}
               loading="lazy"
               allowFullScreen={false}
-              onError={() => setShowFallback(true)}
               style={{ 
                 transform: `scale(${zoom / 100})`, 
                 transformOrigin: 'top left',
@@ -187,6 +146,10 @@ const ExcelPreview = ({
                 height: `${(100 / zoom) * 100}%`
               }}
             />
+          ) : (
+            <div className="excel-preview-empty">
+              <p>Excel dosyası yüklenemedi. Lütfen admin ile iletişime geçin.</p>
+            </div>
           )}
         </div>
       </div>

@@ -140,8 +140,7 @@ const Messages = () => {
       setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
-      console.error('Mesaj gönderme hatası:', error);
-      alert('Mesaj gönderilemedi!');
+            alert('Mesaj gönderilemedi!');
     } finally {
       setLoading(false);
     }
@@ -175,8 +174,7 @@ const Messages = () => {
       await deleteMessage(messageId);
       setContextMenu(null);
     } catch (error) {
-      console.error('Mesaj silme hatası:', error);
-      alert('Mesaj silinirken bir hata oluştu.');
+            alert('Mesaj silinirken bir hata oluştu.');
     }
   };
 
@@ -203,8 +201,7 @@ const Messages = () => {
       setSelectedChat(null);
       setChatMessages([]);
     } catch (error) {
-      console.error('Konuşma silme hatası:', error);
-      alert('Konuşma silinirken bir hata oluştu.');
+            alert('Konuşma silinirken bir hata oluştu.');
     }
   };
 
@@ -361,8 +358,7 @@ const Messages = () => {
       setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
-      console.error('Grup mesajı gönderme hatası:', error);
-      alert('Mesajlar gönderilemedi!');
+            alert('Mesajlar gönderilemedi!');
     } finally {
       setLoading(false);
     }

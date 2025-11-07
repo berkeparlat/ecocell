@@ -17,27 +17,21 @@ const MaintenancePlan = () => {
   const loadLatestFiles = async () => {
     setLoading(true);
     try {
-      console.log('🔍 MaintenancePlan: Dosyalar yükleniyor...');
-      
+            
       // Elektrik Bakım dosyası
       const electricalFile = await getLatestExcelFile('electrical-maintenance');
-      console.log('⚡ MaintenancePlan: Elektrik dosyası:', electricalFile);
-      if (electricalFile) {
+            if (electricalFile) {
         setElectricalData(electricalFile);
       }
       
       // Mekanik Bakım dosyası
       const mechanicalFile = await getLatestExcelFile('mechanical-maintenance');
-      console.log('🔧 MaintenancePlan: Mekanik dosyası:', mechanicalFile);
-      if (mechanicalFile) {
+            if (mechanicalFile) {
         setMechanicalData(mechanicalFile);
       }
       
-      console.log('✅ MaintenancePlan: Dosyalar hazır');
-    } catch (error) {
-      console.error('❌ MaintenancePlan: Dosya yükleme hatası:', error);
-      console.error('Hata detayı:', error.message);
-    } finally {
+          } catch (error) {
+                } finally {
       setLoading(false);
     }
   };
@@ -74,9 +68,6 @@ const MaintenancePlan = () => {
                 <ExcelPreview
                   fileName={electricalData.name}
                   viewerUrl={electricalData.viewerUrl}
-                  downloadUrl={electricalData.downloadUrl}
-                  htmlContent={electricalData.html}
-                  htmlDocument={electricalData.htmlDocument}
                   accent="electrical"
                 />
               ) : (
@@ -97,9 +88,6 @@ const MaintenancePlan = () => {
                 <ExcelPreview
                   fileName={mechanicalData.name}
                   viewerUrl={mechanicalData.viewerUrl}
-                  downloadUrl={mechanicalData.downloadUrl}
-                  htmlContent={mechanicalData.html}
-                  htmlDocument={mechanicalData.htmlDocument}
                   accent="mechanical"
                 />
               ) : (
