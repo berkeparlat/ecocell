@@ -213,7 +213,6 @@
   width: 100%;
   border-collapse: collapse;
   font-size: 0.875rem;
-  table-layout: fixed;
 }
 
 .work-permit-table thead {
@@ -233,8 +232,6 @@
   font-size: 0.75rem;
   letter-spacing: 0.05em;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .work-permit-table tbody tr {
@@ -253,9 +250,6 @@
 .work-permit-table td {
   padding: 1rem 1.25rem;
   color: #424242;
-  vertical-align: middle;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .permit-title {

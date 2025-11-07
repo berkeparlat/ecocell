@@ -150,12 +150,12 @@ const WorkPermitTable = () => {
         <table className="work-permit-table">
           <thead>
             <tr>
-              <th style={{ width: '25%' }}>İş Adı</th>
+              <th style={{ width: '20%' }}>İş Adı</th>
               <th style={{ width: '12%' }}>Durum</th>
               <th style={{ width: '15%' }}>İşi Ekleyen</th>
               <th style={{ width: '15%' }}>İlgili Birim</th>
               <th style={{ width: '13%' }}>Bakım Türü</th>
-              <th style={{ width: '20%' }}>İşlemler</th>
+              <th style={{ width: '25%' }}>İşlemler</th>
             </tr>
           </thead>
           <tbody>
