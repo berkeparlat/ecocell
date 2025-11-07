@@ -249,8 +249,12 @@
 
 .work-permit-table td {
   padding: 1rem 1.25rem;
-  color: #424242;
+  color: #616161;
   vertical-align: middle;
+}
+
+.work-permit-table th:last-child {
+  text-align: center;
 }
 
 .permit-title {
@@ -322,6 +326,7 @@
 }
 
 .actions-menu {
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
