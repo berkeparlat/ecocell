@@ -268,13 +268,15 @@
 
 .creator-info {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  align-items: center;
+  gap: 0.5rem;
+  color: #616161;
+  font-size: 0.8125rem;
 }
 
-.creator-info strong {
-  color: #212121;
-  font-size: 0.875rem;
+.creator-info svg {
+  color: #9e9e9e;
+  flex-shrink: 0;
 }
 
 .creator-dept {

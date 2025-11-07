@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, CheckCircle, Building2 } from 'lucide-react';
+import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, CheckCircle, Building2, User } from 'lucide-react';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import WorkPermitForm from './WorkPermitForm';
@@ -197,10 +197,8 @@ const WorkPermitTable = () => {
                     </td>
                     <td>
                       <div className="creator-info">
-                        <strong>{permit.createdBy}</strong>
-                        {permit.createdByDepartment && (
-                          <span className="creator-dept">{permit.createdByDepartment}</span>
-                        )}
+                        <User size={14} />
+                        {permit.createdBy}
                       </div>
                     </td>
                     <td>
