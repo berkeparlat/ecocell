@@ -251,7 +251,7 @@ const TaskTable = () => {
             {sortedTasks.length === 0 ? (
               <tr>
                 <td colSpan="7" className="no-data">
-                  {searchTerm || departmentFilter || statusFilter !== 'all'
+                  {searchTerm || selectedDepartment !== 'all' || selectedStatus !== 'all'
                     ? 'Arama kriterlerine uygun iş bulunamadı.'
                     : 'Henüz iş eklenmemiş. Yeni bir iş eklemek için yukarıdaki butona tıklayın.'}
                 </td>
