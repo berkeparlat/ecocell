@@ -159,7 +159,10 @@ const TaskTable = () => {
           
           <Button 
             variant="primary" 
-            onClick={() => setShowTaskForm(true)}
+            onClick={() => {
+              console.log('Yeni İş butonu tıklandı');
+              setShowTaskForm(true);
+            }}
             className="add-task-btn"
           >
             <Plus size={18} />
