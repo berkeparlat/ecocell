@@ -31,6 +31,14 @@ const TaskTable = () => {
     const matchesSearch = task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          (task.description && task.description.toLowerCase().includes(searchTerm.toLowerCase()));
     const matchesDepartment = selectedDepartment === 'all' || task.relatedDepartment === selectedDepartment;
+    
+    // Debug
+    if (selectedDepartment !== 'all') {
+      console.log('Selected Department:', selectedDepartment);
+      console.log('Task Department:', task.relatedDepartment);
+      console.log('Matches:', matchesDepartment);
+    }
+    
     return matchesStatus && matchesSearch && matchesDepartment;
   });
 
