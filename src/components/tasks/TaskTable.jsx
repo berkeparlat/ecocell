@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Plus, Edit2, Trash2, Calendar, User, Building2, ArrowUpDown, MessageSquare, Search } from 'lucide-react';
 import TaskForm from './TaskForm';
@@ -25,32 +25,27 @@ const TaskTable = () => {
     { id: 'done', label: 'Tamamlandı', color: '#4caf50' },
   ];
 
-  // Filtreleme: durum, arama ve birim
-  const filteredTasks = tasks.filter(task => {
-    const matchesStatus = selectedStatus === 'all' || task.status === selectedStatus;
-    const matchesSearch = task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         (task.description && task.description.toLowerCase().includes(searchTerm.toLowerCase()));
-    const matchesDepartment = selectedDepartment === 'all' || task.relatedDepartment === selectedDepartment;
-    
-    // Debug
-    if (selectedDepartment !== 'all') {
-      console.log('Selected Department:', selectedDepartment);
-      console.log('Task Department:', task.relatedDepartment);
-      console.log('Matches:', matchesDepartment);
-    }
-    
-    return matchesStatus && matchesSearch && matchesDepartment;
-  });
+  const filteredTasks = useMemo(() => {
+    return tasks.filter(task => {
+      const matchesStatus = selectedStatus === 'all' || task.status === selectedStatus;
+      const matchesSearch = task.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           (task.description && task.description.toLowerCase().includes(searchTerm.toLowerCase()));
+      const matchesDepartment = selectedDepartment === 'all' || task.relatedDepartment === selectedDepartment;
+      
+      return matchesStatus && matchesSearch && matchesDepartment;
+    });
+  }, [tasks, selectedStatus, searchTerm, selectedDepartment]);
 
-  const handleSort = (key) => {
+  const handleSort = useCallback((key) => {
     let direction = 'asc';
     if (sortConfig.key === key && sortConfig.direction === 'asc') {
       direction = 'desc';
     }
     setSortConfig({ key, direction });
-  };
+  }, [sortConfig]);
 
-  const sortedTasks = [...filteredTasks].sort((a, b) => {
+  const sortedTasks = useMemo(() => {
+    return [...filteredTasks].sort((a, b) => {
     if (!sortConfig.key) return 0;
 
     // No (index) sıralaması için
@@ -87,51 +82,52 @@ const TaskTable = () => {
       return sortConfig.direction === 'asc' ? 1 : -1;
     }
     return 0;
-  });
+    });
+  }, [filteredTasks, sortConfig]);
 
-  const getStatusLabel = (status) => {
+  const getStatusLabel = useCallback((status) => {
     const statusMap = {
       'new': 'Yeni',
       'in-progress': 'Devam Ediyor',
       'done': 'Tamamlandı'
     };
     return statusMap[status] || status;
-  };
+  }, []);
 
-  const getStatusColor = (status) => {
+  const getStatusColor = useCallback((status) => {
     const colorMap = {
       'new': '#FFD700',
       'in-progress': '#FF6B35',
       'done': '#4caf50'
     };
     return colorMap[status] || '#757575';
-  };
+  }, []);
 
-  const handleEdit = (task) => {
+  const handleEdit = useCallback((task) => {
     setEditingTask(task);
     setShowTaskForm(true);
-  };
+  }, []);
 
-  const handleMessage = (task) => {
+  const handleMessage = useCallback((task) => {
     setMessageTask(task);
-  };
+  }, []);
 
-  const handleDelete = (taskId) => {
+  const handleDelete = useCallback((taskId) => {
     if (window.confirm('Bu işi silmek istediğinizden emin misiniz?')) {
       deleteTask(taskId);
     }
-  };
+  }, [deleteTask]);
 
-  const handleCloseForm = () => {
+  const handleCloseForm = useCallback(() => {
     setShowTaskForm(false);
     setEditingTask(null);
-  };
+  }, []);
 
-  const formatDate = (dateString) => {
+  const formatDate = useCallback((dateString) => {
     if (!dateString) return '-';
     const date = new Date(dateString);
     return date.toLocaleDateString('tr-TR', { day: '2-digit', month: '2-digit', year: 'numeric' });
-  };
+  }, []);
 
   return (
     <div className="task-table-container">
@@ -159,10 +155,7 @@ const TaskTable = () => {
           
           <Button 
             variant="primary" 
-            onClick={() => {
-              console.log('Yeni İş butonu tıklandı');
-              setShowTaskForm(true);
-            }}
+            onClick={() => setShowTaskForm(true)}
             className="add-task-btn"
           >
             <Plus size={18} />

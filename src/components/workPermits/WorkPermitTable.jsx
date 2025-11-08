@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, Building2, User } from 'lucide-react';
 import Button from '../ui/Button';
@@ -21,45 +21,47 @@ const WorkPermitTable = () => {
     { id: 'approved', label: 'Onaylandı', color: '#4caf50' },
   ];
 
-  const filteredPermits = workPermits.filter(permit => {
-    const matchesSearch = permit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                         permit.description.toLowerCase().includes(searchTerm.toLowerCase());
-    const matchesStatus = statusFilter === 'all' || permit.status === statusFilter;
-    const matchesDepartment = departmentFilter === 'all' || permit.relatedDepartment === departmentFilter;
-    return matchesSearch && matchesStatus && matchesDepartment;
-  });
+  const filteredPermits = useMemo(() => {
+    return workPermits.filter(permit => {
+      const matchesSearch = permit.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                           permit.description.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesStatus = statusFilter === 'all' || permit.status === statusFilter;
+      const matchesDepartment = departmentFilter === 'all' || permit.relatedDepartment === departmentFilter;
+      return matchesSearch && matchesStatus && matchesDepartment;
+    });
+  }, [workPermits, searchTerm, statusFilter, departmentFilter]);
 
-  const handleEdit = (permit) => {
+  const handleEdit = useCallback((permit) => {
     setEditingPermit(permit);
     setShowForm(true);
     setActiveMenu(null);
-  };
+  }, []);
 
-  const handleDelete = async (permitId) => {
+  const handleDelete = useCallback(async (permitId) => {
     if (window.confirm('Bu iş iznini silmek istediğinizden emin misiniz?')) {
       await deleteWorkPermit(permitId);
       setActiveMenu(null);
     }
-  };
+  }, [deleteWorkPermit]);
 
-  const handleAddNew = () => {
+  const handleAddNew = useCallback(() => {
     setEditingPermit(null);
     setShowForm(true);
-  };
+  }, []);
 
-  const handleCloseForm = () => {
+  const handleCloseForm = useCallback(() => {
     setShowForm(false);
     setEditingPermit(null);
-  };
+  }, []);
 
-  const getMaintenanceTypeBadge = (type) => {
+  const getMaintenanceTypeBadge = useCallback((type) => {
     const typeMap = {
       'planned': { label: 'Planlı', class: 'maintenance-planned' },
       'breakdown': { label: 'Arızi', class: 'maintenance-breakdown' },
       'predictive': { label: 'Kestirimci', class: 'maintenance-predictive' }
     };
     return typeMap[type] || typeMap['planned'];
-  };
+  }, []);
 
   const getStatusLabel = (status) => {
     const statusMap = {

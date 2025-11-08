@@ -40,9 +40,7 @@ export const addWorkPermit = async (permitData, userId) => {
       userId,
     };
 
-    console.log('Adding work permit:', permitWithTimestamp);
     const docRef = await addDoc(collection(db, WORK_PERMITS_COLLECTION), permitWithTimestamp);
-    console.log('Work permit added successfully:', docRef.id);
 
     return {
       success: true,
@@ -52,7 +50,6 @@ export const addWorkPermit = async (permitData, userId) => {
       },
     };
   } catch (error) {
-    console.error('Error adding work permit:', error);
     return {
       success: false,
       error: error.message,

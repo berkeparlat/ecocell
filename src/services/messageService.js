@@ -31,22 +31,18 @@ export const sendMessage = async (messageData) => {
     const docRef = await addDoc(collection(db, MESSAGES_COLLECTION), message);
     return docRef.id;
   } catch (error) {
-    console.error('Error sending message:', error);
     throw error;
   }
 };
 
-// OPTIMIZE: Kullanıcının konuşmalarını dinle (sadece ilgili mesajlar)
 export const subscribeToConversations = (userId, callback) => {
-  // Alınan mesajlar için query
   const receivedQuery = query(
     collection(db, MESSAGES_COLLECTION),
     where('recipientId', '==', userId),
     orderBy('createdAt', 'desc'),
-    limit(100) // Son 100 mesaj
+    limit(100)
   );
 
-  // Gönderilen mesajlar için query
   const sentQuery = query(
     collection(db, MESSAGES_COLLECTION),
     where('senderId', '==', userId),
@@ -59,8 +55,6 @@ export const subscribeToConversations = (userId, callback) => {
 
   const processMessages = () => {
     const allMessages = [...receivedMessages, ...sentMessages];
-    
-    // Konuşmaları grupla (her kullanıcı için son mesaj)
     const conversationsMap = new Map();
     
     allMessages.forEach(msg => {
@@ -80,7 +74,6 @@ export const subscribeToConversations = (userId, callback) => {
         });
       }
       
-      // Okunmamış mesaj sayısı (sadece alınan mesajlar)
       if (msg.recipientId === userId && !msg.read) {
         const conv = conversationsMap.get(otherUserId);
         if (conv) {
@@ -89,7 +82,6 @@ export const subscribeToConversations = (userId, callback) => {
       }
     });
     
-    // En son mesaja göre sırala
     const conversations = Array.from(conversationsMap.values()).sort(
       (a, b) => b.lastMessage.createdAt.seconds - a.lastMessage.createdAt.seconds
     );
@@ -97,28 +89,23 @@ export const subscribeToConversations = (userId, callback) => {
     callback(conversations);
   };
 
-  // Alınan mesajları dinle
   const unsubscribeReceived = onSnapshot(receivedQuery, (snapshot) => {
     receivedMessages = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     processMessages();
   });
 
-  // Gönderilen mesajları dinle
   const unsubscribeSent = onSnapshot(sentQuery, (snapshot) => {
     sentMessages = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     processMessages();
   });
 
-  // Her iki listener'ı da temizle
   return () => {
     unsubscribeReceived();
     unsubscribeSent();
   };
 };
 
-// OPTIMIZE: Belirli bir kullanıcı ile olan mesajları dinle
 export const subscribeToChat = (userId, otherUserId, callback) => {
-  // Alınan mesajlar
   const receivedQuery = query(
     collection(db, MESSAGES_COLLECTION),
     where('senderId', '==', otherUserId),
@@ -127,7 +114,6 @@ export const subscribeToChat = (userId, otherUserId, callback) => {
     limit(50) // Son 50 mesaj
   );
 
-  // Gönderilen mesajlar
   const sentQuery = query(
     collection(db, MESSAGES_COLLECTION),
     where('senderId', '==', userId),
@@ -170,7 +156,6 @@ export const getUsers = async (forceRefresh = false) => {
   try {
     const now = Date.now();
     
-    // Cache varsa ve güncel ise kullan
     if (!forceRefresh && usersCache && (now - usersCacheTime) < CACHE_DURATION) {
       return usersCache;
     }
@@ -179,18 +164,15 @@ export const getUsers = async (forceRefresh = false) => {
     const snapshot = await getDocs(usersRef);
     const users = snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
     
-    // Cache güncelle
     usersCache = users;
     usersCacheTime = now;
     
     return users;
   } catch (error) {
-    console.error('Error getting users:', error);
-    return usersCache || []; // Hata durumunda eski cache'i döndür
+    return usersCache || [];
   }
 };
 
-// Dosya yükle (mesaj için)
 export const uploadMessageFile = async (file, senderId) => {
   try {
     const timestamp = Date.now();
@@ -207,7 +189,6 @@ export const uploadMessageFile = async (file, senderId) => {
       type: file.type
     };
   } catch (error) {
-    console.error('Error uploading file:', error);
     throw error;
   }
 };
@@ -220,7 +201,7 @@ export const markMessageAsDelivered = async (messageId) => {
       deliveredAt: Timestamp.now()
     });
   } catch (error) {
-    console.error('Error marking as delivered:', error);
+    // Silent fail
   }
 };
 
@@ -238,7 +219,6 @@ export const markConversationAsRead = async (userId, otherUserId) => {
     
     if (snapshot.empty) return;
     
-    // Batch işlem ile toplu güncelleme (daha hızlı)
     const batch = writeBatch(db);
     const readTime = Timestamp.now();
     
@@ -252,7 +232,7 @@ export const markConversationAsRead = async (userId, otherUserId) => {
     
     await batch.commit();
   } catch (error) {
-    console.error('Error marking conversation as read:', error);
+    // Silent fail
   }
 };
 
@@ -261,22 +241,18 @@ export const deleteMessage = async (messageId) => {
   try {
     await deleteDoc(doc(db, MESSAGES_COLLECTION, messageId));
   } catch (error) {
-    console.error('Error deleting message:', error);
     throw error;
   }
 };
 
-// OPTIMIZE: İki kullanıcı arasındaki tüm konuşmayı sil (batch ile)
 export const deleteConversation = async (userId1, userId2) => {
   try {
-    // Alınan mesajlar
     const receivedQuery = query(
       collection(db, MESSAGES_COLLECTION),
       where('senderId', '==', userId2),
       where('recipientId', '==', userId1)
     );
 
-    // Gönderilen mesajlar
     const sentQuery = query(
       collection(db, MESSAGES_COLLECTION),
       where('senderId', '==', userId1),
@@ -288,7 +264,6 @@ export const deleteConversation = async (userId1, userId2) => {
       getDocs(sentQuery)
     ]);
 
-    // Batch işlem ile toplu silme
     const batch = writeBatch(db);
     
     receivedSnapshot.docs.forEach((document) => {
@@ -303,7 +278,6 @@ export const deleteConversation = async (userId1, userId2) => {
       await batch.commit();
     }
   } catch (error) {
-    console.error('Error deleting conversation:', error);
     throw error;
   }
 };
