@@ -340,7 +340,7 @@ const TaskTable = () => {
       </div>
 
       {showTaskForm && (
-        <Modal onClose={handleCloseForm} size="large">
+        <Modal isOpen={true} onClose={handleCloseForm} size="large">
           {editingTask ? (
             <TaskEditForm 
               task={editingTask} 
