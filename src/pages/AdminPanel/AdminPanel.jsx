@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { useApp } from '../../context/AppContext';
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
@@ -24,7 +24,6 @@ import {
   Search,
   RefreshCw,
   Building2,
-  Calendar,
   Plus,
   X,
   FileSpreadsheet
@@ -48,13 +47,10 @@ const AdminPanel = () => {
     department: '',
     password: ''
   });
-    // Departments management state
   const [localDepartments, setLocalDepartments] = useState([]);
   const [newDepartment, setNewDepartment] = useState('');
   const [departmentError, setDepartmentError] = useState('');
   const [savingDepartments, setSavingDepartments] = useState(false);
-
-  // Excel refresh state
   const [refreshingExcel, setRefreshingExcel] = useState(false);
 
   useEffect(() => {
@@ -83,13 +79,13 @@ const AdminPanel = () => {
       setTasks(tasksData);
       setMessages(messagesData);
     } catch (error) {
-            alert('Veriler yüklenemedi!');
+      alert('Veriler yüklenemedi!');
     } finally {
       setLoading(false);
     }
   };
 
-  const handleDeleteUser = async (userId) => {
+  const handleDeleteUser = useCallback(async (userId) => {
     if (!window.confirm('Bu kullanıcıyı silmek istediğinizden emin misiniz?')) return;
     
     try {
@@ -99,9 +95,9 @@ const AdminPanel = () => {
     } catch (error) {
       alert('Kullanıcı silinemedi!');
     }
-  };
+  }, []);
 
-  const handleDeleteTask = async (taskId) => {
+  const handleDeleteTask = useCallback(async (taskId) => {
     if (!window.confirm('Bu işi silmek istediğinizden emin misiniz?')) return;
     
     try {
@@ -111,9 +107,9 @@ const AdminPanel = () => {
     } catch (error) {
       alert('İş silinemedi!');
     }
-  };
+  }, []);
 
-  const handleDeleteMessage = async (messageId) => {
+  const handleDeleteMessage = useCallback(async (messageId) => {
     if (!window.confirm('Bu mesajı silmek istediğinizden emin misiniz?')) return;
     
     try {
@@ -123,9 +119,9 @@ const AdminPanel = () => {
     } catch (error) {
       alert('Mesaj silinemedi!');
     }
-  };
+  }, []);
 
-  const handleUpdateUser = async (userId, updates) => {
+  const handleUpdateUser = useCallback(async (userId, updates) => {
     try {
       await updateUser(userId, updates);
       alert('Kullanıcı güncellendi!');
@@ -133,11 +129,11 @@ const AdminPanel = () => {
       setEditForm({ fullName: '', email: '', department: '', password: '' });
       loadData();
     } catch (error) {
-            alert('Kullanıcı güncellenemedi!');
+      alert('Kullanıcı güncellenemedi!');
     }
-  };
+  }, []);
 
-  const handleEditUser = (user) => {
+  const handleEditUser = useCallback((user) => {
     setEditingUser(user);
     setEditForm({
       fullName: user.fullName || user.displayName || '',
@@ -145,14 +141,14 @@ const AdminPanel = () => {
       department: user.department || '',
       password: ''
     });
-  };
+  }, []);
 
-  const handleCancelEdit = () => {
+  const handleCancelEdit = useCallback(() => {
     setEditingUser(null);
     setEditForm({ fullName: '', email: '', department: '', password: '' });
-  };
+  }, []);
 
-  const handleSaveEdit = () => {
+  const handleSaveEdit = useCallback(() => {
     if (!editForm.fullName.trim()) {
       alert('Ad Soyad alanı boş olamaz!');
       return;
@@ -164,18 +160,14 @@ const AdminPanel = () => {
       updatedAt: new Date()
     };
 
-    // Şifre değiştirme notunu ekle
     if (editForm.password.trim()) {
-      // Not: Firebase Authentication şifrelerini admin olarak değiştiremeyiz
-      // Kullanıcı kendi şifresini değiştirmeli veya şifre sıfırlama kullanılmalı
-      alert('Not: Şifre değiştirmek için kullanıcıya şifre sıfırlama linki gönderilmesi önerilir. Sadece profil bilgileri güncellenecek.');
+      alert('Not: Şifre değiştirmek için kullanıcıya şifre sıfırlama linki gönderilmesi önerilir.');
     }
 
     handleUpdateUser(editingUser.id, updates);
-  };
+  }, [editForm, editingUser, handleUpdateUser]);
 
-  // Department management functions
-  const handleAddDepartment = () => {
+  const handleAddDepartment = useCallback(() => {
     const trimmed = newDepartment.trim();
     if (!trimmed) {
       setDepartmentError('Birim adı boş olamaz');
@@ -196,14 +188,15 @@ const AdminPanel = () => {
     );
     setNewDepartment('');
     setDepartmentError('');
-  };
+  }, [localDepartments, newDepartment]);
 
-  const handleDeleteDepartment = (dept) => {
+  const handleDeleteDepartment = useCallback((dept) => {
     if (window.confirm(`"${dept}" birimini silmek istediğinizden emin misiniz?`)) {
       setLocalDepartments((prev) => prev.filter((d) => d !== dept));
     }
-  };
-  const handleSaveDepartments = async () => {
+  }, []);
+
+  const handleSaveDepartments = useCallback(async () => {
     if (localDepartments.length === 0) {
       setDepartmentError('En az bir birim olmalıdır');
       return;
@@ -213,60 +206,60 @@ const AdminPanel = () => {
     setDepartmentError('');
 
     try {
-            await updateDepartments(localDepartments);
-      alert('Birimler başarıyla güncellendi!');
+      await updateDepartments(localDepartments);
+      alert('Birimler güncellendi!');
       loadData();
     } catch (err) {
-            const errorMessage = err.message || 'Birimler kaydedilirken bir hata oluştu.';
-      setDepartmentError(`Hata: ${errorMessage}`);
-      alert(`Birimler kaydedilemedi: ${errorMessage}\n\nFirebase Console'dan "meta/departments" oluşturulması gerekebilir.`);
+      const errorMessage = err.message || 'Birimler kaydedilemedi';
+      setDepartmentError(errorMessage);
+      alert(errorMessage);
     } finally {
       setSavingDepartments(false);
     }
-  };
+  }, [localDepartments, updateDepartments]);
 
-  const handleKeyPress = (e) => {
+  const handleKeyPress = useCallback((e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
       handleAddDepartment();
     }
-  };
+  }, [handleAddDepartment]);
 
-  const handleRefreshExcel = async () => {
+  const handleRefreshExcel = useCallback(async () => {
     setRefreshingExcel(true);
     try {
-            await triggerFileWatcher();
-      alert('Excel dosyaları yenileme işlemi başlatıldı! Dosyalar birkaç saniye içinde güncellenecek.');
+      await triggerFileWatcher();
+      alert('Excel yenileme başlatıldı!');
     } catch (error) {
-            alert('Excel dosyaları yenilenemedi. Lütfen tekrar deneyin.');
+      alert('Excel yenilenemedi');
     } finally {
       setTimeout(() => setRefreshingExcel(false), 3000);
     }
-  };
+  }, []);
 
-  const formatDate = (timestamp) => {
+  const formatDate = useCallback((timestamp) => {
     if (!timestamp) return '-';
     const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
     return date.toLocaleDateString('tr-TR') + ' ' + date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
-  };
+  }, []);
 
-  const filteredUsers = users
-    .filter(u => !u.deleted) // Silinen kullanıcıları gösterme
+  const filteredUsers = useMemo(() => users
+    .filter(u => !u.deleted)
     .filter(u => 
       (u.fullName || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (u.email || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
       (u.department || '').toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    ), [users, searchQuery]);
 
-  const filteredTasks = tasks.filter(t =>
+  const filteredTasks = useMemo(() => tasks.filter(t =>
     (t.title || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     (t.description || '').toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ), [tasks, searchQuery]);
 
-  const filteredMessages = messages.filter(m =>
+  const filteredMessages = useMemo(() => messages.filter(m =>
     (m.content || '').toLowerCase().includes(searchQuery.toLowerCase()) ||
     (m.senderName || '').toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  ), [messages, searchQuery]);
 
   if (loading) {
     return (
@@ -288,16 +281,15 @@ const AdminPanel = () => {
         <div className="admin-header">
           <div className="admin-title">
             <Shield size={32} />
-            <div>
-              <h1>Admin Panel</h1>
-              <p>Sistem Yönetimi</p>
-            </div>
+            <h1>Admin Panel</h1>
           </div>
           <button className="refresh-btn" onClick={loadData}>
             <RefreshCw size={18} />
             Yenile
           </button>
-        </div>        <div className="admin-tabs">
+        </div>
+
+        <div className="admin-tabs">
           <button 
             className={`tab-btn ${activeTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setActiveTab('dashboard')}
@@ -325,23 +317,23 @@ const AdminPanel = () => {
           >
             <MessageSquare size={18} />
             Mesajlar ({messages.length})
-          </button>          <button 
+          </button>
+          <button 
             className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
             onClick={() => setActiveTab('departments')}
           >
             <Building2 size={18} />
-            Birimleri Yönet
+            Birimler
           </button>
           <button 
             className={`tab-btn ${activeTab === 'excel' ? 'active' : ''}`}
             onClick={() => setActiveTab('excel')}
           >
             <FileSpreadsheet size={18} />
-            Excel Yenile
+            Excel
           </button>
         </div>
 
-        {/* Dashboard Tab */}
         {activeTab === 'dashboard' && stats && (
           <div className="admin-content">
             <div className="stats-grid">

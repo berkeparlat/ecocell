@@ -99,7 +99,7 @@ const SimpleHeader = () => {
       </div>
 
       {showProfileModal && (
-        <Modal onClose={() => setShowProfileModal(false)} size="small">
+        <Modal isOpen={true} onClose={() => setShowProfileModal(false)} size="small">
           <ProfileModal onClose={() => setShowProfileModal(false)} />
         </Modal>
       )}
