@@ -1,0 +1,103 @@
+.downtime-list-page {
+  min-height: 100vh;
+  background: #fafafa;
+  padding-bottom: 2rem;
+}
+
+.downtime-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.downtime-header {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-title svg {
+  color: #f44336;
+  flex-shrink: 0;
+}
+
+.header-title h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #212121;
+  margin: 0;
+}
+
+.header-title p {
+  color: #757575;
+  font-size: 0.875rem;
+  margin: 0.25rem 0 0 0;
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.loading-state svg {
+  color: #f44336;
+  margin-bottom: 1rem;
+}
+
+.loading-state p {
+  color: #757575;
+  font-size: 1rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.empty-state svg {
+  color: #e0e0e0;
+  margin-bottom: 1rem;
+}
+
+.empty-state h3 {
+  color: #616161;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.empty-state p {
+  color: #9e9e9e;
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}

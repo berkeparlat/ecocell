@@ -93,8 +93,9 @@ async function uploadToFirebase(filePath, fileType) {
 async function handleFileChange(filePath) {
   log(`Değişiklik algılandı: ${filePath}`);
   
-  // Dosya tipini belirle
   const stockPath = process.env.STOCK_FILE_PATH;
+  const electricPath = process.env.ELECTRIC_FILE_PATH;
+  const downtimePath = process.env.DOWNTIME_FILE_PATH;
   const salesPath = process.env.SALES_FILE_PATH;
   const shippingPath = process.env.SHIPPING_FILE_PATH;
   const electricalMaintenancePath = process.env.ELECTRICAL_MAINTENANCE_FILE_PATH;
@@ -106,6 +107,10 @@ async function handleFileChange(filePath) {
   
   if (filePath === stockPath) {
     fileType = 'stock';
+  } else if (filePath === electricPath) {
+    fileType = 'electric';
+  } else if (filePath === downtimePath) {
+    fileType = 'downtime';
   } else if (filePath === salesPath) {
     fileType = 'sales';
   } else if (filePath === shippingPath) {
@@ -132,16 +137,17 @@ async function handleFileChange(filePath) {
   await uploadToFirebase(filePath, fileType);
 }
 
-// İzlenecek dosyaları al
 const watchFiles = [
   process.env.STOCK_FILE_PATH,
+  process.env.ELECTRIC_FILE_PATH,
+  process.env.DOWNTIME_FILE_PATH,
   process.env.SALES_FILE_PATH,
   process.env.SHIPPING_FILE_PATH,
   process.env.ELECTRICAL_MAINTENANCE_FILE_PATH,
   process.env.MECHANICAL_MAINTENANCE_FILE_PATH,
   process.env.ELECTRICAL_DOWNTIME_FILE_PATH,
   process.env.MECHANICAL_DOWNTIME_FILE_PATH
-].filter(Boolean); // Boş olanları filtrele
+].filter(Boolean);
 
 if (watchFiles.length === 0) {
   log('HATA: İzlenecek dosya bulunamadı! .env dosyasını kontrol edin.');

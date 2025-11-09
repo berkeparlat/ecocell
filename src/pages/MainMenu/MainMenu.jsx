@@ -13,6 +13,20 @@ const MainMenu = () => {
       color: '#4CAF50'
     },
     {
+      id: 'electric-consumption',
+      title: 'Elektrik Tüketimi',
+      icon: '⚡',
+      path: '/electric-consumption',
+      color: '#FF9800'
+    },
+    {
+      id: 'downtime-list',
+      title: 'İşletme Duruş Listesi',
+      icon: '🔴',
+      path: '/downtime-list',
+      color: '#F44336'
+    },
+    {
       id: 'sales-order',
       title: 'Satış Sipariş',
       icon: '🛒',
@@ -38,7 +52,7 @@ const MainMenu = () => {
       title: 'İş Takibi',
       icon: '✓',
       path: '/job-tracking',
-      color: '#FF9800'
+      color: '#00BCD4'
     },
     {
       id: 'work-permits',
@@ -59,7 +73,7 @@ const MainMenu = () => {
       title: 'Mesajlar',
       icon: '💬',
       path: '/messages',
-      color: '#F44336'
+      color: '#9C27B0'
     }
   ];
 

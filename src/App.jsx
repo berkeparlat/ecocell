@@ -5,6 +5,8 @@ import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MainMenu from './pages/MainMenu/MainMenu';
 import DailyStock from './pages/DailyStock/DailyStock';
+import ElectricConsumption from './pages/ElectricConsumption/ElectricConsumption';
+import DowntimeList from './pages/DowntimeList/DowntimeList';
 import SalesOrder from './pages/SalesOrder/SalesOrder';
 import MaintenancePlan from './pages/MaintenancePlan/MaintenancePlan';
 import MaintenanceDowntime from './pages/MaintenanceDowntime/MaintenanceDowntime';
@@ -67,6 +69,22 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <DailyStock />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/electric-consumption" 
+          element={
+            <ProtectedRoute>
+              <ElectricConsumption />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/downtime-list" 
+          element={
+            <ProtectedRoute>
+              <DowntimeList />
             </ProtectedRoute>
           } 
         />

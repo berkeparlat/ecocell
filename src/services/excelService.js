@@ -11,7 +11,16 @@ const buildOfficeViewerUrl = (directUrl, fileType) => {
   let activeCell = 'A1';
   let defaultZoom = '100';
   
-  if (fileType === 'shipping') {
+  if (fileType === 'stock') {
+    activeCell = 'A1';
+    defaultZoom = '100';
+  } else if (fileType === 'electric') {
+    activeCell = 'A1';
+    defaultZoom = '100';
+  } else if (fileType === 'downtime') {
+    activeCell = 'A1';
+    defaultZoom = '100';
+  } else if (fileType === 'shipping') {
     activeCell = 'A1985';
     defaultZoom = '100';
   } else if (fileType === 'electrical-maintenance') {
