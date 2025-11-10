@@ -193,8 +193,9 @@ function startWatcher() {
       stabilityThreshold: 2000,
       pollInterval: 100
     },
-    usePolling: false, // Ağ dosyaları için gerekirse true yapılabilir
-    interval: 1000
+    usePolling: true, // Ağ dosyaları için polling kullan
+    interval: 5000, // 5 saniyede bir kontrol et
+    binaryInterval: 10000
   });
 
   // Olayları dinle
@@ -204,25 +205,50 @@ function startWatcher() {
       log(`İzleyici hatası: ${error.message}`);
       
       // Ağ hatası varsa watcher'ı yeniden başlat
-      if (error.code === 'ECONNRESET' || error.code === 'ETIMEDOUT' || error.code === 'ENOTFOUND') {
+      if (error.code === 'ECONNRESET' || error.code === 'ETIMEDOUT' || error.code === 'ENOTFOUND' || error.code === 'UNKNOWN' || error.code === 'ENOENT') {
         if (!isRestarting) {
           isRestarting = true;
-          log('⚠️  Ağ bağlantısı hatası - 10 saniye sonra yeniden başlatılıyor...');
+          log('⚠️  Ağ bağlantısı hatası - 30 saniye sonra yeniden başlatılıyor...');
           
           setTimeout(() => {
             log('🔄 Watcher yeniden başlatılıyor...');
             startWatcher();
             isRestarting = false;
             log('✓ Watcher yeniden başlatıldı');
-          }, 10000);
+          }, 30000);
         }
       }
     })
     .on('ready', () => log('✓ Dosya izleyici hazır ve çalışıyor...'));
 }
 
-// İlk başlatma
-startWatcher();
+// Ağ bağlantısı hazır olana kadar bekle
+async function waitForNetwork() {
+  log('⏳ Ağ bağlantısı kontrol ediliyor...');
+  
+  for (let i = 0; i < 6; i++) {
+    try {
+      // İlk dosyayı kontrol et
+      if (watchFiles[0] && fs.existsSync(watchFiles[0])) {
+        log('✓ Ağ bağlantısı hazır');
+        return true;
+      }
+    } catch (error) {
+      // Devam et
+    }
+    log(`Bekleniyor... (${(i + 1) * 5} saniye)`);
+    await new Promise(resolve => setTimeout(resolve, 5000));
+  }
+  
+  log('⚠️  Ağ hazır değil ama başlatılıyor...');
+  return false;
+}
+
+// İlk başlatma - ağ hazır olana kadar bekle
+(async () => {
+  await waitForNetwork();
+  startWatcher();
+})();
 
 // Manuel tetikleme için Firebase listener
 const db = admin.firestore();
