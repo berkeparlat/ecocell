@@ -244,10 +244,42 @@ async function waitForNetwork() {
   return false;
 }
 
+// Health check - her 5 dakikada bir kontrol et
+let lastHealthCheck = Date.now();
+let healthCheckInterval = null;
+
+function healthCheck() {
+  const now = Date.now();
+  const elapsed = Math.floor((now - lastHealthCheck) / 1000);
+  
+  log(`💚 Health check - Çalışma süresi: ${elapsed} saniye`);
+  lastHealthCheck = now;
+  
+  // Watcher hala çalışıyor mu kontrol et
+  if (!watcher || !watcher._isReady) {
+    log('⚠️  Watcher hazır değil - yeniden başlatılıyor...');
+    startWatcher();
+  }
+  
+  // İlk dosyaya erişim kontrolü
+  try {
+    if (watchFiles[0]) {
+      fs.accessSync(watchFiles[0], fs.constants.R_OK);
+      log('✓ Ağ bağlantısı aktif');
+    }
+  } catch (error) {
+    log(`⚠️  Ağ bağlantısı sorunu: ${error.message}`);
+  }
+}
+
 // İlk başlatma - ağ hazır olana kadar bekle
 (async () => {
   await waitForNetwork();
   startWatcher();
+  
+  // 5 dakikada bir health check
+  healthCheckInterval = setInterval(healthCheck, 5 * 60 * 1000);
+  log('✓ Health check başlatıldı (5 dakika aralıklarla)');
 })();
 
 // Manuel tetikleme için Firebase listener
@@ -285,6 +317,10 @@ log('✓ Firebase trigger listener başlatıldı');
 function shutdown(signal) {
   log(`${signal} sinyali alındı - İzleyici durduruluyor...`);
   
+  if (healthCheckInterval) {
+    clearInterval(healthCheckInterval);
+  }
+  
   if (watcher) {
     watcher.close();
   }
@@ -296,15 +332,27 @@ function shutdown(signal) {
 process.on('SIGINT', () => shutdown('SIGINT'));
 process.on('SIGTERM', () => shutdown('SIGTERM'));
 
-// Beklenmeyen hataları yakala
+// Beklenmeyen hataları yakala ve logla, sonra devam et
 process.on('uncaughtException', (error) => {
   log(`❌ Beklenmeyen hata: ${error.message}`);
+  log(`Stack: ${error.stack}`);
   console.error(error);
   log('⚠️  İzleyici devam ediyor...');
+  
+  // Kritik hataysa 10 saniye sonra yeniden başlat
+  if (error.code === 'ECONNREFUSED' || error.code === 'ERR_NETWORK') {
+    setTimeout(() => {
+      log('🔄 Kritik hata nedeniyle yeniden başlatılıyor...');
+      startWatcher();
+    }, 10000);
+  }
 });
 
 process.on('unhandledRejection', (reason, promise) => {
   log(`❌ İşlenmeyen promise reddi: ${reason}`);
+  if (reason && reason.stack) {
+    log(`Stack: ${reason.stack}`);
+  }
   console.error(reason);
   log('⚠️  İzleyici devam ediyor...');
 });
