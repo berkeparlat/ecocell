@@ -55,14 +55,23 @@ function log(message) {
 }
 
 // Firebase'e dosya yükleme fonksiyonu
-async function uploadToFirebase(filePath, fileType) {
+async function uploadToFirebase(filePath, fileType, retryCount = 0) {
+  const maxRetries = 3;
+  
   try {
     log(`Dosya yükleniyor: ${filePath} (Tip: ${fileType})`);
     
     // Dosya var mı kontrol et
     if (!fs.existsSync(filePath)) {
-      log(`HATA: Dosya bulunamadı: ${filePath}`);
-      return;
+      // Dosya geçici olarak kilitlenmiş olabilir, tekrar dene
+      if (retryCount < maxRetries) {
+        log(`Dosya bulunamadı, ${2} saniye sonra tekrar denenecek... (Deneme ${retryCount + 1}/${maxRetries})`);
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        return await uploadToFirebase(filePath, fileType, retryCount + 1);
+      } else {
+        log(`HATA: Dosya ${maxRetries} denemeden sonra hala bulunamadı: ${filePath}`);
+        return;
+      }
     }
 
     // Sabit dosya adı kullan (timestamp yok - eskisinin üzerine yaz)
@@ -85,6 +94,14 @@ async function uploadToFirebase(filePath, fileType) {
     log(`✓ Başarılı: ${fileName} Firebase'e yüklendi (güncellendi)`);
   } catch (error) {
     log(`✗ HATA: ${error.message}`);
+    
+    // Ağ hatası varsa tekrar dene
+    if ((error.code === 'ECONNRESET' || error.code === 'ETIMEDOUT') && retryCount < maxRetries) {
+      log(`Ağ hatası, ${5} saniye sonra tekrar denenecek... (Deneme ${retryCount + 1}/${maxRetries})`);
+      await new Promise(resolve => setTimeout(resolve, 5000));
+      return await uploadToFirebase(filePath, fileType, retryCount + 1);
+    }
+    
     console.error(error);
   }
 }
@@ -161,21 +178,53 @@ log(`İzlenen dosyalar:`);
 watchFiles.forEach(file => log(`  - ${file}`));
 log('='.repeat(60));
 
-// Dosya izleyiciyi başlat
-const watcher = chokidar.watch(watchFiles, {
-  persistent: true,
-  ignoreInitial: true, // İlk taramada değişiklik olarak algılama
-  awaitWriteFinish: {
-    stabilityThreshold: 2000, // 2 saniye boyunca değişiklik yoksa dosya hazır
-    pollInterval: 100
-  }
-});
+// Watcher global değişkeni
+let watcher = null;
+let isRestarting = false;
 
-// Olayları dinle
-watcher
-  .on('change', handleFileChange)
-  .on('error', error => log(`İzleyici hatası: ${error.message}`))
-  .on('ready', () => log('✓ Dosya izleyici hazır ve çalışıyor...'));
+// Watcher'ı başlat
+function startWatcher() {
+  if (watcher) {
+    watcher.close();
+  }
+
+  watcher = chokidar.watch(watchFiles, {
+    persistent: true,
+    ignoreInitial: true,
+    awaitWriteFinish: {
+      stabilityThreshold: 2000,
+      pollInterval: 100
+    },
+    usePolling: false, // Ağ dosyaları için gerekirse true yapılabilir
+    interval: 1000
+  });
+
+  // Olayları dinle
+  watcher
+    .on('change', handleFileChange)
+    .on('error', (error) => {
+      log(`İzleyici hatası: ${error.message}`);
+      
+      // Ağ hatası varsa watcher'ı yeniden başlat
+      if (error.code === 'ECONNRESET' || error.code === 'ETIMEDOUT' || error.code === 'ENOTFOUND') {
+        if (!isRestarting) {
+          isRestarting = true;
+          log('⚠️  Ağ bağlantısı hatası - 10 saniye sonra yeniden başlatılıyor...');
+          
+          setTimeout(() => {
+            log('🔄 Watcher yeniden başlatılıyor...');
+            startWatcher();
+            isRestarting = false;
+            log('✓ Watcher yeniden başlatıldı');
+          }, 10000);
+        }
+      }
+    })
+    .on('ready', () => log('✓ Dosya izleyici hazır ve çalışıyor...'));
+}
+
+// İlk başlatma
+startWatcher();
 
 // Manuel tetikleme için Firebase listener
 const db = admin.firestore();
@@ -209,14 +258,29 @@ triggerRef.onSnapshot(async (snapshot) => {
 log('✓ Firebase trigger listener başlatıldı');
 
 // Graceful shutdown
-process.on('SIGINT', () => {
-  log('İzleyici durduruluyor...');
-  watcher.close();
+function shutdown(signal) {
+  log(`${signal} sinyali alındı - İzleyici durduruluyor...`);
+  
+  if (watcher) {
+    watcher.close();
+  }
+  
+  log('✓ İzleyici başarıyla durduruldu');
   process.exit(0);
+}
+
+process.on('SIGINT', () => shutdown('SIGINT'));
+process.on('SIGTERM', () => shutdown('SIGTERM'));
+
+// Beklenmeyen hataları yakala
+process.on('uncaughtException', (error) => {
+  log(`❌ Beklenmeyen hata: ${error.message}`);
+  console.error(error);
+  log('⚠️  İzleyici devam ediyor...');
 });
 
-process.on('SIGTERM', () => {
-  log('İzleyici durduruluyor...');
-  watcher.close();
-  process.exit(0);
+process.on('unhandledRejection', (reason, promise) => {
+  log(`❌ İşlenmeyen promise reddi: ${reason}`);
+  console.error(reason);
+  log('⚠️  İzleyici devam ediyor...');
 });
