@@ -37,8 +37,8 @@ const DowntimeList = () => {
           <div className="header-title">
             <AlertCircle size={22} />
             <div>
-              <h1>İşletme Duruş Listesi</h1>
-              <p>Güncel duruş ve arıza bilgilerini görüntüleyin</p>
+              <h1>İşletme Duruş İş Planı</h1>
+              <p>Sipariş ve yükleme bilgilerini takip edin</p>
             </div>
           </div>
         </div>

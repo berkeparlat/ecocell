@@ -37,7 +37,7 @@ const DailyStock = () => {
             <FileSpreadsheet size={22} />
             <div>
               <h1>Günlük Stok Takibi</h1>
-              <p>Güncel stok bilgilerini görüntüleyin</p>
+              <p>Güncel stok durumunu takip edin</p>
             </div>
           </div>
         </div>

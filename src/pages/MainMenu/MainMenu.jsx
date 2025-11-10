@@ -20,14 +20,14 @@ const MainMenu = () => {
   const menuItems = [
     {
       id: 'maintenance-downtime',
-      title: 'Bakım Duruş',
+      title: 'Bakım Duruş İş Planı',
       icon: AlertCircle,
       path: '/maintenance-downtime',
       color: '#F44336'
     },
     {
       id: 'maintenance-plan',
-      title: 'Bakım Planı',
+      title: 'Bakım Günlük İş Planı',
       icon: Calendar,
       path: '/maintenance-plan',
       color: '#9C27B0'
@@ -48,7 +48,7 @@ const MainMenu = () => {
     },
     {
       id: 'daily-stock',
-      title: 'Günlük Stok',
+      title: 'Günlük Stok Takibi',
       icon: Package,
       path: '/daily-stock',
       color: '#4CAF50'
@@ -69,7 +69,7 @@ const MainMenu = () => {
     },
     {
       id: 'downtime-list',
-      title: 'İşletme Duruş',
+      title: 'İşletme Duruş İş Planı',
       icon: Wrench,
       path: '/downtime-list',
       color: '#E91E63'
@@ -83,7 +83,7 @@ const MainMenu = () => {
     },
     {
       id: 'sales-order',
-      title: 'Satış Sipariş',
+      title: 'Sipariş ve Yükleme Listesi',
       icon: ShoppingCart,
       path: '/sales-order',
       color: '#2196F3'

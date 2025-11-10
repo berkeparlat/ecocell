@@ -49,8 +49,8 @@ const SalesOrder = () => {
           <div className="header-title">
             <ShoppingCart size={22} />
             <div>
-              <h1>Satış Sipariş ve Yükleme Takibi</h1>
-              <p>Güncel satış sipariş ve yükleme bilgilerini görüntüleyin</p>
+              <h1>Sipariş ve Yükleme Listesi</h1>
+              <p>Satış siparişi ve yükleme bilgilerini takip edin</p>
             </div>
           </div>
         </div>

@@ -50,7 +50,7 @@ const MaintenancePlan = () => {
             <Wrench size={22} />
             <div>
               <h1>Bakım Günlük İş Planı</h1>
-              <p>Elektrik ve Mekanik Bakım günlük iş planlarını görüntüleyin</p>
+              <p>Günlük bakım planlarını takip edin</p>
             </div>
           </div>
         </div>
