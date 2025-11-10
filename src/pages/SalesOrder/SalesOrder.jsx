@@ -67,7 +67,7 @@ const SalesOrder = () => {
               <div className="panel-header sales">
                 <div className="panel-header-left">
                   <ShoppingCart size={18} />
-                  <h2>Satış Siparişleri</h2>
+                  <h2>Satış ve Siparişler</h2>
                 </div>
                 {excelData && (
                   <div className="panel-header-controls">
