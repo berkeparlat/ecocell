@@ -1,34 +1,66 @@
-# Excel File Watcher# Excel File Watcher
+# Excel File Watcher# Excel File Watcher# Excel File Watcher
 
 
 
-Excel dosyalarını otomatik olarak Firebase Storage'a yükleyen servis.Ağ klasöründeki Excel dosyalarını otomatik olarak Firebase Storage'a yükler.
+Excel dosyalarını otomatik olarak Firebase Storage'a yükleyen servis.
 
 
 
-## Kullanım## 🚀 Hızlı Başlangıç
+## KullanımExcel dosyalarını otomatik olarak Firebase Storage'a yükleyen servis.Ağ klasöründeki Excel dosyalarını otomatik olarak Firebase Storage'a yükler.
 
 
 
-1. **Başlatma**: `start.bat` dosyasına çift tıklayın### Seçenek 1: Manuel Başlatma (Terminal kapanınca durur)
+### Ön Planda (Terminal Görünür)
 
-2. **Durdurma**: Terminal penceresinde `Ctrl+C` basın```
+1. **Başlatma**: `start.bat` dosyasına çift tıklayın
 
-START-WATCHER.ps1 dosyasına sağ tık -> "Run with PowerShell"
+2. **Durdurma**: Terminal penceresinde `Ctrl+C` basın## Kullanım## 🚀 Hızlı Başlangıç
 
-## Özellikler```
+
+
+### Arka Planda (Pencere Kapatılabilir)
+
+1. **Başlatma**: `start-background.vbs` dosyasına çift tıklayın
+
+2. **Durdurma**: Task Manager'dan `node.exe` işlemini sonlandırın1. **Başlatma**: `start.bat` dosyasına çift tıklayın### Seçenek 1: Manuel Başlatma (Terminal kapanınca durur)
+
+
+
+## Özellikler2. **Durdurma**: Terminal penceresinde `Ctrl+C` basın```
+
+
+
+- Network bağlantısı bekler (30 saniye)START-WATCHER.ps1 dosyasına sağ tık -> "Run with PowerShell"
+
+- Polling mode ile network path izleme
+
+- Otomatik hata düzeltme ve yeniden başlatma## Özellikler```
+
+- Detaylı log kayıtları
 
 Durdurmak için: `Ctrl+C`
 
+## Monitörlenen Dosyalar
+
 - Network bağlantısı bekler (30 saniye)
 
-- Polling mode ile network path izleme### Seçenek 2: Otomatik Başlatma (Sürekli çalışır)
+- Günlük Stok
 
-- Otomatik hata düzeltme ve yeniden başlatma```
+- Bakım Onarım- Polling mode ile network path izleme### Seçenek 2: Otomatik Başlatma (Sürekli çalışır)
 
-- Detaylı log kayıtlarıINSTALL-AUTOSTART.ps1 dosyasına sağ tık -> "Run as Administrator"
+- Bakım Planı
 
-```
+- Arıza Kayıtları- Otomatik hata düzeltme ve yeniden başlatma```
+
+- Çalışma İzinleri
+
+- Satış Siparişleri- Detaylı log kayıtlarıINSTALL-AUTOSTART.ps1 dosyasına sağ tık -> "Run as Administrator"
+
+- Aylık Takvim
+
+- Duruş Listesi```
+
+- Elektrik Tüketimi
 
 ## Monitörlenen Dosyalar- ✅ Bilgisayar açıldığında otomatik başlar
 
