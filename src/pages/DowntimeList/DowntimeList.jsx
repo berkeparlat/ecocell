@@ -38,7 +38,6 @@ const DowntimeList = () => {
             <AlertCircle size={22} />
             <div>
               <h1>İşletme Duruş İş Planı</h1>
-              <p>Sipariş ve yükleme bilgilerini takip edin</p>
             </div>
           </div>
         </div>
@@ -58,7 +57,6 @@ const DowntimeList = () => {
           <div className="empty-state">
             <AlertCircle size={64} />
             <h3>Henüz dosya yüklenmemiş</h3>
-            <p>Admin tarafından dosya yüklendiğinde burada görüntülenecektir</p>
           </div>
         )}
       </div>

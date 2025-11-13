@@ -50,7 +50,6 @@ const MaintenanceDowntime = () => {
             <AlertTriangle size={22} />
             <div>
               <h1>Bakım Duruş İş Planı</h1>
-              <p>Duruş anında yapılması gereken işleri görüntüleyin</p>
             </div>
           </div>
         </div>

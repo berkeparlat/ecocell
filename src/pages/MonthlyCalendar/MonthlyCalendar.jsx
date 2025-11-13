@@ -12,7 +12,6 @@ const MonthlyCalendar = () => {
         <div className="coming-soon-content">
           <div className="coming-soon-icon">📅</div>
           <h1>Aylık Takvim</h1>
-          <p>Bu sayfa yakında eklenecek...</p>
           <button className="back-button" onClick={() => navigate('/main-menu')}>
             Ana Menüye Dön
           </button>

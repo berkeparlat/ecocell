@@ -58,7 +58,7 @@ const SimpleHeader = () => {
           <img src={logo} alt="Ecocell Logo" className="header-logo" />
           <div className="header-brand-text">
             <h1>Karafiber Elyaf</h1>
-            <span>Genel Takip Sistemi</span>
+            <span>Ecocell Portal</span>
           </div>
         </div>
 

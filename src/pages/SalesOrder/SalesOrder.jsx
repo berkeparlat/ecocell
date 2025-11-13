@@ -50,7 +50,6 @@ const SalesOrder = () => {
             <ShoppingCart size={22} />
             <div>
               <h1>Sipariş ve Yükleme Listesi</h1>
-              <p>Satış siparişi ve yükleme bilgilerini takip edin</p>
             </div>
           </div>
         </div>

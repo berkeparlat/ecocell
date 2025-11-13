@@ -97,7 +97,7 @@ const Register = () => {
             <Building2 size={40} />
           </div>
           <h1 className="auth-title">Karafiber Elyaf</h1>
-          <h2 className="auth-brand">Genel Takip Sistemi</h2>
+          <h2 className="auth-brand">Ecocell Portal</h2>
           <p className="auth-subtitle">
             Yeni hesap oluşturun
           </p>

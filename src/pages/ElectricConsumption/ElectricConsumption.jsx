@@ -38,7 +38,6 @@ const ElectricConsumption = () => {
             <Zap size={22} />
             <div>
               <h1>Elektrik Tüketimi</h1>
-              <p>Elektrik tüketim verilerini takip edin</p>
             </div>
           </div>
         </div>
@@ -58,7 +57,6 @@ const ElectricConsumption = () => {
           <div className="empty-state">
             <Zap size={64} />
             <h3>Henüz dosya yüklenmemiş</h3>
-            <p>Admin tarafından dosya yüklendiğinde burada görüntülenecektir</p>
           </div>
         )}
       </div>
