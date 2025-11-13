@@ -12,7 +12,7 @@ const AnnouncementForm = ({ announcement = null, onClose }) => {
   const [formData, setFormData] = useState({
     title: announcement?.title || '',
     content: announcement?.content || '',
-    priority: announcement?.priority || 'medium',
+    priority: announcement?.priority || 'low',
     createdBy: announcement?.createdBy || user?.fullName || user?.username || '',
     department: announcement?.department || user?.department || '',
   });
@@ -84,7 +84,6 @@ const AnnouncementForm = ({ announcement = null, onClose }) => {
           onChange={handleChange}
           options={[
             { value: 'low', label: 'Bilgilendirme' },
-            { value: 'medium', label: 'Normal' },
             { value: 'high', label: 'Önemli' },
             { value: 'urgent', label: 'Acil' },
           ]}

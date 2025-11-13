@@ -18,7 +18,6 @@ const AnnouncementList = () => {
   const priorityOptions = [
     { id: 'all', label: 'Tümü', color: '#757575' },
     { id: 'low', label: 'Bilgilendirme', color: '#616161' },
-    { id: 'medium', label: 'Normal', color: '#1565c0' },
     { id: 'high', label: 'Önemli', color: '#e65100' },
     { id: 'urgent', label: 'Acil', color: '#c62828' },
   ];
@@ -61,21 +60,19 @@ const AnnouncementList = () => {
   const getPriorityClass = (priority) => {
     const priorityMap = {
       'low': 'priority-low',
-      'medium': 'priority-medium',
       'high': 'priority-high',
       'urgent': 'priority-urgent'
     };
-    return priorityMap[priority] || 'priority-medium';
+    return priorityMap[priority] || 'priority-low';
   };
 
   const getPriorityLabel = (priority) => {
     const priorityMap = {
       'low': 'Bilgilendirme',
-      'medium': 'Normal',
       'high': 'Önemli',
       'urgent': 'Acil'
     };
-    return priorityMap[priority] || 'Normal';
+    return priorityMap[priority] || 'Bilgilendirme';
   };
 
   const formatDate = (dateString) => {

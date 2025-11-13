@@ -86,7 +86,6 @@ const WorkPermitTable = () => {
           <FileText size={24} />
           <div>
             <h1>İş İzinleri</h1>
-            <p>İş izinlerini yönetin ve takip edin</p>
           </div>
         </div>
         
