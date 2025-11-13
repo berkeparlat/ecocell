@@ -92,7 +92,6 @@ const AnnouncementList = () => {
           <Bell size={24} />
           <div>
             <h1>Duyurular</h1>
-            <p>Genel duyuruları görüntüleyin ve yönetin</p>
           </div>
         </div>
         

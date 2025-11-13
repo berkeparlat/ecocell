@@ -1,128 +1,254 @@
-# 🏢 Ecocell - İş Yönetim ve Takip Sistemi# TaskFlow - Modern Project Management System
+# 🏢 Ecocell Portal# 🏢 Ecocell - İş Yönetim ve Takip Sistemi# TaskFlow - Modern Project Management System
 
 
 
-Modern, kullanıcı dostu iş takip ve proje yönetim sistemi. React + Vite ile geliştirilmiş, Firebase entegrasyonlu, Excel otomasyonu destekli kurumsal uygulama.A modern, feature-rich project management application built with React and Vite. Similar to Jira, Trello, and ClickUp, TaskFlow provides an intuitive interface for managing projects and tasks.
+Modern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
 
 
 
-## ✨ Özellikler## ✨ Features
+## ✨ FeaturesModern, kullanıcı dostu iş takip ve proje yönetim sistemi. React + Vite ile geliştirilmiş, Firebase entegrasyonlu, Excel otomasyonu destekli kurumsal uygulama.A modern, feature-rich project management application built with React and Vite. Similar to Jira, Trello, and ClickUp, TaskFlow provides an intuitive interface for managing projects and tasks.
 
 
 
-### 📊 Görev Yönetimi### Core Features
+### 📊 Task & Project Management
 
-- **Kanban Board** - Sürükle-bırak görev yönetimi- 📊 **Kanban Board** - Drag and drop tasks between columns
+- **Kanban Board** - Drag-and-drop task management with real-time updates
 
-- **Liste Görünümü** - Alternatif tablo görünümü- 📝 **List View** - Alternative view for task management
+- **Work Permits** - Digital approval workflow for maintenance operations## ✨ Özellikler## ✨ Features
+
+- **Maintenance Planning** - Schedule and track daily maintenance tasks
+
+- **Announcements** - Company-wide communication system
+
+
+
+### 📈 Excel Integration & Automation### 📊 Görev Yönetimi### Core Features
+
+- **Auto-sync Excel Files** - Monitors network drives and syncs to Firebase Storage
+
+- **Daily Stock Tracking** - Real-time inventory management- **Kanban Board** - Sürükle-bırak görev yönetimi- 📊 **Kanban Board** - Drag and drop tasks between columns
+
+- **Sales Orders** - Order and shipment tracking
+
+- **Downtime Planning** - Maintenance and operational downtime management- **Liste Görünümü** - Alternatif tablo görünümü- 📝 **List View** - Alternative view for task management
+
+- **Electric Consumption** - Energy usage monitoring
 
 - **Hızlı Mesajlaşma** - Görevler üzerinden anlık iletişim- 🎯 **Project Management** - Create and manage multiple projects
 
-- **Öncelik Seviyeleri** - Düşük, Orta, Yüksek, Acil- ✅ **Task Management** - Create, edit, delete, and organize tasks
+### 👥 User & Department Management
 
-- **Durum Takibi** - Todo, In Progress, Review, Done- 🏷️ **Task Properties** - Priority levels, due dates, assignees, and tags
+- **Firebase Authentication** - Secure login system- **Öncelik Seviyeleri** - Düşük, Orta, Yüksek, Acil- ✅ **Task Management** - Create, edit, delete, and organize tasks
+
+- **Role-based Access** - Admin and user permissions
+
+- **Department Organization** - Multi-department support- **Durum Takibi** - Todo, In Progress, Review, Done- 🏷️ **Task Properties** - Priority levels, due dates, assignees, and tags
+
+- **User Profiles** - Profile management with department assignments
 
 - 🎨 **Custom Colors** - Color-code your projects
 
-### 🗂️ Proje Yönetimi- 💾 **Local Storage** - Data persists in browser
+### 📱 Modern UI/UX
 
-- Çoklu proje desteği
+- **Responsive Design** - Works on desktop, tablet, and mobile### 🗂️ Proje Yönetimi- 💾 **Local Storage** - Data persists in browser
+
+- **Real-time Updates** - Live data synchronization via Firebase
+
+- **Professional Interface** - Clean, minimalist design- Çoklu proje desteği
+
+- **Smooth Animations** - Polished user experience
 
 - Departman bazlı organizasyon### Modern UI/UX
 
+## 🚀 Quick Start
+
 - Renk kodlama sistemi- 🎨 Beautiful gradient design with purple theme
-
-- Proje arşivleme- 📱 Fully responsive - works on desktop, tablet, and mobile
-
-- ⚡ Smooth animations and transitions
-
-### 📈 Excel Entegrasyonu- 🌟 Clean, professional interface
-
-- **Otomatik Excel Yükleme** - Network klasöründeki dosyaları otomatik Firebase'e yükler- 🎯 Intuitive navigation and interactions
-
-- **Stok Takibi** - Günlük stok listesi entegrasyonu
-
-- **Sipariş Yönetimi** - Satış siparişleri entegrasyonu## 🚀 Getting Started
-
-- **Gerçek Zamanlı Senkronizasyon** - Dosya değişikliklerini anında algılar
 
 ### Prerequisites
 
-### 👥 Kullanıcı Yönetimi- Node.js (version 14 or higher)
+- Node.js 16+- Proje arşivleme- 📱 Fully responsive - works on desktop, tablet, and mobile
 
-- Firebase Authentication- npm or yarn
+- Firebase project
 
-- Rol tabanlı yetkilendirme (Admin, User)
+- Network access for Excel file monitoring- ⚡ Smooth animations and transitions
 
-- Kullanıcı profil yönetimi### Installation
 
-- Departman atamaları
 
-1. Install dependencies:
+### Installation### 📈 Excel Entegrasyonu- 🌟 Clean, professional interface
+
+
+
+```bash- **Otomatik Excel Yükleme** - Network klasöründeki dosyaları otomatik Firebase'e yükler- 🎯 Intuitive navigation and interactions
+
+# Install dependencies
+
+npm install- **Stok Takibi** - Günlük stok listesi entegrasyonu
+
+
+
+# Set up environment variables- **Sipariş Yönetimi** - Satış siparişleri entegrasyonu## 🚀 Getting Started
+
+cp .env.example .env
+
+# Edit .env with your Firebase credentials- **Gerçek Zamanlı Senkronizasyon** - Dosya değişikliklerini anında algılar
+
+
+
+# Start development server### Prerequisites
+
+npm run dev
+
+```### 👥 Kullanıcı Yönetimi- Node.js (version 14 or higher)
+
+
+
+### Excel File Watcher Setup- Firebase Authentication- npm or yarn
+
+
+
+```bash- Rol tabanlı yetkilendirme (Admin, User)
+
+cd file-watcher
+
+npm install- Kullanıcı profil yönetimi### Installation
+
+
+
+# Configure network paths in .env- Departman atamaları
+
+# Start monitoring (runs in background)
+
+start-background.vbs1. Install dependencies:
+
+```
 
 ### 📱 Modern Arayüz```bash
 
+## 🔧 Configuration
+
 - Responsive tasarım (Mobil, Tablet, Desktop)npm install
+
+Create `.env` file:
 
 - Gradient temalar```
 
-- Smooth animasyonlar
+```env
 
-- Sezgisel navigasyon### Development
+VITE_FIREBASE_API_KEY=your_api_key- Smooth animasyonlar
 
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
 
+VITE_FIREBASE_PROJECT_ID=your_project_id- Sezgisel navigasyon### Development
 
-## 🚀 KurulumRun the development server:
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
 
-```bash
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
 
-### Ön Gereksinimlernpm run dev
+VITE_FIREBASE_APP_ID=your_app_id
 
-- Node.js 14+```
-
-- npm veya yarn
-
-- Firebase projesiThe application will be available at `http://localhost:5173`
+```## 🚀 KurulumRun the development server:
 
 
 
-### 1. Ana Proje Kurulumu### Build
+## 📦 Build & Deploy```bash
 
 
 
-```bashBuild for production:
+```bash### Ön Gereksinimlernpm run dev
+
+# Build for production
+
+npm run build- Node.js 14+```
+
+
+
+# Deploy to Vercel- npm veya yarn
+
+vercel --prod
+
+```- Firebase projesiThe application will be available at `http://localhost:5173`
+
+
+
+## 🛠️ Tech Stack
+
+
+
+- **Frontend:** React 18, Vite, React Router### 1. Ana Proje Kurulumu### Build
+
+- **Backend:** Firebase (Auth, Firestore, Storage)
+
+- **UI:** Lucide React Icons, Custom CSS
+
+- **File Monitoring:** Chokidar (Node.js)
+
+- **Excel Processing:** SheetJS```bashBuild for production:
+
+- **Deployment:** Vercel
 
 # Bağımlılıkları yükle```bash
+
+## 📁 Project Structure
 
 npm installnpm run build
 
 ```
 
-# Geliştirme sunucusunu başlat
+ecocell/```
 
-npm run dev### Preview Production Build
+├── src/
+
+│   ├── components/       # React components# Geliştirme sunucusunu başlat
+
+│   ├── pages/           # Page components
+
+│   ├── context/         # React Context (AppContext)npm run dev### Preview Production Build
+
+│   ├── services/        # Firebase service layer
+
+│   └── config/          # Firebase configuration
+
+├── file-watcher/        # Excel file monitoring service
+
+│   ├── index.js         # Main watcher script# Production build```bash
+
+│   ├── start-background.vbs  # Background launcher
+
+│   └── logs/            # Activity logsnpm run buildnpm run preview
+
+└── public/              # Static assets
+
+`````````
 
 
 
-# Production build```bash
-
-npm run buildnpm run preview
-
-``````
+## 🔐 Security
 
 
 
-### 2. Firebase Yapılandırması## 🎮 How to Use
+- Firebase Security Rules configured### 2. Firebase Yapılandırması## 🎮 How to Use
 
+- Role-based access control
 
+- Secure authentication flow
+
+- Environment variables for sensitive data
 
 1. Firebase Console'da yeni proje oluşturun1. **Login/Signup** - Enter any email and password (demo mode)
 
+## 📝 License
+
 2. Authentication, Firestore, Storage servislerini aktif edin2. **Create a Project** - Click the + button in the sidebar
+
+Private - © 2025 Karafiber Elyaf
 
 3. `src/config/firebase.js` dosyasını kendi bilgilerinizle güncelleyin3. **Select a Project** - Click on a project to open it
 
+## 👥 Support
+
 4. **Add Tasks** - Use the + button in any column (Board view)
+
+For issues or questions, contact the development team.
 
 ### 3. File Watcher Kurulumu (Opsiyonel)5. **Drag & Drop** - Move tasks between columns
 
