@@ -1,88 +1,173 @@
-# 🏢 Ecocell Portal# 🏢 Ecocell Portal# 🏢 Ecocell - İş Yönetim ve Takip Sistemi# TaskFlow - Modern Project Management System
+# 🏢 Ecocell Portal# 🏢 Ecocell Portal# 🏢 Ecocell Portal# 🏢 Ecocell - İş Yönetim ve Takip Sistemi# TaskFlow - Modern Project Management System
 
 
 
-Modern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
+Enterprise management platform with real-time Excel synchronization, task tracking, and workflow automation.
 
 
 
-## ✨ FeaturesModern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
+[![React](https://img.shields.io/badge/React-18-61dafb?logo=react)](https://reactjs.org/)Modern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
+
+[![Firebase](https://img.shields.io/badge/Firebase-Latest-orange?logo=firebase)](https://firebase.google.com/)
+
+[![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)](https://vitejs.dev/)
 
 
 
-### 📊 Core Modules
+## ✨ Features## ✨ FeaturesModern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
 
-- **Task Management** - Kanban board with drag-and-drop, list view, priority levels
 
-- **Work Permits** - Digital approval workflow for maintenance operations## ✨ FeaturesModern, kullanıcı dostu iş takip ve proje yönetim sistemi. React + Vite ile geliştirilmiş, Firebase entegrasyonlu, Excel otomasyonu destekli kurumsal uygulama.A modern, feature-rich project management application built with React and Vite. Similar to Jira, Trello, and ClickUp, TaskFlow provides an intuitive interface for managing projects and tasks.
 
-- **Maintenance Planning** - Daily/monthly maintenance schedules and downtime tracking
+- 📊 **Task Management** - Kanban board, list view, priorities, assignments
 
-- **Announcements** - Company-wide communication system
+- 📝 **Work Permits** - Digital approval workflow for operations
 
-- **Admin Panel** - User management, department organization, system configuration
+- 🔧 **Maintenance** - Planning, scheduling, downtime tracking### 📊 Core Modules
 
-### 📊 Task & Project Management
+- 📢 **Announcements** - Company-wide communications
+
+- 📈 **Excel Sync** - Auto-monitor and sync network Excel files to cloud- **Task Management** - Kanban board with drag-and-drop, list view, priority levels
+
+- 👥 **Multi-department** - Role-based access control
+
+- 🔄 **Real-time** - Live updates via Firebase- **Work Permits** - Digital approval workflow for maintenance operations## ✨ FeaturesModern, kullanıcı dostu iş takip ve proje yönetim sistemi. React + Vite ile geliştirilmiş, Firebase entegrasyonlu, Excel otomasyonu destekli kurumsal uygulama.A modern, feature-rich project management application built with React and Vite. Similar to Jira, Trello, and ClickUp, TaskFlow provides an intuitive interface for managing projects and tasks.
+
+
+
+## 🚀 Quick Start- **Maintenance Planning** - Daily/monthly maintenance schedules and downtime tracking
+
+
+
+```bash- **Announcements** - Company-wide communication system
+
+git clone https://github.com/berkeparlat/ecocell.git
+
+cd ecocell- **Admin Panel** - User management, department organization, system configuration
+
+npm install
+
+npm run dev### 📊 Task & Project Management
+
+```
 
 ### 📈 Excel Integration
 
+### Environment Setup
+
 - **Auto-sync** - Monitors network Excel files and uploads to Firebase Storage- **Kanban Board** - Drag-and-drop task management with real-time updates
 
-- **Real-time Updates** - Live data synchronization across all devices
+```env
 
-- **Multiple Files** - Stock, sales orders, maintenance plans, downtime lists, electrical data- **Work Permits** - Digital approval workflow for maintenance operations## ✨ Özellikler## ✨ Features
+VITE_FIREBASE_API_KEY=your_key- **Real-time Updates** - Live data synchronization across all devices
+
+VITE_FIREBASE_AUTH_DOMAIN=your_domain
+
+VITE_FIREBASE_PROJECT_ID=your_project- **Multiple Files** - Stock, sales orders, maintenance plans, downtime lists, electrical data- **Work Permits** - Digital approval workflow for maintenance operations## ✨ Özellikler## ✨ Features
+
+VITE_FIREBASE_STORAGE_BUCKET=your_bucket
+
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_id
+
+VITE_FIREBASE_APP_ID=your_app_id
+
+```### 👥 Access Control- **Maintenance Planning** - Schedule and track daily maintenance tasks
 
 
 
-### 👥 Access Control- **Maintenance Planning** - Schedule and track daily maintenance tasks
-
-- **Firebase Authentication** - Secure login/registration
-
-- **Role-based Permissions** - Admin and user roles- **Announcements** - Company-wide communication system
-
-- **Department Organization** - Multi-department support with filtering
+## 📁 Structure- **Firebase Authentication** - Secure login/registration
 
 
 
-### 📱 Modern UI/UX
+```- **Role-based Permissions** - Admin and user roles- **Announcements** - Company-wide communication system
 
-- **Responsive Design** - Desktop, tablet, mobile### 📈 Excel Integration & Automation### 📊 Görev Yönetimi### Core Features
+src/
+
+├── components/    # Reusable UI components- **Department Organization** - Multi-department support with filtering
+
+├── pages/         # Page components
+
+├── context/       # State management
+
+├── services/      # Firebase services
+
+└── config/        # Configuration### 📱 Modern UI/UX
+
+
+
+file-watcher/      # Excel auto-sync service- **Responsive Design** - Desktop, tablet, mobile### 📈 Excel Integration & Automation### 📊 Görev Yönetimi### Core Features
+
+```
 
 - **Real-time Updates** - Live Firebase synchronization
 
+## 🛠️ Tech Stack
+
 - **Professional Interface** - Clean, minimalist design- **Auto-sync Excel Files** - Monitors network drives and syncs to Firebase Storage
 
-- **Smooth Animations** - Polished user experience
+**Frontend:** React 18, Vite, React Router  
 
-- **Daily Stock Tracking** - Real-time inventory management- **Kanban Board** - Sürükle-bırak görev yönetimi- 📊 **Kanban Board** - Drag and drop tasks between columns
+**Backend:** Firebase (Firestore, Storage, Auth)  - **Smooth Animations** - Polished user experience
 
-## 🚀 Quick Start
+**Automation:** Node.js, Chokidar  
 
-- **Sales Orders** - Order and shipment tracking
-
-### Prerequisites
-
-- Node.js 16+- **Downtime Planning** - Maintenance and operational downtime management- **Liste Görünümü** - Alternatif tablo görünümü- 📝 **List View** - Alternative view for task management
-
-- Firebase project with Firestore and Storage
-
-- Network access for Excel file monitoring (optional)- **Electric Consumption** - Energy usage monitoring
+**Deployment:** Vercel- **Daily Stock Tracking** - Real-time inventory management- **Kanban Board** - Sürükle-bırak görev yönetimi- 📊 **Kanban Board** - Drag and drop tasks between columns
 
 
 
-### Installation- **Hızlı Mesajlaşma** - Görevler üzerinden anlık iletişim- 🎯 **Project Management** - Create and manage multiple projects
+## 📦 Excel File Watcher## 🚀 Quick Start
 
 
 
-```bash### 👥 User & Department Management
+Background service for automatic Excel file synchronization:- **Sales Orders** - Order and shipment tracking
 
-# Clone repository
 
-git clone https://github.com/berkeparlat/ecocell.git- **Firebase Authentication** - Secure login system- **Öncelik Seviyeleri** - Düşük, Orta, Yüksek, Acil- ✅ **Task Management** - Create, edit, delete, and organize tasks
 
-cd ecocell
+```bash### Prerequisites
 
-- **Role-based Access** - Admin and user permissions
+cd file-watcher
+
+npm install- Node.js 16+- **Downtime Planning** - Maintenance and operational downtime management- **Liste Görünümü** - Alternatif tablo görünümü- 📝 **List View** - Alternative view for task management
+
+start-background.vbs  # Windows
+
+```- Firebase project with Firestore and Storage
+
+
+
+Monitors network drives and uploads changes to Firebase Storage in real-time.- Network access for Excel file monitoring (optional)- **Electric Consumption** - Energy usage monitoring
+
+
+
+## 📝 Scripts
+
+
+
+```bash### Installation- **Hızlı Mesajlaşma** - Görevler üzerinden anlık iletişim- 🎯 **Project Management** - Create and manage multiple projects
+
+npm run dev      # Development server
+
+npm run build    # Production build
+
+npm run preview  # Preview build
+
+``````bash### 👥 User & Department Management
+
+
+
+## 📄 License# Clone repository
+
+
+
+© 2025 Karafiber Elyaf - Private Enterprise Projectgit clone https://github.com/berkeparlat/ecocell.git- **Firebase Authentication** - Secure login system- **Öncelik Seviyeleri** - Düşük, Orta, Yüksek, Acil- ✅ **Task Management** - Create, edit, delete, and organize tasks
+
+
+
+---cd ecocell
+
+
+
+**Status:** ✅ Production Ready | **Version:** 1.0.0 | **Maintained:** Active- **Role-based Access** - Admin and user permissions
+
 
 # Install dependencies
 
