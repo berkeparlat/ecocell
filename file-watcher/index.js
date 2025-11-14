@@ -180,23 +180,63 @@ log('='.repeat(60));
 let watcher = null;
 let isRestarting = false;
 
+// Son değişiklik zamanlarını takip et
+const lastModifiedTimes = new Map();
+let manualCheckInterval = null;
+
+// Manuel olarak dosya değişikliklerini kontrol et (açık dosyalar için)
+async function checkFileModifications() {
+  for (const filePath of watchFiles) {
+    try {
+      const stats = fs.statSync(filePath);
+      const currentMtime = stats.mtime.getTime();
+      const lastMtime = lastModifiedTimes.get(filePath);
+      
+      if (lastMtime && currentMtime > lastMtime) {
+        log(`📝 Manuel kontrol: Değişiklik tespit edildi - ${path.basename(filePath)}`);
+        await handleFileChange(filePath);
+      }
+      
+      lastModifiedTimes.set(filePath, currentMtime);
+    } catch (error) {
+      // Dosya erişim hatası, devam et
+    }
+  }
+}
+
 // Watcher'ı başlat
 function startWatcher() {
   if (watcher) {
     watcher.close();
   }
+  
+  if (manualCheckInterval) {
+    clearInterval(manualCheckInterval);
+  }
+
+  // İlk kez dosya zamanlarını kaydet
+  watchFiles.forEach(filePath => {
+    try {
+      const stats = fs.statSync(filePath);
+      lastModifiedTimes.set(filePath, stats.mtime.getTime());
+    } catch (error) {
+      // İlk başlangıçta dosya yoksa sorun değil
+    }
+  });
 
   watcher = chokidar.watch(watchFiles, {
     persistent: true,
     ignoreInitial: true,
-    awaitWriteFinish: {
-      stabilityThreshold: 2000,
-      pollInterval: 100
-    },
+    awaitWriteFinish: false, // Açık dosyalar için kapatıldı
     usePolling: true, // Ağ dosyaları için polling kullan
     interval: 5000, // 5 saniyede bir kontrol et
-    binaryInterval: 10000
+    binaryInterval: 10000,
+    alwaysStat: true // Her zaman stat bilgisi al
   });
+  
+  // Her 10 saniyede bir manuel kontrol (açık dosyalar için)
+  manualCheckInterval = setInterval(checkFileModifications, 10000);
+  log('✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)');
 
   // Olayları dinle
   watcher
@@ -319,6 +359,10 @@ function shutdown(signal) {
   
   if (healthCheckInterval) {
     clearInterval(healthCheckInterval);
+  }
+  
+  if (manualCheckInterval) {
+    clearInterval(manualCheckInterval);
   }
   
   if (watcher) {
