@@ -699,3 +699,119 @@
 [17.11.2025 12:46:06] ✓ Health check başlatıldı (5 dakika aralıklarla)
 [17.11.2025 12:46:06] ✓ Dosya izleyici hazır ve çalışıyor...
 [17.11.2025 12:46:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:48:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 12:48:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 12:48:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 12:48:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 12:48:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:48:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:48:13] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[17.11.2025 12:48:13] 🔄 Manuel tarama başlatıldı...
+[17.11.2025 12:48:13] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 12:48:13] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[17.11.2025 12:48:13] 🔄 Manuel tarama başlatıldı...
+[17.11.2025 12:48:13] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 12:48:15] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 12:48:15] 📊 Son dolu satır: 167
+[17.11.2025 12:48:15] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 12:48:15] 📊 Son dolu satır: 167
+[17.11.2025 12:48:17] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:17] Değişiklik algılandı: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx
+[17.11.2025 12:48:17] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:17] Değişiklik algılandı: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\A.xlsx
+[17.11.2025 12:48:19] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx (Tip: dcs-report)
+[17.11.2025 12:48:19] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 1/3)
+[17.11.2025 12:48:19] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\A.xlsx (Tip: dcs-a)
+[17.11.2025 12:48:19] 📊 Son dolu satır: 129
+[17.11.2025 12:48:21] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx (Tip: dcs-report)
+[17.11.2025 12:48:21] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 2/3)
+[17.11.2025 12:48:21] ✓ Başarılı: dcs-a.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:21] Değişiklik algılandı: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\B.xlsx
+[17.11.2025 12:48:23] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx (Tip: dcs-report)
+[17.11.2025 12:48:23] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 3/3)
+[17.11.2025 12:48:23] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\B.xlsx (Tip: dcs-b)
+[17.11.2025 12:48:23] 📊 Son dolu satır: 128
+[17.11.2025 12:48:25] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx (Tip: dcs-report)
+[17.11.2025 12:48:25] HATA: Dosya 3 denemeden sonra hala bulunamadı: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx
+[17.11.2025 12:48:25] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[17.11.2025 12:48:25] ✓ Başarılı: dcs-b.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:25] Değişiklik algılandı: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\S.xlsx
+[17.11.2025 12:48:27] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx (Tip: electric)
+[17.11.2025 12:48:27] Dosya yükleniyor: C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\S.xlsx (Tip: dcs-buhar)
+[17.11.2025 12:48:27] 📊 Son dolu satır: 315
+[17.11.2025 12:48:28] 📊 Son dolu satır: 154
+[17.11.2025 12:48:28] ✓ Başarılı: dcs-buhar.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:28] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[17.11.2025 12:48:30] ✓ Başarılı: electric.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:30] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx
+[17.11.2025 12:48:30] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx (Tip: electric)
+[17.11.2025 12:48:30] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 1/3)
+[17.11.2025 12:48:32] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx (Tip: downtime)
+[17.11.2025 12:48:32] 📊 Son dolu satır: 122
+[17.11.2025 12:48:32] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx (Tip: electric)
+[17.11.2025 12:48:32] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 2/3)
+[17.11.2025 12:48:33] ✓ Başarılı: downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:33] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[17.11.2025 12:48:34] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx (Tip: electric)
+[17.11.2025 12:48:34] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 3/3)
+[17.11.2025 12:48:35] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[17.11.2025 12:48:35] 📊 Son dolu satır: 85
+[17.11.2025 12:48:36] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx (Tip: electric)
+[17.11.2025 12:48:36] HATA: Dosya 3 denemeden sonra hala bulunamadı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[17.11.2025 12:48:36] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx
+[17.11.2025 12:48:36] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:36] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 12:48:38] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx (Tip: downtime)
+[17.11.2025 12:48:38] 📊 Son dolu satır: 122
+[17.11.2025 12:48:38] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 12:48:39] 📊 Son dolu satır: 166
+[17.11.2025 12:48:39] ✓ Başarılı: downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:39] Değişiklik algılandı: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[17.11.2025 12:48:41] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:41] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 12:48:41] Dosya yükleniyor: \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx (Tip: sales)
+[17.11.2025 12:48:41] 📊 Son dolu satır: 85
+[17.11.2025 12:48:42] ✓ Başarılı: sales.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:42] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 12:48:43] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[17.11.2025 12:48:43] 📊 Son dolu satır: 187
+[17.11.2025 12:48:44] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:44] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[17.11.2025 12:48:45] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 12:48:45] 📊 Son dolu satır: 166
+[17.11.2025 12:48:46] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[17.11.2025 12:48:47] 📊 Son dolu satır: 165
+[17.11.2025 12:48:47] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:47] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 12:48:48] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:48] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx
+[17.11.2025 12:48:49] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[17.11.2025 12:48:49] 📊 Son dolu satır: 187
+[17.11.2025 12:48:50] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx (Tip: electrical-downtime)
+[17.11.2025 12:48:50] 📊 Son dolu satır: 26
+[17.11.2025 12:48:51] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:51] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[17.11.2025 12:48:51] ✓ Başarılı: electrical-downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:51] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx
+[17.11.2025 12:48:53] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[17.11.2025 12:48:53] 📊 Son dolu satır: 165
+[17.11.2025 12:48:53] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx (Tip: mechanical-downtime)
+[17.11.2025 12:48:53] 📊 Son dolu satır: 603
+[17.11.2025 12:48:54] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:54] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx
+[17.11.2025 12:48:55] ✓ Başarılı: mechanical-downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:55] ✓ Manuel tarama tamamlandı
+[17.11.2025 12:48:56] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx (Tip: electrical-downtime)
+[17.11.2025 12:48:56] 📊 Son dolu satır: 26
+[17.11.2025 12:48:57] ✓ Başarılı: electrical-downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:48:57] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx
+[17.11.2025 12:48:59] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx (Tip: mechanical-downtime)
+[17.11.2025 12:48:59] 📊 Son dolu satır: 603
+[17.11.2025 12:49:01] ✓ Başarılı: mechanical-downtime.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 12:49:01] ✓ Manuel tarama tamamlandı
+[17.11.2025 12:51:06] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 12:51:06] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 12:51:06] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 12:51:06] ✓ Ağ bağlantısı aktif
+[17.11.2025 12:51:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:51:06] ✓ Dosya izleyici hazır ve çalışıyor...
