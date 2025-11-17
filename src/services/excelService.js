@@ -12,34 +12,34 @@ const buildOfficeViewerUrl = (directUrl, fileType) => {
   let defaultZoom = '100';
   
   if (fileType === 'stock') {
-    activeCell = 'A1000';
+    activeCell = 'A100';
     defaultZoom = '100';
   } else if (fileType === 'dcs-report') {
-    activeCell = 'A500';
+    activeCell = 'A50';
     defaultZoom = '100';
   } else if (fileType === 'electric') {
-    activeCell = 'A1000';
+    activeCell = 'A100';
     defaultZoom = '100';
   } else if (fileType === 'downtime') {
-    activeCell = 'A500';
+    activeCell = 'A50';
     defaultZoom = '100';
   } else if (fileType === 'sales') {
-    activeCell = 'A2000';
+    activeCell = 'A200';
     defaultZoom = '100';
   } else if (fileType === 'shipping') {
-    activeCell = 'A2000';
+    activeCell = 'A200';
     defaultZoom = '100';
   } else if (fileType === 'electrical-maintenance') {
-    activeCell = 'A1500';
+    activeCell = 'A150';
     defaultZoom = '80';
   } else if (fileType === 'mechanical-maintenance') {
-    activeCell = 'A1500';
+    activeCell = 'A150';
     defaultZoom = '100';
   } else if (fileType === 'electrical-downtime') {
-    activeCell = 'A500';
+    activeCell = 'A50';
     defaultZoom = '100';
   } else if (fileType === 'mechanical-downtime') {
-    activeCell = 'A1000';
+    activeCell = 'A100';
     defaultZoom = '100';
   }
   
