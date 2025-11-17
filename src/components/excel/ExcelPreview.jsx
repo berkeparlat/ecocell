@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import './ExcelPreview.css';
 import { Maximize2 } from 'lucide-react';
 
@@ -38,6 +38,8 @@ const ExcelPreview = ({
   viewerUrl,
   accent = 'stock',
   hideToolbar = false,
+  onZoomChange,
+  currentZoom = 100,
   onZoomChange,
   onFullscreen
 }) => {

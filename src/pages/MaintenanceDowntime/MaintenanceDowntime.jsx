@@ -18,6 +18,28 @@ const MaintenanceDowntime = () => {
     loadLatestFiles();
   }, []);
 
+  useEffect(() => {
+    // Elektrik bakım duruş iframe zoom
+    const iframe = document.querySelector('.downtime-panel:first-child iframe');
+    if (iframe) {
+      iframe.style.transform = `scale(${electricalZoom / 100})`;
+      iframe.style.transformOrigin = 'top left';
+      iframe.style.width = `${10000 / electricalZoom}%`;
+      iframe.style.height = `${10000 / electricalZoom}%`;
+    }
+  }, [electricalZoom]);
+
+  useEffect(() => {
+    // Mekanik bakım duruş iframe zoom
+    const iframe = document.querySelector('.downtime-panel:last-child iframe');
+    if (iframe) {
+      iframe.style.transform = `scale(${mechanicalZoom / 100})`;
+      iframe.style.transformOrigin = 'top left';
+      iframe.style.width = `${10000 / mechanicalZoom}%`;
+      iframe.style.height = `${10000 / mechanicalZoom}%`;
+    }
+  }, [mechanicalZoom]);
+
   const loadLatestFiles = async () => {
     setLoading(true);
     try {
