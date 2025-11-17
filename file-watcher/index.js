@@ -4,7 +4,6 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-import XLSX from 'xlsx';
 
 // ES Module için __dirname alternatifi
 const __filename = fileURLToPath(import.meta.url);
@@ -86,24 +85,6 @@ async function cleanupOldFiles(fileType) {
   }
 }
 
-// Excel dosyasının son dolu satırını bul
-function getLastRow(filePath) {
-  try {
-    const workbook = XLSX.readFile(filePath, { sheetRows: 10000 }); // İlk 10000 satırı oku
-    const sheetName = workbook.SheetNames[0];
-    const worksheet = workbook.Sheets[sheetName];
-    const range = XLSX.utils.decode_range(worksheet['!ref']);
-    
-    // Son satır numarasını döndür (0-based, +1 yapıyoruz)
-    const lastRow = range.e.r + 1;
-    log(`📊 Son dolu satır: ${lastRow}`);
-    return lastRow;
-  } catch (error) {
-    log(`⚠️  Son satır bulunamadı: ${error.message}`);
-    return 1000; // Hata olursa default 1000
-  }
-}
-
 // Firebase'e dosya yükleme fonksiyonu
 async function uploadToFirebase(filePath, fileType, retryCount = 0) {
   const maxRetries = 3;
@@ -128,9 +109,6 @@ async function uploadToFirebase(filePath, fileType, retryCount = 0) {
     const fileName = `${fileType}.xlsx`;
     const destination = `excel/${fileType}/${fileName}`;
 
-    // Excel dosyasının son satırını bul
-    const lastRow = getLastRow(filePath);
-
     // Dosyayı Firebase Storage'a yükle (eskisinin üzerine yaz)
     await bucket.upload(filePath, {
       destination: destination,
@@ -139,8 +117,7 @@ async function uploadToFirebase(filePath, fileType, retryCount = 0) {
         metadata: {
           uploadedAt: new Date().toISOString(),
           originalName: path.basename(filePath),
-          autoUploaded: 'true',
-          lastRow: lastRow.toString() // Son satır numarasını kaydet
+          autoUploaded: 'true'
         }
       }
     });
