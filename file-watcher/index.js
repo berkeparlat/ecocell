@@ -52,6 +52,39 @@ function log(message) {
   fs.appendFileSync(logFilePath, logMessage);
 }
 
+// Eski dosyaları temizle (sadece en yeni olanı tut)
+async function cleanupOldFiles(fileType) {
+  try {
+    const folderPath = `excel/${fileType}/`;
+    const [files] = await bucket.getFiles({ prefix: folderPath });
+    
+    if (files.length <= 1) {
+      return; // Sadece 1 veya daha az dosya varsa temizleme yapma
+    }
+    
+    // Tarih bazlı sırala (en yeni en üstte)
+    files.sort((a, b) => {
+      const aTime = new Date(a.metadata.timeCreated).getTime();
+      const bTime = new Date(b.metadata.timeCreated).getTime();
+      return bTime - aTime;
+    });
+    
+    // En yeni olanı hariç diğerlerini sil
+    const filesToDelete = files.slice(1);
+    
+    for (const file of filesToDelete) {
+      await file.delete();
+      log(`🗑️  Eski dosya silindi: ${file.name}`);
+    }
+    
+    if (filesToDelete.length > 0) {
+      log(`✓ ${filesToDelete.length} eski dosya temizlendi`);
+    }
+  } catch (error) {
+    log(`⚠️  Eski dosya temizleme hatası: ${error.message}`);
+  }
+}
+
 // Firebase'e dosya yükleme fonksiyonu
 async function uploadToFirebase(filePath, fileType, retryCount = 0) {
   const maxRetries = 3;
@@ -90,6 +123,11 @@ async function uploadToFirebase(filePath, fileType, retryCount = 0) {
     });
 
     log(`✓ Başarılı: ${fileName} Firebase'e yüklendi (güncellendi)`);
+    
+    // Eski dosyaları temizle (async, hata olsa bile devam et)
+    cleanupOldFiles(fileType).catch(err => {
+      log(`⚠️  Temizleme sırasında hata (devam ediliyor): ${err.message}`);
+    });
   } catch (error) {
     log(`✗ HATA: ${error.message}`);
     
@@ -109,6 +147,7 @@ async function handleFileChange(filePath) {
   log(`Değişiklik algılandı: ${filePath}`);
   
   const stockPath = process.env.STOCK_FILE_PATH;
+  const dcsReportPath = process.env.DCS_REPORT_FILE_PATH;
   const electricPath = process.env.ELECTRIC_FILE_PATH;
   const downtimePath = process.env.DOWNTIME_FILE_PATH;
   const salesPath = process.env.SALES_FILE_PATH;
@@ -122,6 +161,8 @@ async function handleFileChange(filePath) {
   
   if (filePath === stockPath) {
     fileType = 'stock';
+  } else if (filePath === dcsReportPath) {
+    fileType = 'dcs-report';
   } else if (filePath === electricPath) {
     fileType = 'electric';
   } else if (filePath === downtimePath) {
@@ -154,6 +195,7 @@ async function handleFileChange(filePath) {
 
 const watchFiles = [
   process.env.STOCK_FILE_PATH,
+  process.env.DCS_REPORT_FILE_PATH,
   process.env.ELECTRIC_FILE_PATH,
   process.env.DOWNTIME_FILE_PATH,
   process.env.SALES_FILE_PATH,

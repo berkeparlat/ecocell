@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, uploadMessageFile, deleteMessage, deleteConversation } from '../../services/messageService';
-import { Send, Inbox, ArrowLeft, User, Search, Paperclip, Check, CheckCheck, Download, ChevronDown, Trash2, MoreVertical } from 'lucide-react';
+import { sendMessage, subscribeToConversations, subscribeToChat, getUsers, markConversationAsRead, deleteMessage, deleteConversation } from '../../services/messageService';
+import { Send, Inbox, ArrowLeft, User, Search, Check, CheckCheck, ChevronDown, Trash2, MoreVertical } from 'lucide-react';
 import './Messages.css';
 
 const Messages = () => {
@@ -16,14 +16,12 @@ const Messages = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedDepartment, setSelectedDepartment] = useState('');
   const [loading, setLoading] = useState(false);
-  const [selectedFile, setSelectedFile] = useState(null);
   const [isGroupChat, setIsGroupChat] = useState(false);
   const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
   const [isUsersExpanded, setIsUsersExpanded] = useState(true);
   const [contextMenu, setContextMenu] = useState(null);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
-  const fileInputRef = useRef(null);
 
   useEffect(() => {
     if (!user) return;
@@ -77,14 +75,10 @@ const Messages = () => {
   };
   const handleSendMessage = async (e) => {
     e.preventDefault();
-    if ((!messageInput.trim() && !selectedFile) || !selectedChat || loading) return;
+    if (!messageInput.trim() || !selectedChat || loading) return;
 
     setLoading(true);
     try {
-      let fileData = null;
-      if (selectedFile) {
-        fileData = await uploadMessageFile(selectedFile, user.uid);
-      }
 
       // Grup chat ise tüm üyelere gönder
       if (isGroupChat && selectedChat.members) {
@@ -97,7 +91,7 @@ const Messages = () => {
             recipientName: recipient.fullName || recipient.displayName || recipient.email,
             recipientDepartment: recipient.department || '',
             subject: `${selectedChat.userName} Mesajı`,
-            content: messageInput.trim() || (fileData ? '📎 Dosya' : '')
+            content: messageInput.trim()
           };
 
           // Sadece dosya varsa dosya alanlarını ekle
@@ -140,28 +134,9 @@ const Messages = () => {
       setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
-            alert('Mesaj gönderilemedi!');
+      alert('Mesaj gönderilemedi!');
     } finally {
       setLoading(false);
-    }
-  };
-
-  const handleFileSelect = (e) => {
-    const file = e.target.files[0];
-    if (file) {
-      // 10MB limit
-      if (file.size > 10 * 1024 * 1024) {
-        alert('Dosya boyutu 10MB\'dan küçük olmalıdır.');
-        return;
-      }
-      setSelectedFile(file);
-    }
-  };
-
-  const removeFile = () => {
-    setSelectedFile(null);
-    if (fileInputRef.current) {
-      fileInputRef.current.value = '';
     }
   };
 
@@ -306,11 +281,6 @@ const Messages = () => {
     // Mesajı grup üyelerine gönder
     setLoading(true);
     try {
-      let fileData = null;
-      if (selectedFile) {
-        fileData = await uploadMessageFile(selectedFile, user.uid);
-      }
-
       const sendPromises = targetUsers.map(recipient => {
         const messageData = {
           senderId: user.uid,
@@ -322,14 +292,6 @@ const Messages = () => {
           subject: messageSubject,
           content: messageInput.trim()
         };
-
-        // Sadece dosya varsa dosya alanlarını ekle
-        if (fileData) {
-          messageData.fileUrl = fileData.url;
-          messageData.fileName = fileData.name;
-          messageData.fileSize = fileData.size;
-          messageData.fileType = fileData.type;
-        }
 
         return sendMessage(messageData);
       });
@@ -355,7 +317,6 @@ const Messages = () => {
       setChatMessages(prev => [...prev, chatMessage]);
       
       setMessageInput('');
-      setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
             alert('Mesajlar gönderilemedi!');
@@ -562,16 +523,7 @@ const Messages = () => {
                     className={`message-bubble ${msg.senderId === user.uid ? 'sent' : 'received'}`}
                     onContextMenu={(e) => handleContextMenu(e, msg)}
                   >
-                    {msg.fileUrl && (
-                      <div className="message-file">
-                        <a href={msg.fileUrl} target="_blank" rel="noopener noreferrer" className="file-link">
-                          <Paperclip size={16} />
-                          <span>{msg.fileName}</span>
-                          <Download size={14} />
-                        </a>
-                      </div>
-                    )}
-                    {msg.content && <div className="message-content-bubble">{msg.content}</div>}
+                    <div className="message-content-bubble">{msg.content}</div>
                     <div className="message-footer">
                       <span className="message-time">{formatTime(msg.createdAt)}</span>
                       {msg.senderId === user.uid && (
@@ -613,34 +565,13 @@ const Messages = () => {
 
               <form className="chat-input" onSubmit={handleSendMessage}>
                 <input
-                  ref={fileInputRef}
-                  type="file"
-                  style={{ display: 'none' }}
-                  onChange={handleFileSelect}
-                  accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.txt"
-                />
-                <button 
-                  type="button" 
-                  className="attach-btn"
-                  onClick={() => fileInputRef.current?.click()}
-                  disabled={loading || isGroupChat}
-                >
-                  <Paperclip size={20} />
-                </button>
-                {selectedFile && (
-                  <div className="selected-file">
-                    <span>{selectedFile.name}</span>
-                    <button type="button" onClick={removeFile}>×</button>
-                  </div>
-                )}
-                <input
                   type="text"
                   placeholder={isGroupChat ? "Mesaj gönderildi..." : "Mesaj yazın..."}
                   value={messageInput}
                   onChange={(e) => setMessageInput(e.target.value)}
                   disabled={loading || isGroupChat}
                 />
-                <button type="submit" disabled={loading || (!messageInput.trim() && !selectedFile) || isGroupChat}>
+                <button type="submit" disabled={loading || !messageInput.trim() || isGroupChat}>
                   <Send size={20} />
                 </button>
               </form>

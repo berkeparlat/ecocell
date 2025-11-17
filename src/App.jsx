@@ -5,6 +5,7 @@ import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MainMenu from './pages/MainMenu/MainMenu';
 import DailyStock from './pages/DailyStock/DailyStock';
+import DCSReport from './pages/DCSReport/DCSReport';
 import ElectricConsumption from './pages/ElectricConsumption/ElectricConsumption';
 import DowntimeList from './pages/DowntimeList/DowntimeList';
 import SalesOrder from './pages/SalesOrder/SalesOrder';
@@ -69,6 +70,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <DailyStock />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-report" 
+          element={
+            <ProtectedRoute>
+              <DCSReport />
             </ProtectedRoute>
           } 
         />
