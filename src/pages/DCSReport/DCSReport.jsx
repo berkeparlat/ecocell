@@ -16,7 +16,7 @@ const DCSReport = () => {
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-      const file = await getLatestExcelFile('dcs-report');
+      const file = await getLatestExcelFile('dcs-buhar');
       
       if (file) {
         setExcelData(file);
@@ -37,7 +37,7 @@ const DCSReport = () => {
           <div className="header-title">
             <FileSpreadsheet size={22} />
             <div>
-              <h1>DCS Haftalık Rapor</h1>
+              <h1>DCS Haftalık Rapor - Buhar</h1>
             </div>
           </div>
         </div>

@@ -33,11 +33,18 @@ const MainMenu = () => {
       color: '#9C27B0'
     },
     {
+      id: 'dcs-report-ab',
+      title: 'DCS Haftalık Rapor A-B',
+      icon: FileText,
+      path: '/dcs-report-ab',
+      color: '#795548'
+    },
+    {
       id: 'dcs-report',
-      title: 'DCS Haftalık Rapor',
+      title: 'DCS Haftalık Rapor Buhar',
       icon: FileText,
       path: '/dcs-report',
-      color: '#795548'
+      color: '#8D6E63'
     },
     {
       id: 'announcements',

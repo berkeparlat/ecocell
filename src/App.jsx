@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MainMenu from './pages/MainMenu/MainMenu';
 import DailyStock from './pages/DailyStock/DailyStock';
 import DCSReport from './pages/DCSReport/DCSReport';
+import DCSReportAB from './pages/DCSReportAB/DCSReportAB';
 import ElectricConsumption from './pages/ElectricConsumption/ElectricConsumption';
 import DowntimeList from './pages/DowntimeList/DowntimeList';
 import SalesOrder from './pages/SalesOrder/SalesOrder';
@@ -78,6 +79,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <DCSReport />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-report-ab" 
+          element={
+            <ProtectedRoute>
+              <DCSReportAB />
             </ProtectedRoute>
           } 
         />

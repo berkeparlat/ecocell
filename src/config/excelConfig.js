@@ -2,22 +2,26 @@
 // Her dosya tipi için istediğiniz satır numarasını buradan değiştirebilirsiniz
 
 export const excelStartRows = {
-  'stock': 100,                      // Günlük Stok Listesi
-  'dcs-report': 50,                  // DCS Haftalık Rapor
-  'electric': 100,                   // Elektrik Tüketimi
-  'downtime': 50,                    // Duruş İşleri
-  'sales': 200,                      // Satış Siparişleri
-  'shipping': 200,                   // Yüklemeler
-  'electrical-maintenance': 150,     // Elektrik Bakım
+  'stock': 1,                        // Günlük Stok Listesi
+  'dcs-a': 1,                        // DCS Haftalık Rapor A Hattı
+  'dcs-b': 1,                        // DCS Haftalık Rapor B Hattı
+  'dcs-buhar': 1,                    // DCS Haftalık Rapor Buhar
+  'electric': 1,                     // Elektrik Tüketimi
+  'downtime': 1,                     // Duruş İşleri
+  'sales': 1,                        // Satış Siparişleri
+  'shipping': 2100,                  // Yüklemeler
+  'electrical-maintenance': 1230,    // Elektrik Bakım
   'mechanical-maintenance': 150,     // Mekanik Bakım
-  'electrical-downtime': 50,         // Elektrik Duruş
+  'electrical-downtime': 1,          // Elektrik Duruş
   'mechanical-downtime': 100         // Mekanik Duruş
 };
 
 // Zoom seviyeleri (100 = %100, 80 = %80)
 export const excelZoomLevels = {
   'stock': 100,
-  'dcs-report': 100,
+  'dcs-a': 100,
+  'dcs-b': 100,
+  'dcs-buhar': 100,
   'electric': 100,
   'downtime': 100,
   'sales': 100,
