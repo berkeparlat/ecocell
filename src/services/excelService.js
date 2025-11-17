@@ -12,25 +12,34 @@ const buildOfficeViewerUrl = (directUrl, fileType) => {
   let defaultZoom = '100';
   
   if (fileType === 'stock') {
-    activeCell = 'A1';
+    activeCell = 'A1000'; // Günlük stok - yakın tarihlere git
+    defaultZoom = '100';
+  } else if (fileType === 'dcs-report') {
+    activeCell = 'A500'; // DCS Rapor
     defaultZoom = '100';
   } else if (fileType === 'electric') {
-    activeCell = 'A1';
+    activeCell = 'A1000'; // Elektrik tüketimi
     defaultZoom = '100';
   } else if (fileType === 'downtime') {
-    activeCell = 'A1';
+    activeCell = 'A500'; // Duruş işleri
+    defaultZoom = '100';
+  } else if (fileType === 'sales') {
+    activeCell = 'A2000'; // Satış siparişleri - çok uzun dosya
     defaultZoom = '100';
   } else if (fileType === 'shipping') {
-    activeCell = 'A1985';
+    activeCell = 'A2000'; // Yüklemeler - çok uzun dosya
     defaultZoom = '100';
   } else if (fileType === 'electrical-maintenance') {
-    activeCell = 'A1130';
+    activeCell = 'A1500'; // Elektrik bakım
     defaultZoom = '80';
   } else if (fileType === 'mechanical-maintenance') {
-    activeCell = 'A1';
+    activeCell = 'A1500'; // Mekanik bakım
     defaultZoom = '100';
-  } else if (fileType === 'electrical-downtime' || fileType === 'mechanical-downtime') {
-    activeCell = 'A1';
+  } else if (fileType === 'electrical-downtime') {
+    activeCell = 'A500'; // Elektrik duruş
+    defaultZoom = '100';
+  } else if (fileType === 'mechanical-downtime') {
+    activeCell = 'A1000'; // Mekanik duruş
     defaultZoom = '100';
   }
   
