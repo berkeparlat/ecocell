@@ -158,3 +158,443 @@
 [17.11.2025 08:55:38] ✓ Dosya izleyici hazır ve çalışıyor...
 [17.11.2025 08:56:05] SIGINT sinyali alındı - İzleyici durduruluyor...
 [17.11.2025 08:56:05] ✓ İzleyici başarıyla durduruldu
+[17.11.2025 08:58:06] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[17.11.2025 08:58:06] ============================================================
+[17.11.2025 08:58:06] Excel Dosya İzleyici Başlatıldı
+[17.11.2025 08:58:06] ============================================================
+[17.11.2025 08:58:06] İzlenen dosyalar:
+[17.11.2025 08:58:06]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 08:58:06]   - C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\rapor.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx
+[17.11.2025 08:58:06]   - \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx
+[17.11.2025 08:58:06] ============================================================
+[17.11.2025 08:58:06] ⏳ Ağ bağlantısı kontrol ediliyor...
+[17.11.2025 08:58:06] ✓ Ağ bağlantısı hazır
+[17.11.2025 08:58:07] ✓ Firebase trigger listener başlatıldı
+[17.11.2025 08:58:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 08:58:07] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[17.11.2025 08:58:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 08:59:08] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 08:59:10] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[17.11.2025 08:59:10] 📊 Son dolu satır: 187
+[17.11.2025 08:59:13] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 08:59:17] 📝 Manuel kontrol: Değişiklik tespit edildi - Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 08:59:17] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 08:59:19] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[17.11.2025 08:59:19] 📊 Son dolu satır: 187
+[17.11.2025 08:59:21] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:01:58] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:02:00] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:02:00] 📊 Son dolu satır: 167
+[17.11.2025 09:02:02] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:02:07] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:02:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:02:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:02:09] 📊 Son dolu satır: 167
+[17.11.2025 09:02:10] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:03:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 09:03:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:03:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:03:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:03:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:05:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:05:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:05:39] 📊 Son dolu satır: 167
+[17.11.2025 09:05:41] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:05:47] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:05:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:05:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:05:49] 📊 Son dolu satır: 167
+[17.11.2025 09:05:50] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:08:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 09:08:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:08:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:08:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:08:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:12:47] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:12:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:12:48] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:12:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:12:49] 📊 Son dolu satır: 167
+[17.11.2025 09:12:50] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:12:50] 📊 Son dolu satır: 167
+[17.11.2025 09:12:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:12:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:13:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:13:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:13:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:13:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:13:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:14:37] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:14:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:14:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 09:14:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:14:39] 📊 Son dolu satır: 167
+[17.11.2025 09:14:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[17.11.2025 09:14:39] 📊 Son dolu satır: 167
+[17.11.2025 09:14:40] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:14:41] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:18:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:18:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:18:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:18:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:18:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:23:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 09:23:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:23:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:23:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:23:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:28:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:28:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:28:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:28:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:28:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:31:07] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:31:10] 📊 Son dolu satır: 166
+[17.11.2025 09:31:12] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:31:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:31:20] 📊 Son dolu satır: 166
+[17.11.2025 09:31:22] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:31:27] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:31:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:31:30] 📊 Son dolu satır: 166
+[17.11.2025 09:31:30] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:31:30] 📊 Son dolu satır: 166
+[17.11.2025 09:31:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:31:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:33:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:33:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:33:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:33:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:33:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:38:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 09:38:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:38:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:38:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:38:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:40:57] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:40:57] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:40:57] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:40:59] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:41:00] 📊 Son dolu satır: 166
+[17.11.2025 09:41:00] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:41:00] 📊 Son dolu satır: 166
+[17.11.2025 09:41:03] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:41:03] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:43:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:43:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:43:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:43:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:43:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:43:17] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:43:20] 📊 Son dolu satır: 166
+[17.11.2025 09:43:20] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:43:20] 📊 Son dolu satır: 166
+[17.11.2025 09:43:22] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:43:23] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:43:37] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:43:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:43:40] 📊 Son dolu satır: 166
+[17.11.2025 09:43:40] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:43:40] 📊 Son dolu satır: 166
+[17.11.2025 09:43:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:43:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:44:08] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:44:08] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:44:08] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 09:44:10] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:44:10] 📊 Son dolu satır: 166
+[17.11.2025 09:44:10] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 09:44:11] 📊 Son dolu satır: 166
+[17.11.2025 09:44:13] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:44:13] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 09:48:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:48:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:48:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:48:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:48:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:53:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 09:53:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:53:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:53:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:53:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 09:58:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 09:58:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 09:58:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 09:58:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 09:58:08] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:00:58] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:00:58] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:00:58] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:01:00] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:01:00] 📊 Son dolu satır: 166
+[17.11.2025 10:01:00] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:01:00] 📊 Son dolu satır: 166
+[17.11.2025 10:01:03] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:01:03] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:03:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:03:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:03:08] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:03:08] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:03:08] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:08:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 10:08:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:08:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:08:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:08:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:08:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:08:30] 📊 Son dolu satır: 166
+[17.11.2025 10:08:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:08:37] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:08:39] 📊 Son dolu satır: 166
+[17.11.2025 10:08:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:08:57] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:57] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:57] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:08:59] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:08:59] 📊 Son dolu satır: 166
+[17.11.2025 10:08:59] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:09:00] 📊 Son dolu satır: 166
+[17.11.2025 10:09:02] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:09:02] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:13:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:13:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:13:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:13:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:13:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:18:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:18:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:18:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:18:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:18:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:23:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:23:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:23:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:23:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:23:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:25:07] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:25:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:25:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:25:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:25:10] 📊 Son dolu satır: 166
+[17.11.2025 10:25:10] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:25:10] 📊 Son dolu satır: 166
+[17.11.2025 10:25:12] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:25:12] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:28:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:28:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:28:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:28:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:28:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:32:28] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:30] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:32:30] 📊 Son dolu satır: 166
+[17.11.2025 10:32:33] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:32:37] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:32:40] 📊 Son dolu satır: 166
+[17.11.2025 10:32:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:32:47] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:48] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:32:50] 📊 Son dolu satır: 166
+[17.11.2025 10:32:50] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:32:50] 📊 Son dolu satır: 166
+[17.11.2025 10:32:52] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:32:52] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:32:57] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:57] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:58] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:32:59] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:33:00] 📊 Son dolu satır: 166
+[17.11.2025 10:33:00] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:33:00] 📊 Son dolu satır: 166
+[17.11.2025 10:33:02] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:33:03] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:33:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:33:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:33:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:33:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:33:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:38:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 10:38:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:38:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:38:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:38:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:39:27] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:39:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:39:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:39:30] 📊 Son dolu satır: 166
+[17.11.2025 10:39:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:39:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:39:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:39:40] 📊 Son dolu satır: 166
+[17.11.2025 10:39:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:43:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 10:43:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:43:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:43:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:43:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:48:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:48:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:48:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:48:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:48:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:48:17] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:48:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:48:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:48:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:48:20] 📊 Son dolu satır: 166
+[17.11.2025 10:48:20] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:48:20] 📊 Son dolu satır: 166
+[17.11.2025 10:48:22] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:48:22] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:53:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 10:53:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:53:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:53:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:53:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:54:37] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:54:40] 📊 Son dolu satır: 166
+[17.11.2025 10:54:40] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:54:40] 📊 Son dolu satır: 166
+[17.11.2025 10:54:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:54:43] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:54:47] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:54:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:54:50] 📊 Son dolu satır: 166
+[17.11.2025 10:54:50] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:54:50] 📊 Son dolu satır: 166
+[17.11.2025 10:54:52] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:54:53] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:58:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 10:58:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 10:58:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 10:58:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 10:58:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 10:59:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:59:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:59:20] 📊 Son dolu satır: 166
+[17.11.2025 10:59:23] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 10:59:27] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:59:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 10:59:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 10:59:29] 📊 Son dolu satır: 166
+[17.11.2025 10:59:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:03:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:03:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:03:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:03:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:03:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:08:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:08:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:08:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:08:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:08:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:13:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:13:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:13:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:13:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:13:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:18:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:18:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:18:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:18:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:18:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:20:38] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:20:40] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:20:40] 📊 Son dolu satır: 166
+[17.11.2025 11:20:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:20:47] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:20:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:20:48] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:20:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:20:50] 📊 Son dolu satır: 166
+[17.11.2025 11:20:50] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:20:50] 📊 Son dolu satır: 166
+[17.11.2025 11:20:52] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:20:53] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:23:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:23:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:23:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:23:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:23:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:25:27] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:25:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:25:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:25:30] 📊 Son dolu satır: 166
+[17.11.2025 11:25:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:25:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:25:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:25:40] 📊 Son dolu satır: 166
+[17.11.2025 11:25:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:28:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:28:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:28:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:28:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:28:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:33:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:33:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:33:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:33:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:33:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:38:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:38:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:38:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:38:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:38:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:43:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:43:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:43:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:43:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:43:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:48:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:48:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:48:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:48:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:48:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:51:28] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:51:30] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:51:30] 📊 Son dolu satır: 166
+[17.11.2025 11:51:32] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:51:37] 📝 Manuel kontrol: Değişiklik tespit edildi - KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:51:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 11:51:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx (Tip: shipping)
+[17.11.2025 11:51:40] 📊 Son dolu satır: 166
+[17.11.2025 11:51:42] ✓ Başarılı: shipping.xlsx Firebase'e yüklendi (güncellendi)
+[17.11.2025 11:53:07] 💚 Health check - Çalışma süresi: 299 saniye
+[17.11.2025 11:53:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:53:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:53:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:53:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 11:58:07] 💚 Health check - Çalışma süresi: 300 saniye
+[17.11.2025 11:58:07] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[17.11.2025 11:58:07] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 11:58:07] ✓ Ağ bağlantısı aktif
+[17.11.2025 11:58:07] ✓ Dosya izleyici hazır ve çalışıyor...
