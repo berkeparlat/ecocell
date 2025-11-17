@@ -11,9 +11,9 @@ export const excelStartRows = {
   'sales': 1,                        // Satış Siparişleri
   'shipping': 2100,                  // Yüklemeler
   'electrical-maintenance': 1230,    // Elektrik Bakım
-  'mechanical-maintenance': 150,     // Mekanik Bakım
+  'mechanical-maintenance': 480,     // Mekanik Bakım
   'electrical-downtime': 1,          // Elektrik Duruş
-  'mechanical-downtime': 100         // Mekanik Duruş
+  'mechanical-downtime': 1         // Mekanik Duruş
 };
 
 // Zoom seviyeleri (100 = %100, 80 = %80)
