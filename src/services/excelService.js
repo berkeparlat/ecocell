@@ -1,5 +1,6 @@
 import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata } from 'firebase/storage';
 import { storage } from '../config/firebase';
+import { excelStartRows, excelZoomLevels } from '../config/excelConfig';
 
 const buildOfficeViewerUrl = (directUrl, fileType) => {
   const appOrigin = window.location.origin;
@@ -8,40 +9,12 @@ const buildOfficeViewerUrl = (directUrl, fileType) => {
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
-  let activeCell = 'A1';
-  let defaultZoom = '100';
+  // Config dosyasından değerleri al
+  const startRow = excelStartRows[fileType] || 1;
+  const zoomLevel = excelZoomLevels[fileType] || 100;
   
-  if (fileType === 'stock') {
-    activeCell = 'A100';
-    defaultZoom = '100';
-  } else if (fileType === 'dcs-report') {
-    activeCell = 'A50';
-    defaultZoom = '100';
-  } else if (fileType === 'electric') {
-    activeCell = 'A100';
-    defaultZoom = '100';
-  } else if (fileType === 'downtime') {
-    activeCell = 'A50';
-    defaultZoom = '100';
-  } else if (fileType === 'sales') {
-    activeCell = 'A200';
-    defaultZoom = '100';
-  } else if (fileType === 'shipping') {
-    activeCell = 'A200';
-    defaultZoom = '100';
-  } else if (fileType === 'electrical-maintenance') {
-    activeCell = 'A150';
-    defaultZoom = '80';
-  } else if (fileType === 'mechanical-maintenance') {
-    activeCell = 'A150';
-    defaultZoom = '100';
-  } else if (fileType === 'electrical-downtime') {
-    activeCell = 'A50';
-    defaultZoom = '100';
-  } else if (fileType === 'mechanical-downtime') {
-    activeCell = 'A100';
-    defaultZoom = '100';
-  }
+  const activeCell = `A${startRow}`;
+  const defaultZoom = zoomLevel.toString();
   
   const params = new URLSearchParams({
     src: proxiedUrl.toString(),
