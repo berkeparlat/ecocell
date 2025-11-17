@@ -142,13 +142,18 @@
   transition: all 0.2s;
 }
 
-.panel-btn:hover {
+.panel-btn:hover:not(:disabled) {
   background: rgba(255, 255, 255, 0.25);
   transform: translateY(-1px);
 }
 
 .panel-btn:active {
   transform: translateY(0);
+}
+
+.panel-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .panel-btn svg {

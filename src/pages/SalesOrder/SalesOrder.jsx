@@ -18,6 +18,34 @@ const SalesOrder = () => {
     loadLatestFiles();
   }, []);
 
+  useEffect(() => {
+    const iframe = document.querySelector('.sales-panel:first-child iframe');
+    if (iframe && salesZoom !== 100) {
+      iframe.style.transform = `scale(${salesZoom / 100})`;
+      iframe.style.transformOrigin = 'top left';
+      iframe.style.width = `${10000 / salesZoom}%`;
+      iframe.style.height = `${10000 / salesZoom}%`;
+    } else if (iframe) {
+      iframe.style.transform = '';
+      iframe.style.width = '';
+      iframe.style.height = '';
+    }
+  }, [salesZoom]);
+
+  useEffect(() => {
+    const iframe = document.querySelector('.sales-panel:last-child iframe');
+    if (iframe && shippingZoom !== 100) {
+      iframe.style.transform = `scale(${shippingZoom / 100})`;
+      iframe.style.transformOrigin = 'top left';
+      iframe.style.width = `${10000 / shippingZoom}%`;
+      iframe.style.height = `${10000 / shippingZoom}%`;
+    } else if (iframe) {
+      iframe.style.transform = '';
+      iframe.style.width = '';
+      iframe.style.height = '';
+    }
+  }, [shippingZoom]);
+
   const loadLatestFiles = async () => {
     setLoading(true);
     try {

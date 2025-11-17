@@ -19,8 +19,8 @@ export const excelStartRows = {
 // Zoom seviyeleri (100 = %100, 80 = %80)
 export const excelZoomLevels = {
   'stock': 100,
-  'dcs-a': 100,
-  'dcs-b': 100,
+  'dcs-a': 60,
+  'dcs-b': 60,
   'dcs-buhar': 100,
   'electric': 100,
   'downtime': 100,
