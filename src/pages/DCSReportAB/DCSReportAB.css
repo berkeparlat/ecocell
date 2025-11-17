@@ -1,69 +1,210 @@
-.dcs-report-ab-container {
-  padding: 2rem;
+.dcs-report-ab-page {
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background: #f5f7fa;
 }
 
-.page-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2c3e50;
-  margin-bottom: 2rem;
-  text-align: center;
+.dcs-container {
+  max-width: 100%;
+  margin: 0;
+  padding: 1rem;
 }
 
-.dual-excel-view {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  height: calc(100vh - 180px);
+.dcs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.excel-column {
+.dcs-container .excel-preview-card {
+  margin-top: 0;
+}
+
+.header-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dcs-report-ab-page .header-title svg {
+  color: #795548;
+  width: 22px;
+  height: 22px;
+}
+
+.header-title h1 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #212121;
+  font-weight: 600;
+}
+
+.header-title p {
+  margin: 0;
+  color: #757575;
+  font-size: 0.8rem;
+}
+
+.loading-state {
   display: flex;
   flex-direction: column;
-  background-color: white;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 1rem;
+  color: #757575;
+}
+
+.loading-state .spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Dual View Layout */
+.dcs-dual-view {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  height: calc(100vh - 160px);
+}
+
+.dcs-panel {
+  display: flex;
+  flex-direction: column;
+  background: white;
   border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
 }
 
-.column-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #34495e;
-  padding: 1.5rem;
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: linear-gradient(135deg, #795548 0%, #6d4c41 100%);
+  color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.panel-header.dcs-a {
+  background: linear-gradient(135deg, #795548 0%, #6d4c41 100%);
+}
+
+.panel-header.dcs-b {
+  background: linear-gradient(135deg, #8d6e63 0%, #795548 100%);
+}
+
+.panel-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel-header h2 {
   margin: 0;
-  background-color: #ecf0f1;
-  border-bottom: 2px solid #3498db;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.loading {
+.panel-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.panel-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-size: 1.5rem;
-  color: #7f8c8d;
+  padding: 0.4rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-.error-message {
+.panel-btn:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+.panel-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.panel-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.panel-zoom-display {
+  font-size: 0.8rem;
+  font-weight: 600;
+  min-width: 45px;
+  text-align: center;
+}
+
+.empty-panel {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
-  font-size: 1.2rem;
-  color: #e74c3c;
+  height: 100%;
+  color: #bdbdbd;
+  gap: 1rem;
+}
+
+.empty-panel p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 /* Responsive */
 @media (max-width: 1200px) {
-  .dual-excel-view {
+  .dcs-dual-view {
     grid-template-columns: 1fr;
     height: auto;
   }
 
-  .excel-column {
+  .dcs-panel {
     min-height: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dcs-container {
+    padding: 0.5rem;
+  }
+
+  .panel-header {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .panel-header h2 {
+    font-size: 0.85rem;
+  }
+
+  .panel-btn {
+    padding: 0.35rem;
+  }
+
+  .panel-zoom-display {
+    font-size: 0.75rem;
+    min-width: 40px;
   }
 }
