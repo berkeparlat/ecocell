@@ -44,7 +44,7 @@ const MainMenu = () => {
       title: 'DCS Haftalık Rapor Buhar',
       icon: FileText,
       path: '/dcs-report',
-      color: '#8D6E63'
+      color: '#00897B'
     },
     {
       id: 'announcements',

@@ -674,3 +674,28 @@
 [17.11.2025 12:43:07] ✓ Ağ bağlantısı aktif
 [17.11.2025 12:43:07] ✓ Dosya izleyici hazır ve çalışıyor...
 [17.11.2025 12:43:07] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:46:05] Kullanılan bucket: ecocell-5cf22.firebasestorage.app
+[17.11.2025 12:46:05] ============================================================
+[17.11.2025 12:46:05] Excel Dosya İzleyici Başlatıldı
+[17.11.2025 12:46:05] ============================================================
+[17.11.2025 12:46:05] İzlenen dosyalar:
+[17.11.2025 12:46:05]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[17.11.2025 12:46:05]   - C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\A.xlsx
+[17.11.2025 12:46:05]   - C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\B.xlsx
+[17.11.2025 12:46:05]   - C:\Users\berke.parlat\Desktop\ecocell\dcs rapor\S.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\A-B HATTI DURUŞ İŞLERİ AA.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\32-Elyaf Planlama\Siparişler\Sipaarişler ECOCELL.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\KARAFİBER ELYAF YÜKLEMELERİ\KARAFİBER ELYAF YÜKLEMELERİ.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Duruş Listesi.xlsx
+[17.11.2025 12:46:05]   - \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\1.Bakım iş listesi\2025_Bakım_Genel_liste(1).xlsx
+[17.11.2025 12:46:05] ============================================================
+[17.11.2025 12:46:05] ⏳ Ağ bağlantısı kontrol ediliyor...
+[17.11.2025 12:46:05] ✓ Ağ bağlantısı hazır
+[17.11.2025 12:46:06] ✓ Firebase trigger listener başlatıldı
+[17.11.2025 12:46:06] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[17.11.2025 12:46:06] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[17.11.2025 12:46:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[17.11.2025 12:46:06] ✓ Dosya izleyici hazır ve çalışıyor...

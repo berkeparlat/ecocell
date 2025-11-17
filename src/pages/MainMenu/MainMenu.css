@@ -20,9 +20,9 @@
 
 .menu-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -72,9 +72,9 @@
   line-height: 1.3;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
   .menu-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
   }
 }
 
