@@ -1,46 +1,54 @@
 import { ref, uploadBytes, getDownloadURL, listAll, deleteObject, getMetadata } from 'firebase/storage';
 import { storage } from '../config/firebase';
 
-const buildOfficeViewerUrl = (directUrl, fileType) => {
+const buildOfficeViewerUrl = (directUrl, fileType, lastRow = null) => {
   const appOrigin = window.location.origin;
   const proxiedUrl = new URL('/api/excel-proxy', appOrigin);
   proxiedUrl.searchParams.set('url', directUrl);
 
   const base = 'https://view.officeapps.live.com/op/embed.aspx';
   
+  // Eğer metadata'dan lastRow geldiyse onu kullan, yoksa eski sabit değerleri kullan
   let activeCell = 'A1';
   let defaultZoom = '100';
   
-  if (fileType === 'stock') {
-    activeCell = 'A1000'; // Günlük stok - yakın tarihlere git
-    defaultZoom = '100';
-  } else if (fileType === 'dcs-report') {
-    activeCell = 'A500'; // DCS Rapor
-    defaultZoom = '100';
-  } else if (fileType === 'electric') {
-    activeCell = 'A1000'; // Elektrik tüketimi
-    defaultZoom = '100';
-  } else if (fileType === 'downtime') {
-    activeCell = 'A500'; // Duruş işleri
-    defaultZoom = '100';
-  } else if (fileType === 'sales') {
-    activeCell = 'A2000'; // Satış siparişleri - çok uzun dosya
-    defaultZoom = '100';
-  } else if (fileType === 'shipping') {
-    activeCell = 'A2000'; // Yüklemeler - çok uzun dosya
-    defaultZoom = '100';
-  } else if (fileType === 'electrical-maintenance') {
-    activeCell = 'A1500'; // Elektrik bakım
-    defaultZoom = '80';
-  } else if (fileType === 'mechanical-maintenance') {
-    activeCell = 'A1500'; // Mekanik bakım
-    defaultZoom = '100';
-  } else if (fileType === 'electrical-downtime') {
-    activeCell = 'A500'; // Elektrik duruş
-    defaultZoom = '100';
-  } else if (fileType === 'mechanical-downtime') {
-    activeCell = 'A1000'; // Mekanik duruş
-    defaultZoom = '100';
+  if (lastRow) {
+    // Son satırdan biraz geriye git (daha iyi görünüm için)
+    const adjustedRow = Math.max(1, lastRow - 10);
+    activeCell = `A${adjustedRow}`;
+  } else {
+    // Eski sabit değerler (fallback)
+    if (fileType === 'stock') {
+      activeCell = 'A1000';
+      defaultZoom = '100';
+    } else if (fileType === 'dcs-report') {
+      activeCell = 'A500';
+      defaultZoom = '100';
+    } else if (fileType === 'electric') {
+      activeCell = 'A1000';
+      defaultZoom = '100';
+    } else if (fileType === 'downtime') {
+      activeCell = 'A500';
+      defaultZoom = '100';
+    } else if (fileType === 'sales') {
+      activeCell = 'A2000';
+      defaultZoom = '100';
+    } else if (fileType === 'shipping') {
+      activeCell = 'A2000';
+      defaultZoom = '100';
+    } else if (fileType === 'electrical-maintenance') {
+      activeCell = 'A1500';
+      defaultZoom = '80';
+    } else if (fileType === 'mechanical-maintenance') {
+      activeCell = 'A1500';
+      defaultZoom = '100';
+    } else if (fileType === 'electrical-downtime') {
+      activeCell = 'A500';
+      defaultZoom = '100';
+    } else if (fileType === 'mechanical-downtime') {
+      activeCell = 'A1000';
+      defaultZoom = '100';
+    }
   }
   
   const params = new URLSearchParams({
@@ -110,7 +118,8 @@ export const getLatestExcelFile = async (type) => {
           name: item.name,
           url: url,
           uploadDate: metadata.timeCreated,
-          size: metadata.size
+          size: metadata.size,
+          lastRow: metadata.customMetadata?.lastRow ? parseInt(metadata.customMetadata.lastRow) : null
         };
       })
     );
@@ -118,7 +127,7 @@ export const getLatestExcelFile = async (type) => {
     filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
     const latestFile = filesWithMetadata[0];
     
-    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type);
+    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type, latestFile.lastRow);
     
     return {
       name: latestFile.name,
