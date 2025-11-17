@@ -40,7 +40,6 @@ const ExcelPreview = ({
   hideToolbar = false,
   onZoomChange,
   currentZoom = 100,
-  onZoomChange,
   onFullscreen
 }) => {
   const hasViewer = Boolean(viewerUrl);
