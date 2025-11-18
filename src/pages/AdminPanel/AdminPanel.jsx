@@ -651,23 +651,11 @@ const AdminPanel = () => {
                 </div>
                 <div className="header-text">
                   <h2>Excel Dosyalarını Yenile</h2>
-                  <p>Günlük Stok, Satış Sipariş ve Sevkiyat dosyalarını manuel olarak yenileyin</p>
+                  <p>Excel dosyalarını manuel olarak yenileyin</p>
                 </div>
               </div>
 
               <div className="excel-refresh-content">
-                <div className="excel-info-card">
-                  <h3>📌 Bilgi</h3>
-                  <ul>
-                    <li><strong>Günlük Stok:</strong> Mevcut stok durumunu gösterir</li>
-                    <li><strong>Satış Siparişleri:</strong> Aktif satış siparişlerini listeler</li>
-                    <li><strong>Sevkiyatlar:</strong> Yükleme ve sevkiyat bilgilerini içerir</li>
-                  </ul>
-                  <p className="excel-note">
-                    ⚠️ Dosyalar otomatik olarak izlenmektedir. Bu butonu sadece acil güncellemelerde kullanın.
-                  </p>
-                </div>
-
                 <div className="excel-refresh-action">
                   <button 
                     className="refresh-excel-btn"
@@ -677,19 +665,9 @@ const AdminPanel = () => {
                     <RefreshCw size={24} className={refreshingExcel ? 'spinning' : ''} />
                     <div>
                       <h3>{refreshingExcel ? 'Yenileniyor...' : 'Excel Dosyalarını Yenile'}</h3>
-                      <p>File-watcher'ı tetikle ve dosyaları güncelle</p>
+                      <p>Dosyaları güncelle</p>
                     </div>
                   </button>
-                </div>
-
-                <div className="excel-status-card">
-                  <h3>🔄 File-Watcher Durumu</h3>
-                  <p>File-watcher arka planda çalışarak Excel dosyalarını otomatik olarak izler ve değişiklikleri Firebase'e yükler.</p>
-                  <div className="status-list">
-                    <div className="status-item">✅ Günlük Stok - Otomatik izleniyor</div>
-                    <div className="status-item">✅ Satış Siparişleri - Otomatik izleniyor</div>
-                    <div className="status-item">✅ Sevkiyatlar - Otomatik izleniyor</div>
-                  </div>
                 </div>
               </div>
             </div>
