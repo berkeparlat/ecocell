@@ -101,7 +101,6 @@ const QuickMessageModal = ({ task, onClose }) => {
       
       onClose();
     } catch (error) {
-      console.error('Hata:', error);
       alert('Mesaj gönderilemedi. Lütfen tekrar deneyin.');
     } finally {
       setLoading(false);

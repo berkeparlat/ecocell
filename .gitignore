@@ -20,21 +20,3 @@ file-watcher/logs/
 *.tmp
 *.temp
 *_yedek.xlsx
-
-# Log dosyaları
-*.log
-file-watcher/logs/
-
-# Geçici dosyalar
-*.tmp
-*.temp
-*_yedek.xlsx
-
-# Log dosyaları
-*.log
-file-watcher/logs/
-
-# Geçici dosyalar
-*.tmp
-*.temp
-*_yedek.xlsx

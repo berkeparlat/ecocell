@@ -52,8 +52,7 @@ export const AppProvider = ({ children }) => {
     if (savedUser) {
       try {
         setUser(JSON.parse(savedUser));
-      } catch (error) {
-        // Ge�ersiz veri varsa temizle
+      } catch {
         localStorage.removeItem('karafiber_user');
       }
     }
@@ -187,8 +186,8 @@ export const AppProvider = ({ children }) => {
         if (isMounted && Array.isArray(ensured) && ensured.length > 0) {
           setDepartments(ensured);
         }
-      } catch (error) {
-        // Hata durumunda bo� liste kullan
+      } catch {
+        // Hata durumunda boş liste kullan
       }
 
       unsubscribe = listenToDepartmentsFromStore((remoteList) => {
