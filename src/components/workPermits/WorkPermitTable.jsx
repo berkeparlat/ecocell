@@ -45,10 +45,12 @@ const WorkPermitTable = () => {
   }, [deleteWorkPermit]);
 
   const handleApprove = useCallback(async (permit) => {
+    const approverName = user?.displayName || user?.fullName || user?.username || user?.email || 'Bilinmiyor';
+    
     await updateWorkPermit(permit.id, {
       ...permit,
       status: 'approved',
-      approvedBy: user?.displayName,
+      approvedBy: approverName,
       approvedAt: new Date().toISOString()
     });
   }, [updateWorkPermit, user]);
