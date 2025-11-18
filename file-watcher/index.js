@@ -142,8 +142,25 @@ async function uploadToFirebase(filePath, fileType, retryCount = 0) {
   }
 }
 
+// Son işlenen dosya zamanlarını takip et (중복 işlemi önlemek için)
+const lastProcessedTimes = new Map();
+const processingFiles = new Set();
+
 // Dosya değişikliğini işle
 async function handleFileChange(filePath) {
+  // Eğer dosya zaten işleniyorsa, atla
+  if (processingFiles.has(filePath)) {
+    return;
+  }
+  
+  // Son işlenme zamanını kontrol et (5 saniye içinde işlendiyse atla)
+  const lastProcessed = lastProcessedTimes.get(filePath) || 0;
+  const now = Date.now();
+  if (now - lastProcessed < 5000) {
+    return;
+  }
+  
+  processingFiles.add(filePath);
   log(`Değişiklik algılandı: ${filePath}`);
   
   const stockPath = process.env.STOCK_FILE_PATH;
@@ -197,6 +214,10 @@ async function handleFileChange(filePath) {
   
   // Firebase'e yükle
   await uploadToFirebase(filePath, fileType);
+  
+  // İşlem tamamlandı, işaretleri güncelle
+  lastProcessedTimes.set(filePath, Date.now());
+  processingFiles.delete(filePath);
 }
 
 const watchFiles = [
