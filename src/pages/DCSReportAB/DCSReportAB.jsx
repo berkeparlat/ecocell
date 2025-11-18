@@ -54,7 +54,6 @@ const DCSReportAB = () => {
       setFileDataA(dataA);
       setFileDataB(dataB);
     } catch (err) {
-      console.error('Excel dosyaları yüklenirken hata:', err);
       setError('Excel dosyaları yüklenemedi');
     } finally {
       setLoading(false);

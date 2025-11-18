@@ -1,52 +1,63 @@
-# 🏢 Ecocell Portal# 🏢 Ecocell Portal# 🏢 Ecocell Portal# 🏢 Ecocell - İş Yönetim ve Takip Sistemi# TaskFlow - Modern Project Management System
+# 🏢 Ecocell - Kurumsal İş Yönetim Sistemi
 
+Modern, kullanıcı dostu iş takip ve yönetim sistemi. React + Firebase ile geliştirilmiş, gerçek zamanlı Excel senkronizasyonu ve workflow otomasyonu destekli kurumsal uygulama.
 
+## ✨ Özellikler
 
-Enterprise management platform with real-time Excel synchronization, task tracking, and workflow automation.
+### 📊 İş Takip ve Yönetim
+- **Görev Yönetimi** - Kanban board, liste görünümü, öncelik seviyeleri
+- **İş İzinleri** - Dijital onay sistemi ve workflow yönetimi
+- **Bakım Planlama** - Günlük/aylık bakım planları ve duruş takibi
+- **Duyurular** - Şirket içi iletişim ve bilgilendirme sistemi
 
+### 📈 Raporlar ve Excel Entegrasyonu
+- **Otomatik Excel Senkronizasyonu** - Ağ dosyalarını Firebase'e otomatik yükleme
+- **Gerçek Zamanlı Görüntüleme** - Office Online ile tarayıcıda Excel görüntüleme
+- **DCS Raporları** - Haftalık üretim raporları
+- **Elektrik Tüketimi** - Günlük tüketim takibi
+- **Stok Takibi** - Günlük stok listeleri
+- **Sipariş ve Yükleme** - Satış siparişleri ve yükleme listeleri
 
+### 👥 Kullanıcı Yönetimi
+- **Departman Bazlı Yetkilendirme** - Rol tabanlı erişim kontrolü
+- **Admin Paneli** - Kullanıcı ve departman yönetimi
+- **Gerçek Zamanlı Güncellemeler** - Firebase ile canlı veri senkronizasyonu
 
-[![React](https://img.shields.io/badge/React-18-61dafb?logo=react)](https://reactjs.org/)Modern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
+## 🚀 Kurulum
 
-[![Firebase](https://img.shields.io/badge/Firebase-Latest-orange?logo=firebase)](https://firebase.google.com/)
-
-[![Vite](https://img.shields.io/badge/Vite-5-646cff?logo=vite)](https://vitejs.dev/)
-
-
-
-## ✨ Features## ✨ FeaturesModern enterprise management platform built with React and Firebase. Real-time Excel synchronization, task management, and workflow automation for industrial operations.
-
-
-
-- 📊 **Task Management** - Kanban board, list view, priorities, assignments
-
-- 📝 **Work Permits** - Digital approval workflow for operations
-
-- 🔧 **Maintenance** - Planning, scheduling, downtime tracking### 📊 Core Modules
-
-- 📢 **Announcements** - Company-wide communications
-
-- 📈 **Excel Sync** - Auto-monitor and sync network Excel files to cloud- **Task Management** - Kanban board with drag-and-drop, list view, priority levels
-
-- 👥 **Multi-department** - Role-based access control
-
-- 🔄 **Real-time** - Live updates via Firebase- **Work Permits** - Digital approval workflow for maintenance operations## ✨ FeaturesModern, kullanıcı dostu iş takip ve proje yönetim sistemi. React + Vite ile geliştirilmiş, Firebase entegrasyonlu, Excel otomasyonu destekli kurumsal uygulama.A modern, feature-rich project management application built with React and Vite. Similar to Jira, Trello, and ClickUp, TaskFlow provides an intuitive interface for managing projects and tasks.
-
-
-
-## 🚀 Quick Start- **Maintenance Planning** - Daily/monthly maintenance schedules and downtime tracking
-
-
-
-```bash- **Announcements** - Company-wide communication system
-
+```bash
 git clone https://github.com/berkeparlat/ecocell.git
-
-cd ecocell- **Admin Panel** - User management, department organization, system configuration
-
+cd ecocell
 npm install
+npm run dev
+```
 
-npm run dev### 📊 Task & Project Management
+## 📁 Proje Yapısı
+
+```
+ecocell/
+├── src/
+│   ├── components/      # UI bileşenleri
+│   ├── pages/          # Sayfa bileşenleri  
+│   ├── services/       # Firebase servisleri
+│   ├── config/         # Yapılandırma dosyaları
+│   └── context/        # React Context
+├── file-watcher/       # Excel dosya izleyici servisi
+├── api/                # Vercel serverless fonksiyonları
+└── public/             # Statik dosyalar
+```
+
+## 🔧 Teknolojiler
+
+- **Frontend:** React 18, Vite, React Router
+- **Backend:** Firebase (Auth, Firestore, Storage)
+- **Deployment:** Vercel
+- **File Monitoring:** Node.js, Chokidar
+- **Excel Viewing:** Office Online Viewer
+
+## 📝 Lisans
+
+Bu proje özel bir projedir ve telif hakları Karafiber Elyaf'a aittir.
 
 ```
 

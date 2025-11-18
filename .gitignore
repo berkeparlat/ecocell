@@ -11,3 +11,30 @@ serviceAccountKey.json
 
 # OS dosyaları
 .DS_Store
+
+# Log dosyaları
+*.log
+file-watcher/logs/
+
+# Geçici dosyalar
+*.tmp
+*.temp
+*_yedek.xlsx
+
+# Log dosyaları
+*.log
+file-watcher/logs/
+
+# Geçici dosyalar
+*.tmp
+*.temp
+*_yedek.xlsx
+
+# Log dosyaları
+*.log
+file-watcher/logs/
+
+# Geçici dosyalar
+*.tmp
+*.temp
+*_yedek.xlsx

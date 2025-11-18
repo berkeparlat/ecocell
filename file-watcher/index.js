@@ -45,7 +45,6 @@ function log(message) {
     hour12: false
   });
   const logMessage = `[${timestamp}] ${message}\n`;
-  console.log(logMessage.trim());
   
   // Log dosyasına yaz
   const logFilePath = process.env.LOG_FILE_PATH || './logs/watcher.log';
@@ -137,8 +136,7 @@ async function uploadToFirebase(filePath, fileType, retryCount = 0) {
       await new Promise(resolve => setTimeout(resolve, 5000));
       return await uploadToFirebase(filePath, fileType, retryCount + 1);
     }
-    
-    console.error(error);
+    // Hata log dosyasına yazıldı
   }
 }
 
@@ -451,7 +449,6 @@ process.on('SIGTERM', () => shutdown('SIGTERM'));
 process.on('uncaughtException', (error) => {
   log(`❌ Beklenmeyen hata: ${error.message}`);
   log(`Stack: ${error.stack}`);
-  console.error(error);
   log('⚠️  İzleyici devam ediyor...');
   
   // Kritik hataysa 10 saniye sonra yeniden başlat
@@ -468,6 +465,5 @@ process.on('unhandledRejection', (reason, promise) => {
   if (reason && reason.stack) {
     log(`Stack: ${reason.stack}`);
   }
-  console.error(reason);
   log('⚠️  İzleyici devam ediyor...');
 });
