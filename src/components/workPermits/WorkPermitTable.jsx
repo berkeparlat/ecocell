@@ -4,12 +4,14 @@ import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSqu
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import WorkPermitForm from './WorkPermitForm';
+import QuickMessageModal from '../tasks/QuickMessageModal';
 import './WorkPermitTable.css';
 
 const WorkPermitTable = () => {
   const { user, workPermits = [], deleteWorkPermit, updateWorkPermit, departments } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingPermit, setEditingPermit] = useState(null);
+  const [messagePermit, setMessagePermit] = useState(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('all');
   const [departmentFilter, setDepartmentFilter] = useState('all');
@@ -35,6 +37,10 @@ const WorkPermitTable = () => {
     setEditingPermit(permit);
     setShowForm(true);
     setActiveMenu(null);
+  }, []);
+
+  const handleMessage = useCallback((permit) => {
+    setMessagePermit(permit);
   }, []);
 
   const handleDelete = useCallback(async (permitId) => {
@@ -229,6 +235,7 @@ const WorkPermitTable = () => {
                       <div className="actions-menu">
                         <button
                           className="action-btn message-btn"
+                          onClick={() => handleMessage(permit)}
                           title="Mesaj Gönder"
                         >
                           <MessageSquare size={16} />
@@ -260,6 +267,13 @@ const WorkPermitTable = () => {
       <Modal isOpen={showForm} onClose={handleCloseForm}>
         <WorkPermitForm permit={editingPermit} onClose={handleCloseForm} />
       </Modal>
+
+      {messagePermit && (
+        <QuickMessageModal 
+          task={messagePermit}
+          onClose={() => setMessagePermit(null)}
+        />
+      )}
     </div>
   );
 };
