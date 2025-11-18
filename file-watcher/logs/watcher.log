@@ -947,3 +947,128 @@
 [17.11.2025 13:36:06] ✓ Ağ bağlantısı aktif
 [17.11.2025 13:36:06] ✓ Dosya izleyici hazır ve çalışıyor...
 [17.11.2025 13:36:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:07:16] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:18] 📝 Manuel kontrol: Değişiklik tespit edildi - 1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:18] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:18] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[18.11.2025 08:07:20] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:07:20] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[18.11.2025 08:07:21] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:07:44] 📝 Manuel kontrol: Değişiklik tespit edildi - 1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:44] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:44] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:46] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[18.11.2025 08:07:46] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[18.11.2025 08:07:48] 📝 Manuel kontrol: Değişiklik tespit edildi - 1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:48] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx
+[18.11.2025 08:07:48] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:07:48] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:07:50] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Mekanik Bakım\12.Mekanik bakım günlük iş listesi\1.Mekanik bakım günlük iş listesii.xlsx (Tip: mechanical-maintenance)
+[18.11.2025 08:07:51] ✓ Başarılı: mechanical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:08:00] ⚠️  Eski dosya temizleme hatası: request to https://storage.googleapis.com/storage/v1/b/ecocell-5cf22.firebasestorage.app/o?prefix=excel%2Fmechanical-maintenance%2F failed, reason: read ECONNRESET
+[18.11.2025 08:09:58] 💚 Health check - Çalışma süresi: 300 saniye
+[18.11.2025 08:09:58] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:09:58] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:09:58] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:09:58] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:09:58] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:09:58] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:14:57] 💚 Health check - Çalışma süresi: 299 saniye
+[18.11.2025 08:14:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:15:06] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:15:06] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:15:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:15:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:15:06] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:15:57] 📝 Manuel kontrol: Değişiklik tespit edildi - Elektrik Bakım Günlük İş Listesi.xlsx
+[18.11.2025 08:15:57] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[18.11.2025 08:15:59] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[18.11.2025 08:16:01] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:16:06] Değişiklik algılandı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx
+[18.11.2025 08:16:08] Dosya yükleniyor: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Bakım Günlük İş Listesi.xlsx (Tip: electrical-maintenance)
+[18.11.2025 08:16:10] ✓ Başarılı: electrical-maintenance.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:19:57] 💚 Health check - Çalışma süresi: 300 saniye
+[18.11.2025 08:19:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:19:57] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:19:57] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:19:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:19:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:19:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:23:18] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:23:18] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:23:18] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:23:20] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:23:20] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:23:21] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:23:21] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:24:57] 💚 Health check - Çalışma süresi: 299 saniye
+[18.11.2025 08:24:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:24:57] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:24:57] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:24:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:24:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:24:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:29:57] 💚 Health check - Çalışma süresi: 299 saniye
+[18.11.2025 08:29:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:29:57] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:29:57] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:29:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:29:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:29:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:34:57] 💚 Health check - Çalışma süresi: 299 saniye
+[18.11.2025 08:34:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:34:57] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:34:57] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:34:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:34:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:35:27] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:35:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:35:27] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:35:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:35:29] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:35:31] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:35:31] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:36:47] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:36:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:36:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:36:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:36:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:36:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:36:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:37:07] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:37:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:37:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:37:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:37:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:37:11] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:37:11] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:38:07] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:09] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:38:11] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:38:17] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:17] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:38:19] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:38:21] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:38:21] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:38:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:40] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:38:41] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:38:47] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:38:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:38:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:39:57] 💚 Health check - Çalışma süresi: 299 saniye
+[18.11.2025 08:39:57] ⚠️  Watcher hazır değil - yeniden başlatılıyor...
+[18.11.2025 08:39:57] ✓ Manuel dosya kontrolü aktif (10 saniye aralıklarla)
+[18.11.2025 08:39:57] ✓ Ağ bağlantısı aktif
+[18.11.2025 08:39:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:39:57] ✓ Dosya izleyici hazır ve çalışıyor...
+[18.11.2025 08:40:37] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:40:39] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:40:41] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)
+[18.11.2025 08:40:47] 📝 Manuel kontrol: Değişiklik tespit edildi - GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:40:47] Değişiklik algılandı: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx
+[18.11.2025 08:40:49] Dosya yükleniyor: \\10.0.0.6\serkan cansız\Serkan Cansız Ortak klasor\GÜNLÜK STOK LİSTESİ.xlsx (Tip: stock)
+[18.11.2025 08:40:51] ✓ Başarılı: stock.xlsx Firebase'e yüklendi (güncellendi)

@@ -44,6 +44,15 @@ const WorkPermitTable = () => {
     }
   }, [deleteWorkPermit]);
 
+  const handleApprove = useCallback(async (permit) => {
+    await updateWorkPermit(permit.id, {
+      ...permit,
+      status: 'approved',
+      approvedBy: user?.displayName,
+      approvedAt: new Date().toISOString()
+    });
+  }, [updateWorkPermit, user]);
+
   const handleAddNew = useCallback(() => {
     setEditingPermit(null);
     setShowForm(true);
@@ -140,18 +149,19 @@ const WorkPermitTable = () => {
         <table className="work-permit-table">
           <thead>
             <tr>
-              <th style={{ width: '22%' }}>İş Adı</th>
-              <th style={{ width: '12%' }}>Durum</th>
-              <th style={{ width: '16%' }}>İşi Ekleyen</th>
-              <th style={{ width: '16%' }}>İlgili Birim</th>
-              <th style={{ width: '12%' }}>Bakım Türü</th>
-              <th style={{ width: '22%' }}>İşlemler</th>
+              <th style={{ width: '20%' }}>İş Adı</th>
+              <th style={{ width: '10%' }}>Durum</th>
+              <th style={{ width: '14%' }}>İşi Ekleyen</th>
+              <th style={{ width: '14%' }}>İlgili Birim</th>
+              <th style={{ width: '10%' }}>Bakım Türü</th>
+              <th style={{ width: '14%' }}>Onaylayan</th>
+              <th style={{ width: '18%' }}>İşlemler</th>
             </tr>
           </thead>
           <tbody>
             {filteredPermits.length === 0 ? (
               <tr>
-                <td colSpan="6" className="no-data">
+                <td colSpan="7" className="no-data">
                   {searchTerm || statusFilter !== 'all'
                     ? 'Arama kriterlerine uygun iş izni bulunamadı.'
                     : 'Henüz iş izni eklenmemiş. Yeni bir iş izni eklemek için yukarıdaki butona tıklayın.'}
@@ -198,6 +208,27 @@ const WorkPermitTable = () => {
                       <span className={`maintenance-type-badge ${maintenanceType.class}`}>
                         {maintenanceType.label}
                       </span>
+                    </td>
+                    <td>
+                      {permit.status === 'approved' ? (
+                        <div className="approver-info">
+                          <User size={14} />
+                          {permit.approvedBy || 'Bilinmiyor'}
+                        </div>
+                      ) : (
+                        <Button
+                          onClick={() => handleApprove(permit)}
+                          className="approve-btn"
+                          style={{
+                            backgroundColor: '#4caf50',
+                            color: 'white',
+                            padding: '6px 12px',
+                            fontSize: '0.85rem'
+                          }}
+                        >
+                          Onayla
+                        </Button>
+                      )}
                     </td>
                     <td>
                       <div className="actions-menu">

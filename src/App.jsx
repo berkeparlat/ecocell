@@ -4,6 +4,7 @@ import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
 import MainMenu from './pages/MainMenu/MainMenu';
+import Reports from './pages/Reports/Reports';
 import DailyStock from './pages/DailyStock/DailyStock';
 import DCSReport from './pages/DCSReport/DCSReport';
 import DCSReportAB from './pages/DCSReportAB/DCSReportAB';
@@ -54,6 +55,14 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <MainMenu />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/reports" 
+          element={
+            <ProtectedRoute>
+              <Reports />
             </ProtectedRoute>
           } 
         />

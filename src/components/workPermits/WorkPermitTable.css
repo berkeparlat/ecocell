@@ -285,6 +285,32 @@
   flex-shrink: 0;
 }
 
+.approver-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #4caf50;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.approver-info svg {
+  color: #4caf50;
+  flex-shrink: 0;
+}
+
+.approve-btn {
+  font-size: 0.85rem !important;
+  padding: 6px 12px !important;
+  background-color: #4caf50 !important;
+  border: none !important;
+}
+
+.approve-btn:hover {
+  background-color: #45a049 !important;
+}
+
 .creator-dept {
   font-size: 0.75rem;
   color: #757575;
