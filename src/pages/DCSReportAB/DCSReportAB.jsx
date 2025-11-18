@@ -47,13 +47,24 @@ const DCSReportAB = () => {
       setError(null);
 
       const [dataA, dataB] = await Promise.all([
-        getLatestExcelFile('dcs-a'),
-        getLatestExcelFile('dcs-b')
+        getLatestExcelFile('dcs-a').catch(err => {
+          console.error('DCS-A yüklenemedi:', err);
+          return null;
+        }),
+        getLatestExcelFile('dcs-b').catch(err => {
+          console.error('DCS-B yüklenemedi:', err);
+          return null;
+        })
       ]);
 
       setFileDataA(dataA);
       setFileDataB(dataB);
+      
+      if (!dataA && !dataB) {
+        setError('Excel dosyaları yüklenemedi');
+      }
     } catch (err) {
+      console.error('DCS yükleme hatası:', err);
       setError('Excel dosyaları yüklenemedi');
     } finally {
       setLoading(false);

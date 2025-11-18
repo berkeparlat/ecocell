@@ -49,6 +49,11 @@ const QuickMessageModal = ({ task, onClose }) => {
       return;
     }
 
+    if (!user || !user.uid) {
+      alert('Kullanıcı bilgisi bulunamadı. Lütfen tekrar giriş yapın.');
+      return;
+    }
+
     try {
       setLoading(true);
       
@@ -97,7 +102,9 @@ const QuickMessageModal = ({ task, onClose }) => {
       
       onClose();
     } catch (error) {
-      alert('Mesaj gönderilemedi. Lütfen tekrar deneyin.');
+      console.error('Mesaj gönderme hatası:', error);
+      alert(`Mesaj gönderilemedi: ${error.message || 'Bilinmeyen hata'}`);
+      setLoading(false);
     } finally {
       setLoading(false);
     }
