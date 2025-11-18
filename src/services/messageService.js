@@ -20,19 +20,15 @@ const MESSAGES_COLLECTION = 'messages';
 
 // Yeni mesaj gönder
 export const sendMessage = async (messageData) => {
-  try {
-    const message = {
-      ...messageData,
-      createdAt: Timestamp.now(),
-      read: false,
-      status: 'sent'
-    };
-    
-    const docRef = await addDoc(collection(db, MESSAGES_COLLECTION), message);
-    return docRef.id;
-  } catch (error) {
-    throw error;
-  }
+  const message = {
+    ...messageData,
+    createdAt: Timestamp.now(),
+    read: false,
+    status: 'sent'
+  };
+  
+  const docRef = await addDoc(collection(db, MESSAGES_COLLECTION), message);
+  return docRef.id;
 };
 
 export const subscribeToConversations = (userId, callback) => {

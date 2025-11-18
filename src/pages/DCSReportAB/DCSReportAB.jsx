@@ -42,33 +42,22 @@ const DCSReportAB = () => {
   }, [zoomB]);
 
   const loadExcelFiles = async () => {
-    try {
-      setLoading(true);
-      setError(null);
+    setLoading(true);
+    setError(null);
 
-      const [dataA, dataB] = await Promise.all([
-        getLatestExcelFile('dcs-a').catch(err => {
-          console.error('DCS-A yüklenemedi:', err);
-          return null;
-        }),
-        getLatestExcelFile('dcs-b').catch(err => {
-          console.error('DCS-B yüklenemedi:', err);
-          return null;
-        })
-      ]);
+    const [dataA, dataB] = await Promise.all([
+      getLatestExcelFile('dcs-a').catch(() => null),
+      getLatestExcelFile('dcs-b').catch(() => null)
+    ]);
 
-      setFileDataA(dataA);
-      setFileDataB(dataB);
-      
-      if (!dataA && !dataB) {
-        setError('Excel dosyaları yüklenemedi');
-      }
-    } catch (err) {
-      console.error('DCS yükleme hatası:', err);
+    setFileDataA(dataA);
+    setFileDataB(dataB);
+    
+    if (!dataA && !dataB) {
       setError('Excel dosyaları yüklenemedi');
-    } finally {
-      setLoading(false);
     }
+    
+    setLoading(false);
   };
 
   return (

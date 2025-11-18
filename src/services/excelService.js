@@ -33,109 +33,91 @@ const buildOfficeViewerUrl = (directUrl, fileType) => {
 };
 
 export const uploadExcelFile = async (file, type) => {
-  try {
-    if (!file) {
-      throw new Error('Dosya seçilmedi');
-    }
-
-    const validTypes = [
-      'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-      'application/vnd.ms-excel',
-      'text/csv'
-    ];
-
-    if (!validTypes.includes(file.type)) {
-      throw new Error('Geçerli bir Excel dosyası seçin (.xlsx, .xls)');
-    }
-
-    const timestamp = new Date().getTime();
-    const fileName = `${type}_${timestamp}.xlsx`;
-    const storageRef = ref(storage, `excel/${type}/${fileName}`);
-
-    await uploadBytes(storageRef, file);
-    const downloadURL = await getDownloadURL(storageRef);
-
-    return {
-      success: true,
-      url: downloadURL,
-      fileName: fileName,
-      uploadDate: new Date()
-    };
-  } catch (error) {
-    throw error;
+  if (!file) {
+    throw new Error('Dosya seçilmedi');
   }
+
+  const validTypes = [
+    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+    'application/vnd.ms-excel',
+    'text/csv'
+  ];
+
+  if (!validTypes.includes(file.type)) {
+    throw new Error('Geçerli bir Excel dosyası seçin (.xlsx, .xls)');
+  }
+
+  const timestamp = new Date().getTime();
+  const fileName = `${type}_${timestamp}.xlsx`;
+  const storageRef = ref(storage, `excel/${type}/${fileName}`);
+
+  await uploadBytes(storageRef, file);
+  const downloadURL = await getDownloadURL(storageRef);
+
+  return {
+    success: true,
+    url: downloadURL,
+    fileName: fileName,
+    uploadDate: new Date()
+  };
 };
 
 export const getLatestExcelFile = async (type) => {
-  try {
-    const listRef = ref(storage, `excel/${type}`);
-    const fileList = await listAll(listRef);
+  const listRef = ref(storage, `excel/${type}`);
+  const fileList = await listAll(listRef);
 
-    if (fileList.items.length === 0) {
-      return null;
-    }
-
-    const filesWithMetadata = await Promise.all(
-      fileList.items.map(async (item) => {
-        const metadata = await getMetadata(item);
-        const url = await getDownloadURL(item);
-        return {
-          name: item.name,
-          url: url,
-          uploadDate: metadata.timeCreated,
-          size: metadata.size
-        };
-      })
-    );
-
-    filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
-    const latestFile = filesWithMetadata[0];
-    
-    const viewerUrl = buildOfficeViewerUrl(latestFile.url, type);
-    
-    return {
-      name: latestFile.name,
-      uploadDate: latestFile.uploadDate,
-      size: latestFile.size,
-      downloadUrl: latestFile.url,
-      viewerUrl
-    };
-  } catch (error) {
-    throw error;
+  if (fileList.items.length === 0) {
+    return null;
   }
+
+  // Sadece en son dosyanın metadata ve URL'ini al
+  const latestItem = fileList.items.reduce((latest, item) => {
+    // Dosya adlarından timestamp'ı çıkar (type_timestamp.xlsx formatı)
+    const itemName = item.name;
+    const latestName = latest.name;
+    return itemName > latestName ? item : latest;
+  });
+
+  const [metadata, url] = await Promise.all([
+    getMetadata(latestItem),
+    getDownloadURL(latestItem)
+  ]);
+  
+  const viewerUrl = buildOfficeViewerUrl(url, type);
+  
+  return {
+    name: latestItem.name,
+    uploadDate: metadata.timeCreated,
+    size: metadata.size,
+    downloadUrl: url,
+    viewerUrl
+  };
 };
 
 export const deleteExcelFile = async (fileRef) => {
-  try {
-    await deleteObject(fileRef);
-    return { success: true };
-  } catch (error) {
-    throw error;
-  }
+  await deleteObject(fileRef);
+  return { success: true };
 };
 
 export const listAllExcelFiles = async (type) => {
-  try {
-    const listRef = ref(storage, `excel/${type}`);
-    const fileList = await listAll(listRef);
+  const listRef = ref(storage, `excel/${type}`);
+  const fileList = await listAll(listRef);
 
-    const filesWithMetadata = await Promise.all(
-      fileList.items.map(async (item) => {
-        const metadata = await getMetadata(item);
-        const url = await getDownloadURL(item);
-        return {
-          name: item.name,
-          url: url,
-          uploadDate: metadata.timeCreated,
-          size: metadata.size,
-          ref: item
-        };
-      })
-    );
+  const filesWithMetadata = await Promise.all(
+    fileList.items.map(async (item) => {
+      const [metadata, url] = await Promise.all([
+        getMetadata(item),
+        getDownloadURL(item)
+      ]);
+      return {
+        name: item.name,
+        url: url,
+        uploadDate: metadata.timeCreated,
+        size: metadata.size,
+        ref: item
+      };
+    })
+  );
 
-    filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
-    return filesWithMetadata;
-  } catch (error) {
-    throw error;
-  }
+  return filesWithMetadata.sort((a, b) => new Date(b.uploadDate) - new Date(a.uploadDate));
 };

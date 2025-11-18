@@ -18,93 +18,91 @@ const QuickMessageModal = ({ task, onClose }) => {
   }, [task]);
 
   const loadRecipients = async () => {
-    try {
-      setLoadingUsers(true);
-      const allUsers = await getUsers();
-      
-      // Göndericinin kendisi hariç, task'ın departmanına ait kullanıcıları filtrele
-      const filteredUsers = allUsers.filter(u => {
-        if (u.id === user.uid) return false; // Kendini çıkar
-        if (!task.relatedDepartment || task.relatedDepartment === 'Belirtilmemiş') {
-          return true; // Departman belirtilmemişse tüm kullanıcıları göster
-        }
-        return u.department === task.relatedDepartment;
-      });      setRecipients(filteredUsers);
-      
-      // İlk seçenek olarak "Tüm Birim" seçeneğini ayarla
-      if (filteredUsers.length > 1 && task.relatedDepartment && task.relatedDepartment !== 'Belirtilmemiş') {
-        setSendToAll(true);
-      } else if (filteredUsers.length > 0) {
-        setSelectedRecipient(filteredUsers[0].id);
+    setLoadingUsers(true);
+    
+    const allUsers = await getUsers();
+    
+    // Göndericinin kendisi hariç, task'ın departmanına ait kullanıcıları filtrele
+    const filteredUsers = allUsers.filter(u => {
+      if (u.id === user.uid) return false;
+      if (!task.relatedDepartment || task.relatedDepartment === 'Belirtilmemiş') {
+        return true;
       }
-    } catch (error) {
-      // Kullanıcılar yüklenemezse boş liste kullan
-    } finally {
-      setLoadingUsers(false);
+      return u.department === task.relatedDepartment;
+    });
+    
+    setRecipients(filteredUsers);
+    
+    // İlk seçenek olarak "Tüm Birim" seçeneğini ayarla
+    if (filteredUsers.length > 1 && task.relatedDepartment && task.relatedDepartment !== 'Belirtilmemiş') {
+      setSendToAll(true);
+    } else if (filteredUsers.length > 0) {
+      setSelectedRecipient(filteredUsers[0].id);
     }
+    
+    setLoadingUsers(false);
   };
   const handleSend = async () => {
-    if ((!sendToAll && !selectedRecipient) || !messageContent.trim()) {
-      alert('Lütfen alıcı seçin ve mesaj yazın.');
+    if (!messageContent.trim()) {
+      alert('Lütfen mesaj yazın.');
       return;
     }
 
-    if (!user || !user.uid) {
-      alert('Kullanıcı bilgisi bulunamadı. Lütfen tekrar giriş yapın.');
+    if (!sendToAll && !selectedRecipient) {
+      alert('Lütfen alıcı seçin.');
       return;
     }
 
+    setLoading(true);
+    
     try {
-      setLoading(true);
+      
+      const senderName = user?.fullName || user?.username || user?.email || 'Bilinmeyen';
+      const senderDept = user?.department || 'Belirtilmemiş';
       
       if (sendToAll) {
         // Tüm birime gönder
-        const sendPromises = recipients.map(recipient => {
-          const messageData = {
+        await Promise.all(recipients.map(recipient => 
+          sendMessage({
             senderId: user.uid,
-            senderName: user.fullName || user.username || user.email,
-            senderDepartment: user.department || 'Belirtilmemiş',
+            senderName,
+            senderDepartment: senderDept,
             recipientId: recipient.id,
             recipientName: recipient.fullName || recipient.displayName || recipient.email,
             recipientDepartment: recipient.department || 'Belirtilmemiş',
             content: messageContent,
             subject: `İş hakkında: ${task.title}`,
             relatedTaskId: task.id
-          };
-          return sendMessage(messageData);
-        });
-
-        await Promise.all(sendPromises);
-        alert(`Mesaj ${recipients.length} kişiye başarıyla gönderildi!`);
+          })
+        ));
+        alert(`Mesaj ${recipients.length} kişiye gönderildi.`);
       } else {
         // Tek kişiye gönder
         const recipient = recipients.find(r => r.id === selectedRecipient);
         if (!recipient) {
+          setLoading(false);
           alert('Alıcı bulunamadı.');
           return;
         }
 
-        const messageData = {
+        await sendMessage({
           senderId: user.uid,
-          senderName: user.fullName || user.username || user.email,
-          senderDepartment: user.department || 'Belirtilmemiş',
+          senderName,
+          senderDepartment: senderDept,
           recipientId: recipient.id,
           recipientName: recipient.fullName || recipient.displayName || recipient.email,
           recipientDepartment: recipient.department || 'Belirtilmemiş',
           content: messageContent,
           subject: `İş hakkında: ${task.title}`,
           relatedTaskId: task.id
-        };
-
-        await sendMessage(messageData);
-        alert('Mesaj başarıyla gönderildi!');
+        });
+        alert('Mesaj gönderildi.');
       }
       
       onClose();
     } catch (error) {
-      console.error('Mesaj gönderme hatası:', error);
-      alert(`Mesaj gönderilemedi: ${error.message || 'Bilinmeyen hata'}`);
-      setLoading(false);
+      console.error('Hata:', error);
+      alert('Mesaj gönderilemedi. Lütfen tekrar deneyin.');
     } finally {
       setLoading(false);
     }
