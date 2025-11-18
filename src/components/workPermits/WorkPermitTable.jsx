@@ -48,7 +48,6 @@ const WorkPermitTable = () => {
     const approverName = user?.displayName || user?.fullName || user?.username || user?.email || 'Bilinmiyor';
     
     await updateWorkPermit(permit.id, {
-      ...permit,
       status: 'approved',
       approvedBy: approverName,
       approvedAt: new Date().toISOString()
