@@ -302,13 +302,20 @@
 
 .approve-btn {
   font-size: 0.85rem !important;
-  padding: 6px 12px !important;
+  padding: 8px 16px !important;
   background-color: #4caf50 !important;
+  color: white !important;
   border: none !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  font-weight: 500 !important;
+  transition: all 0.2s ease !important;
 }
 
 .approve-btn:hover {
   background-color: #45a049 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
 }
 
 .creator-dept {

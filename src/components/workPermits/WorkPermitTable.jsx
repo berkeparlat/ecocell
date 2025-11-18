@@ -216,18 +216,12 @@ const WorkPermitTable = () => {
                           {permit.approvedBy || 'Bilinmiyor'}
                         </div>
                       ) : (
-                        <Button
+                        <button
                           onClick={() => handleApprove(permit)}
                           className="approve-btn"
-                          style={{
-                            backgroundColor: '#4caf50',
-                            color: 'white',
-                            padding: '6px 12px',
-                            fontSize: '0.85rem'
-                          }}
                         >
                           Onayla
-                        </Button>
+                        </button>
                       )}
                     </td>
                     <td>

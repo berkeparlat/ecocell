@@ -85,7 +85,6 @@ const AnnouncementForm = ({ announcement = null, onClose }) => {
           options={[
             { value: 'low', label: 'Bilgilendirme' },
             { value: 'high', label: 'Önemli' },
-            { value: 'urgent', label: 'Acil' },
           ]}
           required
         />
