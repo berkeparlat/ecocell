@@ -83,7 +83,7 @@ const Messages = () => {
       // Grup chat ise tüm üyelere gönder
       if (isGroupChat && selectedChat.members) {
         const sendPromises = selectedChat.members.map(recipient => {
-          const messageData = {
+          return sendMessage({
             senderId: user.uid,
             senderName: user.fullName || user.displayName || user.email,
             senderDepartment: user.department || '',
@@ -92,23 +92,13 @@ const Messages = () => {
             recipientDepartment: recipient.department || '',
             subject: `${selectedChat.userName} Mesajı`,
             content: messageInput.trim()
-          };
-
-          // Sadece dosya varsa dosya alanlarını ekle
-          if (fileData) {
-            messageData.fileUrl = fileData.url;
-            messageData.fileName = fileData.name;
-            messageData.fileSize = fileData.size;
-            messageData.fileType = fileData.type;
-          }
-
-          return sendMessage(messageData);
+          });
         });
 
         await Promise.all(sendPromises);
       } else {
         // Normal chat
-        const messageData = {
+        await sendMessage({
           senderId: user.uid,
           senderName: user.fullName || user.displayName || user.email,
           senderDepartment: user.department || '',
@@ -116,22 +106,11 @@ const Messages = () => {
           recipientName: selectedChat.userName,
           recipientDepartment: selectedChat.userDepartment || '',
           subject: 'Sohbet',
-          content: messageInput.trim() || (fileData ? '📎 Dosya' : '')
-        };
-
-        // Sadece dosya varsa dosya alanlarını ekle
-        if (fileData) {
-          messageData.fileUrl = fileData.url;
-          messageData.fileName = fileData.name;
-          messageData.fileSize = fileData.size;
-          messageData.fileType = fileData.type;
-        }
-
-        await sendMessage(messageData);
+          content: messageInput.trim()
+        });
       }
 
       setMessageInput('');
-      setSelectedFile(null);
       scrollToBottom();
     } catch (error) {
       alert('Mesaj gönderilemedi!');
@@ -307,12 +286,6 @@ const Messages = () => {
         createdAt: { toDate: () => new Date() },
         status: 'sent'
       };
-
-      // Sadece dosya varsa dosya alanlarını ekle
-      if (fileData) {
-        chatMessage.fileUrl = fileData.url;
-        chatMessage.fileName = fileData.name;
-      }
 
       setChatMessages(prev => [...prev, chatMessage]);
       

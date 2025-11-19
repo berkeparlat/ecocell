@@ -342,10 +342,10 @@ function healthCheck() {
   log(`💚 Health check - Çalışma süresi: ${elapsed} saniye`);
   lastHealthCheck = now;
   
-  // Watcher hala çalışıyor mu kontrol et
-  if (!watcher || !watcher._isReady) {
-    log('⚠️  Watcher hazır değil - yeniden başlatılıyor...');
-    startWatcher();
+  // Manuel kontrol hala çalışıyor mu?
+  if (!manualCheckInterval) {
+    log('⚠️  Manuel kontrol durmuş - yeniden başlatılıyor...');
+    manualCheckInterval = setInterval(checkFileModifications, 10000);
   }
   
   // İlk dosyaya erişim kontrolü

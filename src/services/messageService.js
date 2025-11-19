@@ -13,8 +13,7 @@ import {
   deleteDoc,
   writeBatch
 } from 'firebase/firestore';
-import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
-import { db, storage } from '../config/firebase';
+import { db } from '../config/firebase';
 
 const MESSAGES_COLLECTION = 'messages';
 
@@ -166,26 +165,6 @@ export const getUsers = async (forceRefresh = false) => {
     return users;
   } catch (error) {
     return usersCache || [];
-  }
-};
-
-export const uploadMessageFile = async (file, senderId) => {
-  try {
-    const timestamp = Date.now();
-    const fileName = `${timestamp}_${file.name}`;
-    const storageRef = ref(storage, `messages/${senderId}/${fileName}`);
-    
-    await uploadBytes(storageRef, file);
-    const downloadURL = await getDownloadURL(storageRef);
-    
-    return {
-      url: downloadURL,
-      name: file.name,
-      size: file.size,
-      type: file.type
-    };
-  } catch (error) {
-    throw error;
   }
 };
 
