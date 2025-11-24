@@ -1,16 +1,23 @@
 import { useNavigate } from 'react-router-dom';
+import { useApp } from '../../context/AppContext';
 import { 
   Bell,
   MessageSquare,
   FileText,
   CheckSquare,
-  FolderOpen
+  FolderOpen,
+  Megaphone,
+  Clock
 } from 'lucide-react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import './MainMenu.css';
 
 const MainMenu = () => {
   const navigate = useNavigate();
+  const { unreadNotificationsCount, conversations = [] } = useApp();
+  
+  // Okunmamış mesaj sayısını hesapla
+  const unreadMessagesCount = conversations.filter(conv => conv.unreadCount > 0).length;
   
   const menuItems = [
     {
@@ -35,9 +42,24 @@ const MainMenu = () => {
       color: '#3F51B5'
     },
     {
+      id: 'reminders',
+      title: 'Hatırlatıcılar',
+      icon: Clock,
+      path: '/reminders',
+      color: '#FF6F00'
+    },
+    {
+      id: 'notifications',
+      title: 'Bildirimler',
+      icon: Bell,
+      path: '/notifications',
+      color: '#9C27B0',
+      badge: unreadNotificationsCount
+    },
+    {
       id: 'announcements',
       title: 'Duyurular',
-      icon: Bell,
+      icon: Megaphone,
       path: '/announcements',
       color: '#FF6B35'
     },
@@ -46,7 +68,8 @@ const MainMenu = () => {
       title: 'Mesajlar',
       icon: MessageSquare,
       path: '/messages',
-      color: '#673AB7'
+      color: '#673AB7',
+      badge: unreadMessagesCount
     }
   ];
 
@@ -69,7 +92,10 @@ const MainMenu = () => {
                 onClick={() => handleMenuClick(item.path)}
               >
                 <div className="menu-icon" style={{ backgroundColor: item.color }}>
-                  <IconComponent size={28} strokeWidth={2} />
+                  <IconComponent size={32} strokeWidth={2} />
+                  {item.badge > 0 && (
+                    <span className="menu-badge">{item.badge}</span>
+                  )}
                 </div>
                 <h3 className="menu-card-title">{item.title}</h3>
               </div>

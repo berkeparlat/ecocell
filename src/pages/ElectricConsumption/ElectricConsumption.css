@@ -6,7 +6,7 @@
 .electric-container {
   max-width: 100%;
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .electric-header {
@@ -28,8 +28,9 @@
 
 .electric-consumption-page .header-title svg {
   color: #FFC107;
-  width: 22px;
-  height: 22px;
+  width: 24px !important;
+  height: 24px !important;
+  flex-shrink: 0;
 }
 
 .header-title h1 {
@@ -43,6 +44,52 @@
   margin: 0;
   color: #757575;
   font-size: 0.8rem;
+}
+
+.consumption-tabs {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  background: white;
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.consumption-tab {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+  color: #616161;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.consumption-tab:hover {
+  border-color: #FFC107;
+  color: #FFC107;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2);
+}
+
+.consumption-tab.active {
+  background: linear-gradient(135deg, #FFC107 0%, #FF9800 100%);
+  border-color: #FFC107;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+}
+
+.consumption-tab svg {
+  width: 18px;
+  height: 18px;
 }
 
 .loading-state {
@@ -70,7 +117,7 @@
 
 /* Single View Layout */
 .electric-single-view {
-  height: calc(100vh - 160px);
+  height: calc(100vh - 210px);
 }
 
 .electric-panel {

@@ -117,7 +117,7 @@ const Register = () => {
             value={formData.fullName}
             onChange={handleChange}
             placeholder="Adınızı ve soyadınızı girin"
-            icon={<User size={18} />}
+            icon={<User size={20} />}
           />
 
           <Input
@@ -127,7 +127,7 @@ const Register = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="E-posta adresinizi girin"
-            icon={<Mail size={18} />}
+            icon={<Mail size={20} />}
           />
 
           <Select
@@ -151,7 +151,7 @@ const Register = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="Şifrenizi girin (en az 6 karakter)"
-            icon={<Lock size={18} />}
+            icon={<Lock size={20} />}
           />
 
           <Input
@@ -161,7 +161,7 @@ const Register = () => {
             value={formData.confirmPassword}
             onChange={handleChange}
             placeholder="Şifrenizi tekrar girin"
-            icon={<Lock size={18} />}
+            icon={<Lock size={20} />}
           />
 
           <Button 

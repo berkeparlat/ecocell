@@ -51,6 +51,7 @@
 }
 
 .menu-icon {
+  position: relative;
   width: 64px;
   height: 64px;
   border-radius: 12px;
@@ -58,12 +59,42 @@
   align-items: center;
   justify-content: center;
   color: white;
-  transition: all 0.2s ease;
   flex-shrink: 0;
+}
+
+.menu-icon svg {
+  width: 32px !important;
+  height: 32px !important;
+  stroke-width: 2 !important;
 }
 
 .menu-card:hover .menu-icon {
   transform: scale(1.05);
+}
+
+.menu-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  min-width: 20px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+  animation: badgePulse 2s infinite;
+}
+
+@keyframes badgePulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
 }
 
 .menu-card-title {

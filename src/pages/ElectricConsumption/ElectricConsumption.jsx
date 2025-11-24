@@ -1,18 +1,29 @@
 import { useState, useEffect } from 'react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import { RefreshCw, Zap, ZoomIn, ZoomOut, RotateCcw, Maximize2 } from 'lucide-react';
+import { RefreshCw, Zap, ZoomIn, ZoomOut, RotateCcw, Maximize2, Settings, Droplet } from 'lucide-react';
 import { getLatestExcelFile } from '../../services/excelService';
 import ExcelPreview from '../../components/excel/ExcelPreview';
 import './ElectricConsumption.css';
 
 const ElectricConsumption = () => {
+  const [activeTab, setActiveTab] = useState('electric');
   const [loading, setLoading] = useState(false);
-  const [excelData, setExcelData] = useState(null);
+  const [excelData, setExcelData] = useState({
+    electric: null,
+    mechanic: null,
+    hydraulic: null
+  });
   const [zoom, setZoom] = useState(100);
 
+  const tabs = [
+    { id: 'electric', label: 'Elektrik', icon: Zap, fileType: 'electric' },
+    { id: 'mechanic', label: 'Mekanik', icon: Settings, fileType: 'mechanic' },
+    { id: 'hydraulic', label: 'Hidrolik', icon: Droplet, fileType: 'hydraulic' }
+  ];
+
   useEffect(() => {
-    loadLatestFile();
-  }, []);
+    loadLatestFile(activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
     const iframe = document.querySelector('.electric-panel iframe');
@@ -28,13 +39,19 @@ const ElectricConsumption = () => {
     }
   }, [zoom]);
 
-  const loadLatestFile = async () => {
+  const loadLatestFile = async (tabId) => {
+    if (excelData[tabId]) return; // Daha önce yüklendiyse tekrar yükleme
+    
     setLoading(true);
     try {
-      const file = await getLatestExcelFile('electric');
+      const tab = tabs.find(t => t.id === tabId);
+      const file = await getLatestExcelFile(tab.fileType);
       
       if (file) {
-        setExcelData(file);
+        setExcelData(prev => ({
+          ...prev,
+          [tabId]: file
+        }));
       }
     } catch (error) {
       // Silent fail
@@ -43,18 +60,34 @@ const ElectricConsumption = () => {
     }
   };
 
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    setZoom(100); // Reset zoom when switching tabs
+  };
+
+  const currentData = excelData[activeTab];
+  const currentTab = tabs.find(t => t.id === activeTab);
+  const TabIcon = currentTab.icon;
+
   return (
     <div className="electric-consumption-page">
       <SimpleHeader />
       
       <div className="electric-container">
-        <div className="electric-header">
-          <div className="header-title">
-            <Zap size={22} />
-            <div>
-              <h1>Elektrik Tüketimi</h1>
-            </div>
-          </div>
+        <div className="consumption-tabs">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                className={`consumption-tab ${activeTab === tab.id ? 'active' : ''}`}
+                onClick={() => handleTabChange(tab.id)}
+              >
+                <Icon size={20} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
 
         {loading ? (
@@ -67,10 +100,10 @@ const ElectricConsumption = () => {
             <div className="electric-panel">
               <div className="panel-header">
                 <div className="panel-header-left">
-                  <Zap size={18} />
-                  <h2>Elektrik Tüketimi</h2>
+                  <TabIcon size={20} />
+                  <h2>{currentTab.label} Tüketimi</h2>
                 </div>
-                {excelData && (
+                {currentData && (
                   <div className="panel-header-controls">
                     <button 
                       className="panel-btn"
@@ -78,7 +111,7 @@ const ElectricConsumption = () => {
                       disabled={zoom <= 50}
                       title="Küçült"
                     >
-                      <ZoomOut size={14} />
+                      <ZoomOut size={16} />
                     </button>
                     <span className="panel-zoom-display">{zoom}%</span>
                     <button 
@@ -87,14 +120,14 @@ const ElectricConsumption = () => {
                       disabled={zoom >= 200}
                       title="Büyüt"
                     >
-                      <ZoomIn size={14} />
+                      <ZoomIn size={16} />
                     </button>
                     <button 
                       className="panel-btn"
                       onClick={() => setZoom(100)}
                       title="Varsayılan (100%)"
                     >
-                      <RotateCcw size={14} />
+                      <RotateCcw size={16} />
                     </button>
                     <button 
                       className="panel-btn"
@@ -106,21 +139,21 @@ const ElectricConsumption = () => {
                       }}
                       title="Tam Ekran"
                     >
-                      <Maximize2 size={14} />
+                      <Maximize2 size={16} />
                     </button>
                   </div>
                 )}
               </div>
-              {excelData ? (
+              {currentData ? (
                 <ExcelPreview
-                  fileName={excelData.name}
-                  viewerUrl={excelData.viewerUrl}
+                  fileName={currentData.name}
+                  viewerUrl={currentData.viewerUrl}
                   accent="electric"
                   hideToolbar={true}
                 />
               ) : (
                 <div className="empty-panel">
-                  <Zap size={48} />
+                  <TabIcon size={48} />
                   <p>Henüz dosya yüklenmemiş</p>
                 </div>
               )}

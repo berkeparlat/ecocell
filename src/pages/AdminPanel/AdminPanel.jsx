@@ -284,7 +284,7 @@ const AdminPanel = () => {
             <h1>Admin Panel</h1>
           </div>
           <button className="refresh-btn" onClick={loadData}>
-            <RefreshCw size={18} />
+            <RefreshCw size={20} />
             Yenile
           </button>
         </div>
@@ -294,42 +294,42 @@ const AdminPanel = () => {
             className={`tab-btn ${activeTab === 'dashboard' ? 'active' : ''}`}
             onClick={() => setActiveTab('dashboard')}
           >
-            <BarChart3 size={18} />
+            <BarChart3 size={20} />
             Dashboard
           </button>
           <button 
             className={`tab-btn ${activeTab === 'users' ? 'active' : ''}`}
             onClick={() => setActiveTab('users')}
           >
-            <Users size={18} />
+            <Users size={20} />
             Kullanıcılar ({users.length})
           </button>
           <button 
             className={`tab-btn ${activeTab === 'tasks' ? 'active' : ''}`}
             onClick={() => setActiveTab('tasks')}
           >
-            <Briefcase size={18} />
+            <Briefcase size={20} />
             İşler ({tasks.length})
           </button>
           <button 
             className={`tab-btn ${activeTab === 'messages' ? 'active' : ''}`}
             onClick={() => setActiveTab('messages')}
           >
-            <MessageSquare size={18} />
+            <MessageSquare size={20} />
             Mesajlar ({messages.length})
           </button>
           <button 
             className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
             onClick={() => setActiveTab('departments')}
           >
-            <Building2 size={18} />
+            <Building2 size={20} />
             Birimler
           </button>
           <button 
             className={`tab-btn ${activeTab === 'excel' ? 'active' : ''}`}
             onClick={() => setActiveTab('excel')}
           >
-            <FileSpreadsheet size={18} />
+            <FileSpreadsheet size={20} />
             Excel
           </button>
         </div>
@@ -416,7 +416,7 @@ const AdminPanel = () => {
         {activeTab === 'users' && (
           <div className="admin-content">
             <div className="search-bar">
-              <Search size={18} />
+              <Search size={20} />
               <input
                 type="text"
                 placeholder="Kullanıcı ara (isim, email, departman)..."
@@ -445,10 +445,10 @@ const AdminPanel = () => {
                       <td>
                         <div className="action-buttons">
                           <button className="btn-edit" onClick={() => handleEditUser(u)} title="Düzenle">
-                            <Edit2 size={16} />
+                            <Edit2 size={20} />
                           </button>
                           <button className="btn-delete" onClick={() => handleDeleteUser(u.id)} title="Sil">
-                            <Trash2 size={16} />
+                            <Trash2 size={20} />
                           </button>
                         </div>
                       </td>
@@ -464,7 +464,7 @@ const AdminPanel = () => {
         {activeTab === 'tasks' && (
           <div className="admin-content">
             <div className="search-bar">
-              <Search size={18} />
+              <Search size={20} />
               <input
                 type="text"
                 placeholder="İş ara..."
@@ -502,7 +502,7 @@ const AdminPanel = () => {
                       <td>
                         <div className="action-buttons">
                           <button className="btn-delete" onClick={() => handleDeleteTask(t.id)}>
-                            <Trash2 size={16} />
+                            <Trash2 size={20} />
                           </button>
                         </div>
                       </td>
@@ -516,7 +516,7 @@ const AdminPanel = () => {
         {activeTab === 'messages' && (
           <div className="admin-content">
             <div className="search-bar">
-              <Search size={18} />
+              <Search size={20} />
               <input
                 type="text"
                 placeholder="Mesaj ara..."
@@ -546,7 +546,7 @@ const AdminPanel = () => {
                       <td>
                         <div className="action-buttons">
                           <button className="btn-delete" onClick={() => handleDeleteMessage(m.id)}>
-                            <Trash2 size={16} />
+                            <Trash2 size={20} />
                           </button>
                         </div>
                       </td>
@@ -575,7 +575,7 @@ const AdminPanel = () => {
               <div className="departments-form">
                 <div className="add-department-section">
                   <div className="add-department-input">
-                    <Plus size={18} />
+                    <Plus size={20} />
                     <input
                       type="text"
                       value={newDepartment}
@@ -591,7 +591,7 @@ const AdminPanel = () => {
                     className="add-dept-btn" 
                     onClick={handleAddDepartment}
                   >
-                    <Plus size={18} />
+                    <Plus size={20} />
                     Ekle
                   </button>
                 </div>
@@ -604,7 +604,7 @@ const AdminPanel = () => {
 
                 <div className="departments-list-section">
                   <div className="list-header">
-                    <Users size={18} />
+                    <Users size={20} />
                     <span>Mevcut Birimler ({localDepartments.length})</span>
                   </div>
                   
@@ -612,7 +612,7 @@ const AdminPanel = () => {
                     {localDepartments.map((dept, index) => (
                       <div key={index} className="department-item">
                         <div className="department-info">
-                          <Building2 size={16} />
+                          <Building2 size={20} />
                           <span>{dept}</span>
                         </div>
                         <button
@@ -620,7 +620,7 @@ const AdminPanel = () => {
                           onClick={() => handleDeleteDepartment(dept)}
                           title="Sil"
                         >
-                          <Trash2 size={16} />
+                          <Trash2 size={20} />
                         </button>
                       </div>
                     ))}

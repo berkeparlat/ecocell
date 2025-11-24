@@ -6,74 +6,86 @@ import ExcelPreview from '../../components/excel/ExcelPreview';
 import './MaintenancePlan.css';
 
 const MaintenancePlan = () => {
+  const [activeTab, setActiveTab] = useState('electrical');
   const [loading, setLoading] = useState(false);
-  const [electricalData, setElectricalData] = useState(null);
-  const [mechanicalData, setMechanicalData] = useState(null);
-  
-  // Zoom states
-  const [electricalZoom, setElectricalZoom] = useState(80);
-  const [mechanicalZoom, setMechanicalZoom] = useState(100);
+  const [excelData, setExcelData] = useState({
+    electrical: null,
+    mechanical: null
+  });
+  const [zoom, setZoom] = useState(100);
+
+  const tabs = [
+    { id: 'electrical', label: 'Elektrik Bakım', icon: Zap, fileType: 'electrical-maintenance' },
+    { id: 'mechanical', label: 'Mekanik Bakım', icon: Wrench, fileType: 'mechanical-maintenance' }
+  ];
 
   useEffect(() => {
-    loadLatestFiles();
-  }, []);
+    loadLatestFile(activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
-    // Elektrik bakım iframe zoom
-    const iframe = document.querySelector('.maintenance-panel:first-child iframe');
-    if (iframe) {
-      iframe.style.transform = `scale(${electricalZoom / 100})`;
+    const iframe = document.querySelector('.maintenance-panel iframe');
+    if (iframe && zoom !== 100) {
+      iframe.style.transform = `scale(${zoom / 100})`;
       iframe.style.transformOrigin = 'top left';
-      iframe.style.width = `${10000 / electricalZoom}%`;
-      iframe.style.height = `${10000 / electricalZoom}%`;
+      iframe.style.width = `${10000 / zoom}%`;
+      iframe.style.height = `${10000 / zoom}%`;
+    } else if (iframe) {
+      iframe.style.transform = '';
+      iframe.style.width = '';
+      iframe.style.height = '';
     }
-  }, [electricalZoom]);
+  }, [zoom]);
 
-  useEffect(() => {
-    // Mekanik bakım iframe zoom
-    const iframe = document.querySelector('.maintenance-panel:last-child iframe');
-    if (iframe) {
-      iframe.style.transform = `scale(${mechanicalZoom / 100})`;
-      iframe.style.transformOrigin = 'top left';
-      iframe.style.width = `${10000 / mechanicalZoom}%`;
-      iframe.style.height = `${10000 / mechanicalZoom}%`;
-    }
-  }, [mechanicalZoom]);
-
-  const loadLatestFiles = async () => {
+  const loadLatestFile = async (tabId) => {
+    if (excelData[tabId]) return;
+    
     setLoading(true);
     try {
-            
-      // Elektrik Bakım dosyası
-      const electricalFile = await getLatestExcelFile('electrical-maintenance');
-            if (electricalFile) {
-        setElectricalData(electricalFile);
-      }
+      const tab = tabs.find(t => t.id === tabId);
+      const file = await getLatestExcelFile(tab.fileType);
       
-      // Mekanik Bakım dosyası
-      const mechanicalFile = await getLatestExcelFile('mechanical-maintenance');
-            if (mechanicalFile) {
-        setMechanicalData(mechanicalFile);
+      if (file) {
+        setExcelData(prev => ({
+          ...prev,
+          [tabId]: file
+        }));
       }
-      
-          } catch (error) {
-                } finally {
+    } catch (error) {
+      // Silent fail
+    } finally {
       setLoading(false);
     }
   };
+
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    setZoom(100);
+  };
+
+  const currentData = excelData[activeTab];
+  const currentTab = tabs.find(t => t.id === activeTab);
+  const TabIcon = currentTab.icon;
 
   return (
     <div className="maintenance-plan-page">
       <SimpleHeader />
       
       <div className="maintenance-container">
-        <div className="maintenance-header">
-          <div className="header-title">
-            <Wrench size={22} />
-            <div>
-              <h1>Bakım Günlük İş Planı</h1>
-            </div>
-          </div>
+        <div className="maintenance-tabs">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                className={`maintenance-tab ${activeTab === tab.id ? 'active' : ''}`}
+                onClick={() => handleTabChange(tab.id)}
+              >
+                <Icon size={20} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
         
         {loading ? (
@@ -82,129 +94,65 @@ const MaintenancePlan = () => {
             <p>Yükleniyor...</p>
           </div>
         ) : (
-          <div className="maintenance-dual-view">
-            {/* Sol Panel - Elektrik Bakım */}
+          <div className="maintenance-single-view">
             <div className="maintenance-panel">
-              <div className="panel-header electrical">
+              <div className="panel-header">
                 <div className="panel-header-left">
-                  <Zap size={18} />
-                  <h2>Elektrik Bakım İş Planı</h2>
+                  <TabIcon size={20} />
+                  <h2>{currentTab.label} Günlük İş Planı</h2>
                 </div>
-                {electricalData && (
+                {currentData && (
                   <div className="panel-header-controls">
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(Math.max(50, electricalZoom - 10))}
-                      disabled={electricalZoom <= 50}
+                      onClick={() => setZoom(Math.max(50, zoom - 10))}
+                      disabled={zoom <= 50}
                       title="Küçült"
                     >
-                      <ZoomOut size={14} />
+                      <ZoomOut size={16} />
                     </button>
-                    <span className="panel-zoom-display">{electricalZoom}%</span>
+                    <span className="panel-zoom-display">{zoom}%</span>
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(Math.min(200, electricalZoom + 10))}
-                      disabled={electricalZoom >= 200}
+                      onClick={() => setZoom(Math.min(200, zoom + 10))}
+                      disabled={zoom >= 200}
                       title="Büyüt"
                     >
-                      <ZoomIn size={14} />
+                      <ZoomIn size={16} />
                     </button>
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(80)}
-                      title="Varsayılan (80%)"
-                    >
-                      <RotateCcw size={14} />
-                    </button>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => {
-                        const iframe = document.querySelector('.maintenance-panel:first-child iframe');
-                        if (iframe) {
-                          iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
-                        }
-                      }}
-                      title="Tam Ekran"
-                    >
-                      <Maximize2 size={14} />
-                    </button>
-                  </div>
-                )}
-              </div>
-              {electricalData ? (
-                <ExcelPreview
-                  fileName={electricalData.name}
-                  viewerUrl={electricalData.viewerUrl}
-                  accent="electrical"
-                  hideToolbar={true}
-                />
-              ) : (
-                <div className="empty-panel">
-                  <Zap size={48} />
-                  <p>Elektrik bakım dosyası yüklenmemiş</p>
-                </div>
-              )}
-            </div>
-
-            {/* Sağ Panel - Mekanik Bakım */}
-            <div className="maintenance-panel">
-              <div className="panel-header mechanical">
-                <div className="panel-header-left">
-                  <Wrench size={18} />
-                  <h2>Mekanik Bakım İş Planı</h2>
-                </div>
-                {mechanicalData && (
-                  <div className="panel-header-controls">
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(Math.max(50, mechanicalZoom - 10))}
-                      disabled={mechanicalZoom <= 50}
-                      title="Küçült"
-                    >
-                      <ZoomOut size={14} />
-                    </button>
-                    <span className="panel-zoom-display">{mechanicalZoom}%</span>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(Math.min(200, mechanicalZoom + 10))}
-                      disabled={mechanicalZoom >= 200}
-                      title="Büyüt"
-                    >
-                      <ZoomIn size={14} />
-                    </button>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(100)}
+                      onClick={() => setZoom(100)}
                       title="Varsayılan (100%)"
                     >
-                      <RotateCcw size={14} />
+                      <RotateCcw size={16} />
                     </button>
                     <button 
                       className="panel-btn"
                       onClick={() => {
-                        const iframe = document.querySelector('.maintenance-panel:last-child iframe');
+                        const iframe = document.querySelector('.maintenance-panel iframe');
                         if (iframe) {
                           iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
                         }
                       }}
                       title="Tam Ekran"
                     >
-                      <Maximize2 size={14} />
+                      <Maximize2 size={16} />
                     </button>
                   </div>
                 )}
               </div>
-              {mechanicalData ? (
+              {currentData ? (
                 <ExcelPreview
-                  fileName={mechanicalData.name}
-                  viewerUrl={mechanicalData.viewerUrl}
-                  accent="mechanical"
+                  fileName={currentData.name}
+                  viewerUrl={currentData.viewerUrl}
+                  accent="maintenance"
                   hideToolbar={true}
                 />
               ) : (
                 <div className="empty-panel">
-                  <Wrench size={48} />
-                  <p>Mekanik bakım dosyası yüklenmemiş</p>
+                  <TabIcon size={48} />
+                  <p>Henüz dosya yüklenmemiş</p>
                 </div>
               )}
             </div>

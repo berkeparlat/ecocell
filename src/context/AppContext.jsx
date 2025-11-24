@@ -23,6 +23,22 @@ import {
   updateAnnouncement as updateAnnouncementInStore,
   deleteAnnouncement as deleteAnnouncementFromStore,
 } from '../services/announcementService';
+import {
+  listenToNotifications,
+  markAsRead as markNotificationAsRead,
+  markAllAsRead as markAllNotificationsAsRead,
+  deleteNotification as deleteNotificationFromStore,
+  deleteAllNotifications as deleteAllNotificationsFromStore,
+  getUnreadCount,
+  createNotificationForDepartment,
+} from '../services/notificationService';
+import { subscribeToConversations } from '../services/messageService';
+import {
+  listenToReminders,
+  addReminder as addReminderToStore,
+  updateReminder as updateReminderInStore,
+  deleteReminder as deleteReminderFromStore,
+} from '../services/reminderService';
 
 const AppContext = createContext();
 
@@ -39,11 +55,17 @@ export const AppProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
   const [workPermits, setWorkPermits] = useState([]);
   const [announcements, setAnnouncements] = useState([]);
+  const [notifications, setNotifications] = useState([]);
+  const [conversations, setConversations] = useState([]);
+  const [reminders, setReminders] = useState([]);
   const [viewMode, setViewMode] = useState('board');
   const [departments, setDepartments] = useState([]);
   const tasksListenerRef = useRef(null);
   const workPermitsListenerRef = useRef(null);
   const announcementsListenerRef = useRef(null);
+  const notificationsListenerRef = useRef(null);
+  const conversationsListenerRef = useRef(null);
+  const remindersListenerRef = useRef(null);
   const departmentsListenerRef = useRef(null);
   const userProfileListenerRef = useRef(null);
 
@@ -177,6 +199,78 @@ export const AppProvider = ({ children }) => {
   }, [user?.uid]);
 
   useEffect(() => {
+    if (!user?.uid) {
+      if (notificationsListenerRef.current) {
+        notificationsListenerRef.current();
+        notificationsListenerRef.current = null;
+      }
+      setNotifications([]);
+      return;
+    }
+
+    const unsubscribe = listenToNotifications(user.uid, (fetchedNotifications) => {
+      setNotifications(fetchedNotifications);
+    });
+
+    notificationsListenerRef.current = unsubscribe;
+
+    return () => {
+      if (notificationsListenerRef.current) {
+        notificationsListenerRef.current();
+        notificationsListenerRef.current = null;
+      }
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
+    if (!user?.uid) {
+      if (conversationsListenerRef.current) {
+        conversationsListenerRef.current();
+        conversationsListenerRef.current = null;
+      }
+      setConversations([]);
+      return;
+    }
+
+    const unsubscribe = subscribeToConversations(user.uid, (fetchedConversations) => {
+      setConversations(fetchedConversations);
+    });
+
+    conversationsListenerRef.current = unsubscribe;
+
+    return () => {
+      if (conversationsListenerRef.current) {
+        conversationsListenerRef.current();
+        conversationsListenerRef.current = null;
+      }
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
+    if (!user?.uid) {
+      if (remindersListenerRef.current) {
+        remindersListenerRef.current();
+        remindersListenerRef.current = null;
+      }
+      setReminders([]);
+      return;
+    }
+
+    const unsubscribe = listenToReminders(user.uid, (fetchedReminders) => {
+      setReminders(fetchedReminders);
+    });
+
+    remindersListenerRef.current = unsubscribe;
+
+    return () => {
+      if (remindersListenerRef.current) {
+        remindersListenerRef.current();
+        remindersListenerRef.current = null;
+      }
+    };
+  }, [user?.uid]);
+
+  useEffect(() => {
     let isMounted = true;
     let unsubscribe;
 
@@ -279,6 +373,24 @@ export const AppProvider = ({ children }) => {
       if (!result.success) {
         throw new Error(result.error || 'Is eklenemedi');
       }
+      
+      // İlgili birime bildirim gönder
+      if (task.relatedDepartment) {
+        try {
+          await createNotificationForDepartment(task.relatedDepartment, {
+            type: 'task',
+            title: 'Yeni İş Eklendi',
+            message: `${payload.createdBy} tarafından "${task.title}" işi eklendi.`,
+            actionUrl: '/job-tracking',
+            relatedId: result.task.id,
+            createdBy: payload.createdBy
+          });
+        } catch (notificationError) {
+          console.error('Bildirim gönderilemedi:', notificationError);
+          // Bildirim hatası görev eklemeyi engellemez
+        }
+      }
+      
       return result.task;
     } catch (error) {
       throw error;
@@ -405,6 +517,102 @@ export const AppProvider = ({ children }) => {
     }
   };
 
+  const markNotificationAsReadHandler = async (notificationId) => {
+    try {
+      const result = await markNotificationAsRead(notificationId);
+      if (!result.success) {
+        throw new Error(result.error || 'Bildirim okundu işaretlenemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const markAllNotificationsAsReadHandler = async () => {
+    if (!user?.uid) {
+      throw new Error('Oturum açılmamış');
+    }
+    try {
+      const result = await markAllNotificationsAsRead(user.uid);
+      if (!result.success) {
+        throw new Error(result.error || 'Bildirimler okundu işaretlenemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteNotification = async (notificationId) => {
+    try {
+      const result = await deleteNotificationFromStore(notificationId);
+      if (!result.success) {
+        throw new Error(result.error || 'Bildirim silinemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteAllNotifications = async () => {
+    if (!user?.uid) {
+      throw new Error('Oturum açılmamış');
+    }
+    try {
+      const result = await deleteAllNotificationsFromStore(user.uid);
+      if (!result.success) {
+        throw new Error(result.error || 'Bildirimler silinemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const addReminder = async (reminder) => {
+    if (!user?.uid) {
+      throw new Error('Oturum açılmamış');
+    }
+
+    try {
+      const result = await addReminderToStore(reminder, user.uid);
+      if (!result.success) {
+        throw new Error(result.error || 'Hatırlatıcı eklenemedi');
+      }
+      return result.reminder;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const updateReminder = async (reminderId, updates) => {
+    try {
+      const result = await updateReminderInStore(reminderId, updates);
+      if (!result.success) {
+        throw new Error(result.error || 'Hatırlatıcı güncellenemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const deleteReminder = async (reminderId) => {
+    try {
+      const result = await deleteReminderFromStore(reminderId);
+      if (!result.success) {
+        throw new Error(result.error || 'Hatırlatıcı silinemedi');
+      }
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  const unreadNotificationsCount = getUnreadCount(notifications);
+
   const value = {
     user,
     login,
@@ -422,6 +630,17 @@ export const AppProvider = ({ children }) => {
     addAnnouncement,
     updateAnnouncement,
     deleteAnnouncement,
+    notifications,
+    unreadNotificationsCount,
+    markNotificationAsRead: markNotificationAsReadHandler,
+    markAllNotificationsAsRead: markAllNotificationsAsReadHandler,
+    deleteNotification,
+    deleteAllNotifications,
+    conversations,
+    reminders,
+    addReminder,
+    updateReminder,
+    deleteReminder,
     viewMode,
     setViewMode,
     departments,

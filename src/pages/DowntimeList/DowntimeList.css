@@ -26,6 +26,8 @@
 
 .header-title svg {
   color: #f44336;
+  width: 24px !important;
+  height: 24px !important;
   flex-shrink: 0;
 }
 
@@ -97,6 +99,8 @@
 }
 
 .panel-header svg {
+  width: 20px !important;
+  height: 20px !important;
   flex-shrink: 0;
 }
 

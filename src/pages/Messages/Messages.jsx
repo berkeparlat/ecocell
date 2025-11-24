@@ -306,7 +306,7 @@ const Messages = () => {
           <div className="conversations-header">
             <h2>Mesajlar</h2>
             <button className="new-chat-btn" onClick={() => setShowNewChat(true)}>
-              <Send size={18} />
+              <Send size={20} />
             </button>
           </div>          {showNewChat ? (
             <div className="new-chat-panel">
@@ -318,7 +318,7 @@ const Messages = () => {
               </div>
               
               <div className="search-box">
-                <Search size={18} />
+                <Search size={20} />
                 <input
                   type="text"
                   placeholder="Kullanıcı veya birim ara..."
@@ -340,7 +340,7 @@ const Messages = () => {
                         <span className="section-count">({departments.length + 1})</span>
                       </div>
                       <ChevronDown 
-                        size={18} 
+                        size={20} 
                         className={`section-chevron ${isDepartmentsExpanded ? 'expanded' : ''}`}
                       />
                     </div>
@@ -392,7 +392,7 @@ const Messages = () => {
                     <span className="section-count">({filteredUsers.length})</span>
                   </div>
                   <ChevronDown 
-                    size={18} 
+                    size={20} 
                     className={`section-chevron ${isUsersExpanded ? 'expanded' : ''}`}
                   />
                 </div>
@@ -484,7 +484,7 @@ const Messages = () => {
                     onClick={handleDeleteConversation}
                     title="Konuşmayı Sil"
                   >
-                    <Trash2 size={18} />
+                    <Trash2 size={20} />
                   </button>
                 )}
               </div>
@@ -502,11 +502,11 @@ const Messages = () => {
                       {msg.senderId === user.uid && (
                         <span className="message-status">
                           {msg.status === 'read' ? (
-                            <CheckCheck size={16} className="status-read" />
+                            <CheckCheck size={20} className="status-read" />
                           ) : msg.status === 'delivered' ? (
-                            <CheckCheck size={16} className="status-delivered" />
+                            <CheckCheck size={20} className="status-delivered" />
                           ) : (
-                            <Check size={16} className="status-sent" />
+                            <Check size={20} className="status-sent" />
                           )}
                         </span>
                       )}
@@ -530,7 +530,7 @@ const Messages = () => {
                     className="context-menu-item delete"
                     onClick={() => handleDeleteMessage(contextMenu.messageId)}
                   >
-                    <Trash2 size={16} />
+                    <Trash2 size={20} />
                     <span>Mesajı Sil</span>
                   </button>
                 </div>

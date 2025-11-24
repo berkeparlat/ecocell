@@ -16,25 +16,28 @@ const DailyStock = () => {
 
   useEffect(() => {
     const iframe = document.querySelector('.stock-panel iframe');
-    if (iframe) {
+    if (iframe && zoom !== 100) {
       iframe.style.transform = `scale(${zoom / 100})`;
       iframe.style.transformOrigin = 'top left';
       iframe.style.width = `${10000 / zoom}%`;
       iframe.style.height = `${10000 / zoom}%`;
+    } else if (iframe) {
+      iframe.style.transform = '';
+      iframe.style.width = '';
+      iframe.style.height = '';
     }
   }, [zoom]);
 
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-            const file = await getLatestExcelFile('stock');
-            
+      const file = await getLatestExcelFile('stock');
       if (file) {
-                setExcelData(file);
-              } else {
-              }
+        setExcelData(file);
+      }
     } catch (error) {
-                } finally {
+      console.error('Dosya yüklenirken hata:', error);
+    } finally {
       setLoading(false);
     }
   };
@@ -43,14 +46,6 @@ const DailyStock = () => {
       <SimpleHeader />
       
       <div className="stock-container">
-        <div className="stock-header">
-          <div className="header-title">
-            <FileSpreadsheet size={22} />
-            <div>
-              <h1>Günlük Stok Takibi</h1>
-            </div>
-          </div>
-        </div>
         {loading ? (
           <div className="loading-state">
             <RefreshCw className="spin" size={48} />
@@ -59,9 +54,9 @@ const DailyStock = () => {
         ) : (
           <div className="stock-single-view">
             <div className="stock-panel">
-              <div className="panel-header stock">
+              <div className="panel-header">
                 <div className="panel-header-left">
-                  <FileSpreadsheet size={18} />
+                  <FileSpreadsheet size={20} />
                   <h2>Günlük Stok Listesi</h2>
                 </div>
                 {excelData && (
@@ -72,7 +67,7 @@ const DailyStock = () => {
                       disabled={zoom <= 50}
                       title="Küçült"
                     >
-                      <ZoomOut size={14} />
+                      <ZoomOut size={16} />
                     </button>
                     <span className="panel-zoom-display">{zoom}%</span>
                     <button 
@@ -81,14 +76,14 @@ const DailyStock = () => {
                       disabled={zoom >= 200}
                       title="Büyüt"
                     >
-                      <ZoomIn size={14} />
+                      <ZoomIn size={16} />
                     </button>
                     <button 
                       className="panel-btn"
                       onClick={() => setZoom(100)}
                       title="Varsayılan (100%)"
                     >
-                      <RotateCcw size={14} />
+                      <RotateCcw size={16} />
                     </button>
                     <button 
                       className="panel-btn"
@@ -100,7 +95,7 @@ const DailyStock = () => {
                       }}
                       title="Tam Ekran"
                     >
-                      <Maximize2 size={14} />
+                      <Maximize2 size={16} />
                     </button>
                   </div>
                 )}
@@ -115,7 +110,7 @@ const DailyStock = () => {
               ) : (
                 <div className="empty-panel">
                   <FileSpreadsheet size={48} />
-                  <p>Henüz dosya yüklenmemiş</p>
+                  <p>Henüz excel dosyası yüklenmemiş</p>
                 </div>
               )}
             </div>

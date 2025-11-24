@@ -48,14 +48,6 @@ const DowntimeList = () => {
       <SimpleHeader />
       
       <div className="downtime-container">
-        <div className="downtime-header">
-          <div className="header-title">
-            <AlertCircle size={22} />
-            <div>
-              <h1>İşletme Duruş İş Planı</h1>
-            </div>
-          </div>
-        </div>
 
         {loading ? (
           <div className="loading-state">
@@ -67,7 +59,7 @@ const DowntimeList = () => {
             <div className="downtime-panel">
               <div className="panel-header">
                 <div className="panel-header-left">
-                  <AlertCircle size={18} />
+                  <AlertCircle size={20} />
                   <h2>İşletme Duruş İş Planı</h2>
                 </div>
                 {excelData && (
@@ -78,7 +70,7 @@ const DowntimeList = () => {
                       disabled={zoom <= 50}
                       title="Küçült"
                     >
-                      <ZoomOut size={14} />
+                      <ZoomOut size={16} />
                     </button>
                     <span className="panel-zoom-display">{zoom}%</span>
                     <button 
@@ -87,14 +79,14 @@ const DowntimeList = () => {
                       disabled={zoom >= 200}
                       title="Büyüt"
                     >
-                      <ZoomIn size={14} />
+                      <ZoomIn size={16} />
                     </button>
                     <button 
                       className="panel-btn"
                       onClick={() => setZoom(100)}
                       title="Varsayılan (100%)"
                     >
-                      <RotateCcw size={14} />
+                      <RotateCcw size={16} />
                     </button>
                     <button 
                       className="panel-btn"
@@ -106,7 +98,7 @@ const DowntimeList = () => {
                       }}
                       title="Tam Ekran"
                     >
-                      <Maximize2 size={14} />
+                      <Maximize2 size={16} />
                     </button>
                   </div>
                 )}

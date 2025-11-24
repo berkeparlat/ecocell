@@ -6,74 +6,86 @@ import ExcelPreview from '../../components/excel/ExcelPreview';
 import './MaintenanceDowntime.css';
 
 const MaintenanceDowntime = () => {
+  const [activeTab, setActiveTab] = useState('electrical');
   const [loading, setLoading] = useState(false);
-  const [electricalData, setElectricalData] = useState(null);
-  const [mechanicalData, setMechanicalData] = useState(null);
-  
-  // Zoom states
-  const [electricalZoom, setElectricalZoom] = useState(100);
-  const [mechanicalZoom, setMechanicalZoom] = useState(100);
+  const [excelData, setExcelData] = useState({
+    electrical: null,
+    mechanical: null
+  });
+  const [zoom, setZoom] = useState(100);
+
+  const tabs = [
+    { id: 'electrical', label: 'Elektrik Bakım', icon: Zap, fileType: 'electrical-downtime' },
+    { id: 'mechanical', label: 'Mekanik Bakım', icon: Wrench, fileType: 'mechanical-downtime' }
+  ];
 
   useEffect(() => {
-    loadLatestFiles();
-  }, []);
+    loadLatestFile(activeTab);
+  }, [activeTab]);
 
   useEffect(() => {
-    // Elektrik bakım duruş iframe zoom
-    const iframe = document.querySelector('.downtime-panel:first-child iframe');
-    if (iframe) {
-      iframe.style.transform = `scale(${electricalZoom / 100})`;
+    const iframe = document.querySelector('.downtime-panel iframe');
+    if (iframe && zoom !== 100) {
+      iframe.style.transform = `scale(${zoom / 100})`;
       iframe.style.transformOrigin = 'top left';
-      iframe.style.width = `${10000 / electricalZoom}%`;
-      iframe.style.height = `${10000 / electricalZoom}%`;
+      iframe.style.width = `${10000 / zoom}%`;
+      iframe.style.height = `${10000 / zoom}%`;
+    } else if (iframe) {
+      iframe.style.transform = '';
+      iframe.style.width = '';
+      iframe.style.height = '';
     }
-  }, [electricalZoom]);
+  }, [zoom]);
 
-  useEffect(() => {
-    // Mekanik bakım duruş iframe zoom
-    const iframe = document.querySelector('.downtime-panel:last-child iframe');
-    if (iframe) {
-      iframe.style.transform = `scale(${mechanicalZoom / 100})`;
-      iframe.style.transformOrigin = 'top left';
-      iframe.style.width = `${10000 / mechanicalZoom}%`;
-      iframe.style.height = `${10000 / mechanicalZoom}%`;
-    }
-  }, [mechanicalZoom]);
-
-  const loadLatestFiles = async () => {
+  const loadLatestFile = async (tabId) => {
+    if (excelData[tabId]) return;
+    
     setLoading(true);
     try {
-            
-      // Elektrik Bakım Duruş dosyası
-      const electricalFile = await getLatestExcelFile('electrical-downtime');
-            if (electricalFile) {
-        setElectricalData(electricalFile);
-      }
+      const tab = tabs.find(t => t.id === tabId);
+      const file = await getLatestExcelFile(tab.fileType);
       
-      // Mekanik Bakım Duruş dosyası
-      const mechanicalFile = await getLatestExcelFile('mechanical-downtime');
-            if (mechanicalFile) {
-        setMechanicalData(mechanicalFile);
+      if (file) {
+        setExcelData(prev => ({
+          ...prev,
+          [tabId]: file
+        }));
       }
-      
-          } catch (error) {
-                } finally {
+    } catch (error) {
+      // Silent fail
+    } finally {
       setLoading(false);
     }
   };
+
+  const handleTabChange = (tabId) => {
+    setActiveTab(tabId);
+    setZoom(100);
+  };
+
+  const currentData = excelData[activeTab];
+  const currentTab = tabs.find(t => t.id === activeTab);
+  const TabIcon = currentTab.icon;
 
   return (
     <div className="maintenance-downtime-page">
       <SimpleHeader />
       
       <div className="downtime-container">
-        <div className="downtime-header">
-          <div className="header-title">
-            <AlertTriangle size={22} />
-            <div>
-              <h1>Bakım Duruş İş Planı</h1>
-            </div>
-          </div>
+        <div className="downtime-tabs">
+          {tabs.map((tab) => {
+            const Icon = tab.icon;
+            return (
+              <button
+                key={tab.id}
+                className={`downtime-tab ${activeTab === tab.id ? 'active' : ''}`}
+                onClick={() => handleTabChange(tab.id)}
+              >
+                <Icon size={20} />
+                <span>{tab.label}</span>
+              </button>
+            );
+          })}
         </div>
         
         {loading ? (
@@ -82,129 +94,65 @@ const MaintenanceDowntime = () => {
             <p>Yükleniyor...</p>
           </div>
         ) : (
-          <div className="downtime-dual-view">
-            {/* Sol Panel - Elektrik Bakım Duruş */}
+          <div className="downtime-single-view">
             <div className="downtime-panel">
-              <div className="panel-header electrical">
+              <div className="panel-header">
                 <div className="panel-header-left">
-                  <Zap size={18} />
-                  <h2>Elektrik Bakım Duruş Listesi</h2>
+                  <TabIcon size={20} />
+                  <h2>{currentTab.label} Duruş İş Planı</h2>
                 </div>
-                {electricalData && (
+                {currentData && (
                   <div className="panel-header-controls">
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(Math.max(50, electricalZoom - 10))}
-                      disabled={electricalZoom <= 50}
+                      onClick={() => setZoom(Math.max(50, zoom - 10))}
+                      disabled={zoom <= 50}
                       title="Küçült"
                     >
-                      <ZoomOut size={14} />
+                      <ZoomOut size={16} />
                     </button>
-                    <span className="panel-zoom-display">{electricalZoom}%</span>
+                    <span className="panel-zoom-display">{zoom}%</span>
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(Math.min(200, electricalZoom + 10))}
-                      disabled={electricalZoom >= 200}
+                      onClick={() => setZoom(Math.min(200, zoom + 10))}
+                      disabled={zoom >= 200}
                       title="Büyüt"
                     >
-                      <ZoomIn size={14} />
+                      <ZoomIn size={16} />
                     </button>
                     <button 
                       className="panel-btn"
-                      onClick={() => setElectricalZoom(100)}
+                      onClick={() => setZoom(100)}
                       title="Varsayılan (100%)"
                     >
-                      <RotateCcw size={14} />
+                      <RotateCcw size={16} />
                     </button>
                     <button 
                       className="panel-btn"
                       onClick={() => {
-                        const iframe = document.querySelector('.downtime-panel:first-child iframe');
+                        const iframe = document.querySelector('.downtime-panel iframe');
                         if (iframe) {
                           iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
                         }
                       }}
                       title="Tam Ekran"
                     >
-                      <Maximize2 size={14} />
+                      <Maximize2 size={16} />
                     </button>
                   </div>
                 )}
               </div>
-              {electricalData ? (
+              {currentData ? (
                 <ExcelPreview
-                  fileName={electricalData.name}
-                  viewerUrl={electricalData.viewerUrl}
-                  accent="electrical"
+                  fileName={currentData.name}
+                  viewerUrl={currentData.viewerUrl}
+                  accent={activeTab}
                   hideToolbar={true}
                 />
               ) : (
                 <div className="empty-panel">
-                  <Zap size={48} />
-                  <p>Elektrik duruş dosyası yüklenmemiş</p>
-                </div>
-              )}
-            </div>
-
-            {/* Sağ Panel - Mekanik Bakım Duruş */}
-            <div className="downtime-panel">
-              <div className="panel-header mechanical">
-                <div className="panel-header-left">
-                  <Wrench size={18} />
-                  <h2>Mekanik Bakım Duruş Listesi</h2>
-                </div>
-                {mechanicalData && (
-                  <div className="panel-header-controls">
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(Math.max(50, mechanicalZoom - 10))}
-                      disabled={mechanicalZoom <= 50}
-                      title="Küçült"
-                    >
-                      <ZoomOut size={14} />
-                    </button>
-                    <span className="panel-zoom-display">{mechanicalZoom}%</span>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(Math.min(200, mechanicalZoom + 10))}
-                      disabled={mechanicalZoom >= 200}
-                      title="Büyüt"
-                    >
-                      <ZoomIn size={14} />
-                    </button>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => setMechanicalZoom(100)}
-                      title="Varsayılan (100%)"
-                    >
-                      <RotateCcw size={14} />
-                    </button>
-                    <button 
-                      className="panel-btn"
-                      onClick={() => {
-                        const iframe = document.querySelector('.downtime-panel:last-child iframe');
-                        if (iframe) {
-                          iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
-                        }
-                      }}
-                      title="Tam Ekran"
-                    >
-                      <Maximize2 size={14} />
-                    </button>
-                  </div>
-                )}
-              </div>
-              {mechanicalData ? (
-                <ExcelPreview
-                  fileName={mechanicalData.name}
-                  viewerUrl={mechanicalData.viewerUrl}
-                  accent="mechanical"
-                  hideToolbar={true}
-                />
-              ) : (
-                <div className="empty-panel">
-                  <Wrench size={48} />
-                  <p>Mekanik duruş dosyası yüklenmemiş</p>
+                  <TabIcon size={48} />
+                  <p>{currentTab.label} duruş dosyası yüklenmemiş</p>
                 </div>
               )}
             </div>

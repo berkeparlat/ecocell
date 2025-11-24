@@ -78,7 +78,7 @@ const Login = () => {
             value={formData.email}
             onChange={handleChange}
             placeholder="E-posta adresinizi girin"
-            icon={<Mail size={18} />}
+            icon={<Mail size={20} />}
           />
 
           <Input
@@ -88,7 +88,7 @@ const Login = () => {
             value={formData.password}
             onChange={handleChange}
             placeholder="Şifrenizi girin"
-            icon={<Lock size={18} />}
+            icon={<Lock size={20} />}
           />
 
           <Button 
@@ -136,11 +136,11 @@ const Login = () => {
               </p>
               <div className="help-contact">
                 <div className="contact-item">
-                  <Phone size={18} />
+                  <Phone size={20} />
                   <a href="tel:+905512342632">0551 234 26 32</a>
                 </div>
                 <div className="contact-item">
-                  <Mail size={18} />
+                  <Mail size={20} />
                   <a href="mailto:berke.parlat27@gmail.com">berke.parlat27@gmail.com</a>
                 </div>
               </div>

@@ -134,3 +134,3424 @@
 [19.11.2025 11:37:13] ✓ sales.xlsx yüklendi
 [19.11.2025 11:40:00] 💚 Health check - Çalışma süresi: 299 saniye
 [19.11.2025 11:40:00] ✓ Ağ bağlantısı aktif
+[19.11.2025 11:42:44] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:43:05] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:43:09] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[19.11.2025 11:43:09] 🔄 Manuel tarama başlatıldı...
+[19.11.2025 11:43:13] ✓ stock.xlsx yüklendi
+[19.11.2025 11:43:15] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:43:17] ✓ dcs-a.xlsx yüklendi
+[19.11.2025 11:43:20] ✓ dcs-b.xlsx yüklendi
+[19.11.2025 11:43:24] ✓ dcs-buhar.xlsx yüklendi
+[19.11.2025 11:43:26] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 1/3)
+[19.11.2025 11:43:28] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 2/3)
+[19.11.2025 11:43:30] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 3/3)
+[19.11.2025 11:43:32] HATA: Dosya 3 denemeden sonra hala bulunamadı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\04.11.2025 KARAFİBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[19.11.2025 11:43:35] ✓ downtime.xlsx yüklendi
+[19.11.2025 11:43:39] ✓ sales.xlsx yüklendi
+[19.11.2025 11:43:43] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:43:46] ✓ electrical-maintenance.xlsx yüklendi
+[19.11.2025 11:43:50] ✓ mechanical-maintenance.xlsx yüklendi
+[19.11.2025 11:43:53] ✓ electrical-downtime.xlsx yüklendi
+[19.11.2025 11:43:56] ✓ mechanical-downtime.xlsx yüklendi
+[19.11.2025 11:45:00] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 11:45:00] ✓ Ağ bağlantısı aktif
+[19.11.2025 11:45:43] ============================================================
+[19.11.2025 11:45:43] 🚀 Başlatılıyor...
+[19.11.2025 11:45:43] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 11:45:43] ✓ Ağ bağlantısı hazır
+[19.11.2025 11:45:44] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 11:45:45] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 11:45:45] ✓ Hazır
+[19.11.2025 11:45:45] ✓ Hazır
+[19.11.2025 11:50:45] 💚 Health check - Çalışma süresi: 301 saniye
+[19.11.2025 11:50:45] ✓ Ağ bağlantısı aktif
+[19.11.2025 11:54:40] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:55:45] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 11:55:45] ✓ Ağ bağlantısı aktif
+[19.11.2025 11:58:10] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:58:40] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:58:49] ✓ shipping.xlsx yüklendi
+[19.11.2025 11:59:31] ============================================================
+[19.11.2025 11:59:31] 🚀 Başlatılıyor...
+[19.11.2025 11:59:31] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 11:59:31] ✓ Ağ bağlantısı hazır
+[19.11.2025 11:59:32] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 11:59:32] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 11:59:32] ✓ Hazır
+[19.11.2025 11:59:32] ✓ Hazır
+[19.11.2025 12:03:40] ============================================================
+[19.11.2025 12:03:40] 🚀 Başlatılıyor...
+[19.11.2025 12:03:40] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 12:03:40] ✓ Ağ bağlantısı hazır
+[19.11.2025 12:03:41] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 12:03:41] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 12:03:41] ✓ Hazır
+[19.11.2025 12:03:41] ✓ Hazır
+[19.11.2025 12:05:22] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[19.11.2025 12:05:22] 🔄 Manuel tarama başlatıldı...
+[19.11.2025 12:05:26] ✓ stock.xlsx yüklendi
+[19.11.2025 12:05:30] ✓ dcs-a.xlsx yüklendi
+[19.11.2025 12:05:34] ✓ dcs-b.xlsx yüklendi
+[19.11.2025 12:05:37] ✓ dcs-buhar.xlsx yüklendi
+[19.11.2025 12:05:39] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 1/3)
+[19.11.2025 12:05:41] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 2/3)
+[19.11.2025 12:05:43] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 3/3)
+[19.11.2025 12:05:45] HATA: Dosya 3 denemeden sonra hala bulunamadı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\KARAFIBER Elyaf Elektrik Tüketimi Günlük.xlsx
+[19.11.2025 12:05:49] ✓ downtime.xlsx yüklendi
+[19.11.2025 12:05:53] ✓ sales.xlsx yüklendi
+[19.11.2025 12:05:57] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:06:00] ✓ electrical-maintenance.xlsx yüklendi
+[19.11.2025 12:06:04] ✓ mechanical-maintenance.xlsx yüklendi
+[19.11.2025 12:06:07] ✓ electrical-downtime.xlsx yüklendi
+[19.11.2025 12:06:11] ✓ mechanical-downtime.xlsx yüklendi
+[19.11.2025 12:07:44] ============================================================
+[19.11.2025 12:07:44] 🚀 Başlatılıyor...
+[19.11.2025 12:07:44] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 12:07:44] ✓ Ağ bağlantısı hazır
+[19.11.2025 12:07:44] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 12:07:44] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 12:07:44] ✓ Hazır
+[19.11.2025 12:07:44] ✓ Hazır
+[19.11.2025 12:09:02] 🔔 Firebase trigger algılandı - Manuel tarama yapılıyor...
+[19.11.2025 12:09:02] 🔄 Manuel tarama başlatıldı...
+[19.11.2025 12:09:07] ✓ stock.xlsx yüklendi
+[19.11.2025 12:09:10] ✓ dcs-a.xlsx yüklendi
+[19.11.2025 12:09:14] ✓ dcs-b.xlsx yüklendi
+[19.11.2025 12:09:18] ✓ dcs-buhar.xlsx yüklendi
+[19.11.2025 12:09:20] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 1/3)
+[19.11.2025 12:09:22] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 2/3)
+[19.11.2025 12:09:24] Dosya bulunamadı, 2 saniye sonra tekrar denenecek... (Deneme 3/3)
+[19.11.2025 12:09:26] HATA: Dosya 3 denemeden sonra hala bulunamadı: \\10.0.0.6\31-Bakım&Onarım\Elektrik Bakım\Elektrik Tüketimi Günlük.xlsx
+[19.11.2025 12:09:29] ✓ downtime.xlsx yüklendi
+[19.11.2025 12:09:32] ✓ sales.xlsx yüklendi
+[19.11.2025 12:09:36] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:09:40] ✓ electrical-maintenance.xlsx yüklendi
+[19.11.2025 12:09:44] ✓ mechanical-maintenance.xlsx yüklendi
+[19.11.2025 12:09:47] ✓ electrical-downtime.xlsx yüklendi
+[19.11.2025 12:09:50] ✓ mechanical-downtime.xlsx yüklendi
+[19.11.2025 12:11:21] ============================================================
+[19.11.2025 12:11:21] 🚀 Başlatılıyor...
+[19.11.2025 12:11:21] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 12:11:21] ✓ Ağ bağlantısı hazır
+[19.11.2025 12:11:22] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 12:11:22] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 12:11:22] ✓ Hazır
+[19.11.2025 12:14:07] ✓ electric.xlsx yüklendi
+[19.11.2025 12:14:26] ✓ electric.xlsx yüklendi
+[19.11.2025 12:14:47] ✓ electric.xlsx yüklendi
+[19.11.2025 12:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 12:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:18:34] ============================================================
+[19.11.2025 12:18:34] 🚀 Başlatılıyor...
+[19.11.2025 12:18:34] ⏳ Ağ bağlantısı kontrol ediliyor...
+[19.11.2025 12:18:34] Bekleniyor... (5 saniye)
+[19.11.2025 12:18:34] ✓ Firebase trigger listener başlatıldı
+[19.11.2025 12:18:39] Bekleniyor... (10 saniye)
+[19.11.2025 12:18:44] Bekleniyor... (15 saniye)
+[19.11.2025 12:18:49] Bekleniyor... (20 saniye)
+[19.11.2025 12:18:54] Bekleniyor... (25 saniye)
+[19.11.2025 12:18:59] Bekleniyor... (30 saniye)
+[19.11.2025 12:19:04] ⚠️  Ağ hazır değil ama başlatılıyor...
+[19.11.2025 12:19:04] ✓ Health check başlatıldı (5 dakika aralıklarla)
+[19.11.2025 12:19:04] ⚠️  Ağ bağlantısı hatası - 30 saniye sonra yeniden başlatılıyor...
+[19.11.2025 12:19:04] ✓ Hazır
+[19.11.2025 12:19:04] ✓ Hazır
+[19.11.2025 12:19:04] ✓ Hazır
+[19.11.2025 12:19:04] ✓ Hazır
+[19.11.2025 12:19:04] ✓ Hazır
+[19.11.2025 12:19:34] ⚠️  Ağ bağlantısı hatası - 30 saniye sonra yeniden başlatılıyor...
+[19.11.2025 12:19:34] ✓ Hazır
+[19.11.2025 12:19:34] ✓ Hazır
+[19.11.2025 12:19:34] ✓ Hazır
+[19.11.2025 12:19:34] ✓ Hazır
+[19.11.2025 12:19:34] ✓ Hazır
+[19.11.2025 12:20:04] ⚠️  Ağ bağlantısı hatası - 30 saniye sonra yeniden başlatılıyor...
+[19.11.2025 12:20:04] ✓ Hazır
+[19.11.2025 12:20:05] ✓ Hazır
+[19.11.2025 12:20:05] ✓ Hazır
+[19.11.2025 12:20:05] ✓ Hazır
+[19.11.2025 12:20:05] ✓ Hazır
+[19.11.2025 12:20:35] ⚠️  Ağ bağlantısı hatası - 30 saniye sonra yeniden başlatılıyor...
+[19.11.2025 12:20:35] ✓ Hazır
+[19.11.2025 12:20:35] ✓ Hazır
+[19.11.2025 12:20:35] ✓ Hazır
+[19.11.2025 12:20:35] ✓ Hazır
+[19.11.2025 12:20:35] ✓ Hazır
+[19.11.2025 12:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 12:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 12:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 12:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:35:18] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:35:27] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 12:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:39:38] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 12:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 12:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 12:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 12:54:29] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:54:39] ✓ shipping.xlsx yüklendi
+[19.11.2025 12:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 12:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 13:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 13:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 13:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:39:00] ✓ shipping.xlsx yüklendi
+[19.11.2025 13:39:10] ✓ shipping.xlsx yüklendi
+[19.11.2025 13:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 13:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:51:21] ✓ shipping.xlsx yüklendi
+[19.11.2025 13:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 13:51:40] ✓ shipping.xlsx yüklendi
+[19.11.2025 13:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 13:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 14:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:28:14] ✓ shipping.xlsx yüklendi
+[19.11.2025 14:28:32] ✓ shipping.xlsx yüklendi
+[19.11.2025 14:29:33] ✓ shipping.xlsx yüklendi
+[19.11.2025 14:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 14:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:37:22] ✓ shipping.xlsx yüklendi
+[19.11.2025 14:38:32] ✓ shipping.xlsx yüklendi
+[19.11.2025 14:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 14:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 14:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:20:34] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:20:54] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:24:16] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:24:26] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:24:36] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:29:44] ✓ stock.xlsx yüklendi
+[19.11.2025 15:31:15] ✓ stock.xlsx yüklendi
+[19.11.2025 15:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:38:06] ✓ stock.xlsx yüklendi
+[19.11.2025 15:39:05] ✓ stock.xlsx yüklendi
+[19.11.2025 15:39:24] ✓ shipping.xlsx yüklendi
+[19.11.2025 15:40:04] ✓ stock.xlsx yüklendi
+[19.11.2025 15:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 15:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:41:24] ✓ stock.xlsx yüklendi
+[19.11.2025 15:41:34] ✓ stock.xlsx yüklendi
+[19.11.2025 15:41:44] ✓ stock.xlsx yüklendi
+[19.11.2025 15:42:04] ✓ stock.xlsx yüklendi
+[19.11.2025 15:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 15:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 15:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 15:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 15:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 16:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 16:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 16:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 16:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:53:09] ✓ stock.xlsx yüklendi
+[19.11.2025 16:53:18] ✓ stock.xlsx yüklendi
+[19.11.2025 16:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 16:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 16:58:19] ✓ stock.xlsx yüklendi
+[19.11.2025 17:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:02:37] ✓ stock.xlsx yüklendi
+[19.11.2025 17:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 17:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 17:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:15:21] ✓ shipping.xlsx yüklendi
+[19.11.2025 17:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:20:11] ✓ shipping.xlsx yüklendi
+[19.11.2025 17:21:11] ✓ shipping.xlsx yüklendi
+[19.11.2025 17:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 17:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:21:29] ✓ shipping.xlsx yüklendi
+[19.11.2025 17:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 17:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:33:39] ✓ mechanical-maintenance.xlsx yüklendi
+[19.11.2025 17:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 17:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 17:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 17:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 18:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 18:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 18:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 18:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 18:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 18:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 19:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 19:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 19:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 19:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 19:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 19:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 20:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 20:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 20:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 20:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 20:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 20:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 20:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 21:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 21:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 21:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 21:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 21:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 22:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 22:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 22:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 22:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 22:56:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:01:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:06:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:11:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 23:16:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:21:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:26:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 23:31:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:36:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:41:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:46:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[19.11.2025 23:51:22] ✓ Ağ bağlantısı aktif
+[19.11.2025 23:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[19.11.2025 23:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 00:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 00:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 00:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 00:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 00:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 00:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 00:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 01:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 01:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 01:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 02:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 02:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 02:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 02:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 02:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 02:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 02:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 03:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 03:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 03:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 03:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 03:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 03:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 03:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 04:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 04:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 04:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 04:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 04:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 04:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 04:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 05:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 05:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 05:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 05:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 05:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 05:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 05:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 06:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 06:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 06:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 06:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 06:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 06:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 07:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 07:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 07:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 07:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 07:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 07:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 07:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 08:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:03:58] ✓ mechanical-maintenance.xlsx yüklendi
+[20.11.2025 08:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:08:23] ✓ stock.xlsx yüklendi
+[20.11.2025 08:08:57] ✓ stock.xlsx yüklendi
+[20.11.2025 08:09:37] ✓ stock.xlsx yüklendi
+[20.11.2025 08:10:57] ✓ stock.xlsx yüklendi
+[20.11.2025 08:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:11:46] ✓ stock.xlsx yüklendi
+[20.11.2025 08:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 08:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 08:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:27:24] ✓ stock.xlsx yüklendi
+[20.11.2025 08:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 08:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 08:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 08:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:05:19] ✓ stock.xlsx yüklendi
+[20.11.2025 09:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 09:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:07:09] ✓ stock.xlsx yüklendi
+[20.11.2025 09:07:59] ✓ stock.xlsx yüklendi
+[20.11.2025 09:08:09] ✓ stock.xlsx yüklendi
+[20.11.2025 09:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:11:49] ✓ stock.xlsx yüklendi
+[20.11.2025 09:12:26] ✓ stock.xlsx yüklendi
+[20.11.2025 09:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 09:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:19:06] ✓ stock.xlsx yüklendi
+[20.11.2025 09:19:59] ✓ stock.xlsx yüklendi
+[20.11.2025 09:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:24:11] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:26:11] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 09:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:32:31] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 09:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 09:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 09:52:48] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:52:58] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:53:42] ✓ shipping.xlsx yüklendi
+[20.11.2025 09:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 09:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:13:20] ✓ shipping.xlsx yüklendi
+[20.11.2025 10:13:29] ✓ shipping.xlsx yüklendi
+[20.11.2025 10:13:39] ✓ shipping.xlsx yüklendi
+[20.11.2025 10:13:49] ✓ shipping.xlsx yüklendi
+[20.11.2025 10:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 10:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 10:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 10:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 11:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:09:35] ✓ shipping.xlsx yüklendi
+[20.11.2025 11:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:16:26] ✓ shipping.xlsx yüklendi
+[20.11.2025 11:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 11:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 11:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 11:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:43:47] ✓ shipping.xlsx yüklendi
+[20.11.2025 11:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 11:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 11:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 11:59:24] ✓ shipping.xlsx yüklendi
+[20.11.2025 11:59:34] ✓ shipping.xlsx yüklendi
+[20.11.2025 11:59:54] ✓ shipping.xlsx yüklendi
+[20.11.2025 12:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:06:25] ✓ stock.xlsx yüklendi
+[20.11.2025 12:06:34] ✓ stock.xlsx yüklendi
+[20.11.2025 12:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:18:55] ✓ electrical-maintenance.xlsx yüklendi
+[20.11.2025 12:19:05] ✓ electrical-maintenance.xlsx yüklendi
+[20.11.2025 12:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:41:07] ✓ shipping.xlsx yüklendi
+[20.11.2025 12:41:17] ✓ shipping.xlsx yüklendi
+[20.11.2025 12:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 12:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:45:09] ✓ shipping.xlsx yüklendi
+[20.11.2025 12:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 12:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 12:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 13:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 13:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:23:39] ✓ sales.xlsx yüklendi
+[20.11.2025 13:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 13:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 13:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 13:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 13:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 13:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 14:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:01:30] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:01:40] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:03:10] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:03:20] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 14:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:21:31] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:21:41] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:24:21] ✓ shipping.xlsx yüklendi
+[20.11.2025 14:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 14:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 14:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 14:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 14:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:00:52] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:01:02] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:01:12] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:01:32] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:03:02] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:03:12] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 15:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 15:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 15:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 15:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:53:25] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 15:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 15:58:24] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:58:35] ✓ shipping.xlsx yüklendi
+[20.11.2025 15:58:44] ✓ shipping.xlsx yüklendi
+[20.11.2025 16:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 16:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:21:25] ✓ shipping.xlsx yüklendi
+[20.11.2025 16:21:35] ✓ shipping.xlsx yüklendi
+[20.11.2025 16:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 16:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:33:46] ✓ shipping.xlsx yüklendi
+[20.11.2025 16:34:26] ✓ shipping.xlsx yüklendi
+[20.11.2025 16:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 16:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 16:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:05:58] ✓ shipping.xlsx yüklendi
+[20.11.2025 17:06:07] ✓ shipping.xlsx yüklendi
+[20.11.2025 17:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:06:46] ✓ stock.xlsx yüklendi
+[20.11.2025 17:06:56] ✓ stock.xlsx yüklendi
+[20.11.2025 17:08:36] ✓ stock.xlsx yüklendi
+[20.11.2025 17:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:11:27] ✓ stock.xlsx yüklendi
+[20.11.2025 17:11:56] ✓ stock.xlsx yüklendi
+[20.11.2025 17:12:06] ✓ stock.xlsx yüklendi
+[20.11.2025 17:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 17:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 17:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 17:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 18:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 18:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 18:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 18:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 18:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 19:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 19:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 19:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 19:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 19:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 19:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 20:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 20:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 20:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 21:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 21:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 21:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 21:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 21:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 21:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 21:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 22:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 22:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 22:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 22:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 22:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 22:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 22:56:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 23:01:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:06:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 23:11:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:16:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 23:21:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:26:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:31:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 23:36:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:41:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:46:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[20.11.2025 23:51:22] ✓ Ağ bağlantısı aktif
+[20.11.2025 23:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[20.11.2025 23:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 00:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 00:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 00:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 00:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 00:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 00:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 01:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 01:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 01:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 01:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 01:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 01:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 02:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 02:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 02:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 02:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 02:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 03:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 03:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 03:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 03:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 03:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 03:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 03:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 04:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 04:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 04:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 04:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 04:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 04:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 05:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 05:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 05:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 05:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 06:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 06:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 06:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 06:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 06:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 06:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 06:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 07:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 07:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 07:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 07:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 07:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:04:14] ✓ stock.xlsx yüklendi
+[21.11.2025 08:04:33] ✓ stock.xlsx yüklendi
+[21.11.2025 08:05:08] ✓ stock.xlsx yüklendi
+[21.11.2025 08:05:28] ✓ stock.xlsx yüklendi
+[21.11.2025 08:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:06:46] ✓ shipping.xlsx yüklendi
+[21.11.2025 08:08:05] ✓ shipping.xlsx yüklendi
+[21.11.2025 08:09:27] ✓ shipping.xlsx yüklendi
+[21.11.2025 08:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 08:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:14:03] ✓ mechanical-maintenance.xlsx yüklendi
+[21.11.2025 08:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:18:12] ✓ stock.xlsx yüklendi
+[21.11.2025 08:20:41] ✓ electrical-maintenance.xlsx yüklendi
+[21.11.2025 08:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:24:53] ✓ stock.xlsx yüklendi
+[21.11.2025 08:25:10] ✓ stock.xlsx yüklendi
+[21.11.2025 08:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 08:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 08:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:41:27] ✓ stock.xlsx yüklendi
+[21.11.2025 08:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:47:34] ✓ stock.xlsx yüklendi
+[21.11.2025 08:47:50] ✓ stock.xlsx yüklendi
+[21.11.2025 08:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 08:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 08:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 08:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 09:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:04:11] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 09:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:20:44] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:22:19] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:22:57] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:23:18] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:23:39] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 09:52:50] ✓ shipping.xlsx yüklendi
+[21.11.2025 09:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 09:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 10:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 10:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:23:51] ✓ shipping.xlsx yüklendi
+[21.11.2025 10:24:01] ✓ shipping.xlsx yüklendi
+[21.11.2025 10:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 10:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:32:11] ✓ shipping.xlsx yüklendi
+[21.11.2025 10:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 10:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 10:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 10:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 11:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 11:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 11:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 11:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 11:51:45] ✓ shipping.xlsx yüklendi
+[21.11.2025 11:51:54] ✓ shipping.xlsx yüklendi
+[21.11.2025 11:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 11:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 12:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 12:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 12:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 13:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:30:19] ✓ shipping.xlsx yüklendi
+[21.11.2025 13:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 13:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 13:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 13:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:47:00] ✓ shipping.xlsx yüklendi
+[21.11.2025 13:47:09] ✓ shipping.xlsx yüklendi
+[21.11.2025 13:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 13:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 13:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 13:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 14:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:07:20] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:07:40] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 14:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:23:31] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 14:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:35:42] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 14:54:32] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:54:42] ✓ shipping.xlsx yüklendi
+[21.11.2025 14:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 14:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:02:03] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:02:12] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 15:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 15:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:37:15] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:41:34] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:41:44] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 15:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 15:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 15:51:35] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:51:45] ✓ shipping.xlsx yüklendi
+[21.11.2025 15:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 15:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 16:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 16:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:11:56] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:12:06] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:12:15] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 16:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:20:26] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:20:36] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:24:56] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 16:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 16:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 16:51:38] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:52:07] ✓ shipping.xlsx yüklendi
+[21.11.2025 16:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 16:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:00:48] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:01:08] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 17:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:09:58] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:10:08] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:10:18] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:13:38] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:16:48] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:17:38] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:17:48] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:42:30] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:42:39] ✓ shipping.xlsx yüklendi
+[21.11.2025 17:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 17:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 17:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 18:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 18:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 18:11:23] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 18:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 18:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 18:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 19:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 19:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 19:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 19:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 19:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 19:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 19:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 20:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:21:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 20:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 20:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 20:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 20:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 21:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 21:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 21:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 21:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 21:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 21:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 22:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 22:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 22:21:23] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 22:31:23] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 22:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 22:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 22:56:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:01:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:06:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 23:11:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:16:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 23:21:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:26:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:26:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:31:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:31:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:36:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 23:41:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:46:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[21.11.2025 23:51:22] ✓ Ağ bağlantısı aktif
+[21.11.2025 23:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[21.11.2025 23:56:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:01:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:06:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:11:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:11:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:16:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:16:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 00:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 00:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 00:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 01:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 01:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 01:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 01:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 01:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 01:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 01:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 02:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 02:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 02:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 02:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 02:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 02:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 02:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 03:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 03:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 03:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 03:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 03:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:01:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:06:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:06:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:11:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:16:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:21:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:26:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:31:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:36:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:36:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:41:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:41:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:46:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 04:46:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:51:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:51:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 04:56:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 04:56:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:01:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:01:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:06:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:06:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:11:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:11:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:16:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:16:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:21:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:21:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:26:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:26:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:31:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:31:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:36:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:36:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:41:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:41:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:46:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 05:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:51:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:51:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 05:56:22] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 05:56:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:01:22] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:01:22] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 06:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 06:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 06:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 07:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 07:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 07:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 07:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 08:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 08:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 08:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 08:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 08:51:29] ✓ electrical-maintenance.xlsx yüklendi
+[22.11.2025 08:51:39] ✓ electrical-maintenance.xlsx yüklendi
+[22.11.2025 08:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 08:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 09:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 09:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 09:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 09:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 09:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 10:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 10:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 10:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 10:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 11:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 11:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 11:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 11:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 11:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 12:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 12:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 12:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 12:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:21:24] ✓ shipping.xlsx yüklendi
+[22.11.2025 12:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 12:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 12:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 13:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 13:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 13:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 14:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 14:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 14:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 14:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 14:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 14:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 15:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 15:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 15:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 15:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 16:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 16:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 16:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 16:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 16:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 16:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 17:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 17:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 17:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 17:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 17:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 18:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 18:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 18:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 18:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 19:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 19:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 19:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 19:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 19:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 20:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 20:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 20:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 21:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 21:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 21:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 22:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 22:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 22:56:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:01:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:06:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 23:11:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 23:16:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:21:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 23:26:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:31:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 23:36:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:41:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[22.11.2025 23:46:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:51:23] ✓ Ağ bağlantısı aktif
+[22.11.2025 23:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[22.11.2025 23:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 00:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 00:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 00:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 00:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 01:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 01:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 01:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 01:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 01:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 01:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 01:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 02:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 02:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 02:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 02:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 02:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 03:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 03:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 03:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 03:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 03:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 04:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 04:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 04:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 04:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 04:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 04:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 05:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 05:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 05:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 05:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 06:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 06:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 06:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 07:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 07:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 08:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 08:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 08:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 09:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 09:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 09:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 09:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 09:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 09:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 09:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 10:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 10:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 10:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 10:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 11:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 11:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 11:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 11:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 12:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 12:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 12:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 12:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 13:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 13:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 13:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 13:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 13:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 14:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 14:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 14:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 14:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 15:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 15:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 15:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 15:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 15:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 16:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 16:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 16:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 16:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 17:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 17:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 17:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 17:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 18:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 18:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 18:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 18:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 18:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 19:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 19:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 19:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 19:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 19:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 20:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 20:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 20:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 20:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 20:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 21:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 21:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 21:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 21:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 21:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 21:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 22:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 22:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 22:56:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:01:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:06:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 23:11:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:16:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:21:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:26:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:31:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:36:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:41:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:46:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[23.11.2025 23:51:23] ✓ Ağ bağlantısı aktif
+[23.11.2025 23:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[23.11.2025 23:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 00:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 00:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 00:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 00:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 01:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 01:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 02:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:16:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 02:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 02:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 02:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 02:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 02:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 02:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 03:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 03:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 03:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:26:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:41:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 03:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 03:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 03:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 03:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:06:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 04:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:31:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 04:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 04:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 04:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 04:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:01:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 05:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 05:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 05:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:51:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 05:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 05:56:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 05:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:11:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 06:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:21:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:36:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 06:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:46:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 06:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 06:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 06:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:01:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:01:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:06:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:06:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:11:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:11:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:16:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:16:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:21:23] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 07:21:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:26:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:26:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:31:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:31:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:36:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:36:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:41:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:41:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:46:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:46:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:51:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:51:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 07:56:23] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 07:56:23] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:01:31] 💚 Health check - Çalışma süresi: 307 saniye
+[24.11.2025 08:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:05:16] ✓ mechanical-maintenance.xlsx yüklendi
+[24.11.2025 08:05:25] ✓ mechanical-maintenance.xlsx yüklendi
+[24.11.2025 08:06:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:11:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:17:07] ✓ electrical-maintenance.xlsx yüklendi
+[24.11.2025 08:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:23:16] ✓ shipping.xlsx yüklendi
+[24.11.2025 08:26:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 08:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 08:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:41:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:45:58] ✓ shipping.xlsx yüklendi
+[24.11.2025 08:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:51:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 08:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 08:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:01:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 09:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:09:39] ✓ shipping.xlsx yüklendi
+[24.11.2025 09:09:48] ✓ shipping.xlsx yüklendi
+[24.11.2025 09:11:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:13:01] ✓ shipping.xlsx yüklendi
+[24.11.2025 09:13:21] ✓ shipping.xlsx yüklendi
+[24.11.2025 09:14:38] ✓ electrical-maintenance.xlsx yüklendi
+[24.11.2025 09:14:48] ✓ electrical-maintenance.xlsx yüklendi
+[24.11.2025 09:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:36:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:41:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 09:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:51:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 09:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 09:56:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 09:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:01:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:03:20] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:03:30] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:03:40] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:08:41] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:15:21] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:16:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:16:42] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:18:10] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:21:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:26:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:31:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:35:51] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:36:22] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:40:02] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:40:32] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:41:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:41:32] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:41:41] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 10:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:51:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 10:54:23] ✓ shipping.xlsx yüklendi
+[24.11.2025 10:56:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 10:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:01:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 11:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:08:15] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:16:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:19:45] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:19:55] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:20:34] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:20:44] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:21:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 11:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:29:44] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:29:53] ✓ shipping.xlsx yüklendi
+[24.11.2025 11:31:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:41:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:46:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:51:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 11:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 11:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 11:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:01:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:20:16] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:20:27] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:31:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:39:07] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:39:16] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:41:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:43:48] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:43:58] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:46:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 12:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:51:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 12:54:49] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:54:58] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:55:08] ✓ shipping.xlsx yüklendi
+[24.11.2025 12:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 12:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:01:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:04:09] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:04:19] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:04:29] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:04:39] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:09:29] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:15:28] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:16:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:21:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 13:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 13:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:41:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 13:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:46:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 13:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:51:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 13:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:55:51] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 13:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 13:58:20] ✓ shipping.xlsx yüklendi
+[24.11.2025 13:58:39] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:00:21] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:00:59] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:01:09] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:01:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:04:41] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:04:51] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:05:01] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 14:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:07:49] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:07:59] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 14:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:17:32] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:29:41] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:33:32] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:33:42] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 14:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:41:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 14:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:42:43] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:46:33] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:46:43] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:46:52] ✓ shipping.xlsx yüklendi
+[24.11.2025 14:51:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 14:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 14:59:42] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:00:13] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:01:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:06:14] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:06:23] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:11:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 15:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 15:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:20:43] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:21:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:25:14] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:26:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:28:33] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 15:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:33:53] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:34:03] ✓ shipping.xlsx yüklendi
+[24.11.2025 15:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:41:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 15:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 15:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:51:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 15:56:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 15:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:01:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:06:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:11:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:20:16] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:26:25] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:32:09] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:36:07] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:36:17] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:36:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 16:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:41:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:43:28] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:43:38] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:43:56] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:46:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:51:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 16:51:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:56:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 16:56:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 16:57:29] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:57:38] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:57:57] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:58:07] ✓ shipping.xlsx yüklendi
+[24.11.2025 16:58:17] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:01:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 17:01:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:06:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 17:06:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:11:31] 💚 Health check - Çalışma süresi: 299 saniye
+[24.11.2025 17:11:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:13:58] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:14:07] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:16:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:16:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:18:10] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:21:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:21:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:22:10] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:26:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:26:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:31:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:31:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:36:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:36:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:37:19] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:41:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:41:31] ✓ Ağ bağlantısı aktif
+[24.11.2025 17:43:48] ✓ shipping.xlsx yüklendi
+[24.11.2025 17:46:31] 💚 Health check - Çalışma süresi: 300 saniye
+[24.11.2025 17:46:31] ✓ Ağ bağlantısı aktif
