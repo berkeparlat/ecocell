@@ -14,7 +14,7 @@ import './MainMenu.css';
 
 const MainMenu = () => {
   const navigate = useNavigate();
-  const { unreadNotificationsCount, conversations = [] } = useApp();
+  const { unreadNotificationsCount, unreadAnnouncementsCount, conversations = [] } = useApp();
   
   // Okunmamış mesaj sayısını hesapla
   const unreadMessagesCount = conversations.filter(conv => conv.unreadCount > 0).length;
@@ -61,7 +61,8 @@ const MainMenu = () => {
       title: 'Duyurular',
       icon: Megaphone,
       path: '/announcements',
-      color: '#FF6B35'
+      color: '#FF6B35',
+      badge: unreadAnnouncementsCount
     },
     {
       id: 'messages',

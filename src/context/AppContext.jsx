@@ -22,6 +22,8 @@ import {
   addAnnouncement as addAnnouncementToStore,
   updateAnnouncement as updateAnnouncementInStore,
   deleteAnnouncement as deleteAnnouncementFromStore,
+  markAnnouncementAsRead,
+  getUnreadAnnouncementsCount,
 } from '../services/announcementService';
 import {
   listenToNotifications,
@@ -499,7 +501,7 @@ export const AppProvider = ({ children }) => {
     };
 
     try {
-      const result = await addAnnouncementToStore(payload, user.uid, payload.createdBy);
+      const result = await addAnnouncementToStore(payload, user.uid);
       if (!result.success) {
         throw new Error(result.error || 'Duyuru eklenemedi');
       }
@@ -630,6 +632,7 @@ export const AppProvider = ({ children }) => {
   };
 
   const unreadNotificationsCount = getUnreadCount(notifications);
+  const unreadAnnouncementsCount = getUnreadAnnouncementsCount(announcements, user?.uid || '');
 
   const value = {
     user,
@@ -648,6 +651,8 @@ export const AppProvider = ({ children }) => {
     addAnnouncement,
     updateAnnouncement,
     deleteAnnouncement,
+    markAnnouncementAsRead,
+    unreadAnnouncementsCount,
     notifications,
     unreadNotificationsCount,
     markNotificationAsRead: markNotificationAsReadHandler,

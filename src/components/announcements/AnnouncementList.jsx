@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useApp } from '../../context/AppContext';
 import { Plus, Bell, MoreVertical, Edit2, Trash2, AlertCircle, Search } from 'lucide-react';
 import Button from '../ui/Button';
@@ -7,7 +7,7 @@ import AnnouncementForm from './AnnouncementForm';
 import './AnnouncementList.css';
 
 const AnnouncementList = () => {
-  const { user, announcements = [], deleteAnnouncement } = useApp();
+  const { user, announcements = [], deleteAnnouncement, markAnnouncementAsRead } = useApp();
   const [showForm, setShowForm] = useState(false);
   const [editingAnnouncement, setEditingAnnouncement] = useState(null);
   const [activeMenu, setActiveMenu] = useState(null);
@@ -52,10 +52,27 @@ const AnnouncementList = () => {
     setEditingAnnouncement(null);
   };
 
-  const handleViewDetails = (announcement) => {
+  const handleViewDetails = async (announcement) => {
     setSelectedAnnouncement(announcement);
     setActiveMenu(null);
+    
+    // Duyuruyu okundu olarak işaretle
+    if (user?.uid) {
+      await markAnnouncementAsRead(announcement.id, user.uid);
+    }
   };
+
+  // Sayfa yüklendiğinde görünen duyuruları okundu olarak işaretle
+  useEffect(() => {
+    if (user?.uid && filteredAnnouncements.length > 0) {
+      filteredAnnouncements.forEach(async (announcement) => {
+        const readBy = announcement.readBy || [];
+        if (!readBy.includes(user.uid)) {
+          await markAnnouncementAsRead(announcement.id, user.uid);
+        }
+      });
+    }
+  }, [user?.uid, announcements]);
 
   const getPriorityClass = (priority) => {
     const priorityMap = {

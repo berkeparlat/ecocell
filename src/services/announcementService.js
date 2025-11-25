@@ -9,10 +9,9 @@ import {
   query,
   orderBy,
   serverTimestamp,
-  getDocs,
-  writeBatch
+  getDoc,
+  arrayUnion
 } from 'firebase/firestore';
-import { createNotification } from './notificationService';
 
 const ANNOUNCEMENTS_COLLECTION = 'announcements';
 
@@ -35,41 +34,17 @@ export const listenToAnnouncements = (callback) => {
   );
 };
 
-export const addAnnouncement = async (announcementData, userId, userName) => {
+export const addAnnouncement = async (announcementData, userId) => {
   try {
     const announcementWithTimestamp = {
       ...announcementData,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       userId,
+      readBy: [userId] // Oluşturan kişi otomatik okundu
     };
 
     const docRef = await addDoc(collection(db, ANNOUNCEMENTS_COLLECTION), announcementWithTimestamp);
-
-    // Tüm kullanıcılara bildirim gönder
-    const usersSnapshot = await getDocs(collection(db, 'users'));
-    const batch = writeBatch(db);
-    const notificationsRef = collection(db, 'notifications');
-
-    usersSnapshot.forEach((userDoc) => {
-      const userData = userDoc.data();
-      if (!userData.deleted && userDoc.id !== userId) {
-        const notificationRef = doc(notificationsRef);
-        batch.set(notificationRef, {
-          userId: userDoc.id,
-          type: 'announcement',
-          title: 'Yeni Duyuru',
-          message: `${userName} tarafından yeni bir duyuru yayınlandı: "${announcementData.title}"`,
-          actionUrl: '/announcements',
-          relatedId: docRef.id,
-          createdBy: userName,
-          read: false,
-          createdAt: serverTimestamp()
-        });
-      }
-    });
-
-    await batch.commit();
 
     return {
       success: true,
@@ -121,4 +96,30 @@ export const deleteAnnouncement = async (announcementId) => {
       error: error.message,
     };
   }
+};
+
+/**
+ * Duyuruyu okundu olarak işaretle
+ */
+export const markAnnouncementAsRead = async (announcementId, userId) => {
+  try {
+    const announcementRef = doc(db, ANNOUNCEMENTS_COLLECTION, announcementId);
+    await updateDoc(announcementRef, {
+      readBy: arrayUnion(userId)
+    });
+
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+};
+
+/**
+ * Okunmamış duyuru sayısını hesapla
+ */
+export const getUnreadAnnouncementsCount = (announcements, userId) => {
+  return announcements.filter(announcement => {
+    const readBy = announcement.readBy || [];
+    return !readBy.includes(userId);
+  }).length;
 };
