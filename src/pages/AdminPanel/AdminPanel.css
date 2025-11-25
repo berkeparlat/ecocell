@@ -376,6 +376,93 @@
   color: #212121;
 }
 
+.btn-approve {
+  padding: 0.5rem 1rem;
+  border: 1px solid #4caf50;
+  background: white;
+  color: #4caf50;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-approve:hover {
+  background: #4caf50;
+  color: white;
+}
+
+.btn-reject {
+  padding: 0.5rem 1rem;
+  border: 1px solid #f44336;
+  background: white;
+  color: #f44336;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.btn-reject:hover {
+  background: #f44336;
+  color: white;
+}
+
+.pending-header {
+  margin-bottom: 2rem;
+}
+
+.pending-header h2 {
+  margin: 0 0 0.5rem 0;
+  color: #212121;
+}
+
+.pending-header p {
+  margin: 0;
+  color: #757575;
+  font-size: 0.95rem;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  color: #999;
+}
+
+.empty-state svg {
+  margin-bottom: 1rem;
+  color: #ccc;
+}
+
+.empty-state p {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.badge-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  background: #f44336;
+  color: white;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .admin-container {

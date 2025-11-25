@@ -45,8 +45,9 @@ export const addWorkPermit = async (permitData, userId, userName) => {
     const docRef = await addDoc(collection(db, WORK_PERMITS_COLLECTION), permitWithTimestamp);
 
     // Birime bildirim gönder
-    if (permitData.department) {
-      await createNotificationForDepartment(permitData.department, {
+    const targetDepartment = permitData.relatedDepartment || permitData.createdByDepartment || permitData.department;
+    if (targetDepartment) {
+      await createNotificationForDepartment(targetDepartment, {
         type: 'workPermit',
         title: 'Yeni İş İzni Eklendi',
         message: `${userName} tarafından "${permitData.name}" için yeni bir iş izni eklendi.`,

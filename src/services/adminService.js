@@ -34,6 +34,53 @@ export const getAllUsers = async () => {
   }
 };
 
+// Bekleyen kullanıcıları getir
+export const getPendingUsers = async () => {
+  try {
+    const usersRef = collection(db, 'users');
+    const snapshot = await getDocs(usersRef);
+    const pendingUsers = [];
+    snapshot.forEach((doc) => {
+      const userData = doc.data();
+      if (userData.approved === false && !userData.deleted) {
+        pendingUsers.push({ id: doc.id, ...userData });
+      }
+    });
+    return pendingUsers;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Kullanıcıyı onayla
+export const approveUser = async (userId) => {
+  try {
+    const userRef = doc(db, 'users', userId);
+    await updateDoc(userRef, {
+      approved: true,
+      approvedAt: new Date().toISOString()
+    });
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Kullanıcı onayını reddet
+export const rejectUser = async (userId) => {
+  try {
+    const userRef = doc(db, 'users', userId);
+    await updateDoc(userRef, {
+      approved: false,
+      rejected: true,
+      rejectedAt: new Date().toISOString()
+    });
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
 // Kullanıcı güncelle
 export const updateUser = async (userId, userData) => {
   try {
