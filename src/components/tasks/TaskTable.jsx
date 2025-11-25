@@ -9,7 +9,7 @@ import Button from '../ui/Button';
 import './TaskTable.css';
 
 const TaskTable = () => {
-  const { tasks, deleteTask, departments } = useApp();
+  const { tasks, deleteTask, departments, user } = useApp();
   const [showTaskForm, setShowTaskForm] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [messageTask, setMessageTask] = useState(null);
@@ -310,20 +310,24 @@ const TaskTable = () => {
                     >
                       <MessageSquare size={16} />
                     </button>
-                    <button
-                      className="action-btn edit-btn"
-                      onClick={() => handleEdit(task)}
-                      title="Düzenle"
-                    >
-                      <Edit2 size={16} />
-                    </button>
-                    <button
-                      className="action-btn delete-btn"
-                      onClick={() => handleDelete(task.id)}
-                      title="Sil"
-                    >
-                      <Trash2 size={16} />
-                    </button>
+                    {user?.department === task.relatedDepartment && (
+                      <>
+                        <button
+                          className="action-btn edit-btn"
+                          onClick={() => handleEdit(task)}
+                          title="Düzenle"
+                        >
+                          <Edit2 size={16} />
+                        </button>
+                        <button
+                          className="action-btn delete-btn"
+                          onClick={() => handleDelete(task.id)}
+                          title="Sil"
+                        >
+                          <Trash2 size={16} />
+                        </button>
+                      </>
+                    )}
                   </td>
                 </tr>
               ))

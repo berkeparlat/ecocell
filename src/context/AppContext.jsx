@@ -387,7 +387,7 @@ export const AppProvider = ({ children }) => {
     };
 
     try {
-      const result = await addTaskToStore(payload, user.uid);
+      const result = await addTaskToStore(payload, user.uid, payload.createdBy);
       if (!result.success) {
         throw new Error(result.error || 'Is eklenemedi');
       }

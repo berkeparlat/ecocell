@@ -6,9 +6,12 @@ import TaskEditForm from './TaskEditForm';
 import './TaskCard.css';
 
 const TaskCard = ({ task }) => {
-  const { deleteTask } = useApp();
+  const { deleteTask, user } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+
+  // Kullanıcı sadece kendi departmanının işlerini düzenleyebilir
+  const canEdit = user?.department === task.relatedDepartment;
 
   const priorityColors = {
     low: '#10b981',
@@ -43,23 +46,27 @@ const TaskCard = ({ task }) => {
             style={{ backgroundColor: priorityColors[task.priority] }}
             title={priorityLabels[task.priority]}
           />
-          <button 
-            className="task-menu-btn"
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            <MoreVertical size={16} />
-          </button>
-          {showMenu && (
-            <div className="task-menu">
-              <button onClick={handleEdit}>
-                <Edit size={14} />
-                Düzenle
+          {canEdit && (
+            <>
+              <button 
+                className="task-menu-btn"
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                <MoreVertical size={16} />
               </button>
-              <button onClick={handleDelete} className="task-menu-delete">
-                <Trash2 size={14} />
-                Sil
-              </button>
-            </div>
+              {showMenu && (
+                <div className="task-menu">
+                  <button onClick={handleEdit}>
+                    <Edit size={14} />
+                    Düzenle
+                  </button>
+                  <button onClick={handleDelete} className="task-menu-delete">
+                    <Trash2 size={14} />
+                    Sil
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </div>
 
