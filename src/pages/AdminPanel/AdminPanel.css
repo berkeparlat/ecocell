@@ -416,6 +416,13 @@
 
 .pending-header {
   margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pending-header > div {
+  flex: 1;
 }
 
 .pending-header h2 {
@@ -427,6 +434,28 @@
   margin: 0;
   color: #757575;
   font-size: 0.95rem;
+}
+
+.migrate-btn {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.migrate-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.migrate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
 .empty-state {

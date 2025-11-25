@@ -100,7 +100,15 @@ export const AppProvider = ({ children }) => {
       const fallbackName =
         firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Kullanici';
 
-      userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, (profile) => {
+      userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, async (profile) => {
+        // Kullanıcı silinmişse veya onaylanmamışsa çıkış yap
+        if (profile?.deleted || profile?.approved === false) {
+          await logoutUser();
+          setUser(null);
+          localStorage.removeItem('karafiber_user');
+          return;
+        }
+
         const userData = {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
@@ -109,6 +117,7 @@ export const AppProvider = ({ children }) => {
           department: profile?.department || '',
           role: profile?.role || 'user',
           createdAt: profile?.createdAt || null,
+          approved: profile?.approved !== false, // Varsayılan true (eski kullanıcılar için)
         };
 
         setUser(userData);

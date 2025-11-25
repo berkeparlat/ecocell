@@ -82,8 +82,8 @@ const Register = () => {
     setLoading(false);
 
     if (result.success) {
-      alert('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...');
-      navigate('/');
+      alert('Kayıt başarılı! Hesabınız yönetici onayı bekliyor. Onaylandıktan sonra giriş yapabileceksiniz.');
+      navigate('/login');
     } else {
       setError(result.error);
     }

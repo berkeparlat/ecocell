@@ -56,6 +56,7 @@ const AdminPanel = () => {
   const [departmentError, setDepartmentError] = useState('');
   const [savingDepartments, setSavingDepartments] = useState(false);
   const [refreshingExcel, setRefreshingExcel] = useState(false);
+  const [migratingUsers, setMigratingUsers] = useState(false);
 
   useEffect(() => {
     if (!user || !isAdmin(user)) {
@@ -269,6 +270,29 @@ const AdminPanel = () => {
     }
   }, []);
 
+  const handleMigrateUsers = useCallback(async () => {
+    if (!window.confirm('Mevcut tüm kullanıcılara approved: true eklenecek. Devam edilsin mi?')) {
+      return;
+    }
+    
+    setMigratingUsers(true);
+    try {
+      const { migrateExistingUsers } = await import('../../scripts/migrateUsers');
+      const result = await migrateExistingUsers();
+      
+      if (result.success) {
+        alert(`✅ ${result.updated} kullanıcı güncellendi!`);
+        loadData();
+      } else {
+        alert('❌ Hata: ' + result.error);
+      }
+    } catch (error) {
+      alert('❌ Migration hatası: ' + error.message);
+    } finally {
+      setMigratingUsers(false);
+    }
+  }, []);
+
   const formatDate = useCallback((timestamp) => {
     if (!timestamp) return '-';
     const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
@@ -455,8 +479,17 @@ const AdminPanel = () => {
         {activeTab === 'pending' && (
           <div className="admin-content">
             <div className="pending-header">
-              <h2>Bekleyen Kullanıcılar</h2>
-              <p>Kayıt olan ancak henüz onaylanmamış kullanıcılar</p>
+              <div>
+                <h2>Bekleyen Kullanıcılar</h2>
+                <p>Kayıt olan ancak henüz onaylanmamış kullanıcılar</p>
+              </div>
+              <button 
+                className="migrate-btn" 
+                onClick={handleMigrateUsers}
+                disabled={migratingUsers}
+              >
+                {migratingUsers ? 'Güncelleniyor...' : '🔄 Eski Kullanıcıları Onayla'}
+              </button>
             </div>
 
             {pendingUsers.length === 0 ? (
