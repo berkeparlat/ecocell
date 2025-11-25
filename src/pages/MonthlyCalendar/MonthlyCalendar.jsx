@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import SimpleHeader from '../../components/layout/SimpleHeader';
-import './ComingSoon.css';
+import '../DailyStock/DailyStock.css';
 
 const MonthlyCalendar = () => {
   const navigate = useNavigate();

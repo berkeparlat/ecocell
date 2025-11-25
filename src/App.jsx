@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AppProvider, useApp } from './context/AppContext';
+import { useTabNotification } from './hooks/useTabNotification';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Dashboard from './pages/Dashboard/Dashboard';
@@ -42,9 +43,24 @@ const PublicRoute = ({ children }) => {
   return !user ? children : <Navigate to="/main-menu" />;
 };
 
+// Tab bildirimi için wrapper bileşeni
+function TabNotificationWrapper() {
+  const { unreadNotificationsCount, conversations, unreadAnnouncementsCount } = useApp();
+  
+  // Toplam okunmamış sayısını hesapla
+  const unreadMessagesCount = conversations?.filter(c => c.unreadCount > 0).reduce((sum, c) => sum + c.unreadCount, 0) || 0;
+  const totalUnread = (unreadNotificationsCount || 0) + unreadMessagesCount + (unreadAnnouncementsCount || 0);
+  
+  // Tab bildirimini aktifleştir
+  useTabNotification(totalUnread, 'Yeni bildirim var!');
+  
+  return null;
+}
+
 function AppContent() {
   return (
     <BrowserRouter>
+      <TabNotificationWrapper />
       <Routes>
         <Route 
           path="/login" 
