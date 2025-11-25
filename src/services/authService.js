@@ -27,6 +27,9 @@ export const registerUser = async (email, password, displayName, department) => 
       createdAt: serverTimestamp(),
     });
 
+    // Kayıttan hemen sonra çıkış yap - onay beklesin
+    await signOut(auth);
+
     return {
       success: true,
       user: {

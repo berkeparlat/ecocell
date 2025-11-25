@@ -156,8 +156,11 @@ export const getStatistics = async () => {
       getAllMessages()
     ]);
 
+    // Sadece onaylanmış kullanıcıları say
+    const approvedUsers = users.filter(u => u.approved !== false);
+
     const stats = {
-      totalUsers: users.length,
+      totalUsers: approvedUsers.length,
       totalTasks: tasks.length,
       totalMessages: messages.length,
       tasksByStatus: {
@@ -165,7 +168,7 @@ export const getStatistics = async () => {
         inProgress: tasks.filter(t => t.status === 'in-progress').length,
         done: tasks.filter(t => t.status === 'done').length
       },
-      usersByDepartment: users.reduce((acc, user) => {
+      usersByDepartment: approvedUsers.reduce((acc, user) => {
         const dept = user.department || 'Belirtilmemiş';
         acc[dept] = (acc[dept] || 0) + 1;
         return acc;

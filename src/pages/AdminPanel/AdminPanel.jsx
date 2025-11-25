@@ -27,7 +27,8 @@ import {
   Building2,
   Plus,
   X,
-  FileSpreadsheet
+  FileSpreadsheet,
+  Check
 } from 'lucide-react';
 import { triggerFileWatcher } from '../../services/fileWatcherService';
 import './AdminPanel.css';
@@ -475,13 +476,8 @@ const AdminPanel = () => {
                               className="btn-approve" 
                               onClick={() => handleApproveUser(u.id)} 
                               title="Onayla"
-                              style={{
-                                backgroundColor: '#28a745',
-                                color: 'white',
-                                marginRight: '8px'
-                              }}
                             >
-                              ✓
+                              <Check size={20} />
                             </button>
                           )}
                           <button className="btn-edit" onClick={() => handleEditUser(u)} title="Düzenle">
