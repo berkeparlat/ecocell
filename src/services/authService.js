@@ -27,10 +27,8 @@ export const registerUser = async (email, password, displayName, department) => 
       createdAt: serverTimestamp(),
     });
 
-    // Kayıt sonrası hemen logout yap (onay beklesin)
-    await signOut(auth);
-
-    return {
+    // Kayıt bilgilerini sakla
+    const registrationData = {
       success: true,
       user: {
         uid: userCredential.user.uid,
@@ -40,6 +38,11 @@ export const registerUser = async (email, password, displayName, department) => 
         department,
       },
     };
+
+    // Kayıt sonrası hemen logout yap (onay beklesin)
+    await signOut(auth);
+
+    return registrationData;
   } catch (error) {
     return {
       success: false,

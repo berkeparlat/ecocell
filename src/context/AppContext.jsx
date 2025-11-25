@@ -102,7 +102,16 @@ export const AppProvider = ({ children }) => {
 
       userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, async (profile) => {
         // Kullanıcı silinmişse veya onaylanmamışsa çıkış yap
-        if (profile?.deleted || profile?.approved === false) {
+        if (profile?.deleted) {
+          console.log('❌ Kullanıcı silinmiş, çıkış yapılıyor...');
+          await logoutUser();
+          setUser(null);
+          localStorage.removeItem('karafiber_user');
+          return;
+        }
+        
+        if (profile?.approved === false) {
+          console.log('⏳ Kullanıcı onay bekliyor, çıkış yapılıyor...');
           await logoutUser();
           setUser(null);
           localStorage.removeItem('karafiber_user');
