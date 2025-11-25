@@ -256,11 +256,7 @@ export const AppProvider = ({ children }) => {
       return;
     }
 
-    console.log('👤 Hatırlatıcılar dinleniyor, userId:', user.uid);
-    
     const unsubscribe = listenToReminders(user.uid, (fetchedReminders) => {
-      console.log('✅ Hatırlatıcılar alındı:', fetchedReminders.length, 'adet');
-      console.log('📋 Hatırlatıcılar:', fetchedReminders);
       setReminders(fetchedReminders);
     });
 
