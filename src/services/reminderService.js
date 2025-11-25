@@ -48,21 +48,13 @@ export const listenToReminders = (userId, callback) => {
  */
 export const addReminder = async (reminderData, userId) => {
   try {
-    console.log('reminderService.addReminder başladı:', { reminderData, userId });
-    
-    const dataToSave = {
+    const docRef = await addDoc(collection(db, REMINDERS_COLLECTION), {
       ...reminderData,
       userId: userId,
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp(),
       lastNotified: null
-    };
-    
-    console.log('Firestore\'a kaydedilecek veri:', dataToSave);
-    
-    const docRef = await addDoc(collection(db, REMINDERS_COLLECTION), dataToSave);
-    
-    console.log('Firestore döküman oluşturuldu:', docRef.id);
+    });
     
     return { 
       success: true, 
