@@ -9,7 +9,9 @@ import {
   query,
   orderBy,
   serverTimestamp,
+  getDocs
 } from 'firebase/firestore';
+import { createNotificationForDepartment } from './notificationService';
 
 const WORK_PERMITS_COLLECTION = 'workPermits';
 
@@ -31,7 +33,7 @@ export const listenToWorkPermits = (callback) => {
   );
 };
 
-export const addWorkPermit = async (permitData, userId) => {
+export const addWorkPermit = async (permitData, userId, userName) => {
   try {
     const permitWithTimestamp = {
       ...permitData,
@@ -41,6 +43,18 @@ export const addWorkPermit = async (permitData, userId) => {
     };
 
     const docRef = await addDoc(collection(db, WORK_PERMITS_COLLECTION), permitWithTimestamp);
+
+    // Birime bildirim gönder
+    if (permitData.department) {
+      await createNotificationForDepartment(permitData.department, {
+        type: 'workPermit',
+        title: 'Yeni İş İzni Eklendi',
+        message: `${userName} tarafından "${permitData.name}" için yeni bir iş izni eklendi.`,
+        actionUrl: '/work-permits',
+        relatedId: docRef.id,
+        createdBy: userName
+      });
+    }
 
     return {
       success: true,

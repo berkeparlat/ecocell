@@ -39,6 +39,7 @@ import {
   updateReminder as updateReminderInStore,
   deleteReminder as deleteReminderFromStore,
 } from '../services/reminderService';
+import { checkRemindersAndNotify } from '../services/reminderNotificationService';
 
 const AppContext = createContext();
 
@@ -270,6 +271,21 @@ export const AppProvider = ({ children }) => {
     };
   }, [user?.uid]);
 
+  // Hatırlatıcı kontrolü - Her 1 saatte bir
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    // İlk kontrol
+    checkRemindersAndNotify();
+
+    // Her 1 saatte bir kontrol
+    const intervalId = setInterval(() => {
+      checkRemindersAndNotify();
+    }, 60 * 60 * 1000); // 1 saat
+
+    return () => clearInterval(intervalId);
+  }, [user?.uid]);
+
   useEffect(() => {
     let isMounted = true;
     let unsubscribe;
@@ -437,7 +453,7 @@ export const AppProvider = ({ children }) => {
     };
 
     try {
-      const result = await addWorkPermitToStore(payload, user.uid);
+      const result = await addWorkPermitToStore(payload, user.uid, payload.createdBy);
       if (!result.success) {
         throw new Error(result.error || 'Is izni eklenemedi');
       }
@@ -483,7 +499,7 @@ export const AppProvider = ({ children }) => {
     };
 
     try {
-      const result = await addAnnouncementToStore(payload, user.uid);
+      const result = await addAnnouncementToStore(payload, user.uid, payload.createdBy);
       if (!result.success) {
         throw new Error(result.error || 'Duyuru eklenemedi');
       }

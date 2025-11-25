@@ -61,7 +61,7 @@ export const listenToTasks = (callback) => {
 };
 
 // Yeni görev ekle
-export const addTask = async (taskData, userId) => {
+export const addTask = async (taskData, userId, userName) => {
   try {
     const docRef = await addDoc(collection(db, TASKS_COLLECTION), {
       ...taskData,
@@ -69,6 +69,18 @@ export const addTask = async (taskData, userId) => {
       createdAt: serverTimestamp(),
       updatedAt: serverTimestamp()
     });
+    
+    // Birime bildirim gönder
+    if (taskData.assignedDepartment) {
+      await createNotificationForDepartment(taskData.assignedDepartment, {
+        type: 'task',
+        title: 'Yeni İş Eklendi',
+        message: `${userName} tarafından "${taskData.title}" başlıklı yeni bir iş eklendi.`,
+        actionUrl: '/job-tracking',
+        relatedId: docRef.id,
+        createdBy: userName
+      });
+    }
     
     return { 
       success: true, 
