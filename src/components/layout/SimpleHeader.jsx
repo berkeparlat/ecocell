@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { LogOut, User, ChevronDown, Shield, ArrowLeft } from 'lucide-react';
+import { LogOut, User, ChevronDown, Shield, ArrowLeft, Home, Bell, MessageSquare, Megaphone } from 'lucide-react';
 import { isAdmin } from '../../services/adminService';
 import Modal from '../ui/Modal';
 import ProfileModal from '../profile/ProfileModal';
@@ -10,10 +10,13 @@ import './SimpleHeader.css';
 
 const SimpleHeader = () => {
   const navigate = useNavigate();
-  const { user, logout } = useApp();
+  const { user, logout, unreadNotificationsCount, unreadAnnouncementsCount, conversations = [] } = useApp();
   const [showMenu, setShowMenu] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const menuRef = useRef(null);
+  
+  // Okunmamış mesaj sayısını hesapla
+  const unreadMessagesCount = conversations.filter(conv => conv.unreadCount > 0).length;
 
   // Dışarı tıklayınca menüyü kapat
   useEffect(() => {
@@ -54,18 +57,52 @@ const SimpleHeader = () => {
   return (
     <header className="simple-header">
       <div className="header-container">
-        <button className="header-back-btn" onClick={() => navigate(-1)} title="Geri">
-          <ArrowLeft size={24} />
-        </button>
+        <div className="header-nav-buttons">
+          <button className="header-back-btn" onClick={() => navigate(-1)} title="Geri">
+            <ArrowLeft size={24} />
+          </button>
+          <button className="header-home-btn" onClick={handleLogoClick} title="Ana Menü">
+            <Home size={24} />
+          </button>
+        </div>
         <div className="header-brand" onClick={handleLogoClick}>
           <img src={logo} alt="Ecocell Logo" className="header-logo" />
-          <div className="header-brand-text">
-            <h1>Karafiber Elyaf</h1>
-            <span>Ecocell Portal</span>
-          </div>
         </div>
 
         <div className="header-actions">
+          <button 
+            className="header-nav-icon-btn" 
+            onClick={() => navigate('/announcements')}
+            title="Duyurular"
+          >
+            <Megaphone size={22} />
+            {unreadAnnouncementsCount > 0 && (
+              <span className="header-badge">{unreadAnnouncementsCount}</span>
+            )}
+          </button>
+          
+          <button 
+            className="header-nav-icon-btn" 
+            onClick={() => navigate('/notifications')}
+            title="Bildirimler"
+          >
+            <Bell size={22} />
+            {unreadNotificationsCount > 0 && (
+              <span className="header-badge">{unreadNotificationsCount}</span>
+            )}
+          </button>
+          
+          <button 
+            className="header-nav-icon-btn" 
+            onClick={() => navigate('/messages')}
+            title="Mesajlar"
+          >
+            <MessageSquare size={22} />
+            {unreadMessagesCount > 0 && (
+              <span className="header-badge">{unreadMessagesCount}</span>
+            )}
+          </button>
+          
           <div className="header-user" ref={menuRef}>
             <button className="user-menu-trigger" onClick={toggleMenu}>
               <div className="user-info">

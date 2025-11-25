@@ -18,7 +18,14 @@
   gap: 2rem;
 }
 
-.header-back-btn {
+.header-nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.header-back-btn,
+.header-home-btn {
   width: 45px;
   height: 45px;
   border-radius: 12px;
@@ -38,8 +45,14 @@
   box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
 }
 
-.header-back-btn:active {
-  transform: translateX(-1px) scale(0.98);
+.header-home-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+}
+
+.header-back-btn:active,
+.header-home-btn:active {
+  transform: scale(0.98);
 }
 
 .header-brand {
@@ -88,7 +101,48 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 1.5rem;
+  gap: 0.75rem;
+}
+
+.header-nav-icon-btn {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+}
+
+.header-nav-icon-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+}
+
+.header-nav-icon-btn:active {
+  transform: scale(0.98);
+}
+
+.header-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #ef4444;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15rem 0.4rem;
+  border-radius: 10px;
+  min-width: 18px;
+  text-align: center;
+  line-height: 1;
+  box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
 }
 
 .header-user {
