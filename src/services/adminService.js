@@ -18,14 +18,18 @@ export const isAdmin = (user) => {
   return user?.email === ADMIN_EMAIL;
 };
 
-// Tüm kullanıcıları getir
+// Tüm kullanıcıları getir (silinmemiş ve onaylanmış)
 export const getAllUsers = async () => {
   try {
     const usersRef = collection(db, 'users');
     const snapshot = await getDocs(usersRef);
     const users = [];
     snapshot.forEach((doc) => {
-      users.push({ id: doc.id, ...doc.data() });
+      const userData = doc.data();
+      // Silinmiş kullanıcıları gösterme
+      if (!userData.deleted) {
+        users.push({ id: doc.id, ...userData });
+      }
     });
     return users;
   } catch (error) {
@@ -61,6 +65,24 @@ export const approveUser = async (userId) => {
       approvedAt: new Date().toISOString()
     });
     return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Silinmiş kullanıcıları getir
+export const getDeletedUsers = async () => {
+  try {
+    const usersRef = collection(db, 'users');
+    const snapshot = await getDocs(usersRef);
+    const deletedUsers = [];
+    snapshot.forEach((doc) => {
+      const userData = doc.data();
+      if (userData.deleted) {
+        deletedUsers.push({ id: doc.id, ...userData });
+      }
+    });
+    return deletedUsers;
   } catch (error) {
     throw error;
   }
