@@ -11,7 +11,8 @@ import {
   updateUser,
   deleteUser as deleteUserService,
   deleteTask as deleteTaskService,
-  deleteMessage as deleteMessageService
+  deleteMessage as deleteMessageService,
+  approveUser
 } from '../../services/adminService';
 import { 
   Users, 
@@ -94,6 +95,22 @@ const AdminPanel = () => {
       loadData();
     } catch (error) {
       alert('Kullanıcı silinemedi!');
+    }
+  }, []);
+
+  const handleApproveUser = useCallback(async (userId) => {
+    if (!window.confirm('Bu kullanıcıyı onaylamak istediğinize emin misiniz?')) return;
+    
+    try {
+      const result = await approveUser(userId);
+      if (result.success) {
+        alert('Kullanıcı onaylandı!');
+        loadData();
+      } else {
+        alert('Kullanıcı onaylanamadı: ' + (result.error || 'Bilinmeyen hata'));
+      }
+    } catch (error) {
+      alert('Kullanıcı onaylanamadı!');
     }
   }, []);
 
@@ -432,6 +449,7 @@ const AdminPanel = () => {
                     <th>Ad Soyad</th>
                     <th>Email</th>
                     <th>Departman</th>
+                    <th>Durum</th>
                     <th>Oluşturulma</th>
                     <th>İşlemler</th>
                   </tr>
@@ -441,9 +459,31 @@ const AdminPanel = () => {
                       <td>{u.fullName || u.displayName || '-'}</td>
                       <td>{u.email}</td>
                       <td><span className="badge">{u.department || 'Belirtilmemiş'}</span></td>
+                      <td>
+                        <span className="badge" style={{
+                          backgroundColor: u.approved === false ? '#fff3cd' : '#d4edda',
+                          color: u.approved === false ? '#856404' : '#155724'
+                        }}>
+                          {u.approved === false ? 'Onay Bekliyor' : 'Onaylandı'}
+                        </span>
+                      </td>
                       <td>{formatDate(u.createdAt)}</td>
                       <td>
                         <div className="action-buttons">
+                          {u.approved === false && (
+                            <button 
+                              className="btn-approve" 
+                              onClick={() => handleApproveUser(u.id)} 
+                              title="Onayla"
+                              style={{
+                                backgroundColor: '#28a745',
+                                color: 'white',
+                                marginRight: '8px'
+                              }}
+                            >
+                              ✓
+                            </button>
+                          )}
                           <button className="btn-edit" onClick={() => handleEditUser(u)} title="Düzenle">
                             <Edit2 size={20} />
                           </button>

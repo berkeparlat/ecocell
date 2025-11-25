@@ -133,6 +133,20 @@ export const deleteMessage = async (messageId) => {
   }
 };
 
+// Kullanıcıyı onayla
+export const approveUser = async (userId) => {
+  try {
+    const userRef = doc(db, 'users', userId);
+    await updateDoc(userRef, {
+      approved: true,
+      approvedAt: new Date().toISOString()
+    });
+    return { success: true };
+  } catch (error) {
+    return { success: false, error: error.message };
+  }
+};
+
 // İstatistikler
 export const getStatistics = async () => {
   try {

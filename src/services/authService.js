@@ -23,6 +23,7 @@ export const registerUser = async (email, password, displayName, department) => 
       fullName: displayName,
       email,
       department,
+      approved: false,
       createdAt: serverTimestamp(),
     });
 
@@ -63,6 +64,15 @@ export const loginUser = async (email, password) => {
       return {
         success: false,
         error: 'Bu hesap silinmiştir. Lütfen yönetici ile iletişime geçin.',
+      };
+    }
+
+    // Kullanıcı onaylanmamışsa giriş yapmasına izin verme
+    if (profileData?.approved === false) {
+      await signOut(auth);
+      return {
+        success: false,
+        error: 'Hesabınız henüz onaylanmamıştır. Lütfen yönetici onayını bekleyin.',
       };
     }
 
