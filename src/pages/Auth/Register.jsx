@@ -82,15 +82,8 @@ const Register = () => {
     setLoading(false);
 
     if (result.success) {
-      // LocalStorage temizle
-      localStorage.removeItem('karafiber_user');
-      
-      alert('Kayıt başarılı! Hesabınız yönetici onayı bekliyor. Onaylandıktan sonra giriş yapabileceksiniz.');
-      
-      // Küçük bir gecikme ile yönlendir
-      setTimeout(() => {
-        navigate('/login');
-      }, 100);
+      alert('Kayıt başarılı! Giriş sayfasına yönlendiriliyorsunuz...');
+      navigate('/');
     } else {
       setError(result.error);
     }

@@ -23,12 +23,10 @@ export const registerUser = async (email, password, displayName, department) => 
       fullName: displayName,
       email,
       department,
-      approved: false,
       createdAt: serverTimestamp(),
     });
 
-    // Kayıt bilgilerini sakla
-    const registrationData = {
+    return {
       success: true,
       user: {
         uid: userCredential.user.uid,
@@ -38,11 +36,6 @@ export const registerUser = async (email, password, displayName, department) => 
         department,
       },
     };
-
-    // Kayıt sonrası hemen logout yap (onay beklesin)
-    await signOut(auth);
-
-    return registrationData;
   } catch (error) {
     return {
       success: false,
@@ -70,15 +63,6 @@ export const loginUser = async (email, password) => {
       return {
         success: false,
         error: 'Bu hesap silinmiştir. Lütfen yönetici ile iletişime geçin.',
-      };
-    }
-
-    // Kullanıcı onaylanmamışsa giriş yapmasına izin verme
-    if (profileData?.approved === false) {
-      await signOut(auth);
-      return {
-        success: false,
-        error: 'Hesabınız henüz onaylanmamıştır. Lütfen yönetici onayını bekleyin.',
       };
     }
 

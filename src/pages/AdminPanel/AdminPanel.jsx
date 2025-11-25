@@ -11,10 +11,7 @@ import {
   updateUser,
   deleteUser as deleteUserService,
   deleteTask as deleteTaskService,
-  deleteMessage as deleteMessageService,
-  getPendingUsers,
-  approveUser,
-  rejectUser
+  deleteMessage as deleteMessageService
 } from '../../services/adminService';
 import { 
   Users, 
@@ -42,7 +39,6 @@ const AdminPanel = () => {
   const [stats, setStats] = useState(null);
   const [users, setUsers] = useState([]);
   const [tasks, setTasks] = useState([]);  const [messages, setMessages] = useState([]);
-  const [pendingUsers, setPendingUsers] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [editingUser, setEditingUser] = useState(null);
   const [editForm, setEditForm] = useState({
@@ -56,7 +52,6 @@ const AdminPanel = () => {
   const [departmentError, setDepartmentError] = useState('');
   const [savingDepartments, setSavingDepartments] = useState(false);
   const [refreshingExcel, setRefreshingExcel] = useState(false);
-  const [migratingUsers, setMigratingUsers] = useState(false);
 
   useEffect(() => {
     if (!user || !isAdmin(user)) {
@@ -73,18 +68,16 @@ const AdminPanel = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const [statsData, usersData, tasksData, messagesData, pendingUsersData] = await Promise.all([
+      const [statsData, usersData, tasksData, messagesData] = await Promise.all([
         getStatistics(),
         getAllUsers(),
         getAllTasks(),
-        getAllMessages(),
-        getPendingUsers()
+        getAllMessages()
       ]);
       setStats(statsData);
       setUsers(usersData);
       setTasks(tasksData);
       setMessages(messagesData);
-      setPendingUsers(pendingUsersData);
     } catch (error) {
       alert('Veriler yüklenemedi!');
     } finally {
@@ -244,55 +237,6 @@ const AdminPanel = () => {
     }
   }, []);
 
-  const handleApproveUser = useCallback(async (userId, userName) => {
-    if (!window.confirm(`${userName} kullanıcısını onaylamak istediğinizden emin misiniz?`)) {
-      return;
-    }
-    try {
-      await approveUser(userId);
-      alert('Kullanıcı onaylandı!');
-      loadData();
-    } catch (error) {
-      alert('Kullanıcı onaylanırken hata oluştu');
-    }
-  }, []);
-
-  const handleRejectUser = useCallback(async (userId, userName) => {
-    if (!window.confirm(`${userName} kullanıcısını reddetmek istediğinizden emin misiniz?`)) {
-      return;
-    }
-    try {
-      await rejectUser(userId);
-      alert('Kullanıcı reddedildi!');
-      loadData();
-    } catch (error) {
-      alert('Kullanıcı reddedilirken hata oluştu');
-    }
-  }, []);
-
-  const handleMigrateUsers = useCallback(async () => {
-    if (!window.confirm('Mevcut tüm kullanıcılara approved: true eklenecek. Devam edilsin mi?')) {
-      return;
-    }
-    
-    setMigratingUsers(true);
-    try {
-      const { migrateExistingUsers } = await import('../../scripts/migrateUsers');
-      const result = await migrateExistingUsers();
-      
-      if (result.success) {
-        alert(`✅ ${result.updated} kullanıcı güncellendi!`);
-        loadData();
-      } else {
-        alert('❌ Hata: ' + result.error);
-      }
-    } catch (error) {
-      alert('❌ Migration hatası: ' + error.message);
-    } finally {
-      setMigratingUsers(false);
-    }
-  }, []);
-
   const formatDate = useCallback((timestamp) => {
     if (!timestamp) return '-';
     const date = timestamp.toDate ? timestamp.toDate() : new Date(timestamp);
@@ -352,13 +296,6 @@ const AdminPanel = () => {
           >
             <BarChart3 size={20} />
             Dashboard
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'pending' ? 'active' : ''}`}
-            onClick={() => setActiveTab('pending')}
-          >
-            <Users size={20} />
-            Bekleyen Kullanıcılar {pendingUsers.length > 0 && <span className="badge-count">{pendingUsers.length}</span>}
           </button>
           <button 
             className={`tab-btn ${activeTab === 'users' ? 'active' : ''}`}
@@ -472,74 +409,6 @@ const AdminPanel = () => {
                 </div>
               </div>
             </div>
-          </div>
-        )}
-
-        {/* Pending Users Tab */}
-        {activeTab === 'pending' && (
-          <div className="admin-content">
-            <div className="pending-header">
-              <div>
-                <h2>Bekleyen Kullanıcılar</h2>
-                <p>Kayıt olan ancak henüz onaylanmamış kullanıcılar</p>
-              </div>
-              <button 
-                className="migrate-btn" 
-                onClick={handleMigrateUsers}
-                disabled={migratingUsers}
-              >
-                {migratingUsers ? 'Güncelleniyor...' : '🔄 Eski Kullanıcıları Onayla'}
-              </button>
-            </div>
-
-            {pendingUsers.length === 0 ? (
-              <div className="empty-state">
-                <Users size={48} />
-                <p>Bekleyen kullanıcı yok</p>
-              </div>
-            ) : (
-              <div className="data-table">
-                <table>
-                  <thead>
-                    <tr>
-                      <th>Ad Soyad</th>
-                      <th>Email</th>
-                      <th>Departman</th>
-                      <th>Kayıt Tarihi</th>
-                      <th>İşlemler</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {pendingUsers.map(u => (
-                      <tr key={u.id}>
-                        <td>{u.fullName || u.displayName || '-'}</td>
-                        <td>{u.email}</td>
-                        <td><span className="badge">{u.department || 'Belirtilmemiş'}</span></td>
-                        <td>{formatDate(u.createdAt)}</td>
-                        <td>
-                          <div className="action-buttons">
-                            <button 
-                              className="btn-approve" 
-                              onClick={() => handleApproveUser(u.id, u.fullName || u.email)}
-                              title="Onayla"
-                            >
-                              ✓ Onayla
-                            </button>
-                            <button 
-                              className="btn-reject" 
-                              onClick={() => handleRejectUser(u.id, u.fullName || u.email)}
-                              title="Reddet"
-                            >
-                              ✗ Reddet
-                            </button>
-                          </div>
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            )}
           </div>
         )}
 

@@ -100,24 +100,7 @@ export const AppProvider = ({ children }) => {
       const fallbackName =
         firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Kullanici';
 
-      userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, async (profile) => {
-        // Kullanıcı silinmişse veya onaylanmamışsa çıkış yap
-        if (profile?.deleted) {
-          console.log('❌ Kullanıcı silinmiş, çıkış yapılıyor...');
-          await logoutUser();
-          setUser(null);
-          localStorage.removeItem('karafiber_user');
-          return;
-        }
-        
-        if (profile?.approved === false) {
-          console.log('⏳ Kullanıcı onay bekliyor, çıkış yapılıyor...');
-          await logoutUser();
-          setUser(null);
-          localStorage.removeItem('karafiber_user');
-          return;
-        }
-
+      userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, (profile) => {
         const userData = {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
@@ -126,7 +109,6 @@ export const AppProvider = ({ children }) => {
           department: profile?.department || '',
           role: profile?.role || 'user',
           createdAt: profile?.createdAt || null,
-          approved: profile?.approved !== false, // Varsayılan true (eski kullanıcılar için)
         };
 
         setUser(userData);
