@@ -572,17 +572,24 @@ export const AppProvider = ({ children }) => {
   };
 
   const addReminder = async (reminder) => {
+    console.log('AppContext addReminder çağrıldı:', { reminder, userId: user?.uid });
+    
     if (!user?.uid) {
+      console.error('Kullanıcı oturumu bulunamadı');
       throw new Error('Oturum açılmamış');
     }
 
     try {
+      console.log('addReminderToStore çağrılıyor...');
       const result = await addReminderToStore(reminder, user.uid);
+      console.log('addReminderToStore sonucu:', result);
+      
       if (!result.success) {
         throw new Error(result.error || 'Hatırlatıcı eklenemedi');
       }
       return result.reminder;
     } catch (error) {
+      console.error('AppContext addReminder hatası:', error);
       throw error;
     }
   };

@@ -18,6 +18,30 @@
   gap: 2rem;
 }
 
+.header-back-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+}
+
+.header-back-btn:hover {
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+}
+
+.header-back-btn:active {
+  transform: translateX(-1px) scale(0.98);
+}
+
 .header-brand {
   display: flex;
   align-items: center;

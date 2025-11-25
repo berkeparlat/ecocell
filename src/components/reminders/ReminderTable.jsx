@@ -137,13 +137,6 @@ const ReminderTable = () => {
           <Clock size={48} />
           <h3>Henüz hatırlatıcınız yok</h3>
           <p>Periyodik işleriniz için hatırlatıcı oluşturun</p>
-          <button 
-            className="reminder-add-btn"
-            onClick={() => setShowReminderForm(true)}
-          >
-            <Plus size={18} />
-            İlk Hatırlatıcıyı Oluştur
-          </button>
         </div>
       ) : (
         <div className="reminder-table-wrapper">

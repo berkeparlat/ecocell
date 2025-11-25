@@ -9,9 +9,9 @@ export const excelStartRows = {
   'electric': 1,                     // Elektrik Tüketimi
   'downtime': 1,                     // Duruş İşleri
   'sales': 1,                        // Satış Siparişleri
-  'shipping': 2100,                  // Yüklemeler
-  'electrical-maintenance': 1230,    // Elektrik Bakım
-  'mechanical-maintenance': 480,     // Mekanik Bakım
+  'shipping': 2120,                  // Yüklemeler
+  'electrical-maintenance': 1300,    // Elektrik Bakım
+  'mechanical-maintenance': 500,     // Mekanik Bakım
   'electrical-downtime': 1,          // Elektrik Duruş
   'mechanical-downtime': 1         // Mekanik Duruş
 };
@@ -19,14 +19,14 @@ export const excelStartRows = {
 // Zoom seviyeleri (100 = %100, 80 = %80)
 export const excelZoomLevels = {
   'stock': 100,
-  'dcs-a': 60,
-  'dcs-b': 60,
+  'dcs-a': 100,
+  'dcs-b': 100,
   'dcs-buhar': 100,
   'electric': 100,
   'downtime': 100,
   'sales': 100,
   'shipping': 100,
-  'electrical-maintenance': 80,
+  'electrical-maintenance': 100,
   'mechanical-maintenance': 100,
   'electrical-downtime': 100,
   'mechanical-downtime': 100

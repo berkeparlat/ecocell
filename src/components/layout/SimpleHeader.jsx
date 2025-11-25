@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { LogOut, User, ChevronDown, Shield } from 'lucide-react';
+import { LogOut, User, ChevronDown, Shield, ArrowLeft } from 'lucide-react';
 import { isAdmin } from '../../services/adminService';
 import Modal from '../ui/Modal';
 import ProfileModal from '../profile/ProfileModal';
@@ -54,6 +54,9 @@ const SimpleHeader = () => {
   return (
     <header className="simple-header">
       <div className="header-container">
+        <button className="header-back-btn" onClick={() => navigate(-1)} title="Geri">
+          <ArrowLeft size={24} />
+        </button>
         <div className="header-brand" onClick={handleLogoClick}>
           <img src={logo} alt="Ecocell Logo" className="header-logo" />
           <div className="header-brand-text">

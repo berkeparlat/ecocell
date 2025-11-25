@@ -56,13 +56,20 @@ const ReminderForm = ({ reminder = null, onClose }) => {
     setLoading(true);
 
     try {
+      console.log('Form verisi gönderiliyor:', formData);
+      console.log('Kullanıcı:', user);
+      
       if (reminder) {
-        await updateReminder(reminder.id, formData);
+        const result = await updateReminder(reminder.id, formData);
+        console.log('Güncelleme sonucu:', result);
       } else {
-        await addReminder(formData);
+        const result = await addReminder(formData);
+        console.log('Ekleme sonucu:', result);
       }
+      console.log('Hatırlatıcı başarıyla kaydedildi');
       onClose?.();
     } catch (error) {
+      console.error('Hatırlatıcı kaydedilirken hata:', error);
       alert(error.message || 'Hatırlatıcı kaydedilirken bir hata oluştu.');
     } finally {
       setLoading(false);

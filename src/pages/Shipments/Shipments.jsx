@@ -31,7 +31,7 @@ const Shipments = () => {
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-      const file = await getLatestExcelFile('shipments');
+      const file = await getLatestExcelFile('shipping');
       if (file) {
         setExcelData(file);
       }
