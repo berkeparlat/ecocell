@@ -8,7 +8,7 @@ import {
   orderBy,
   getDoc
 } from 'firebase/firestore';
-import { updatePassword, updateEmail, deleteUser as deleteAuthUser } from 'firebase/auth';
+import { updatePassword, updateEmail } from 'firebase/auth';
 import { db, auth } from '../config/firebase';
 
 // Admin email kontrolü
@@ -48,22 +48,32 @@ export const updateUser = async (userId, userData) => {
   }
 };
 
-// Kullanıcıyı tamamen sil (hem Firestore hem Authentication'dan)
+// Kullanıcı sil (soft delete - Firestore'da deleted flag'i ekler)
+// Not: Firebase Authentication'dan silmek için Cloud Function gerekir
 export const deleteUser = async (userId) => {
   try {
-    // Önce Firestore'dan sil
     const userRef = doc(db, 'users', userId);
-    await deleteDoc(userRef);
-    
-    // Not: Authentication'dan silmek için kullanıcının kendisi login olmalı
-    // veya Cloud Function kullanılmalı. Şimdilik sadece Firestore'dan siliyoruz.
-    // Kullanıcı login yapmaya çalıştığında zaten profil bulunamayacak.
-    
+    // Kullanıcıyı tamamen silmek yerine "deleted" flag'i ekle
+    await updateDoc(userRef, {
+      deleted: true,
+      deletedAt: new Date().toISOString()
+    });
     return { success: true };
   } catch (error) {
     throw error;
   }
 };
+
+// Kullanıcıyı tamamen sil (sadece Firestore'dan)
+export const permanentlyDeleteUser = async (userId) => {
+  try {
+    const userRef = doc(db, 'users', userId);
+    await deleteDoc(userRef);
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};;
 
 // Tüm görevleri getir
 export const getAllTasks = async () => {

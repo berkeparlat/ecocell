@@ -101,14 +101,6 @@ export const AppProvider = ({ children }) => {
         firebaseUser.displayName || firebaseUser.email?.split('@')[0] || 'Kullanici';
 
       userProfileListenerRef.current = listenToUserProfile(firebaseUser.uid, (profile) => {
-        // Kullanıcı silinmişse, profil yoksa veya onaylanmamışsa logout yap
-        if (!profile || profile?.deleted || profile?.approved === false) {
-          logoutUser();
-          setUser(null);
-          localStorage.removeItem('karafiber_user');
-          return;
-        }
-
         const userData = {
           uid: firebaseUser.uid,
           email: firebaseUser.email,
