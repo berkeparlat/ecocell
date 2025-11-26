@@ -852,26 +852,13 @@
   }
 
   .chat-panel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    transform: translateX(100%);
-    transition: transform 0.3s;
-  }
-
-  .chat-panel:has(.chat-header) {
-    transform: translateX(0);
-  }
-
-  .conversations-panel:has(+ .chat-panel .chat-header) {
-    display: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .back-btn-mobile {
-    display: flex;
+    display: flex !important;
   }
 
   .message-bubble {
@@ -884,5 +871,9 @@
 
   .chat-input {
     padding: 0.75rem 1rem;
+  }
+  
+  .no-chat-selected {
+    display: flex;
   }
 }

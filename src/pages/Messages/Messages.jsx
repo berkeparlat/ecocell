@@ -20,6 +20,7 @@ const Messages = () => {
   const [isDepartmentsExpanded, setIsDepartmentsExpanded] = useState(true);
   const [isUsersExpanded, setIsUsersExpanded] = useState(true);
   const [contextMenu, setContextMenu] = useState(null);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth <= 768);
   const chatEndRef = useRef(null);
   const chatUnsubscribeRef = useRef(null);
 
@@ -36,9 +37,14 @@ const Messages = () => {
     const handleClick = () => setContextMenu(null);
     document.addEventListener('click', handleClick);
 
+    // Mobil görünüm kontrolü
+    const handleResize = () => setIsMobileView(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+
     return () => {
       unsubscribe();
       document.removeEventListener('click', handleClick);
+      window.removeEventListener('resize', handleResize);
     };
   }, [user]);
 
@@ -302,6 +308,7 @@ const Messages = () => {
     <div className="messages-page">
       <SimpleHeader />
       <div className="messages-container-chat">
+        {(!isMobileView || !selectedChat) && (
         <div className="conversations-panel">
           <div className="conversations-header">
             <h2>Mesajlar</h2>
@@ -459,7 +466,9 @@ const Messages = () => {
             </div>
           )}
         </div>
+        )}
 
+        {(!isMobileView || selectedChat) && (
         <div className="chat-panel">
           {selectedChat ? (
             <>
@@ -556,6 +565,7 @@ const Messages = () => {
             </div>
           )}
         </div>
+        )}
       </div>
     </div>
   );
