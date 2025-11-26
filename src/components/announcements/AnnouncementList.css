@@ -118,6 +118,8 @@
   border-radius: 0.625rem;
   padding: 0.625rem 1rem;
   transition: all 0.2s;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .search-box:focus-within {

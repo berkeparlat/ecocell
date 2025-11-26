@@ -107,6 +107,8 @@
   background: white;
   min-height: 40px;
   max-height: 40px;
+  pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .search-box svg {
