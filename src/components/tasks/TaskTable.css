@@ -464,40 +464,59 @@
 
 @media (max-width: 768px) {
   .task-table-container {
-    padding: 1rem;
+    padding: 0;
+    border-radius: 12px;
   }
 
   .table-header {
     flex-direction: column;
     align-items: stretch;
-    gap: 1rem;
-    padding: 1rem;
+    gap: 1.25rem;
+    padding: 1.5rem 1.25rem;
   }
 
   .table-title {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .table-title h2 {
+    font-size: 1.375rem;
+  }
+
+  .task-count {
+    font-size: 0.9375rem;
+    padding: 0.5rem 1rem;
   }
 
   .table-actions {
     flex-direction: column;
     align-items: stretch;
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .status-filter {
     width: 100%;
     overflow-x: auto;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem;
+    gap: 0.625rem;
   }
 
   .filter-btn {
     white-space: nowrap;
+    padding: 0.625rem 1.125rem;
+    font-size: 0.9375rem;
+    min-height: 44px;
   }
 
   .add-task-btn {
     width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    min-height: 52px;
+    border-radius: 12px;
   }
 
   .task-filters {
@@ -541,11 +560,12 @@
 
 @media (max-width: 480px) {
   .task-table-container {
-    padding: 0.75rem;
+    padding: 0;
+    border-radius: 10px;
   }
 
   .table-header {
-    padding: 0.75rem;
+    padding: 1.25rem 1rem;
   }
 
   .table-title h2 {
@@ -553,16 +573,20 @@
   }
 
   .task-count {
-    font-size: 0.8rem;
+    font-size: 0.875rem;
+    padding: 0.4rem 0.875rem;
   }
 
   .filter-btn {
-    font-size: 0.75rem;
-    padding: 0.4rem 0.75rem;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+    min-height: 48px;
   }
 
   .add-task-btn {
-    padding: 0.75rem;
-    font-size: 0.875rem;
+    padding: 0.875rem;
+    font-size: 0.9375rem;
+    min-height: 48px;
+    border-radius: 10px;
   }
 }

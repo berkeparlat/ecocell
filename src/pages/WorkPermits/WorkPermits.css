@@ -13,3 +13,23 @@
   margin: 0 auto;
   padding: 2rem;
 }
+
+@media (max-width: 768px) {
+  .work-permits-page {
+    padding-top: 80px;
+  }
+
+  .work-permits-content {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .work-permits-page {
+    padding-top: 72px;
+  }
+
+  .work-permits-content {
+    padding: 1.25rem 1rem;
+  }
+}
