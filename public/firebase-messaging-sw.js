@@ -21,21 +21,14 @@ firebase.initializeApp(firebaseConfig);
 const messaging = firebase.messaging();
 
 // Background mesajları dinle (uygulama kapalı veya arka planda)
+// NOT: Firebase otomatik olarak notification gösteriyor
+// Manuel showNotification çağrısı yapmaya gerek yok, çift bildirim olur
 messaging.onBackgroundMessage((payload) => {
   console.log('[firebase-messaging-sw.js] Background mesaj alındı:', payload);
-
-  const notificationTitle = payload.notification?.title || 'Yeni Bildirim';
-  const notificationOptions = {
-    body: payload.notification?.body || 'Yeni bir bildiriminiz var',
-    icon: '/logo.png',
-    badge: '/logo.png',
-    tag: payload.data?.type || 'default',
-    requireInteraction: false,
-    data: payload.data || {}
-  };
-
-  // Bildirimi göster
-  return self.registration.showNotification(notificationTitle, notificationOptions);
+  
+  // Firebase otomatik olarak bildirimi gösteriyor
+  // Burada sadece log tutuyoruz veya özel işlemler yapabiliriz
+  // Örnek: localStorage'a kaydetme, badge sayısını güncelleme vb.
 });
 
 // Bildirime tıklanınca
