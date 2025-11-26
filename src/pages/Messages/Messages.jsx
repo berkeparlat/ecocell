@@ -323,19 +323,41 @@ const Messages = () => {
                 <h3>Yeni Sohbet</h3>
               </div>
               
-              <div className="search-box">
-                <Search size={20} />
-                <input
-                  type="text"
-                  placeholder="Kullanıcı veya birim ara..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                />
-              </div>
-
               <div className="users-list">
+                {/* Kişiler Accordion */}
+                <div 
+                  className="list-section-header"
+                  onClick={() => setIsUsersExpanded(!isUsersExpanded)}
+                >
+                  <div className="section-header-content">
+                    <span className="section-title">Kişiler</span>
+                    <span className="section-count">({filteredUsers.length})</span>
+                  </div>
+                  <ChevronDown 
+                    size={20} 
+                    className={`section-chevron ${isUsersExpanded ? 'expanded' : ''}`}
+                  />
+                </div>
+                
+                {/* Kullanıcılar */}
+                {isUsersExpanded && filteredUsers.map(u => (
+                  <div
+                    key={u.id}
+                    className="user-item"
+                    onClick={() => handleStartNewChat(u)}
+                  >
+                    <div className="user-avatar">
+                      <User size={24} />
+                    </div>
+                    <div className="user-info-chat">
+                      <div className="user-name-chat">{u.fullName || u.displayName || u.email}</div>
+                      {u.department && <div className="user-dept">{u.department}</div>}
+                    </div>
+                  </div>
+                ))}
+
                 {/* Birimler Accordion */}
-                {!searchQuery && departments && (
+                {departments && (
                   <>
                     <div 
                       className="list-section-header"
@@ -387,38 +409,6 @@ const Messages = () => {
                     )}
                   </>
                 )}
-                
-                {/* Kişiler Accordion */}
-                <div 
-                  className="list-section-header"
-                  onClick={() => setIsUsersExpanded(!isUsersExpanded)}
-                >
-                  <div className="section-header-content">
-                    <span className="section-title">Kişiler</span>
-                    <span className="section-count">({filteredUsers.length})</span>
-                  </div>
-                  <ChevronDown 
-                    size={20} 
-                    className={`section-chevron ${isUsersExpanded ? 'expanded' : ''}`}
-                  />
-                </div>
-                
-                {/* Kullanıcılar */}
-                {isUsersExpanded && filteredUsers.map(u => (
-                  <div
-                    key={u.id}
-                    className="user-item"
-                    onClick={() => handleStartNewChat(u)}
-                  >
-                    <div className="user-avatar">
-                      <User size={24} />
-                    </div>
-                    <div className="user-info-chat">
-                      <div className="user-name-chat">{u.fullName || u.displayName || u.email}</div>
-                      {u.department && <div className="user-dept">{u.department}</div>}
-                    </div>
-                  </div>
-                ))}
               </div>
             </div>
           ) : (

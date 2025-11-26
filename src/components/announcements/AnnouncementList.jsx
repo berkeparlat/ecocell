@@ -133,18 +133,6 @@ const AnnouncementList = () => {
         </div>
       </div>
 
-      <div className="announcement-filters">
-        <div className="search-box">
-          <Search size={18} />
-          <input
-            type="text"
-            placeholder="Duyuru ara"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
-      </div>
-
       <div className="announcements-grid">
         {filteredAnnouncements.length === 0 ? (
           <div className="no-announcements">

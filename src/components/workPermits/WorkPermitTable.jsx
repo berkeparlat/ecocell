@@ -131,15 +131,6 @@ const WorkPermitTable = () => {
       </div>
 
       <div className="work-permit-filters">
-        <div className="search-box">
-          <Search size={18} />
-          <input
-            type="text"
-            placeholder="İş izni ara"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-        </div>
         <div className="department-filter">
           <Building2 size={18} />
           <select 
