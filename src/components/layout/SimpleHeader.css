@@ -332,82 +332,101 @@
 @media (max-width: 768px) {
   .simple-header .header-container {
     padding: 0.5rem 0.75rem !important;
-    grid-template-columns: auto 1fr auto !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
     gap: 0.5rem !important;
   }
 
   .simple-header .header-nav-buttons {
-    gap: 0.5rem !important;
+    display: flex !important;
+    gap: 0.4rem !important;
+    flex-shrink: 0 !important;
   }
 
   .simple-header .header-back-btn,
-  .simple-header .header-home-btn,
-  .simple-header .header-nav-icon-btn {
+  .simple-header .header-home-btn {
     width: 36px !important;
     height: 36px !important;
     border-radius: 10px !important;
     min-width: 36px !important;
-    min-height: 36px !important;
+    padding: 0 !important;
   }
 
   .simple-header .header-back-btn svg,
-  .simple-header .header-home-btn svg,
-  .simple-header .header-nav-icon-btn svg {
+  .simple-header .header-home-btn svg {
     width: 18px !important;
     height: 18px !important;
   }
 
-  .simple-header .header-brand-text h1 {
-    font-size: 0.875rem !important;
-    white-space: nowrap !important;
-  }
-
-  .simple-header .header-brand-text span {
-    font-size: 0.65rem !important;
+  .simple-header .header-brand {
+    flex: 1 !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    min-width: 0 !important;
   }
 
   .simple-header .header-logo {
     height: 32px !important;
     max-height: 32px !important;
+    flex-shrink: 0 !important;
   }
 
-  .simple-header .header-brand {
-    gap: 0.5rem !important;
-  }
-
-  .simple-header .view-toggle-btn span {
+  .simple-header .header-brand-text {
     display: none !important;
   }
 
+  .simple-header .header-actions {
+    display: flex !important;
+    gap: 0.4rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  .simple-header .header-nav-icon-btn {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 10px !important;
+    min-width: 36px !important;
+    padding: 0 !important;
+  }
+
+  .simple-header .header-nav-icon-btn svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .simple-header .header-badge {
+    font-size: 0.6rem !important;
+    padding: 0.1rem 0.3rem !important;
+    min-width: 14px !important;
+    top: -4px !important;
+    right: -4px !important;
+  }
+
   .simple-header .header-user {
-    padding-left: 0.5rem !important;
+    padding-left: 0 !important;
     border-left: none !important;
+    gap: 0 !important;
   }
 
   .simple-header .user-info {
     display: none !important;
   }
 
-  .simple-header .user-name,
-  .simple-header .user-department {
-    display: none !important;
-  }
-
   .simple-header .user-menu-trigger {
     padding: 0.25rem !important;
     gap: 0 !important;
+    min-width: 36px !important;
+    height: 36px !important;
   }
 
-  .simple-header .header-actions {
-    gap: 0.35rem !important;
+  .simple-header .user-avatar {
+    width: 32px !important;
+    height: 32px !important;
   }
 
-  .simple-header .header-badge {
-    font-size: 0.65rem !important;
-    padding: 0.1rem 0.3rem !important;
-    min-width: 16px !important;
-    top: -4px !important;
-    right: -4px !important;
+  .simple-header .user-menu-trigger svg:last-child {
+    display: none !important;
   }
 }
 
@@ -415,36 +434,25 @@
 @media (max-width: 480px) {
   .simple-header .header-container {
     padding: 0.4rem 0.5rem !important;
-    gap: 0.35rem !important;
+    gap: 0.3rem !important;
   }
 
   .simple-header .header-nav-buttons {
-    gap: 0.35rem !important;
+    gap: 0.3rem !important;
   }
 
   .simple-header .header-back-btn,
-  .simple-header .header-home-btn,
-  .simple-header .header-nav-icon-btn {
+  .simple-header .header-home-btn {
     width: 32px !important;
     height: 32px !important;
     border-radius: 8px !important;
     min-width: 32px !important;
-    min-height: 32px !important;
   }
 
   .simple-header .header-back-btn svg,
-  .simple-header .header-home-btn svg,
-  .simple-header .header-nav-icon-btn svg {
+  .simple-header .header-home-btn svg {
     width: 16px !important;
     height: 16px !important;
-  }
-
-  .simple-header .header-brand-text h1 {
-    font-size: 0.8rem !important;
-  }
-
-  .simple-header .header-brand-text span {
-    display: none !important;
   }
 
   .simple-header .header-logo {
@@ -452,22 +460,36 @@
     max-height: 28px !important;
   }
 
-  .simple-header .header-brand {
-    gap: 0.35rem !important;
-  }
-
   .simple-header .header-actions {
-    gap: 0.25rem !important;
+    gap: 0.3rem !important;
   }
 
-  .simple-header .header-user {
-    padding-left: 0.35rem !important;
+  .simple-header .header-nav-icon-btn {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 8px !important;
+    min-width: 32px !important;
+  }
+
+  .simple-header .header-nav-icon-btn svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+
+  .simple-header .user-menu-trigger {
+    min-width: 32px !important;
+    height: 32px !important;
+  }
+
+  .simple-header .user-avatar {
+    width: 28px !important;
+    height: 28px !important;
   }
 
   .simple-header .header-badge {
-    font-size: 0.6rem !important;
+    font-size: 0.55rem !important;
     padding: 0.1rem 0.25rem !important;
-    min-width: 14px !important;
+    min-width: 13px !important;
     top: -3px !important;
     right: -3px !important;
   }
