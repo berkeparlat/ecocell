@@ -135,7 +135,7 @@ const WorkPermitTable = () => {
           <Search size={18} />
           <input
             type="text"
-            placeholder="İş izinlerinde ara..."
+            placeholder="İş izni ara"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />

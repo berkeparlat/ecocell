@@ -138,7 +138,7 @@ const AnnouncementList = () => {
           <Search size={18} />
           <input
             type="text"
-            placeholder="Duyurularda ara..."
+            placeholder="Duyuru ara"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
