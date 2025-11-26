@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
-import { LogOut, User, ChevronDown, Shield, ArrowLeft, Home, Bell, MessageSquare, Megaphone } from 'lucide-react';
+import { LogOut, User, Shield, ArrowLeft, Home, Bell, MessageSquare, Megaphone } from 'lucide-react';
 import { isAdmin } from '../../services/adminService';
 import Modal from '../ui/Modal';
 import ProfileModal from '../profile/ProfileModal';
@@ -11,10 +11,10 @@ import './SimpleHeader.css';
 const SimpleHeader = () => {
   const navigate = useNavigate();
   const { user, logout, unreadNotificationsCount, unreadAnnouncementsCount, conversations = [] } = useApp();
-  const [showMenu, setShowMenu] = useState(false);
+  const [showProfileMenu, setShowProfileMenu] = useState(false);
   const [showNotificationsMenu, setShowNotificationsMenu] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
-  const menuRef = useRef(null);
+  const profileMenuRef = useRef(null);
   const notificationsMenuRef = useRef(null);
   
   // Okunmamış mesaj sayısını hesapla
@@ -26,22 +26,22 @@ const SimpleHeader = () => {
   // Dışarı tıklayınca menüyü kapat
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setShowMenu(false);
+      if (profileMenuRef.current && !profileMenuRef.current.contains(event.target)) {
+        setShowProfileMenu(false);
       }
       if (notificationsMenuRef.current && !notificationsMenuRef.current.contains(event.target)) {
         setShowNotificationsMenu(false);
       }
     };
 
-    if (showMenu || showNotificationsMenu) {
+    if (showProfileMenu || showNotificationsMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showMenu, showNotificationsMenu]);
+  }, [showProfileMenu, showNotificationsMenu]);
 
   const handleLogout = () => {
     if (window.confirm('Çıkış yapmak istediğinizden emin misiniz?')) {
@@ -49,12 +49,12 @@ const SimpleHeader = () => {
     }
   };
 
-  const toggleMenu = () => {
-    setShowMenu(!showMenu);
+  const toggleProfileMenu = () => {
+    setShowProfileMenu(!showProfileMenu);
   };
 
-  const handleProfileClick = () => {
-    setShowMenu(false);
+  const handleProfileModalOpen = () => {
+    setShowProfileMenu(false);
     setShowProfileModal(true);
   };
 
@@ -138,46 +138,34 @@ const SimpleHeader = () => {
             )}
             </div>
             
-            <button 
-              className="header-action-btn" 
-              onClick={handleProfileClick}
-              title="Profil"
-            >
-              <User size={24} />
-            </button>
-          </div>
-          
-          <div className="header-user" ref={menuRef}>
-            <button className="user-menu-trigger" onClick={toggleMenu}>
-              <div className="user-info">
-                <span className="user-name">{user?.fullName || user?.username}</span>
-                <span className="user-department">{user?.department}</span>
-              </div>
-              <ChevronDown size={18} className={`chevron ${showMenu ? 'open' : ''}`} />
-            </button>
-            
-            {showMenu && (
-              <div className="user-dropdown">
-                <button className="dropdown-item" onClick={handleProfileClick}>
-                  <User size={16} />
-                  <span>Profil</span>
-                </button>
-                {isAdmin(user) && (
-                  <>
-                    <div className="dropdown-divider"></div>
-                    <button className="dropdown-item admin" onClick={() => { setShowMenu(false); navigate('/admin'); }}>
-                      <Shield size={16} />
+            <div className="header-profile-wrapper" ref={profileMenuRef}>
+              <button 
+                className="header-action-btn" 
+                onClick={toggleProfileMenu}
+                title="Profil"
+              >
+                <User size={24} />
+              </button>
+
+              {showProfileMenu && (
+                <div className="notifications-dropdown">
+                  <button className="notifications-dropdown-item" onClick={handleProfileModalOpen}>
+                    <User size={18} />
+                    <span>Profil</span>
+                  </button>
+                  {isAdmin(user) && (
+                    <button className="notifications-dropdown-item" onClick={() => { setShowProfileMenu(false); navigate('/admin'); }}>
+                      <Shield size={18} />
                       <span>Admin Panel</span>
                     </button>
-                  </>
-                )}
-                <div className="dropdown-divider"></div>
-                <button className="dropdown-item logout" onClick={handleLogout}>
-                  <LogOut size={16} />
-                  <span>Çıkış Yap</span>
-                </button>
-              </div>
-            )}
+                  )}
+                  <button className="notifications-dropdown-item logout" onClick={handleLogout}>
+                    <LogOut size={18} />
+                    <span>Çıkış Yap</span>
+                  </button>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
