@@ -55,6 +55,7 @@ export const getFCMToken = async (userId) => {
 
 /**
  * Foreground mesajları dinle (uygulama açıkken)
+ * NOT: Service Worker zaten bildirim gösteriyor, burada tekrar göstermeye gerek yok
  */
 export const onMessageListener = (callback) => {
   if (!messaging) {
@@ -65,21 +66,13 @@ export const onMessageListener = (callback) => {
   return onMessage(messaging, (payload) => {
     console.log('Foreground mesaj alındı:', payload);
     
-    // Callback'e mesajı gönder
+    // Callback'e mesajı gönder (state güncellemeleri için)
     if (callback) {
       callback(payload);
     }
 
-    // Tarayıcı bildirimi göster
-    if (Notification.permission === 'granted') {
-      new Notification(payload.notification?.title || 'Yeni Bildirim', {
-        body: payload.notification?.body || '',
-        icon: '/logo.png',
-        badge: '/logo.png',
-        tag: payload.data?.type || 'default',
-        data: payload.data || {}
-      });
-    }
+    // NOT: Service Worker (firebase-messaging-sw.js) zaten bildirim gösteriyor
+    // Burada tekrar gösterirsek çift bildirim olur, bu yüzden kaldırıldı
   });
 };
 
