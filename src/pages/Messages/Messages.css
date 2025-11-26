@@ -122,6 +122,10 @@
   background: transparent;
   padding: 0;
   line-height: 1.2;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 /* Departman Grup Mesajlaşma */

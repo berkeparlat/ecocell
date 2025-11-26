@@ -165,6 +165,10 @@
   outline: none;
   font-size: 0.875rem;
   color: #212121;
+  pointer-events: auto;
+  touch-action: manipulation;
+  -webkit-user-select: text;
+  user-select: text;
 }
 
 .search-box input::placeholder {
