@@ -120,6 +120,13 @@ export const AppProvider = ({ children }) => {
 
         setUser(userData);
         localStorage.setItem('karafiber_user', JSON.stringify(userData));
+        
+        // Bildirim iznini iste (sadece bir kez, ilk giriş sonrası)
+        setTimeout(() => {
+          requestNotificationPermission(firebaseUser.uid).catch(err => {
+            console.log('Bildirim izni istenemedi:', err);
+          });
+        }, 2000); // 2 saniye bekle ki kullanıcı arayüzü görsün
       });
     });
 
