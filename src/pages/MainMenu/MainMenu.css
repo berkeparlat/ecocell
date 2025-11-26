@@ -133,15 +133,17 @@
   }
 
   .main-menu-container {
-    padding: 1.5rem 1.25rem;
+    padding: 2rem 1.25rem 2rem;
     flex: 1;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   .main-menu-title {
     font-size: 1.75rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
     text-align: center;
     font-weight: 700;
   }
@@ -149,9 +151,9 @@
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.25rem;
-    flex: 1;
     max-width: 100%;
-    align-content: start;
+    width: 100%;
+    align-content: center;
   }
 
   .menu-card {
@@ -189,12 +191,13 @@
   }
 
   .main-menu-container {
-    padding: 1.25rem 1rem;
+    padding: 1.5rem 1rem 1.5rem;
+    justify-content: center;
   }
 
   .main-menu-title {
     font-size: 1.5rem;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.75rem;
     font-weight: 700;
   }
 
