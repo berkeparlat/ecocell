@@ -134,5 +134,42 @@
 
   .kanban-columns {
     grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .kanban-column {
+    border-radius: 0.625rem;
+  }
+
+  .kanban-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .kanban-actions {
+    width: 100%;
+  }
+
+  .kanban-actions button {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .kanban-board {
+    padding: 0.75rem;
+  }
+
+  .kanban-columns {
+    gap: 0.75rem;
+  }
+
+  .kanban-column {
+    padding: 0.875rem;
+  }
+
+  .kanban-header h2 {
+    font-size: 1.25rem;
   }
 }
