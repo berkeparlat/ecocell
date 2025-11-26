@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cache Temizle - Ecocell</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        button {
+            background: white;
+            color: #1b5e20;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: all 0.2s;
+        }
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+        .info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            max-width: 500px;
+        }
+        .info strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔄 Ecocell Portal - Cache Temizleme</h1>
+    <p>Yeni değişiklikleri görmek için cache'i temizleyin</p>
+    
+    <button onclick="clearCache()">Cache'i Temizle ve Ana Sayfaya Git</button>
+    
+    <div class="info">
+        <strong>Mobil tarayıcıda manuel temizlik:</strong>
+        1. Ayarlar > Site Ayarları > ecocell.vercel.app<br>
+        2. Verileri Temizle<br>
+        3. Sayfayı yenileyin (Pull down to refresh)
+    </div>
+
+    <script>
+        async function clearCache() {
+            try {
+                // Service Worker cache temizle
+                if ('serviceWorker' in navigator) {
+                    const registrations = await navigator.serviceWorker.getRegistrations();
+                    for (const registration of registrations) {
+                        await registration.unregister();
+                    }
+                    console.log('Service Workers temizlendi');
+                }
+
+                // Cache API temizle
+                if ('caches' in window) {
+                    const cacheNames = await caches.keys();
+                    await Promise.all(
+                        cacheNames.map(cacheName => caches.delete(cacheName))
+                    );
+                    console.log('Cache API temizlendi');
+                }
+
+                // LocalStorage temizle
+                localStorage.clear();
+                sessionStorage.clear();
+
+                alert('✅ Cache temizlendi! Ana sayfaya yönlendiriliyorsunuz...');
+                
+                // Timestamp ekleyerek cache bypass
+                window.location.href = '/main-menu?nocache=' + Date.now();
+            } catch (error) {
+                console.error('Cache temizleme hatası:', error);
+                alert('⚠️ Cache temizlenemedi. Lütfen tarayıcı ayarlarından temizleyin.');
+            }
+        }
+    </script>
+</body>
+</html>

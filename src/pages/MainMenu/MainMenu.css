@@ -129,33 +129,85 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    padding-top: 80px;
   }
 
   .main-menu-container {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 1.25rem;
     flex: 1;
     display: flex;
     flex-direction: column;
   }
 
   .main-menu-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 700;
   }
 
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 1.25rem;
     flex: 1;
     max-width: 100%;
     align-content: start;
   }
 
   .menu-card {
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem;
     max-width: 100%;
-    min-height: 160px;
+    min-height: 180px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .menu-card:active {
+    transform: scale(0.97);
+  }
+
+  .menu-icon {
+    width: 72px;
+    height: 72px;
     border-radius: 16px;
+  }
+
+  .menu-icon svg {
+    width: 36px !important;
+    height: 36px !important;
+  }
+
+  .menu-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-menu-page {
+    padding-top: 72px;
+  }
+
+  .main-menu-container {
+    padding: 1.25rem 1rem;
+  }
+
+  .main-menu-title {
+    font-size: 1.5rem;
+    margin-bottom: 1.25rem;
+    font-weight: 700;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .menu-card {
+    padding: 2rem 1.25rem;
+    border-radius: 16px;
+    min-height: 160px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   }
 
   .menu-icon {
@@ -171,44 +223,6 @@
 
   .menu-card-title {
     font-size: 0.9375rem;
-    font-weight: 600;
-  }
-}
-
-@media (max-width: 480px) {
-  .main-menu-container {
-    padding: 1rem 0.875rem;
-  }
-
-  .main-menu-title {
-    font-size: 1.375rem;
-    margin-bottom: 1.25rem;
-  }
-
-  .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.875rem;
-  }
-
-  .menu-card {
-    padding: 1.75rem 1.25rem;
-    border-radius: 14px;
-    min-height: 140px;
-  }
-
-  .menu-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 12px;
-  }
-
-  .menu-icon svg {
-    width: 28px !important;
-    height: 28px !important;
-  }
-
-  .menu-card-title {
-    font-size: 0.875rem;
     font-weight: 600;
   }
 

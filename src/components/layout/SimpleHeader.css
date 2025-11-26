@@ -278,48 +278,50 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
   }
 
   .simple-header .header-container {
-    padding: 0.75rem 1rem !important;
+    padding: 1rem 1.25rem !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 0.75rem !important;
-    min-height: 64px;
+    gap: 1rem !important;
+    min-height: 80px !important;
   }
 
   .simple-header .header-nav-buttons {
     display: flex !important;
-    gap: 0.5rem !important;
+    gap: 0.75rem !important;
     flex-shrink: 0 !important;
   }
 
   .simple-header .header-back-btn,
   .simple-header .header-home-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 12px !important;
-    min-width: 44px !important;
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 14px !important;
+    min-width: 52px !important;
     padding: 0 !important;
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.25) !important;
   }
 
   .simple-header .header-back-btn svg,
   .simple-header .header-home-btn svg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
   }
 
   .simple-header .header-brand {
     flex: 1 !important;
     justify-content: center !important;
-    gap: 0.5rem !important;
+    gap: 0.75rem !important;
     min-width: 0 !important;
   }
 
   .simple-header .header-logo {
-    height: 32px !important;
-    max-height: 32px !important;
+    height: 40px !important;
+    max-height: 40px !important;
     flex-shrink: 0 !important;
   }
 
@@ -329,13 +331,13 @@
 
   .simple-header .header-actions {
     display: flex !important;
-    gap: 0.5rem !important;
+    gap: 0.75rem !important;
     flex-shrink: 0 !important;
   }
 
   .simple-header .header-actions-buttons {
     display: flex !important;
-    gap: 0.5rem !important;
+    gap: 0.75rem !important;
   }
 
   .simple-header .header-notifications-wrapper,
@@ -344,24 +346,26 @@
   }
 
   .simple-header .header-action-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 12px !important;
-    min-width: 44px !important;
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 14px !important;
+    min-width: 52px !important;
     padding: 0 !important;
+    box-shadow: 0 2px 8px rgba(27, 94, 32, 0.25) !important;
   }
 
   .simple-header .header-action-btn svg {
-    width: 20px !important;
-    height: 20px !important;
+    width: 24px !important;
+    height: 24px !important;
   }
 
   .simple-header .header-badge {
-    font-size: 0.6rem !important;
-    padding: 0.1rem 0.3rem !important;
-    min-width: 14px !important;
-    top: -4px !important;
-    right: -4px !important;
+    font-size: 0.7rem !important;
+    padding: 0.2rem 0.4rem !important;
+    min-width: 18px !important;
+    top: -6px !important;
+    right: -6px !important;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4) !important;
   }
 
   .simple-header .notifications-dropdown {
@@ -416,52 +420,52 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .simple-header .header-container {
-    padding: 0.625rem 0.75rem !important;
-    gap: 0.5rem !important;
-    min-height: 60px;
+    padding: 0.875rem 1rem !important;
+    gap: 0.625rem !important;
+    min-height: 72px !important;
   }
 
   .simple-header .header-nav-buttons {
-    gap: 0.4rem !important;
+    gap: 0.625rem !important;
   }
 
   .simple-header .header-back-btn,
   .simple-header .header-home-btn {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 10px !important;
-    min-width: 40px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    min-width: 48px !important;
   }
 
   .simple-header .header-back-btn svg,
   .simple-header .header-home-btn svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
 
   .simple-header .header-logo {
-    height: 32px !important;
-    max-height: 32px !important;
+    height: 36px !important;
+    max-height: 36px !important;
   }
 
   .simple-header .header-actions {
-    gap: 0.4rem !important;
+    gap: 0.625rem !important;
   }
 
   .simple-header .header-actions-buttons {
-    gap: 0.4rem !important;
+    gap: 0.625rem !important;
   }
 
   .simple-header .header-action-btn {
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 10px !important;
-    min-width: 40px !important;
+    width: 48px !important;
+    height: 48px !important;
+    border-radius: 12px !important;
+    min-width: 48px !important;
   }
 
   .simple-header .header-action-btn svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 22px !important;
+    height: 22px !important;
   }
 
   .simple-header .notifications-dropdown {
@@ -496,11 +500,11 @@
   }
 
   .simple-header .header-badge {
-    font-size: 0.55rem !important;
-    padding: 0.1rem 0.25rem !important;
-    min-width: 13px !important;
-    top: -3px !important;
-    right: -3px !important;
+    font-size: 0.65rem !important;
+    padding: 0.15rem 0.35rem !important;
+    min-width: 16px !important;
+    top: -5px !important;
+    right: -5px !important;
   }
 
   .simple-header .user-menu {
