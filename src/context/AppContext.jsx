@@ -42,6 +42,13 @@ import {
   deleteReminder as deleteReminderFromStore,
 } from '../services/reminderService';
 import { checkRemindersAndNotify } from '../services/reminderNotificationService';
+import {
+  requestNotificationPermission,
+  getFCMToken,
+  onMessageListener,
+  enableNotifications,
+  disableNotifications,
+} from '../services/pushNotificationService';
 
 const AppContext = createContext();
 
@@ -223,6 +230,51 @@ export const AppProvider = ({ children }) => {
         notificationsListenerRef.current = null;
       }
     };
+  }, [user?.uid]);
+
+  // Push Notifications setup
+  useEffect(() => {
+    if (!user?.uid) return;
+
+    // Kullanıcı giriş yaptığında bildirim izni kontrolü
+    const setupPushNotifications = async () => {
+      try {
+        // Service Worker'ı kaydet
+        if ('serviceWorker' in navigator) {
+          const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+          console.log('Service Worker kaydedildi:', registration);
+        }
+
+        // Bildirim iznini kontrol et
+        if (Notification.permission === 'default') {
+          // İlk girişte sor (isteğe bağlı - kullanıcı profilde de açabilir)
+          console.log('Bildirim izni henüz verilmedi');
+        } else if (Notification.permission === 'granted') {
+          // İzin varsa token al ve kaydet
+          await getFCMToken(user.uid);
+        }
+
+        // Foreground mesajları dinle
+        const unsubscribeMessages = onMessageListener((payload) => {
+          console.log('Yeni bildirim:', payload);
+          
+          // Bildirimleri ve duyuruları yenile
+          if (payload.data?.type === 'task') {
+            // Task güncellemesi - listener zaten çalışıyor
+          } else if (payload.data?.type === 'announcement') {
+            // Duyuru güncellemesi
+          } else if (payload.data?.type === 'message') {
+            // Mesaj güncellemesi
+          }
+        });
+
+        return unsubscribeMessages;
+      } catch (error) {
+        console.error('Push notification setup hatası:', error);
+      }
+    };
+
+    setupPushNotifications();
   }, [user?.uid]);
 
   useEffect(() => {
@@ -634,6 +686,21 @@ export const AppProvider = ({ children }) => {
   const unreadNotificationsCount = getUnreadCount(notifications);
   const unreadAnnouncementsCount = getUnreadAnnouncementsCount(announcements, user?.uid || '');
 
+  // Push notification fonksiyonları
+  const enablePushNotifications = async () => {
+    if (!user?.uid) {
+      throw new Error('Oturum açılmamış');
+    }
+    return await enableNotifications(user.uid);
+  };
+
+  const disablePushNotifications = async () => {
+    if (!user?.uid) {
+      throw new Error('Oturum açılmamış');
+    }
+    return await disableNotifications(user.uid);
+  };
+
   const value = {
     user,
     login,
@@ -668,6 +735,8 @@ export const AppProvider = ({ children }) => {
     setViewMode,
     departments,
     updateDepartments,
+    enablePushNotifications,
+    disablePushNotifications,
   };
 
   return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
