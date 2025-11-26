@@ -195,7 +195,7 @@ const Messages = () => {
       groupType: department,
       members: targetUsers
     });
-    setIsGroupChat(true);
+    setIsGroupChat(false);
     setChatMessages([]);
     setShowNewChat(false);
   };
@@ -252,8 +252,7 @@ const Messages = () => {
       return;
     }
 
-    // Grup chat moduna geç
-    setIsGroupChat(true);
+    // Grup chat görünümüne geç ama henüz disable etme
     setSelectedChat({
       userId: 'group_' + selectedDepartment,
       userName: selectedDepartment === 'all' ? 'Tüm Karafiber Elyaf' : selectedDepartment,
@@ -548,12 +547,12 @@ const Messages = () => {
               <form className="chat-input" onSubmit={handleSendMessage}>
                 <input
                   type="text"
-                  placeholder={isGroupChat ? "Mesaj gönderildi..." : "Mesaj yazın..."}
+                  placeholder={isGroupChat ? "Grup mesajı yazın..." : "Mesaj yazın..."}
                   value={messageInput}
                   onChange={(e) => setMessageInput(e.target.value)}
-                  disabled={loading || isGroupChat}
+                  disabled={loading}
                 />
-                <button type="submit" disabled={loading || !messageInput.trim() || isGroupChat}>
+                <button type="submit" disabled={loading || !messageInput.trim()}>
                   <Send size={20} />
                 </button>
               </form>

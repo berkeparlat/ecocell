@@ -19,7 +19,6 @@ const AnnouncementList = () => {
     { id: 'all', label: 'Tümü', color: '#757575' },
     { id: 'low', label: 'Bilgilendirme', color: '#616161' },
     { id: 'high', label: 'Önemli', color: '#e65100' },
-    { id: 'urgent', label: 'Acil', color: '#c62828' },
   ];
 
   const filteredAnnouncements = announcements.filter(announcement => {
@@ -86,8 +85,7 @@ const AnnouncementList = () => {
   const getPriorityLabel = (priority) => {
     const priorityMap = {
       'low': 'Bilgilendirme',
-      'high': 'Önemli',
-      'urgent': 'Acil'
+      'high': 'Önemli'
     };
     return priorityMap[priority] || 'Bilgilendirme';
   };
