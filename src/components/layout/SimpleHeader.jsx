@@ -12,11 +12,16 @@ const SimpleHeader = () => {
   const navigate = useNavigate();
   const { user, logout, unreadNotificationsCount, unreadAnnouncementsCount, conversations = [] } = useApp();
   const [showMenu, setShowMenu] = useState(false);
+  const [showNotificationsMenu, setShowNotificationsMenu] = useState(false);
   const [showProfileModal, setShowProfileModal] = useState(false);
   const menuRef = useRef(null);
+  const notificationsMenuRef = useRef(null);
   
   // Okunmamış mesaj sayısını hesapla
   const unreadMessagesCount = conversations.filter(conv => conv.unreadCount > 0).length;
+  
+  // Toplam bildirim sayısı
+  const totalNotifications = unreadAnnouncementsCount + unreadNotificationsCount + unreadMessagesCount;
 
   // Dışarı tıklayınca menüyü kapat
   useEffect(() => {
@@ -24,16 +29,19 @@ const SimpleHeader = () => {
       if (menuRef.current && !menuRef.current.contains(event.target)) {
         setShowMenu(false);
       }
+      if (notificationsMenuRef.current && !notificationsMenuRef.current.contains(event.target)) {
+        setShowNotificationsMenu(false);
+      }
     };
 
-    if (showMenu) {
+    if (showMenu || showNotificationsMenu) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [showMenu]);
+  }, [showMenu, showNotificationsMenu]);
 
   const handleLogout = () => {
     if (window.confirm('Çıkış yapmak istediğinizden emin misiniz?')) {
@@ -54,6 +62,15 @@ const SimpleHeader = () => {
     navigate('/main-menu');
   };
 
+  const toggleNotificationsMenu = () => {
+    setShowNotificationsMenu(!showNotificationsMenu);
+  };
+
+  const handleNotificationClick = (path) => {
+    setShowNotificationsMenu(false);
+    navigate(path);
+  };
+
   return (
     <header className="simple-header">
       <div className="header-container">
@@ -70,38 +87,55 @@ const SimpleHeader = () => {
         </div>
 
         <div className="header-actions">
-          <button 
-            className="header-nav-icon-btn" 
-            onClick={() => navigate('/announcements')}
-            title="Duyurular"
-          >
-            <Megaphone size={22} />
-            {unreadAnnouncementsCount > 0 && (
-              <span className="header-badge">{unreadAnnouncementsCount}</span>
+          <div className="header-notifications-wrapper" ref={notificationsMenuRef}>
+            <button 
+              className="header-nav-icon-btn" 
+              onClick={toggleNotificationsMenu}
+              title="Bildirimler"
+            >
+              <Bell size={22} />
+              {totalNotifications > 0 && (
+                <span className="header-badge">{totalNotifications}</span>
+              )}
+            </button>
+
+            {showNotificationsMenu && (
+              <div className="notifications-dropdown">
+                <button 
+                  className="notifications-dropdown-item" 
+                  onClick={() => handleNotificationClick('/announcements')}
+                >
+                  <Megaphone size={18} />
+                  <span>Duyurular</span>
+                  {unreadAnnouncementsCount > 0 && (
+                    <span className="dropdown-badge">{unreadAnnouncementsCount}</span>
+                  )}
+                </button>
+                
+                <button 
+                  className="notifications-dropdown-item" 
+                  onClick={() => handleNotificationClick('/notifications')}
+                >
+                  <Bell size={18} />
+                  <span>Bildirimler</span>
+                  {unreadNotificationsCount > 0 && (
+                    <span className="dropdown-badge">{unreadNotificationsCount}</span>
+                  )}
+                </button>
+                
+                <button 
+                  className="notifications-dropdown-item" 
+                  onClick={() => handleNotificationClick('/messages')}
+                >
+                  <MessageSquare size={18} />
+                  <span>Mesajlar</span>
+                  {unreadMessagesCount > 0 && (
+                    <span className="dropdown-badge">{unreadMessagesCount}</span>
+                  )}
+                </button>
+              </div>
             )}
-          </button>
-          
-          <button 
-            className="header-nav-icon-btn" 
-            onClick={() => navigate('/notifications')}
-            title="Bildirimler"
-          >
-            <Bell size={22} />
-            {unreadNotificationsCount > 0 && (
-              <span className="header-badge">{unreadNotificationsCount}</span>
-            )}
-          </button>
-          
-          <button 
-            className="header-nav-icon-btn" 
-            onClick={() => navigate('/messages')}
-            title="Mesajlar"
-          >
-            <MessageSquare size={22} />
-            {unreadMessagesCount > 0 && (
-              <span className="header-badge">{unreadMessagesCount}</span>
-            )}
-          </button>
+          </div>
           
           <div className="header-user" ref={menuRef}>
             <button className="user-menu-trigger" onClick={toggleMenu}>
