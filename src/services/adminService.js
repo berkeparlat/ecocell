@@ -184,3 +184,84 @@ export const getStatistics = async () => {
     throw error;
   }
 };
+
+// Tüm iş izinlerini getir
+export const getAllWorkPermits = async () => {
+  try {
+    const permitsRef = collection(db, 'workPermits');
+    const q = query(permitsRef, orderBy('createdAt', 'desc'));
+    const snapshot = await getDocs(q);
+    const permits = [];
+    snapshot.forEach((doc) => {
+      permits.push({ id: doc.id, ...doc.data() });
+    });
+    return permits;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// İş izni sil
+export const deleteWorkPermit = async (permitId) => {
+  try {
+    const permitRef = doc(db, 'workPermits', permitId);
+    await deleteDoc(permitRef);
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Tüm bildirimleri getir
+export const getAllNotifications = async () => {
+  try {
+    const notificationsRef = collection(db, 'notifications');
+    const q = query(notificationsRef, orderBy('createdAt', 'desc'));
+    const snapshot = await getDocs(q);
+    const notifications = [];
+    snapshot.forEach((doc) => {
+      notifications.push({ id: doc.id, ...doc.data() });
+    });
+    return notifications;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Bildirim sil
+export const deleteNotification = async (notificationId) => {
+  try {
+    const notificationRef = doc(db, 'notifications', notificationId);
+    await deleteDoc(notificationRef);
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Tüm hatırlatıcıları getir
+export const getAllReminders = async () => {
+  try {
+    const remindersRef = collection(db, 'reminders');
+    const q = query(remindersRef, orderBy('createdAt', 'desc'));
+    const snapshot = await getDocs(q);
+    const reminders = [];
+    snapshot.forEach((doc) => {
+      reminders.push({ id: doc.id, ...doc.data() });
+    });
+    return reminders;
+  } catch (error) {
+    throw error;
+  }
+};
+
+// Hatırlatıcı sil
+export const deleteReminder = async (reminderId) => {
+  try {
+    const reminderRef = doc(db, 'reminders', reminderId);
+    await deleteDoc(reminderRef);
+    return { success: true };
+  } catch (error) {
+    throw error;
+  }
+};

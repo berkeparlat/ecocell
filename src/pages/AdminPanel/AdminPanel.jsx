@@ -12,7 +12,13 @@ import {
   deleteUser as deleteUserService,
   deleteTask as deleteTaskService,
   deleteMessage as deleteMessageService,
-  approveUser
+  approveUser,
+  getAllWorkPermits,
+  deleteWorkPermit as deleteWorkPermitService,
+  getAllNotifications,
+  deleteNotification as deleteNotificationService,
+  getAllReminders,
+  deleteReminder as deleteReminderService
 } from '../../services/adminService';
 import { 
   Users, 
@@ -28,7 +34,10 @@ import {
   Plus,
   X,
   FileSpreadsheet,
-  Check
+  Check,
+  ClipboardCheck,
+  Bell,
+  Clock
 } from 'lucide-react';
 import { triggerFileWatcher } from '../../services/fileWatcherService';
 import './AdminPanel.css';
@@ -40,7 +49,11 @@ const AdminPanel = () => {
   const [loading, setLoading] = useState(true);
   const [stats, setStats] = useState(null);
   const [users, setUsers] = useState([]);
-  const [tasks, setTasks] = useState([]);  const [messages, setMessages] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [messages, setMessages] = useState([]);
+  const [workPermits, setWorkPermits] = useState([]);
+  const [notifications, setNotifications] = useState([]);
+  const [reminders, setReminders] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const [editingUser, setEditingUser] = useState(null);
   const [editForm, setEditForm] = useState({
@@ -70,16 +83,22 @@ const AdminPanel = () => {
   const loadData = async () => {
     setLoading(true);
     try {
-      const [statsData, usersData, tasksData, messagesData] = await Promise.all([
+      const [statsData, usersData, tasksData, messagesData, permitsData, notificationsData, remindersData] = await Promise.all([
         getStatistics(),
         getAllUsers(),
         getAllTasks(),
-        getAllMessages()
+        getAllMessages(),
+        getAllWorkPermits(),
+        getAllNotifications(),
+        getAllReminders()
       ]);
       setStats(statsData);
       setUsers(usersData);
       setTasks(tasksData);
       setMessages(messagesData);
+      setWorkPermits(permitsData);
+      setNotifications(notificationsData);
+      setReminders(remindersData);
     } catch (error) {
       alert('Veriler yüklenemedi!');
     } finally {
@@ -136,6 +155,42 @@ const AdminPanel = () => {
       loadData();
     } catch (error) {
       alert('Mesaj silinemedi!');
+    }
+  }, []);
+
+  const handleDeleteWorkPermit = useCallback(async (permitId) => {
+    if (!window.confirm('Bu iş iznini silmek istediğinizden emin misiniz?')) return;
+    
+    try {
+      await deleteWorkPermitService(permitId);
+      alert('İş izni silindi!');
+      loadData();
+    } catch (error) {
+      alert('İş izni silinemedi!');
+    }
+  }, []);
+
+  const handleDeleteNotification = useCallback(async (notificationId) => {
+    if (!window.confirm('Bu bildirimi silmek istediğinizden emin misiniz?')) return;
+    
+    try {
+      await deleteNotificationService(notificationId);
+      alert('Bildirim silindi!');
+      loadData();
+    } catch (error) {
+      alert('Bildirim silinemedi!');
+    }
+  }, []);
+
+  const handleDeleteReminder = useCallback(async (reminderId) => {
+    if (!window.confirm('Bu hatırlatıcıyı silmek istediğinizden emin misiniz?')) return;
+    
+    try {
+      await deleteReminderService(reminderId);
+      alert('Hatırlatıcı silindi!');
+      loadData();
+    } catch (error) {
+      alert('Hatırlatıcı silinemedi!');
     }
   }, []);
 
@@ -335,6 +390,27 @@ const AdminPanel = () => {
           >
             <MessageSquare size={20} />
             Mesajlar ({messages.length})
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'workPermits' ? 'active' : ''}`}
+            onClick={() => setActiveTab('workPermits')}
+          >
+            <ClipboardCheck size={20} />
+            İş İzinleri ({workPermits.length})
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'notifications' ? 'active' : ''}`}
+            onClick={() => setActiveTab('notifications')}
+          >
+            <Bell size={20} />
+            Bildirimler ({notifications.length})
+          </button>
+          <button 
+            className={`tab-btn ${activeTab === 'reminders' ? 'active' : ''}`}
+            onClick={() => setActiveTab('reminders')}
+          >
+            <Clock size={20} />
+            Hatırlatıcılar ({reminders.length})
           </button>
           <button 
             className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
@@ -582,6 +658,171 @@ const AdminPanel = () => {
                       <td>
                         <div className="action-buttons">
                           <button className="btn-delete" onClick={() => handleDeleteMessage(m.id)}>
+                            <Trash2 size={20} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Work Permits Tab */}
+        {activeTab === 'workPermits' && (
+          <div className="admin-content">
+            <div className="search-bar">
+              <Search size={20} />
+              <input
+                type="text"
+                placeholder="İş izni ara..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>İş Adı</th>
+                    <th>Durum</th>
+                    <th>Ekleyen</th>
+                    <th>İlgili Birim</th>
+                    <th>Bakım Türü</th>
+                    <th>Tarih</th>
+                    <th>İşlemler</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {workPermits.filter(p => 
+                    p.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    p.description?.toLowerCase().includes(searchQuery.toLowerCase())
+                  ).map(p => (
+                    <tr key={p.id}>
+                      <td>{p.title}</td>
+                      <td>
+                        <span className="badge" style={{
+                          backgroundColor: p.status === 'approved' ? '#4caf50' : '#ff9800'
+                        }}>
+                          {p.status === 'approved' ? 'Onaylandı' : 'Onay Bekliyor'}
+                        </span>
+                      </td>
+                      <td>{p.createdBy}</td>
+                      <td><span className="badge">{p.relatedDepartment}</span></td>
+                      <td><span className="badge">{p.maintenanceType}</span></td>
+                      <td>{formatDate(p.createdAt)}</td>
+                      <td>
+                        <div className="action-buttons">
+                          <button className="btn-delete" onClick={() => handleDeleteWorkPermit(p.id)} title="Sil">
+                            <Trash2 size={20} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Notifications Tab */}
+        {activeTab === 'notifications' && (
+          <div className="admin-content">
+            <div className="search-bar">
+              <Search size={20} />
+              <input
+                type="text"
+                placeholder="Bildirim ara..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Başlık</th>
+                    <th>Mesaj</th>
+                    <th>Tür</th>
+                    <th>Hedef Birim</th>
+                    <th>Oluşturan</th>
+                    <th>Tarih</th>
+                    <th>İşlemler</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {notifications.filter(n => 
+                    n.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    n.message?.toLowerCase().includes(searchQuery.toLowerCase())
+                  ).map(n => (
+                    <tr key={n.id}>
+                      <td>{n.title}</td>
+                      <td className="message-preview">{n.message}</td>
+                      <td><span className="badge">{n.type}</span></td>
+                      <td><span className="badge">{n.targetDepartment || 'Tümü'}</span></td>
+                      <td>{n.createdBy}</td>
+                      <td>{formatDate(n.createdAt)}</td>
+                      <td>
+                        <div className="action-buttons">
+                          <button className="btn-delete" onClick={() => handleDeleteNotification(n.id)} title="Sil">
+                            <Trash2 size={20} />
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        )}
+
+        {/* Reminders Tab */}
+        {activeTab === 'reminders' && (
+          <div className="admin-content">
+            <div className="search-bar">
+              <Search size={20} />
+              <input
+                type="text"
+                placeholder="Hatırlatıcı ara..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+
+            <div className="data-table">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Başlık</th>
+                    <th>Açıklama</th>
+                    <th>Tarih</th>
+                    <th>Tekrar</th>
+                    <th>Kullanıcı</th>
+                    <th>Oluşturulma</th>
+                    <th>İşlemler</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {reminders.filter(r => 
+                    r.title?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                    r.description?.toLowerCase().includes(searchQuery.toLowerCase())
+                  ).map(r => (
+                    <tr key={r.id}>
+                      <td>{r.title}</td>
+                      <td className="message-preview">{r.description}</td>
+                      <td>{formatDate(r.date)}</td>
+                      <td><span className="badge">{r.repeat || 'Yok'}</span></td>
+                      <td>{r.createdBy}</td>
+                      <td>{formatDate(r.createdAt)}</td>
+                      <td>
+                        <div className="action-buttons">
+                          <button className="btn-delete" onClick={() => handleDeleteReminder(r.id)} title="Sil">
                             <Trash2 size={20} />
                           </button>
                         </div>
