@@ -4,7 +4,7 @@ import { db, messaging } from '../config/firebase';
 
 // VAPID Key - Firebase Console > Project Settings > Cloud Messaging > Web Push certificates
 // Bu key'i Firebase Console'dan almanız gerekiyor
-const VAPID_KEY = 'BPFHd-v3LjYZ8S6kYz0xFqH1d8J-lX7vZ9z3nQ5tYjKyV-xJ-3dN1gH7lZ8F5tK3yV9zQ1xN5tK7yV3zQ9xN1tK'; // TODO: Firebase Console'dan alınacak
+const VAPID_KEY = 'BGMWU6MmuQK54T602e6eyylHOrxJJ_3keIb5orXBStscExnhvjaYHJMJ4FS5W2wGMIGme84163cRz_t7mjYjDE4'; // TODO: Firebase Console'dan alınacak
 
 /**
  * Kullanıcıdan push notification izni iste
