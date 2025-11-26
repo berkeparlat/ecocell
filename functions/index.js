@@ -72,57 +72,71 @@ exports.sendNotificationOnCreate = onDocumentCreated(
       }
     });
 
-// Yeni görev oluşturulduğunda bildirim gönder
+// Yeni görev oluşturulduğunda ilgili departmandaki kullanıcılara bildirim gönder
 exports.sendNotificationOnTaskCreate = onDocumentCreated(
     "tasks/{taskId}",
     async (event) => {
       const task = event.data.data();
-      const assignedTo = task.assignedTo;
+      const relatedDepartment = task.relatedDepartment;
+      const createdBy = task.createdBy || "Bilinmeyen";
 
       console.log("Yeni görev:", task);
 
-      if (!assignedTo) {
-        console.log("assignedTo yok, atlanıyor");
+      if (!relatedDepartment) {
+        console.log("relatedDepartment yok, atlanıyor");
         return null;
       }
 
       try {
-        const userDoc = await admin.firestore()
+        // İlgili departmandaki bildirimleri açık olan kullanıcıları al
+        const usersSnapshot = await admin.firestore()
             .collection("users")
-            .doc(assignedTo)
+            .where("department", "==", relatedDepartment)
+            .where("notificationsEnabled", "==", true)
             .get();
 
-        if (!userDoc.exists) {
-          console.log("Kullanıcı bulunamadı:", assignedTo);
+        if (usersSnapshot.empty) {
+          console.log("İlgili departmanda bildirim açık kullanıcı yok:",
+              relatedDepartment);
           return null;
         }
 
-        const userData = userDoc.data();
-        const fcmToken = userData.fcmToken;
-        const notificationsEnabled = userData.notificationsEnabled;
+        // Tüm kullanıcılara bildirim gönder
+        const promises = [];
+        usersSnapshot.forEach((doc) => {
+          const userData = doc.data();
+          if (userData.fcmToken) {
+            const message = {
+              notification: {
+                title: "Yeni Görev",
+                body: `${createdBy} - ${task.title}`,
+              },
+              data: {
+                type: "task",
+                taskId: event.params.taskId,
+                url: "/job-tracking",
+              },
+              token: userData.fcmToken,
+            };
 
-        if (!notificationsEnabled || !fcmToken) {
-          console.log("Bildirimler kapalı:", assignedTo);
-          return null;
-        }
+            promises.push(
+                admin.messaging().send(message)
+                    .then((response) => {
+                      console.log("Görev bildirimi gönderildi:", doc.id);
+                      return response;
+                    })
+                    .catch((error) => {
+                      console.error("Görev bildirim hatası:", doc.id, error);
+                      return null;
+                    }),
+            );
+          }
+        });
 
-        const message = {
-          notification: {
-            title: "Yeni Görev Atandı",
-            body: task.title,
-          },
-          data: {
-            type: "task",
-            taskId: event.params.taskId,
-            url: "/tasks",
-          },
-          token: fcmToken,
-        };
+        await Promise.all(promises);
+        console.log(`${promises.length} kullanıcıya görev bildirimi gönderildi`);
 
-        const response = await admin.messaging().send(message);
-        console.log("Görev bildirimi gönderildi:", response);
-
-        return response;
+        return null;
       } catch (error) {
         console.error("Görev bildirimi hatası:", error);
         return null;
