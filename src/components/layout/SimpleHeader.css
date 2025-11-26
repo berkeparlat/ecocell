@@ -28,6 +28,15 @@
 
 .header-actions {
   justify-self: end;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header-actions-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
 }
 
 .header-nav-buttons {
@@ -64,6 +73,31 @@
 
 .header-back-btn:active,
 .header-home-btn:active {
+  transform: scale(0.98);
+}
+
+.header-action-btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: white;
+  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
+  position: relative;
+}
+
+.header-action-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
+}
+
+.header-action-btn:active {
   transform: scale(0.98);
 }
 
@@ -114,31 +148,6 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-}
-
-.header-nav-icon-btn {
-  position: relative;
-  width: 45px;
-  height: 45px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  color: white;
-  box-shadow: 0 2px 8px rgba(27, 94, 32, 0.2);
-}
-
-.header-nav-icon-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(27, 94, 32, 0.3);
-}
-
-.header-nav-icon-btn:active {
-  transform: scale(0.98);
 }
 
 .header-badge {

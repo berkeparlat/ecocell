@@ -87,20 +87,21 @@ const SimpleHeader = () => {
         </div>
 
         <div className="header-actions">
-          <div className="header-notifications-wrapper" ref={notificationsMenuRef}>
-            <button 
-              className="header-nav-icon-btn" 
-              onClick={toggleNotificationsMenu}
-              title="Bildirimler"
-            >
-              <Bell size={22} />
-              {totalNotifications > 0 && (
-                <span className="header-badge">{totalNotifications}</span>
-              )}
-            </button>
+          <div className="header-actions-buttons">
+            <div className="header-notifications-wrapper" ref={notificationsMenuRef}>
+              <button 
+                className="header-action-btn" 
+                onClick={toggleNotificationsMenu}
+                title="Bildirimler"
+              >
+                <Bell size={24} />
+                {totalNotifications > 0 && (
+                  <span className="header-badge">{totalNotifications}</span>
+                )}
+              </button>
 
-            {showNotificationsMenu && (
-              <div className="notifications-dropdown">
+              {showNotificationsMenu && (
+                <div className="notifications-dropdown">
                 <button 
                   className="notifications-dropdown-item" 
                   onClick={() => handleNotificationClick('/announcements')}
@@ -135,6 +136,15 @@ const SimpleHeader = () => {
                 </button>
               </div>
             )}
+            </div>
+            
+            <button 
+              className="header-action-btn" 
+              onClick={handleProfileClick}
+              title="Profil"
+            >
+              <User size={24} />
+            </button>
           </div>
           
           <div className="header-user" ref={menuRef}>
