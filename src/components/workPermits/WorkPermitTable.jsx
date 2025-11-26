@@ -264,7 +264,7 @@ const WorkPermitTable = () => {
                           {permit.approvedBy || 'Bilinmiyor'}
                         </div>
                       ) : (
-                        user?.department === permit.relatedDepartment ? (
+                        user?.department?.trim().toLowerCase() === permit.relatedDepartment?.trim().toLowerCase() ? (
                           <button
                             onClick={() => handleApprove(permit)}
                             className="approve-btn"
@@ -285,7 +285,7 @@ const WorkPermitTable = () => {
                         >
                           <MessageSquare size={16} />
                         </button>
-                        {user?.department === permit.relatedDepartment && (
+                        {user?.department?.trim().toLowerCase() === permit.relatedDepartment?.trim().toLowerCase() && (
                           <>
                             <button
                               className="action-btn edit-btn"

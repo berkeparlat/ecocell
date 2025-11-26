@@ -351,7 +351,7 @@ const TaskTable = () => {
                     >
                       <MessageSquare size={16} />
                     </button>
-                    {user?.department === task.relatedDepartment && (
+                    {user?.department?.trim().toLowerCase() === task.relatedDepartment?.trim().toLowerCase() && (
                       <>
                         <button
                           className="action-btn edit-btn"

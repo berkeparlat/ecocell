@@ -11,7 +11,7 @@ const TaskCard = ({ task }) => {
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
 
   // Kullanıcı sadece kendi departmanının işlerini düzenleyebilir
-  const canEdit = user?.department === task.relatedDepartment;
+  const canEdit = user?.department?.trim().toLowerCase() === task.relatedDepartment?.trim().toLowerCase();
 
   const priorityColors = {
     low: '#10b981',
