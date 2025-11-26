@@ -274,33 +274,40 @@
 
 /* Mobile */
 @media (max-width: 768px) {
+  .simple-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+
   .simple-header .header-container {
-    padding: 0.5rem 0.75rem !important;
+    padding: 0.75rem 1rem !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
-    gap: 0.5rem !important;
+    gap: 0.75rem !important;
+    min-height: 64px;
   }
 
   .simple-header .header-nav-buttons {
     display: flex !important;
-    gap: 0.4rem !important;
+    gap: 0.5rem !important;
     flex-shrink: 0 !important;
   }
 
   .simple-header .header-back-btn,
   .simple-header .header-home-btn {
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 10px !important;
-    min-width: 36px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    min-width: 44px !important;
     padding: 0 !important;
   }
 
   .simple-header .header-back-btn svg,
   .simple-header .header-home-btn svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
 
   .simple-header .header-brand {
@@ -322,13 +329,13 @@
 
   .simple-header .header-actions {
     display: flex !important;
-    gap: 0.4rem !important;
+    gap: 0.5rem !important;
     flex-shrink: 0 !important;
   }
 
   .simple-header .header-actions-buttons {
     display: flex !important;
-    gap: 0.4rem !important;
+    gap: 0.5rem !important;
   }
 
   .simple-header .header-notifications-wrapper,
@@ -337,16 +344,16 @@
   }
 
   .simple-header .header-action-btn {
-    width: 36px !important;
-    height: 36px !important;
-    border-radius: 10px !important;
-    min-width: 36px !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    min-width: 44px !important;
     padding: 0 !important;
   }
 
   .simple-header .header-action-btn svg {
-    width: 18px !important;
-    height: 18px !important;
+    width: 20px !important;
+    height: 20px !important;
   }
 
   .simple-header .header-badge {
@@ -409,51 +416,52 @@
 /* Small Mobile */
 @media (max-width: 480px) {
   .simple-header .header-container {
-    padding: 0.4rem 0.5rem !important;
-    gap: 0.3rem !important;
+    padding: 0.625rem 0.75rem !important;
+    gap: 0.5rem !important;
+    min-height: 60px;
   }
 
   .simple-header .header-nav-buttons {
-    gap: 0.3rem !important;
+    gap: 0.4rem !important;
   }
 
   .simple-header .header-back-btn,
   .simple-header .header-home-btn {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 8px !important;
-    min-width: 32px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    min-width: 40px !important;
   }
 
   .simple-header .header-back-btn svg,
   .simple-header .header-home-btn svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 
   .simple-header .header-logo {
-    height: 28px !important;
-    max-height: 28px !important;
+    height: 32px !important;
+    max-height: 32px !important;
   }
 
   .simple-header .header-actions {
-    gap: 0.3rem !important;
+    gap: 0.4rem !important;
   }
 
   .simple-header .header-actions-buttons {
-    gap: 0.3rem !important;
+    gap: 0.4rem !important;
   }
 
   .simple-header .header-action-btn {
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 8px !important;
-    min-width: 32px !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 10px !important;
+    min-width: 40px !important;
   }
 
   .simple-header .header-action-btn svg {
-    width: 16px !important;
-    height: 16px !important;
+    width: 18px !important;
+    height: 18px !important;
   }
 
   .simple-header .notifications-dropdown {
