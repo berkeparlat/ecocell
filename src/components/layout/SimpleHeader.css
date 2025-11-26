@@ -331,51 +331,12 @@
 /* Mobile */
 @media (max-width: 768px) {
   .header-container {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem;
     grid-template-columns: auto 1fr auto;
-    gap: 1rem;
-  }
-
-  .header-back-btn,
-  .header-home-btn,
-  .header-nav-icon-btn {
-    width: 40px;
-    height: 40px;
-  }
-
-  .header-brand-text h1 {
-    font-size: 0.95rem;
-  }
-
-  .header-brand-text span {
-    font-size: 0.7rem;
-  }
-
-  .header-logo {
-    height: 36px;
-  }
-
-  .header-brand {
-    gap: 0.75rem;
-  }
-
-  .view-toggle-btn span {
-    display: none;
-  }
-
-  .user-info span {
-    display: none;
-  }
-
-  .header-actions {
     gap: 0.5rem;
   }
-}
 
-/* Small Mobile */
-@media (max-width: 480px) {
-  .header-container {
-    padding: 0.5rem 0.75rem;
+  .header-nav-buttons {
     gap: 0.5rem;
   }
 
@@ -384,6 +345,7 @@
   .header-nav-icon-btn {
     width: 36px;
     height: 36px;
+    border-radius: 10px;
   }
 
   .header-back-btn svg,
@@ -398,16 +360,104 @@
   }
 
   .header-brand-text span {
-    display: none;
+    font-size: 0.65rem;
   }
 
   .header-logo {
     height: 32px;
   }
 
+  .header-brand {
+    gap: 0.5rem;
+  }
+
+  .view-toggle-btn span {
+    display: none;
+  }
+
+  .header-user {
+    padding-left: 0.5rem;
+    border-left: none;
+  }
+
+  .user-info {
+    display: none;
+  }
+
+  .user-menu-trigger {
+    padding: 0.25rem;
+    gap: 0;
+  }
+
+  .header-actions {
+    gap: 0.35rem;
+  }
+
   .header-badge {
     font-size: 0.65rem;
-    padding: 0.15rem 0.35rem;
+    padding: 0.1rem 0.3rem;
+    min-width: 16px;
+    top: -4px;
+    right: -4px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0.4rem 0.5rem;
+    gap: 0.35rem;
+  }
+
+  .header-nav-buttons {
+    gap: 0.35rem;
+  }
+
+  .header-back-btn,
+  .header-home-btn,
+  .header-nav-icon-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
+
+  .header-back-btn svg,
+  .header-home-btn svg,
+  .header-nav-icon-btn svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .header-brand-text h1 {
+    font-size: 0.8rem;
+  }
+
+  .header-brand-text span {
+    display: none;
+  }
+
+  .header-logo {
+    height: 28px;
+  }
+
+  .header-brand {
+    gap: 0.35rem;
+  }
+
+  .header-actions {
+    gap: 0.25rem;
+  }
+
+  .header-user {
+    padding-left: 0.35rem;
+  }
+
+  .header-badge {
+    font-size: 0.6rem;
+    padding: 0.1rem 0.25rem;
+    min-width: 14px;
+    top: -3px;
+    right: -3px;
   }
 
   .user-menu {
