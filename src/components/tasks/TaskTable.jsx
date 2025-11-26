@@ -121,6 +121,8 @@ const TaskTable = () => {
   const handleCloseForm = useCallback(() => {
     setShowTaskForm(false);
     setEditingTask(null);
+    // Yeni iş eklendikten sonra filtreyi sıfırla
+    setSelectedDepartment('all');
   }, []);
 
   const formatDate = useCallback((dateString) => {
@@ -187,6 +189,45 @@ const TaskTable = () => {
           </select>
         </div>
       </div>
+
+      {(selectedDepartment !== 'all' || selectedStatus !== 'all' || searchTerm) && (
+        <div style={{
+          padding: '8px 12px',
+          backgroundColor: '#fff3cd',
+          color: '#856404',
+          borderRadius: '4px',
+          marginBottom: '12px',
+          fontSize: '14px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <span>⚠️</span>
+          <span>
+            Filtre aktif: {tasks.length} toplam işten {sortedTasks.length} iş gösteriliyor
+            {selectedDepartment !== 'all' && ` (${selectedDepartment})`}
+          </span>
+          <button 
+            onClick={() => {
+              setSelectedDepartment('all');
+              setSelectedStatus('all');
+              setSearchTerm('');
+            }}
+            style={{
+              marginLeft: 'auto',
+              padding: '4px 12px',
+              backgroundColor: '#856404',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '13px'
+            }}
+          >
+            Filtreyi Temizle
+          </button>
+        </div>
+      )}
 
       <div className="table-wrapper">
         <table className="task-table">
