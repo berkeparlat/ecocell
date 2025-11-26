@@ -239,10 +239,25 @@ export const AppProvider = ({ children }) => {
     // Kullanıcı giriş yaptığında bildirim izni kontrolü
     const setupPushNotifications = async () => {
       try {
-        // Service Worker'ı kaydet
+        // Service Worker'ı kaydet (update on change ile)
         if ('serviceWorker' in navigator) {
-          const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js');
+          // Eski Service Worker'ları unregister et
+          const registrations = await navigator.serviceWorker.getRegistrations();
+          for (const registration of registrations) {
+            if (registration.active?.scriptURL.includes('firebase-messaging-sw.js')) {
+              await registration.unregister();
+              console.log('Eski Service Worker unregister edildi');
+            }
+          }
+          
+          // Yeni Service Worker'ı kaydet
+          const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js', {
+            updateViaCache: 'none' // Cache'i atla, her zaman yeni versiyonu al
+          });
           console.log('Service Worker kaydedildi:', registration);
+          
+          // Güncellemeyi zorla
+          await registration.update();
         }
 
         // Bildirim iznini kontrol et

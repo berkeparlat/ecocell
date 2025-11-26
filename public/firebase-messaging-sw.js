@@ -1,5 +1,6 @@
-// Firebase Cloud Messaging Service Worker
+// Firebase Cloud Messaging Service Worker v2.0
 // Bu dosya background'da çalışır ve push notifications'ı yönetir
+// Version: 2.0 - Fixed duplicate notifications
 
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js');
 importScripts('https://www.gstatic.com/firebasejs/10.7.1/firebase-messaging-compat.js');
