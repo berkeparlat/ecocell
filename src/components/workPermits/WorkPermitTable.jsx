@@ -68,6 +68,8 @@ const WorkPermitTable = () => {
   const handleCloseForm = useCallback(() => {
     setShowForm(false);
     setEditingPermit(null);
+    // Yeni iş izni eklendikten sonra filtreyi sıfırla
+    setDepartmentFilter('all');
   }, []);
 
   const getMaintenanceTypeBadge = useCallback((type) => {
@@ -152,6 +154,45 @@ const WorkPermitTable = () => {
         </div>
       </div>
 
+      {(departmentFilter !== 'all' || statusFilter !== 'all' || searchTerm) && (
+        <div style={{
+          padding: '8px 12px',
+          backgroundColor: '#fff3cd',
+          color: '#856404',
+          borderRadius: '4px',
+          marginBottom: '12px',
+          fontSize: '14px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '8px'
+        }}>
+          <span>⚠️</span>
+          <span>
+            Filtre aktif: {workPermits.length} toplam izinden {filteredPermits.length} izin gösteriliyor
+            {departmentFilter !== 'all' && ` (${departmentFilter})`}
+          </span>
+          <button 
+            onClick={() => {
+              setDepartmentFilter('all');
+              setStatusFilter('all');
+              setSearchTerm('');
+            }}
+            style={{
+              marginLeft: 'auto',
+              padding: '4px 12px',
+              backgroundColor: '#856404',
+              color: 'white',
+              border: 'none',
+              borderRadius: '4px',
+              cursor: 'pointer',
+              fontSize: '13px'
+            }}
+          >
+            Filtreyi Temizle
+          </button>
+        </div>
+      )}
+
       <div className="work-permit-table-wrapper">
         <table className="work-permit-table">
           <thead>
@@ -223,12 +264,16 @@ const WorkPermitTable = () => {
                           {permit.approvedBy || 'Bilinmiyor'}
                         </div>
                       ) : (
-                        <button
-                          onClick={() => handleApprove(permit)}
-                          className="approve-btn"
-                        >
-                          Onayla
-                        </button>
+                        user?.department === permit.relatedDepartment ? (
+                          <button
+                            onClick={() => handleApprove(permit)}
+                            className="approve-btn"
+                          >
+                            Onayla
+                          </button>
+                        ) : (
+                          <span style={{ color: '#999', fontSize: '13px' }}>Onay Bekliyor</span>
+                        )
                       )}
                     </td>
                     <td>
@@ -240,20 +285,24 @@ const WorkPermitTable = () => {
                         >
                           <MessageSquare size={16} />
                         </button>
-                        <button
-                          className="action-btn edit-btn"
-                          onClick={() => handleEdit(permit)}
-                          title="Düzenle"
-                        >
-                          <Edit2 size={16} />
-                        </button>
-                        <button
-                          className="action-btn delete-btn"
-                          onClick={() => handleDelete(permit.id)}
-                          title="Sil"
-                        >
-                          <Trash2 size={16} />
-                        </button>
+                        {user?.department === permit.relatedDepartment && (
+                          <>
+                            <button
+                              className="action-btn edit-btn"
+                              onClick={() => handleEdit(permit)}
+                              title="Düzenle"
+                            >
+                              <Edit2 size={16} />
+                            </button>
+                            <button
+                              className="action-btn delete-btn"
+                              onClick={() => handleDelete(permit.id)}
+                              title="Sil"
+                            >
+                              <Trash2 size={16} />
+                            </button>
+                          </>
+                        )}
                       </div>
                     </td>
                   </tr>

@@ -50,7 +50,7 @@ export const addWorkPermit = async (permitData, userId, userName) => {
       await createNotificationForDepartment(targetDepartment, {
         type: 'workPermit',
         title: 'Yeni İş İzni Eklendi',
-        message: `${userName} tarafından "${permitData.name}" için yeni bir iş izni eklendi.`,
+        message: `${userName} tarafından "${permitData.title}" için yeni bir iş izni eklendi.`,
         actionUrl: '/work-permits',
         relatedId: docRef.id,
         createdBy: userName
