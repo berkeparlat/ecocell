@@ -4,13 +4,22 @@ const admin = require("firebase-admin");
 admin.initializeApp();
 
 // Yeni bildirim oluşturulduğunda push notification gönder
+// NOT: Görev ve duyurular zaten kendi function'larında işlendiği için
+// sadece diğer tip bildirimleri gönder
 exports.sendNotificationOnCreate = onDocumentCreated(
     "notifications/{notificationId}",
     async (event) => {
       const notification = event.data.data();
       const userId = notification.userId;
+      const type = notification.type;
 
       console.log("Yeni bildirim:", notification);
+
+      // Görev ve duyuru bildirimleri zaten ayrı function'larda işlendiği için atla
+      if (type === "task" || type === "announcement") {
+        console.log("Bu tip bildirim ayrı function'da işleniyor:", type);
+        return null;
+      }
 
       if (!userId) {
         console.log("userId yok, atlanıyor");
@@ -116,6 +125,76 @@ exports.sendNotificationOnTaskCreate = onDocumentCreated(
         return response;
       } catch (error) {
         console.error("Görev bildirimi hatası:", error);
+        return null;
+      }
+    });
+
+// Yeni mesaj oluşturulduğunda alıcıya bildirim gönder
+exports.sendNotificationOnMessageCreate = onDocumentCreated(
+    "messages/{messageId}",
+    async (event) => {
+      const message = event.data.data();
+      const recipientId = message.recipientId;
+      const senderId = message.senderId;
+
+      console.log("Yeni mesaj:", message);
+
+      if (!recipientId || !senderId) {
+        console.log("recipientId veya senderId yok, atlanıyor");
+        return null;
+      }
+
+      try {
+        // Gönderen kişinin adını al
+        const senderDoc = await admin.firestore()
+            .collection("users")
+            .doc(senderId)
+            .get();
+
+        const senderName = senderDoc.exists ?
+          senderDoc.data().fullName || "Bir kullanıcı" :
+          "Bir kullanıcı";
+
+        // Alıcının FCM token'ını al
+        const recipientDoc = await admin.firestore()
+            .collection("users")
+            .doc(recipientId)
+            .get();
+
+        if (!recipientDoc.exists) {
+          console.log("Alıcı bulunamadı:", recipientId);
+          return null;
+        }
+
+        const recipientData = recipientDoc.data();
+        const fcmToken = recipientData.fcmToken;
+        const notificationsEnabled = recipientData.notificationsEnabled;
+
+        if (!notificationsEnabled || !fcmToken) {
+          console.log("Alıcının bildirimleri kapalı:", recipientId);
+          return null;
+        }
+
+        const pushMessage = {
+          notification: {
+            title: `Yeni Mesaj - ${senderName}`,
+            body: message.text || "Yeni bir mesajınız var",
+          },
+          data: {
+            type: "message",
+            messageId: event.params.messageId,
+            senderId: senderId,
+            url: "/messages",
+          },
+          token: fcmToken,
+        };
+
+        const response = await admin.messaging().send(pushMessage);
+        console.log("Mesaj bildirimi gönderildi:", response);
+
+        return response;
+      } catch (error) {
+        console.error("Mesaj bildirimi hatası:", error);
         return null;
       }
     });
