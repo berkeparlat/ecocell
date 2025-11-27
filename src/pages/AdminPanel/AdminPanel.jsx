@@ -378,53 +378,11 @@ const AdminPanel = () => {
             Kullanıcılar ({users.length})
           </button>
           <button 
-            className={`tab-btn ${activeTab === 'tasks' ? 'active' : ''}`}
-            onClick={() => setActiveTab('tasks')}
-          >
-            <Briefcase size={20} />
-            İşler ({tasks.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'messages' ? 'active' : ''}`}
-            onClick={() => setActiveTab('messages')}
-          >
-            <MessageSquare size={20} />
-            Mesajlar ({messages.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'workPermits' ? 'active' : ''}`}
-            onClick={() => setActiveTab('workPermits')}
-          >
-            <ClipboardCheck size={20} />
-            İş İzinleri ({workPermits.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'notifications' ? 'active' : ''}`}
-            onClick={() => setActiveTab('notifications')}
-          >
-            <Bell size={20} />
-            Bildirimler ({notifications.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'reminders' ? 'active' : ''}`}
-            onClick={() => setActiveTab('reminders')}
-          >
-            <Clock size={20} />
-            Hatırlatıcılar ({reminders.length})
-          </button>
-          <button 
-            className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
-            onClick={() => setActiveTab('departments')}
-          >
-            <Building2 size={20} />
-            Birimler
-          </button>
-          <button 
             className={`tab-btn ${activeTab === 'excel' ? 'active' : ''}`}
             onClick={() => setActiveTab('excel')}
           >
             <FileSpreadsheet size={20} />
-            Excel
+            Excel Yenile
           </button>
         </div>
 

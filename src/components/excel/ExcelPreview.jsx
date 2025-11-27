@@ -28,7 +28,7 @@ const ACCENT_PALETTES = {
 
 // Varsayılan zoom değerleri
 const DEFAULT_ZOOM = {
-  stock: 60,
+  stock: 100,
   sales: 60,
   shipping: 60
 };
