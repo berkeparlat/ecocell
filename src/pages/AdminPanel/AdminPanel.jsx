@@ -378,6 +378,13 @@ const AdminPanel = () => {
             Kullanıcılar ({users.length})
           </button>
           <button 
+            className={`tab-btn ${activeTab === 'departments' ? 'active' : ''}`}
+            onClick={() => setActiveTab('departments')}
+          >
+            <Building2 size={20} />
+            Birimler ({localDepartments.length})
+          </button>
+          <button 
             className={`tab-btn ${activeTab === 'excel' ? 'active' : ''}`}
             onClick={() => setActiveTab('excel')}
           >
