@@ -53,53 +53,68 @@ const DCSA021 = () => {
             <p>Yükleniyor...</p>
           </div>
         ) : (
-          <div className="dcs-a021-panel">
-            <div className="panel-header">
-              <div className="panel-header-left">
-                <Activity size={20} />
-                <h2>DCS Haftalık Rapor A Hattı - A021 Bölgesi</h2>
+          <div className="dcs-a021-single-view">
+            <div className="dcs-a021-panel">
+              <div className="panel-header">
+                <div className="panel-header-left">
+                  <Activity size={20} />
+                  <h2>DCS Haftalık Rapor A Hattı - A021 Bölgesi</h2>
+                </div>
+                {excelData && (
+                  <div className="panel-header-controls">
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setZoom(Math.max(50, zoom - 10))}
+                      disabled={zoom <= 50}
+                      title="Küçült"
+                    >
+                      <ZoomOut size={16} />
+                    </button>
+                    <span className="panel-zoom-display">{zoom}%</span>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setZoom(Math.min(200, zoom + 10))}
+                      disabled={zoom >= 200}
+                      title="Büyüt"
+                    >
+                      <ZoomIn size={16} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => setZoom(100)}
+                      title="Varsayılan (100%)"
+                    >
+                      <RotateCcw size={16} />
+                    </button>
+                    <button 
+                      className="panel-btn"
+                      onClick={() => {
+                        const iframe = document.querySelector('.dcs-a021-panel iframe');
+                        if (iframe) {
+                          iframe.requestFullscreen?.() || iframe.webkitRequestFullscreen?.() || iframe.mozRequestFullScreen?.();
+                        }
+                      }}
+                      title="Tam Ekran"
+                    >
+                      <Maximize2 size={16} />
+                    </button>
+                  </div>
+                )}
               </div>
-              <div className="panel-header-controls">
-                <button 
-                  className="panel-btn"
-                  onClick={() => setZoom(prev => Math.max(prev - 10, 50))}
-                  title="Küçült"
-                >
-                  <ZoomOut size={16} />
-                </button>
-                <span className="panel-zoom-display">{zoom}%</span>
-                <button 
-                  className="panel-btn"
-                  onClick={() => setZoom(prev => Math.min(prev + 10, 150))}
-                  title="Büyüt"
-                >
-                  <ZoomIn size={16} />
-                </button>
-                <button 
-                  className="panel-btn"
-                  onClick={() => setZoom(100)}
-                  title="Sıfırla"
-                >
-                  <RotateCcw size={16} />
-                </button>
-                <button 
-                  className="panel-btn"
-                  onClick={loadLatestFile}
-                  title="Yenile"
-                >
-                  <RefreshCw size={16} />
-                </button>
-              </div>
+              {excelData ? (
+                <ExcelPreview
+                  fileName={excelData.name}
+                  viewerUrl={excelData.viewerUrl}
+                  accent="dcs"
+                  hideToolbar={true}
+                />
+              ) : (
+                <div className="empty-state">
+                  <Activity size={48} />
+                  <p>Henüz excel dosyası yüklenmemiş</p>
+                </div>
+              )}
             </div>
-            
-            {excelData ? (
-              <ExcelPreview file={excelData} />
-            ) : (
-              <div className="empty-panel">
-                <Activity size={48} />
-                <p>Henüz dosya yüklenmemiş</p>
-              </div>
-            )}
           </div>
         )}
       </div>
