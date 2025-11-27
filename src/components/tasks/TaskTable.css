@@ -141,7 +141,6 @@
 
 .task-search {
   flex: 1;
-  max-width: 300px;
   display: flex;
   align-items: center;
   gap: 0.5rem;
