@@ -29,6 +29,10 @@ import MechanicalPlan from './pages/MechanicalPlan/MechanicalPlan';
 import DCSLineA from './pages/DCSLineA/DCSLineA';
 import DCSLineB from './pages/DCSLineB/DCSLineB';
 import DCSBuhar from './pages/DCSBuhar/DCSBuhar';
+import DCSA012 from './pages/DCSA012/DCSA012';
+import DCSA021 from './pages/DCSA021/DCSA021';
+import DCSB012 from './pages/DCSB012/DCSB012';
+import DCSB021 from './pages/DCSB021/DCSB021';
 import Orders from './pages/Orders/Orders';
 import Shipments from './pages/Shipments/Shipments';
 import './App.css';
@@ -224,6 +228,38 @@ function AppContent() {
           element={
             <ProtectedRoute>
               <DCSBuhar />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-a012" 
+          element={
+            <ProtectedRoute>
+              <DCSA012 />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-a021" 
+          element={
+            <ProtectedRoute>
+              <DCSA021 />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-b012" 
+          element={
+            <ProtectedRoute>
+              <DCSB012 />
+            </ProtectedRoute>
+          } 
+        />
+        <Route 
+          path="/dcs-b021" 
+          element={
+            <ProtectedRoute>
+              <DCSB021 />
             </ProtectedRoute>
           } 
         />

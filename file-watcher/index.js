@@ -154,6 +154,10 @@ async function handleFileChange(filePath) {
   const dcsAPath = process.env.DCS_A_FILE_PATH;
   const dcsBPath = process.env.DCS_B_FILE_PATH;
   const dcsBuharPath = process.env.DCS_BUHAR_FILE_PATH;
+  const dcsA012Path = process.env.DCS_A012_FILE_PATH;
+  const dcsA021Path = process.env.DCS_A021_FILE_PATH;
+  const dcsB012Path = process.env.DCS_B012_FILE_PATH;
+  const dcsB021Path = process.env.DCS_B021_FILE_PATH;
   const electricPath = process.env.ELECTRIC_FILE_PATH;
   const downtimePath = process.env.DOWNTIME_FILE_PATH;
   const salesPath = process.env.SALES_FILE_PATH;
@@ -173,6 +177,14 @@ async function handleFileChange(filePath) {
     fileType = 'dcs-b';
   } else if (filePath === dcsBuharPath) {
     fileType = 'dcs-buhar';
+  } else if (filePath === dcsA012Path) {
+    fileType = 'dcs-a012';
+  } else if (filePath === dcsA021Path) {
+    fileType = 'dcs-a021';
+  } else if (filePath === dcsB012Path) {
+    fileType = 'dcs-b012';
+  } else if (filePath === dcsB021Path) {
+    fileType = 'dcs-b021';
   } else if (filePath === electricPath) {
     fileType = 'electric';
   } else if (filePath === downtimePath) {
@@ -211,6 +223,10 @@ const watchFiles = [
   process.env.DCS_A_FILE_PATH,
   process.env.DCS_B_FILE_PATH,
   process.env.DCS_BUHAR_FILE_PATH,
+  process.env.DCS_A012_FILE_PATH,
+  process.env.DCS_A021_FILE_PATH,
+  process.env.DCS_B012_FILE_PATH,
+  process.env.DCS_B021_FILE_PATH,
   process.env.ELECTRIC_FILE_PATH,
   process.env.DOWNTIME_FILE_PATH,
   process.env.SALES_FILE_PATH,

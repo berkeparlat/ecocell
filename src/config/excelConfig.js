@@ -6,6 +6,10 @@ export const excelStartRows = {
   'dcs-a': 1,                        // DCS Haftalık Rapor A Hattı
   'dcs-b': 1,                        // DCS Haftalık Rapor B Hattı
   'dcs-buhar': 1,                    // DCS Haftalık Rapor Buhar
+  'dcs-a012': 1,                     // DCS Haftalık Rapor A Hattı - A012 Bölgesi
+  'dcs-a021': 1,                     // DCS Haftalık Rapor A Hattı - A021 Bölgesi
+  'dcs-b012': 1,                     // DCS Haftalık Rapor B Hattı - B012 Bölgesi
+  'dcs-b021': 1,                     // DCS Haftalık Rapor B Hattı - B021 Bölgesi
   'electric': 1,                     // Elektrik Tüketimi
   'downtime': 1,                     // Duruş İşleri
   'sales': 1,                        // Satış Siparişleri
@@ -22,6 +26,10 @@ export const excelZoomLevels = {
   'dcs-a': 100,
   'dcs-b': 100,
   'dcs-buhar': 100,
+  'dcs-a012': 100,
+  'dcs-a021': 100,
+  'dcs-b012': 100,
+  'dcs-b021': 100,
   'electric': 100,
   'downtime': 100,
   'sales': 100,
