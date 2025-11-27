@@ -131,7 +131,7 @@ const WorkPermitTable = () => {
       </div>
 
       <div className="work-permit-filters">
-        <div className="search-box">
+        <div className="permit-search">
           <Search size={18} />
           <input
             type="text"

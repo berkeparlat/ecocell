@@ -166,7 +166,7 @@ const TaskTable = () => {
       </div>
 
       <div className="task-filters">
-        <div className="search-box">
+        <div className="task-search">
           <Search size={18} />
           <input
             type="text"
