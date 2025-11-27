@@ -89,12 +89,19 @@
 }
 
 .excel-zoom-label {
-  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
   font-weight: 600;
   color: #64748b;
-  padding: 0 6px;
-  min-width: 50px;
+  padding: 6px 12px;
+  min-width: 60px;
+  min-height: 36px;
   text-align: center;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
 }
 
 .excel-render-area {
