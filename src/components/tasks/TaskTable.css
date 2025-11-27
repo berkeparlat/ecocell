@@ -146,13 +146,11 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  background: white;
+  background: #fafafa;
   border: 1px solid #e0e0e0;
-  border-radius: 0.625rem;
+  border-radius: 8px;
   padding: 0.625rem 1rem;
   transition: all 0.2s;
-  pointer-events: auto;
-  touch-action: manipulation;
 }
 
 .search-box:focus-within {
@@ -168,14 +166,10 @@
 .search-box input {
   flex: 1;
   border: none;
-  outline: none;
-  font-size: 0.875rem;
-  color: #212121;
   background: transparent;
-  pointer-events: auto;
-  touch-action: manipulation;
-  -webkit-user-select: text;
-  user-select: text;
+  font-size: 0.875rem;
+  outline: none;
+  color: #212121;
 }
 
 .search-box input::placeholder {
