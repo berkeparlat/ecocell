@@ -1,6 +1,6 @@
-import { useState, useEffect, useMemo, useCallback } from 'react';
+import { useState, useEffect, useMemo, useCallback, useRef } from 'react';
 import { useApp } from '../../context/AppContext';
-import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, Building2, User } from 'lucide-react';
+import { Plus, Filter, Search, MoreVertical, Edit2, Trash2, FileText, MessageSquare, Building2, User, ChevronDown, Check } from 'lucide-react';
 import Button from '../ui/Button';
 import Modal from '../ui/Modal';
 import WorkPermitForm from './WorkPermitForm';
@@ -16,6 +16,19 @@ const WorkPermitTable = () => {
   const [statusFilter, setStatusFilter] = useState('all');
   const [departmentFilter, setDepartmentFilter] = useState('all');
   const [activeMenu, setActiveMenu] = useState(null);
+  const [isDeptDropdownOpen, setIsDeptDropdownOpen] = useState(false);
+  const deptDropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (deptDropdownRef.current && !deptDropdownRef.current.contains(event.target)) {
+        setIsDeptDropdownOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const statusOptions = [
     { id: 'all', label: 'Tümü', color: '#757575' },
@@ -140,17 +153,36 @@ const WorkPermitTable = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <div className="department-filter">
-          <Building2 size={18} />
-          <select 
-            value={departmentFilter} 
-            onChange={(e) => setDepartmentFilter(e.target.value)}
+        <div className="department-filter" ref={deptDropdownRef}>
+          <div 
+            className="department-filter-trigger"
+            onClick={() => setIsDeptDropdownOpen(!isDeptDropdownOpen)}
           >
-            <option value="all">Tüm Birimler</option>
-            {departments && departments.map(dept => (
-              <option key={dept} value={dept}>{dept}</option>
-            ))}
-          </select>
+            <Building2 size={16} />
+            <span>{departmentFilter === 'all' ? 'Tüm Birimler' : departmentFilter}</span>
+            <ChevronDown size={14} className={`dropdown-chevron ${isDeptDropdownOpen ? 'open' : ''}`} />
+          </div>
+          {isDeptDropdownOpen && (
+            <div className="department-dropdown">
+              <div 
+                className={`department-option ${departmentFilter === 'all' ? 'selected' : ''}`}
+                onClick={() => { setDepartmentFilter('all'); setIsDeptDropdownOpen(false); }}
+              >
+                <span>Tüm Birimler</span>
+                {departmentFilter === 'all' && <Check size={14} />}
+              </div>
+              {departments && departments.map(dept => (
+                <div 
+                  key={dept}
+                  className={`department-option ${departmentFilter === dept ? 'selected' : ''}`}
+                  onClick={() => { setDepartmentFilter(dept); setIsDeptDropdownOpen(false); }}
+                >
+                  <span>{dept}</span>
+                  {departmentFilter === dept && <Check size={14} />}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

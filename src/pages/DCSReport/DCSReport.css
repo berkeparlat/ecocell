@@ -181,15 +181,18 @@
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
-  padding: 0.35rem 0.75rem;
+  padding: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
   font-size: 0.8rem;
   font-weight: 500;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
   transition: all 0.2s;
+  min-width: 36px;
+  min-height: 36px;
 }
 
 .panel-btn:hover:not(:disabled) {
@@ -212,14 +215,18 @@
 }
 
 .panel-zoom-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: rgba(255, 255, 255, 0.15);
   border: 1px solid rgba(255, 255, 255, 0.25);
   color: white;
-  padding: 0.35rem 0.65rem;
+  padding: 0.5rem 1rem;
   border-radius: 6px;
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 600;
-  min-width: 48px;
+  min-width: 60px;
+  min-height: 36px;
   text-align: center;
 }
 

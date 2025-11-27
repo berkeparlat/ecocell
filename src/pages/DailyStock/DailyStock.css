@@ -88,7 +88,7 @@
 }
 
 .panel-btn {
-  padding: 0.5rem 0.75rem;
+  padding: 0.5rem;
   border: 1px solid rgba(255, 255, 255, 0.3);
   background: rgba(255, 255, 255, 0.1);
   border-radius: 6px;
@@ -98,6 +98,8 @@
   align-items: center;
   justify-content: center;
   color: white;
+  min-width: 36px;
+  min-height: 36px;
 }
 
 .panel-btn:hover:not(:disabled) {
@@ -115,14 +117,18 @@
 }
 
 .panel-zoom-display {
-  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
   border: 1px solid #e0e0e0;
   background: white;
   border-radius: 6px;
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #616161;
-  min-width: 50px;
+  min-width: 60px;
+  min-height: 36px;
   text-align: center;
 }
 
