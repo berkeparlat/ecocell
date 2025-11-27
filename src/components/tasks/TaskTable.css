@@ -140,15 +140,15 @@
 }
 
 .task-search {
-  flex: 1;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.4rem 0.75rem;
+  padding: 0.5rem 0.75rem;
   background: white;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
   transition: all 0.2s ease;
+  flex: 1;
 }
 
 .task-search:focus-within {
@@ -159,6 +159,8 @@
 .task-search svg {
   color: #9e9e9e;
   flex-shrink: 0;
+  width: 18px;
+  height: 18px;
 }
 
 .task-search input {
@@ -168,6 +170,7 @@
   font-size: 0.875rem;
   outline: none;
   color: #212121;
+  line-height: 1.2;
 }
 
 .task-search input::placeholder {
