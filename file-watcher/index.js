@@ -151,8 +151,6 @@ async function handleFileChange(filePath) {
   processingFiles.add(filePath);
   
   const stockPath = process.env.STOCK_FILE_PATH;
-  const dcsAPath = process.env.DCS_A_FILE_PATH;
-  const dcsBPath = process.env.DCS_B_FILE_PATH;
   const dcsBuharPath = process.env.DCS_BUHAR_FILE_PATH;
   const dcsA012Path = process.env.DCS_A012_FILE_PATH;
   const dcsA021Path = process.env.DCS_A021_FILE_PATH;
@@ -171,10 +169,6 @@ async function handleFileChange(filePath) {
   
   if (filePath === stockPath) {
     fileType = 'stock';
-  } else if (filePath === dcsAPath) {
-    fileType = 'dcs-a';
-  } else if (filePath === dcsBPath) {
-    fileType = 'dcs-b';
   } else if (filePath === dcsBuharPath) {
     fileType = 'dcs-buhar';
   } else if (filePath === dcsA012Path) {
@@ -220,8 +214,6 @@ async function handleFileChange(filePath) {
 
 const watchFiles = [
   process.env.STOCK_FILE_PATH,
-  process.env.DCS_A_FILE_PATH,
-  process.env.DCS_B_FILE_PATH,
   process.env.DCS_BUHAR_FILE_PATH,
   process.env.DCS_A012_FILE_PATH,
   process.env.DCS_A021_FILE_PATH,
