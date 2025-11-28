@@ -4,23 +4,19 @@ import { useEffect, useRef } from 'react';
  * Tarayıcı sekmesinde bildirim animasyonu
  * Okunmamış bildirim, mesaj veya duyuru varsa sekme başlığı yanıp söner
  */
-export const useTabNotification = (unreadCount, message = 'Yeni bildirim!') => {
+export const useTabNotification = (unreadCount) => {
   const intervalRef = useRef(null);
-  const originalTitleRef = useRef(document.title);
+  const originalTitleRef = useRef('Ecocell Portal');
 
   useEffect(() => {
-    // Orijinal başlığı kaydet
-    if (!originalTitleRef.current) {
-      originalTitleRef.current = document.title;
-    }
-
     // Okunmamış varsa animasyonu başlat
     if (unreadCount > 0) {
       let isOriginal = true;
+      const notificationTitle = `(${unreadCount}) yeni bildirimiz var`;
 
       intervalRef.current = setInterval(() => {
         if (isOriginal) {
-          document.title = `(${unreadCount}) ${message}`;
+          document.title = notificationTitle;
         } else {
           document.title = originalTitleRef.current;
         }
@@ -42,5 +38,5 @@ export const useTabNotification = (unreadCount, message = 'Yeni bildirim!') => {
       }
       document.title = originalTitleRef.current;
     };
-  }, [unreadCount, message]);
+  }, [unreadCount]);
 };

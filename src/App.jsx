@@ -56,7 +56,7 @@ function TabNotificationWrapper() {
   const totalUnread = (unreadNotificationsCount || 0) + unreadMessagesCount + (unreadAnnouncementsCount || 0);
   
   // Tab bildirimini aktifleştir
-  useTabNotification(totalUnread, 'Yeni bildirim var!');
+  useTabNotification(totalUnread);
   
   return null;
 }

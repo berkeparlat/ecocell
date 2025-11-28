@@ -17,8 +17,8 @@ const SimpleHeader = () => {
   const profileMenuRef = useRef(null);
   const notificationsMenuRef = useRef(null);
   
-  // Okunmamış mesaj sayısını hesapla
-  const unreadMessagesCount = conversations.filter(conv => conv.unreadCount > 0).length;
+  // Okunmamış mesaj sayısını hesapla (toplam mesaj sayısı)
+  const unreadMessagesCount = conversations.reduce((sum, conv) => sum + (conv.unreadCount || 0), 0);
   
   // Toplam bildirim sayısı
   const totalNotifications = unreadAnnouncementsCount + unreadNotificationsCount + unreadMessagesCount;
