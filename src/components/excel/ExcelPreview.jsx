@@ -159,8 +159,8 @@ const ExcelPreview = ({
               style={{ 
                 transform: `scale(${zoom / 100})`, 
                 transformOrigin: 'top left',
-                width: `${(100 / zoom) * 100}%`,
-                height: `${(100 / zoom) * 100}%`
+                width: `${10000 / zoom}%`,
+                height: `${10000 / zoom}%`
               }}
             />
           ) : (

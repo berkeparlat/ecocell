@@ -2,13 +2,17 @@ import { useState, useEffect } from 'react';
 import SimpleHeader from '../../components/layout/SimpleHeader';
 import { RefreshCw, FileSpreadsheet, ZoomIn, ZoomOut, RotateCcw, Maximize2 } from 'lucide-react';
 import { getLatestExcelFile } from '../../services/excelService';
+import { excelZoomLevels } from '../../config/excelConfig';
 import ExcelPreview from '../../components/excel/ExcelPreview';
 import './DailyStock.css';
+
+const FILE_TYPE = 'stock';
+const DEFAULT_ZOOM = excelZoomLevels[FILE_TYPE] || 100;
 
 const DailyStock = () => {
   const [loading, setLoading] = useState(false);
   const [excelData, setExcelData] = useState(null);
-  const [zoom, setZoom] = useState(100);
+  const [zoom, setZoom] = useState(DEFAULT_ZOOM);
 
   useEffect(() => {
     loadLatestFile();
@@ -16,22 +20,18 @@ const DailyStock = () => {
 
   useEffect(() => {
     const iframe = document.querySelector('.stock-panel iframe');
-    if (iframe && zoom !== 100) {
+    if (iframe) {
       iframe.style.transform = `scale(${zoom / 100})`;
       iframe.style.transformOrigin = 'top left';
       iframe.style.width = `${10000 / zoom}%`;
       iframe.style.height = `${10000 / zoom}%`;
-    } else if (iframe) {
-      iframe.style.transform = '';
-      iframe.style.width = '';
-      iframe.style.height = '';
     }
   }, [zoom]);
 
   const loadLatestFile = async () => {
     setLoading(true);
     try {
-      const file = await getLatestExcelFile('stock');
+      const file = await getLatestExcelFile(FILE_TYPE);
       if (file) {
         setExcelData(file);
       }
@@ -80,8 +80,8 @@ const DailyStock = () => {
                     </button>
                     <button 
                       className="panel-btn"
-                      onClick={() => setZoom(100)}
-                      title="Varsayılan (100%)"
+                      onClick={() => setZoom(DEFAULT_ZOOM)}
+                      title={`Varsayılan (${DEFAULT_ZOOM}%)`}
                     >
                       <RotateCcw size={16} />
                     </button>
