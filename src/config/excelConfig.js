@@ -13,29 +13,27 @@ export const excelStartRows = {
   'electric': 1,                     // Elektrik Tüketimi
   'downtime': 1,                     // Duruş İşleri
   'sales': 1,                        // Satış Siparişleri
-  'shipping': 2120,                  // Yüklemeler
-  'electrical-maintenance': 1300,    // Elektrik Bakım
-  'mechanical-maintenance': 500,     // Mekanik Bakım
+  'shipping': 2240,                  // Yüklemeler
+  'electrical-maintenance': 1400,    // Elektrik Bakım
+  'mechanical-maintenance': 600,     // Mekanik Bakım
   'electrical-downtime': 1,          // Elektrik Duruş
   'mechanical-downtime': 1         // Mekanik Duruş
 };
 
 // Zoom seviyeleri (100 = %100, 80 = %80)
 export const excelZoomLevels = {
-  'stock': 100,
-  'dcs-a': 100,
-  'dcs-b': 100,
-  'dcs-buhar': 100,
-  'dcs-a012': 100,
-  'dcs-a021': 100,
-  'dcs-b012': 100,
-  'dcs-b021': 100,
-  'electric': 100,
-  'downtime': 100,
-  'sales': 100,
-  'shipping': 100,
-  'electrical-maintenance': 100,
-  'mechanical-maintenance': 100,
-  'electrical-downtime': 100,
-  'mechanical-downtime': 100
+  'stock': 50,
+  'dcs-buhar': 50,
+  'dcs-a012': 50,
+  'dcs-a021': 50,
+  'dcs-b012': 50,
+  'dcs-b021': 50,
+  'electric': 90,
+  'downtime': 50,
+  'sales': 50,
+  'shipping': 50,
+  'electrical-maintenance': 80,
+  'mechanical-maintenance': 80,
+  'electrical-downtime': 80,
+  'mechanical-downtime': 80
 };
