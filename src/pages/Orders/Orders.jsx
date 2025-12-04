@@ -19,14 +19,24 @@ const Orders = () => {
   }, []);
 
   useEffect(() => {
+    const applyZoom = () => {
+      const iframe = document.querySelector('.orders-panel iframe');
+      if (iframe) {
+        iframe.style.transform = `scale(${zoom / 100})`;
+        iframe.style.transformOrigin = 'top left';
+        iframe.style.width = `${10000 / zoom}%`;
+        iframe.style.height = `${10000 / zoom}%`;
+      }
+    };
+    
+    applyZoom();
+    
     const iframe = document.querySelector('.orders-panel iframe');
     if (iframe) {
-      iframe.style.transform = `scale(${zoom / 100})`;
-      iframe.style.transformOrigin = 'top left';
-      iframe.style.width = `${10000 / zoom}%`;
-      iframe.style.height = `${10000 / zoom}%`;
+      iframe.addEventListener('load', applyZoom);
+      return () => iframe.removeEventListener('load', applyZoom);
     }
-  }, [zoom]);
+  }, [zoom, excelData]);
 
   const loadLatestFile = async () => {
     setLoading(true);
