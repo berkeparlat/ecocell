@@ -98,6 +98,7 @@ const updateAppBadge = async (count) => {
 export const useTabNotification = (unreadCount) => {
   const originalTitleRef = useRef('Ecocell Portal');
   const prevCountRef = useRef(0);
+  const flashIntervalRef = useRef(null);
 
   useEffect(() => {
     if (unreadCount > 0) {
@@ -110,12 +111,15 @@ export const useTabNotification = (unreadCount) => {
       // PWA görev çubuğu badge'i
       updateAppBadge(unreadCount);
 
-      // Yeni bildirim geldiyse ve pencere focus değilse, görev çubuğunda dikkat çek
+      // Yeni bildirim geldiyse ve pencere focus değilse
       if (unreadCount > prevCountRef.current && !document.hasFocus()) {
-        // Görev çubuğunda yanıp sönme
-        if ('Notification' in window && Notification.permission === 'granted') {
-          // PWA'da görev çubuğu flash efekti
-          window.focus?.();
+        // Başlık yanıp sönme - Windows görev çubuğunda turuncu yanar
+        if (!flashIntervalRef.current) {
+          let isOriginal = true;
+          flashIntervalRef.current = setInterval(() => {
+            document.title = isOriginal ? `🔔 ${unreadCount} Yeni Bildirim!` : `(${unreadCount}) Bildirim`;
+            isOriginal = !isOriginal;
+          }, 1000);
         }
       }
     } else {
@@ -123,12 +127,36 @@ export const useTabNotification = (unreadCount) => {
       document.title = originalTitleRef.current;
       updateFavicon(0);
       updateAppBadge(0);
+      
+      // Yanıp sönmeyi durdur
+      if (flashIntervalRef.current) {
+        clearInterval(flashIntervalRef.current);
+        flashIntervalRef.current = null;
+      }
     }
 
     prevCountRef.current = unreadCount;
 
+    // Focus olunca yanıp sönmeyi durdur
+    const handleFocus = () => {
+      if (flashIntervalRef.current) {
+        clearInterval(flashIntervalRef.current);
+        flashIntervalRef.current = null;
+        if (unreadCount > 0) {
+          document.title = `(${unreadCount}) Bildirim`;
+        }
+      }
+    };
+
+    window.addEventListener('focus', handleFocus);
+
     // Cleanup
     return () => {
+      window.removeEventListener('focus', handleFocus);
+      if (flashIntervalRef.current) {
+        clearInterval(flashIntervalRef.current);
+        flashIntervalRef.current = null;
+      }
       document.title = originalTitleRef.current;
     };
   }, [unreadCount]);
