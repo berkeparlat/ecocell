@@ -73,11 +73,27 @@ const updateFavicon = async (count) => {
   }
 };
 
+// PWA görev çubuğu badge'i güncelle (Windows/macOS/Android)
+const updateAppBadge = async (count) => {
+  try {
+    if ('setAppBadge' in navigator) {
+      if (count > 0) {
+        await navigator.setAppBadge(count);
+      } else {
+        await navigator.clearAppBadge();
+      }
+    }
+  } catch (error) {
+    // Badge API desteklenmiyor veya izin yok
+    console.log('Badge API kullanılamıyor:', error);
+  }
+};
+
 /**
  * Tarayıcı sekmesinde bildirim gösterimi
  * - Başlıkta bildirim sayısı
  * - Favicon'da kırmızı badge
- * - Görev çubuğunda dikkat çekme (flash)
+ * - PWA görev çubuğunda badge (Windows/macOS/Android)
  */
 export const useTabNotification = (unreadCount) => {
   const originalTitleRef = useRef('Ecocell Portal');
@@ -90,6 +106,9 @@ export const useTabNotification = (unreadCount) => {
       
       // Favicon'a badge ekle
       updateFavicon(unreadCount);
+      
+      // PWA görev çubuğu badge'i
+      updateAppBadge(unreadCount);
 
       // Yeni bildirim geldiyse ve pencere focus değilse, görev çubuğunda dikkat çek
       if (unreadCount > prevCountRef.current && !document.hasFocus()) {
@@ -103,6 +122,7 @@ export const useTabNotification = (unreadCount) => {
       // Bildirim yoksa orijinal başlık ve favicon
       document.title = originalTitleRef.current;
       updateFavicon(0);
+      updateAppBadge(0);
     }
 
     prevCountRef.current = unreadCount;
