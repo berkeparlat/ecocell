@@ -7,7 +7,6 @@ import {
   deleteTask as deleteTaskFromStore,
 } from '../services/taskService';
 import {
-  ensureDepartmentsDocument,
   listenToDepartments as listenToDepartmentsFromStore,
   saveDepartments,
 } from '../services/departmentService';
@@ -369,41 +368,22 @@ export const AppProvider = ({ children }) => {
     return () => clearInterval(intervalId);
   }, [user?.uid]);
 
+  // Birimler herkese açık - uygulama başlar başlamaz yükle (login gerektirmez)
   useEffect(() => {
-    let isMounted = true;
-    let unsubscribe;
-
-    const initialiseDepartments = async () => {
-      try {
-        const ensured = await ensureDepartmentsDocument([]);
-        if (isMounted && Array.isArray(ensured) && ensured.length > 0) {
-          setDepartments(ensured);
-        }
-      } catch {
-        // Hata durumunda boş liste kullan
+    // Önce mevcut birimleri al, sonra dinlemeye başla
+    const unsubscribe = listenToDepartmentsFromStore((remoteList) => {
+      if (Array.isArray(remoteList)) {
+        setDepartments(remoteList);
       }
+    });
 
-      unsubscribe = listenToDepartmentsFromStore((remoteList) => {
-        if (!isMounted) {
-          return;
-        }
-
-        if (Array.isArray(remoteList) && remoteList.length > 0) {
-          setDepartments(remoteList);
-        }
-      });
-
-      departmentsListenerRef.current = unsubscribe;
-    };
-
-    initialiseDepartments();
+    departmentsListenerRef.current = unsubscribe;
 
     return () => {
-      isMounted = false;
-      if (unsubscribe) {
-        unsubscribe();
+      if (departmentsListenerRef.current) {
+        departmentsListenerRef.current();
+        departmentsListenerRef.current = null;
       }
-      departmentsListenerRef.current = null;
     };
   }, []);
 

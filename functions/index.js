@@ -3,9 +3,46 @@ const admin = require("firebase-admin");
 
 admin.initializeApp();
 
+// Push notification ayarları - SADECE data payload kullanıyoruz
+// notification payload kullanılırsa Firebase SDK otomatik bildirim gösteriyor
+// ve Service Worker'daki onBackgroundMessage de çalışıyor = çift bildirim
+const getNotificationConfig = (title, body, data, token) => {
+  return {
+    // notification objesi YOK - sadece data kullanıyoruz
+    // Bu sayede sadece Service Worker bildirim gösterecek
+    data: {
+      title: title,
+      body: body,
+      ...data,
+      click_action: "FLUTTER_NOTIFICATION_CLICK",
+    },
+    android: {
+      priority: "high",
+      ttl: 86400 * 1000, // 24 saat
+    },
+    apns: {
+      payload: {
+        aps: {
+          "content-available": 1,
+          sound: "default",
+        },
+      },
+      headers: {
+        "apns-priority": "10",
+        "apns-push-type": "background",
+      },
+    },
+    webpush: {
+      headers: {
+        Urgency: "high",
+        TTL: "86400",
+      },
+    },
+    token: token,
+  };
+};
+
 // Yeni bildirim oluşturulduğunda push notification gönder
-// NOT: Görev ve duyurular zaten kendi function'larında işlendiği için
-// sadece diğer tip bildirimleri gönder
 exports.sendNotificationOnCreate = onDocumentCreated(
     "notifications/{notificationId}",
     async (event) => {
@@ -48,18 +85,16 @@ exports.sendNotificationOnCreate = onDocumentCreated(
         }
 
         // Push notification mesajını hazırla
-        const message = {
-          notification: {
-            title: notification.title || "Yeni Bildirim",
-            body: notification.message || "",
-          },
-          data: {
-            type: notification.type || "general",
-            notificationId: event.params.notificationId,
-            url: "/notifications",
-          },
-          token: fcmToken,
-        };
+        const message = getNotificationConfig(
+            notification.title || "Yeni Bildirim",
+            notification.message || "",
+            {
+              type: notification.type || "general",
+              notificationId: event.params.notificationId,
+              url: "/notifications",
+            },
+            fcmToken,
+        );
 
         // Bildirimi gönder
         const response = await admin.messaging().send(message);
@@ -68,6 +103,15 @@ exports.sendNotificationOnCreate = onDocumentCreated(
         return response;
       } catch (error) {
         console.error("Push notification hatası:", error);
+        // Token geçersizse temizle
+        if (error.code === "messaging/invalid-registration-token" ||
+            error.code === "messaging/registration-token-not-registered") {
+          await admin.firestore().collection("users").doc(userId).update({
+            fcmToken: null,
+            notificationsEnabled: false,
+          });
+          console.log("Geçersiz token temizlendi:", userId);
+        }
         return null;
       }
     });
@@ -106,18 +150,16 @@ exports.sendNotificationOnTaskCreate = onDocumentCreated(
         usersSnapshot.forEach((doc) => {
           const userData = doc.data();
           if (userData.fcmToken) {
-            const message = {
-              notification: {
-                title: "Yeni Görev",
-                body: `${createdBy} - ${task.title}`,
-              },
-              data: {
-                type: "task",
-                taskId: event.params.taskId,
-                url: "/job-tracking",
-              },
-              token: userData.fcmToken,
-            };
+            const message = getNotificationConfig(
+                "Yeni Görev",
+                `${createdBy} - ${task.title}`,
+                {
+                  type: "task",
+                  taskId: event.params.taskId,
+                  url: "/job-tracking",
+                },
+                userData.fcmToken,
+            );
 
             promises.push(
                 admin.messaging().send(message)
@@ -127,6 +169,13 @@ exports.sendNotificationOnTaskCreate = onDocumentCreated(
                     })
                     .catch((error) => {
                       console.error("Görev bildirim hatası:", doc.id, error);
+                      // Token geçersizse temizle
+                      if (error.code === "messaging/invalid-registration-token" ||
+                          error.code === "messaging/registration-token-not-registered") {
+                        admin.firestore().collection("users").doc(doc.id).update({
+                          fcmToken: null,
+                        });
+                      }
                       return null;
                     }),
             );
@@ -189,19 +238,17 @@ exports.sendNotificationOnMessageCreate = onDocumentCreated(
           return null;
         }
 
-        const pushMessage = {
-          notification: {
-            title: `Yeni Mesaj - ${senderName}`,
-            body: message.text || "Yeni bir mesajınız var",
-          },
-          data: {
-            type: "message",
-            messageId: event.params.messageId,
-            senderId: senderId,
-            url: "/messages",
-          },
-          token: fcmToken,
-        };
+        const pushMessage = getNotificationConfig(
+            `${senderName}`,
+            message.text || "Yeni bir mesajınız var",
+            {
+              type: "message",
+              messageId: event.params.messageId,
+              senderId: senderId,
+              url: "/messages",
+            },
+            fcmToken,
+        );
 
         const response = await admin.messaging().send(pushMessage);
         console.log("Mesaj bildirimi gönderildi:", response);
@@ -209,6 +256,13 @@ exports.sendNotificationOnMessageCreate = onDocumentCreated(
         return response;
       } catch (error) {
         console.error("Mesaj bildirimi hatası:", error);
+        // Token geçersizse temizle
+        if (error.code === "messaging/invalid-registration-token" ||
+            error.code === "messaging/registration-token-not-registered") {
+          await admin.firestore().collection("users").doc(recipientId).update({
+            fcmToken: null,
+          });
+        }
         return null;
       }
     });
@@ -238,18 +292,16 @@ exports.sendNotificationOnAnnouncementCreate = onDocumentCreated(
         usersSnapshot.forEach((doc) => {
           const userData = doc.data();
           if (userData.fcmToken) {
-            const message = {
-              notification: {
-                title: "Yeni Duyuru",
-                body: announcement.title,
-              },
-              data: {
-                type: "announcement",
-                announcementId: event.params.announcementId,
-                url: "/announcements",
-              },
-              token: userData.fcmToken,
-            };
+            const message = getNotificationConfig(
+                "📢 Yeni Duyuru",
+                announcement.title,
+                {
+                  type: "announcement",
+                  announcementId: event.params.announcementId,
+                  url: "/announcements",
+                },
+                userData.fcmToken,
+            );
 
             promises.push(
                 admin.messaging().send(message)
@@ -259,6 +311,13 @@ exports.sendNotificationOnAnnouncementCreate = onDocumentCreated(
                     })
                     .catch((error) => {
                       console.error("Duyuru gönderim hatası:", doc.id, error);
+                      // Token geçersizse temizle
+                      if (error.code === "messaging/invalid-registration-token" ||
+                          error.code === "messaging/registration-token-not-registered") {
+                        admin.firestore().collection("users").doc(doc.id).update({
+                          fcmToken: null,
+                        });
+                      }
                       return null;
                     }),
             );

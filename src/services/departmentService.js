@@ -32,6 +32,7 @@ export const ensureDepartmentsDocument = async (defaultList = []) => {
   return list;
 };
 
+// Birimler herkese açık (public) - login gerektirmez
 export const listenToDepartments = (callback) => {
   return onSnapshot(
     departmentsDocRef,
