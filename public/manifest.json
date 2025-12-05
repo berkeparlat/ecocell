@@ -7,6 +7,7 @@
   "background_color": "#000000",
   "theme_color": "#000000",
   "orientation": "portrait-primary",
+  "gcm_sender_id": "103953800507",
   "icons": [
     {
       "src": "/assets/app.png",
@@ -34,5 +35,7 @@
     }
   ],
   "categories": ["business", "productivity"],
-  "lang": "tr"
+  "lang": "tr",
+  "permissions": ["notifications"],
+  "prefer_related_applications": false
 }

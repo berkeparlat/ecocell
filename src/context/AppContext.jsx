@@ -246,39 +246,46 @@ export const AppProvider = ({ children }) => {
     // Kullanıcı giriş yaptığında bildirim izni kontrolü
     const setupPushNotifications = async () => {
       try {
-        // Service Worker'ı kaydet (update on change ile)
+        // Service Worker'ı kaydet
         if ('serviceWorker' in navigator) {
-          // Eski Service Worker'ları unregister et
-          const registrations = await navigator.serviceWorker.getRegistrations();
-          for (const registration of registrations) {
-            if (registration.active?.scriptURL.includes('firebase-messaging-sw.js')) {
-              await registration.unregister();
-              console.log('Eski Service Worker unregister edildi');
-            }
+          let registration = await navigator.serviceWorker.getRegistration('/firebase-messaging-sw.js');
+          
+          if (!registration) {
+            // Service Worker yoksa kaydet
+            registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js', {
+              updateViaCache: 'none'
+            });
+            console.log('[Push] Service Worker ilk kez kaydedildi');
+          } else {
+            // Varsa güncellemeyi kontrol et
+            await registration.update();
+            console.log('[Push] Service Worker güncellendi');
           }
-          
-          // Yeni Service Worker'ı kaydet
-          const registration = await navigator.serviceWorker.register('/firebase-messaging-sw.js', {
-            updateViaCache: 'none' // Cache'i atla, her zaman yeni versiyonu al
-          });
-          console.log('Service Worker kaydedildi:', registration);
-          
-          // Güncellemeyi zorla
-          await registration.update();
+
+          // Service Worker'ın aktif olmasını bekle
+          if (registration.installing) {
+            await new Promise((resolve) => {
+              registration.installing.addEventListener('statechange', (e) => {
+                if (e.target.state === 'activated') resolve();
+              });
+            });
+          }
         }
 
         // Bildirim iznini kontrol et
-        if (Notification.permission === 'default') {
-          // İlk girişte sor (isteğe bağlı - kullanıcı profilde de açabilir)
-          console.log('Bildirim izni henüz verilmedi');
-        } else if (Notification.permission === 'granted') {
-          // İzin varsa token al ve kaydet
-          await getFCMToken(user.uid);
+        if (Notification.permission === 'granted') {
+          // İzin varsa token al ve kaydet (token yenilenmiş olabilir)
+          const token = await getFCMToken(user.uid);
+          if (token) {
+            console.log('[Push] FCM Token aktif');
+          }
+        } else if (Notification.permission === 'default') {
+          console.log('[Push] Bildirim izni henüz verilmedi');
         }
 
         // Foreground mesajları dinle
         const unsubscribeMessages = onMessageListener((payload) => {
-          console.log('Yeni bildirim:', payload);
+          console.log('[Push] Yeni bildirim:', payload);
           
           // Bildirimleri ve duyuruları yenile
           if (payload.data?.type === 'task') {
@@ -292,7 +299,7 @@ export const AppProvider = ({ children }) => {
 
         return unsubscribeMessages;
       } catch (error) {
-        console.error('Push notification setup hatası:', error);
+        console.error('[Push] Setup hatası:', error);
       }
     };
 
