@@ -97,67 +97,46 @@ const updateAppBadge = async (count) => {
  */
 export const useTabNotification = (unreadCount) => {
   const originalTitleRef = useRef('Ecocell Portal');
-  const prevCountRef = useRef(0);
   const flashIntervalRef = useRef(null);
 
   useEffect(() => {
+    // Önceki interval'i temizle
+    if (flashIntervalRef.current) {
+      clearInterval(flashIntervalRef.current);
+      flashIntervalRef.current = null;
+    }
+
     if (unreadCount > 0) {
-      // Kısa format - PWA'da başlık alanı dar
-      document.title = `(${unreadCount}) Bildirim`;
-      
       // Favicon'a badge ekle
       updateFavicon(unreadCount);
       
       // PWA görev çubuğu badge'i
       updateAppBadge(unreadCount);
 
-      // Yeni bildirim geldiyse ve pencere focus değilse
-      if (unreadCount > prevCountRef.current && !document.hasFocus()) {
-        // Başlık yanıp sönme - Windows görev çubuğunda turuncu yanar
-        if (!flashIntervalRef.current) {
-          let isOriginal = true;
-          flashIntervalRef.current = setInterval(() => {
-            document.title = isOriginal ? `🔔 ${unreadCount} Yeni Bildirim!` : `(${unreadCount}) Bildirim`;
-            isOriginal = !isOriginal;
-          }, 1000);
-        }
-      }
+      // Başlık yanıp sönme - "2 Bildirim" ve "Ecocell Portal" arasında
+      let isNotification = true;
+      const notificationTitle = `${unreadCount} Bildirim`;
+      
+      // İlk başta bildirim göster
+      document.title = notificationTitle;
+      
+      flashIntervalRef.current = setInterval(() => {
+        document.title = isNotification ? originalTitleRef.current : notificationTitle;
+        isNotification = !isNotification;
+      }, 1500);
     } else {
       // Bildirim yoksa orijinal başlık ve favicon
       document.title = originalTitleRef.current;
       updateFavicon(0);
       updateAppBadge(0);
-      
-      // Yanıp sönmeyi durdur
-      if (flashIntervalRef.current) {
-        clearInterval(flashIntervalRef.current);
-        flashIntervalRef.current = null;
-      }
     }
-
-    prevCountRef.current = unreadCount;
-
-    // Focus olunca yanıp sönmeyi durdur
-    const handleFocus = () => {
-      if (flashIntervalRef.current) {
-        clearInterval(flashIntervalRef.current);
-        flashIntervalRef.current = null;
-        if (unreadCount > 0) {
-          document.title = `(${unreadCount}) Bildirim`;
-        }
-      }
-    };
-
-    window.addEventListener('focus', handleFocus);
 
     // Cleanup
     return () => {
-      window.removeEventListener('focus', handleFocus);
       if (flashIntervalRef.current) {
         clearInterval(flashIntervalRef.current);
         flashIntervalRef.current = null;
       }
-      document.title = originalTitleRef.current;
     };
   }, [unreadCount]);
 };
