@@ -1,0 +1,74 @@
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #424242;
+  letter-spacing: 0.01em;
+}
+
+.input-label-icon {
+  display: inline-flex;
+  align-items: center;
+  color: #4caf50;
+}
+
+.input-field {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  font-family: inherit;
+  background: #fafafa;
+}
+
+.input-field::placeholder {
+  color: #9e9e9e;
+  font-weight: 400;
+}
+
+.input-field:focus {
+  outline: none;
+  border-color: #4caf50;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+}
+
+.input-field:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.input-error {
+  font-size: 0.813rem;
+  color: #e53935;
+  margin-top: 0.25rem;
+  font-weight: 500;
+}
+
+textarea.input-field {
+  min-height: 100px;
+  resize: vertical;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+select.input-field {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23757575' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 12px;
+  padding-right: 2.5rem;
+  appearance: none;
+}

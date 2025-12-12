@@ -1,0 +1,27 @@
+.announcements-page {
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.announcements-content {
+  flex: 1;
+  overflow: auto;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .announcements-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .announcements-content {
+    padding: 0.75rem;
+  }
+}

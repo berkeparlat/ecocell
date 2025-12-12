@@ -1,0 +1,98 @@
+.work-permit-form {
+  background: white;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.work-permit-form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.work-permit-form-header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #212529;
+}
+
+.work-permit-form-close {
+  background: none;
+  border: none;
+  color: #6c757d;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.2s;
+}
+
+.work-permit-form-close:hover {
+  background: #f8f9fa;
+  color: #212529;
+}
+
+.work-permit-form-body {
+  padding: 1.5rem;
+}
+
+.work-permit-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.work-permit-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.work-permit-form-readonly {
+  background: #f8f9fa;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  color: #495057;
+  font-size: 0.875rem;
+}
+
+.work-permit-form-textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 0.875rem;
+  resize: vertical;
+  transition: all 0.2s;
+}
+
+.work-permit-form-textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.work-permit-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.work-permit-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-top: 1px solid #e9ecef;
+}
+
+.work-permit-form-body {
+  padding: 1.5rem;
+}

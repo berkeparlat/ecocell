@@ -1,0 +1,22 @@
+# Sadece çok büyük dosyalar hariç
+node_modules/
+**/node_modules/
+dist/
+dist-ssr/
+
+# Hassas bilgiler
+serviceAccountKey.json
+**/serviceAccountKey.json
+.env.local
+
+# OS dosyaları
+.DS_Store
+
+# Log dosyaları
+*.log
+file-watcher/logs/
+
+# Geçici dosyalar
+*.tmp
+*.temp
+*_yedek.xlsx

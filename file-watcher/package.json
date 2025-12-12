@@ -1,0 +1,17 @@
+{
+  "name": "ecocell-file-watcher",
+  "version": "1.0.0",
+  "description": "Network klasöründeki Excel dosyalarını otomatik olarak Firebase'e yükler",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "install-service": "node install-service.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "firebase-admin": "^12.0.0"
+  },
+  "author": "",
+  "license": "MIT"
+}

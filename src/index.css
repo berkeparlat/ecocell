@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light;
+  color: #212121;
+  background-color: #fafafa;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Responsive font sizes */
+@media (max-width: 768px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    font-size: 13px;
+  }
+}
+
+/* Responsive utilities */
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsive tables */
+@media (max-width: 768px) {
+  table {
+    font-size: 0.875rem;
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  table thead {
+    display: table-header-group;
+  }
+  
+  table tbody {
+    display: table-row-group;
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 16px; /* Prevents zoom on iOS */
+  min-height: 44px;
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 0.75rem 1rem;
+  }
+  
+  input, textarea, select {
+    padding: 0.75rem 1rem;
+  }
+  
+  /* Touch-friendly spacing */
+  .page-container {
+    padding: 1rem;
+  }
+  
+  .card, .panel, .section {
+    margin-bottom: 1rem;
+  }
+  
+  /* Better spacing for forms */
+  form .form-group {
+    margin-bottom: 1rem;
+  }
+  
+  /* Table wrapper for horizontal scroll */
+  .table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0 1rem;
+  }
+}
+
+/* Mobile scroll optimization */
+.scrollable {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;
+}

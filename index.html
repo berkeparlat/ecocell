@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/assets/app.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- iOS PWA Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Ecocell" />
+    <link rel="apple-touch-icon" href="/assets/app.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/app.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/app.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/app.png" />
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#1a1a2e" />
+    
+    <!-- Preconnect to Firebase -->
+    <link rel="preconnect" href="https://firestore.googleapis.com" />
+    <link rel="preconnect" href="https://firebase.googleapis.com" />
+    <link rel="preconnect" href="https://identitytoolkit.googleapis.com" />
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://firestore.googleapis.com" />
+    <link rel="dns-prefetch" href="https://firebase.googleapis.com" />
+    
+    <title>Ecocell Portal</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

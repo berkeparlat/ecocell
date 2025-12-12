@@ -1,0 +1,9 @@
+# Sadece node_modules hariç (çok büyük)
+node_modules/
+
+# Hassas bilgiler
+serviceAccountKey.json
+
+# OS dosyaları
+.DS_Store
+Thumbs.db

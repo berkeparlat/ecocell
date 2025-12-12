@@ -1,0 +1,41 @@
+{
+  "name": "Ecocell Portal",
+  "short_name": "Ecocell",
+  "description": "Ecocell İşletme Yönetim Sistemi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "orientation": "portrait-primary",
+  "gcm_sender_id": "103953800507",
+  "icons": [
+    {
+      "src": "/assets/app.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/app.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/app.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/assets/app.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "tr",
+  "permissions": ["notifications"],
+  "prefer_related_applications": false
+}

@@ -1,0 +1,35 @@
+.simple-dashboard {
+  min-height: 100vh;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-content {
+  flex: 1;
+  overflow: auto;
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .simple-dashboard {
+    padding-top: 80px;
+  }
+
+  .dashboard-content {
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .simple-dashboard {
+    padding-top: 72px;
+  }
+
+  .dashboard-content {
+    padding: 1.25rem 1rem;
+  }
+}
